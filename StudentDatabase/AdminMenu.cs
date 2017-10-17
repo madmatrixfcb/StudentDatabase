@@ -14,10 +14,11 @@ namespace StudentDatabase
 
         private void AdminMenu_Load(object sender, EventArgs e)
         {
+            tabPane1.Refresh();
             // TODO: This line of code loads data into the 'poradniaDataSet.WIZYTA' table. You can move, or remove it, as needed.
             this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
             // TODO: This line of code loads data into the 'poradniaDataSet.PACJENT' table. You can move, or remove it, as needed.
-            this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
+            this.pACJENTTableAdapter.FillNazwy(this.poradniaDataSet.PACJENT);
             // TODO: This line of code loads data into the 'poradniaDataSet.UBEZPIECZENIE' table. You can move, or remove it, as needed.
             this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
             // TODO: This line of code loads data into the 'poradniaDataSet.ICD' table. You can move, or remove it, as needed.
@@ -54,7 +55,7 @@ namespace StudentDatabase
 
         private void refreshButton_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
+            this.pACJENTTableAdapter.FillNazwy(this.poradniaDataSet.PACJENT);
         }
 
         private void saveChanges_ItemClick(object sender, ItemClickEventArgs e)
@@ -87,6 +88,11 @@ namespace StudentDatabase
         {
             AddPatient addPat = new AddPatient();
             addPat.Show();
+        }
+
+        private void editPatient_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
 
         //-----------------------------------UBEZPIECZENIE RIBBON-----------------------------------//

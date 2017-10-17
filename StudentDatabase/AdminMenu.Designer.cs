@@ -45,6 +45,7 @@
             this.deleteButtonI = new DevExpress.XtraBars.BarButtonItem();
             this.deleteButtonW = new DevExpress.XtraBars.BarButtonItem();
             this.dodajUbezp = new DevExpress.XtraBars.BarButtonItem();
+            this.editPatient = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonAdmin = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -103,6 +104,7 @@
             this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.wIZYTATableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
+            this.pacjentTableAdapter1 = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
@@ -143,9 +145,10 @@
             this.deleteButtonU,
             this.deleteButtonI,
             this.deleteButtonW,
-            this.dodajUbezp});
+            this.dodajUbezp,
+            this.editPatient});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 18;
+            this.ribbon.MaxItemId = 19;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonAdmin,
@@ -278,6 +281,15 @@
             this.dodajUbezp.Name = "dodajUbezp";
             this.dodajUbezp.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.dodajUbezp_ItemClick);
             // 
+            // editPatient
+            // 
+            this.editPatient.Caption = "Edytuj pacjenta";
+            this.editPatient.Id = 18;
+            this.editPatient.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.editPatient.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.editPatient.Name = "editPatient";
+            this.editPatient.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editPatient_ItemClick);
+            // 
             // ribbonAdmin
             // 
             this.ribbonAdmin.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -291,6 +303,7 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.addPatient);
+            this.ribbonPageGroup1.ItemLinks.Add(this.editPatient);
             this.ribbonPageGroup1.ItemLinks.Add(this.refreshButton);
             this.ribbonPageGroup1.ItemLinks.Add(this.saveChanges);
             this.ribbonPageGroup1.ItemLinks.Add(this.deleteButtonP);
@@ -424,7 +437,7 @@
             this.colID_Pacjent.Name = "colID_Pacjent";
             this.colID_Pacjent.Visible = true;
             this.colID_Pacjent.VisibleIndex = 0;
-            this.colID_Pacjent.Width = 37;
+            this.colID_Pacjent.Width = 40;
             // 
             // colImie
             // 
@@ -755,6 +768,10 @@
             // 
             this.wIZYTATableAdapter.ClearBeforeFill = true;
             // 
+            // pacjentTableAdapter1
+            // 
+            this.pacjentTableAdapter1.ClearBeforeFill = true;
+            // 
             // AdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -869,5 +886,7 @@
         private DevExpress.XtraBars.BarButtonItem dodajUbezp;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private PoradniaDataSetTableAdapters.PACJENTTableAdapter pacjentTableAdapter1;
+        private DevExpress.XtraBars.BarButtonItem editPatient;
     }
 }

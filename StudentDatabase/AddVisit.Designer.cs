@@ -29,17 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.icdFilter1 = new DevExpress.XtraEditors.LookUpEdit();
-            this.iCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.bpodTB = new System.Windows.Forms.RichTextBox();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            this.patientFilter = new DevExpress.XtraEditors.LookUpEdit();
-            this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.icdFilter2 = new DevExpress.XtraEditors.LookUpEdit();
-            this.icdFilter3 = new DevExpress.XtraEditors.LookUpEdit();
             this.addVisitButton = new System.Windows.Forms.Button();
             this.nameSurnameLabel = new DevExpress.XtraEditors.LabelControl();
             this.dateLabel = new DevExpress.XtraEditors.LabelControl();
@@ -51,47 +44,43 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.objawyTB = new System.Windows.Forms.RichTextBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.filteringUIContext1 = new DevExpress.Utils.Filtering.FilteringUIContext(this.components);
+            this.iCDBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.poradniaDataSet1 = new StudentDatabase.PoradniaDataSet();
+            this.iCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
+            this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
-            this.pACJENTTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
-            this.wIZYTATableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
             this.wIZYTABindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.icdFilter1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
+            this.filteringUIContext1 = new DevExpress.Utils.Filtering.FilteringUIContext(this.components);
+            this.wIZYTATableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
+            this.pacjentTableAdapter1 = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
+            this.icdTableAdapter1 = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
+            this.icdFilter1 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.icdFilter2 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.icdFilter3 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.patientFilter = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientFilter.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icdFilter2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icdFilter3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filteringUIContext1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wIZYTABindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filteringUIContext1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icdFilter1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icdFilter2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icdFilter3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientFilter.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
-            // 
-            // icdFilter1
-            // 
-            this.icdFilter1.EditValue = "";
-            this.icdFilter1.Location = new System.Drawing.Point(102, 250);
-            this.icdFilter1.Name = "icdFilter1";
-            this.icdFilter1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.icdFilter1.Properties.DataSource = this.iCDBindingSource;
-            this.icdFilter1.Properties.DisplayMember = "Rozpoznanie";
-            this.icdFilter1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.icdFilter1.Properties.ValueMember = "idICD";
-            this.icdFilter1.Size = new System.Drawing.Size(166, 20);
-            this.icdFilter1.TabIndex = 6;
-            // 
-            // iCDBindingSource
-            // 
-            this.iCDBindingSource.DataMember = "ICD";
-            this.iCDBindingSource.DataSource = this.poradniaDataSet;
-            // 
-            // poradniaDataSet
-            // 
-            this.poradniaDataSet.DataSetName = "PoradniaDataSet";
-            this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bpodTB
             // 
@@ -139,69 +128,6 @@
             this.dateEdit1.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateEdit1.Size = new System.Drawing.Size(126, 20);
             this.dateEdit1.TabIndex = 2;
-            // 
-            // patientFilter
-            // 
-            this.patientFilter.Location = new System.Drawing.Point(102, 22);
-            this.patientFilter.Name = "patientFilter";
-            this.patientFilter.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.patientFilter.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID_Pacjent", "ID_Pacjent", 76, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Imie", "Imie", 30, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Nazwisko", "Nazwisko", 54, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Adres", "Adres", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Kraj", "Kraj", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Data_urodzenia", "Data_urodzenia", 86, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Plec", "Plec", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("PESEL", "PESEL", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Karta_polaka", "Karta_polaka", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Dowod_osobisty", "Dowod_osobisty", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Paszport", "Paszport", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID_Ubezpieczenie", "ID_Ubezpieczenie", 20, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Telefon", "Telefon", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Near)});
-            this.patientFilter.Properties.DataSource = this.pACJENTBindingSource;
-            this.patientFilter.Properties.DisplayMember = "Nazwisko";
-            this.patientFilter.Properties.KeyMember = "Adres;Kraj;Plec;PESEL;Karta_polaka;Dowod_osobisty;Paszport;ID_Ubezpieczenie;Telef" +
-    "on";
-            this.patientFilter.Properties.NullText = "";
-            this.patientFilter.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.patientFilter.Properties.ValueMember = "ID_Pacjent";
-            this.patientFilter.Size = new System.Drawing.Size(126, 20);
-            this.patientFilter.TabIndex = 1;
-            // 
-            // pACJENTBindingSource
-            // 
-            this.pACJENTBindingSource.DataMember = "PACJENT";
-            this.pACJENTBindingSource.DataSource = this.poradniaDataSet;
-            // 
-            // icdFilter2
-            // 
-            this.icdFilter2.EditValue = "";
-            this.icdFilter2.Location = new System.Drawing.Point(274, 250);
-            this.icdFilter2.Name = "icdFilter2";
-            this.icdFilter2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.icdFilter2.Properties.DataSource = this.iCDBindingSource;
-            this.icdFilter2.Properties.DisplayMember = "Rozpoznanie";
-            this.icdFilter2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.icdFilter2.Properties.ValueMember = "idICD";
-            this.icdFilter2.Size = new System.Drawing.Size(166, 20);
-            this.icdFilter2.TabIndex = 7;
-            // 
-            // icdFilter3
-            // 
-            this.icdFilter3.EditValue = "";
-            this.icdFilter3.Location = new System.Drawing.Point(446, 250);
-            this.icdFilter3.Name = "icdFilter3";
-            this.icdFilter3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.icdFilter3.Properties.DataSource = this.iCDBindingSource;
-            this.icdFilter3.Properties.DisplayMember = "Rozpoznanie";
-            this.icdFilter3.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.icdFilter3.Properties.ValueMember = "idICD";
-            this.icdFilter3.Size = new System.Drawing.Size(166, 20);
-            this.icdFilter3.TabIndex = 9;
             // 
             // addVisitButton
             // 
@@ -293,26 +219,146 @@
             this.labelControl3.TabIndex = 88;
             this.labelControl3.Text = "Objawy:";
             // 
-            // filteringUIContext1
+            // iCDBindingSource1
             // 
-            this.filteringUIContext1.ModelType = typeof(StudentDatabase.PoradniaDataSet);
+            this.iCDBindingSource1.DataMember = "ICD";
+            this.iCDBindingSource1.DataSource = this.poradniaDataSet1;
+            this.iCDBindingSource1.Sort = "idICD DESC";
+            // 
+            // poradniaDataSet1
+            // 
+            this.poradniaDataSet1.DataSetName = "PoradniaDataSet";
+            this.poradniaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // iCDBindingSource
+            // 
+            this.iCDBindingSource.DataMember = "ICD";
+            this.iCDBindingSource.DataSource = this.poradniaDataSet;
+            // 
+            // poradniaDataSet
+            // 
+            this.poradniaDataSet.DataSetName = "PoradniaDataSet";
+            this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pACJENTBindingSource
+            // 
+            this.pACJENTBindingSource.DataMember = "PACJENT";
+            this.pACJENTBindingSource.DataSource = this.poradniaDataSet;
             // 
             // iCDTableAdapter
             // 
             this.iCDTableAdapter.ClearBeforeFill = true;
             // 
-            // pACJENTTableAdapter
+            // wIZYTABindingSource
             // 
-            this.pACJENTTableAdapter.ClearBeforeFill = true;
+            this.wIZYTABindingSource.DataMember = "WIZYTA";
+            this.wIZYTABindingSource.DataSource = this.poradniaDataSet;
+            // 
+            // filteringUIContext1
+            // 
+            this.filteringUIContext1.ModelType = typeof(StudentDatabase.PoradniaDataSet);
             // 
             // wIZYTATableAdapter
             // 
             this.wIZYTATableAdapter.ClearBeforeFill = true;
             // 
-            // wIZYTABindingSource
+            // pacjentTableAdapter1
             // 
-            this.wIZYTABindingSource.DataMember = "WIZYTA";
-            this.wIZYTABindingSource.DataSource = this.poradniaDataSet;
+            this.pacjentTableAdapter1.ClearBeforeFill = true;
+            // 
+            // icdTableAdapter1
+            // 
+            this.icdTableAdapter1.ClearBeforeFill = true;
+            // 
+            // icdFilter1
+            // 
+            this.icdFilter1.EditValue = "Wprowadz kod ICD";
+            this.icdFilter1.Location = new System.Drawing.Point(102, 250);
+            this.icdFilter1.Name = "icdFilter1";
+            this.icdFilter1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.icdFilter1.Properties.DataSource = this.iCDBindingSource;
+            this.icdFilter1.Properties.DisplayMember = "Kod_ICD";
+            this.icdFilter1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.icdFilter1.Properties.ValueMember = "idICD";
+            this.icdFilter1.Properties.View = this.searchLookUpEdit2View;
+            this.icdFilter1.Size = new System.Drawing.Size(166, 20);
+            this.icdFilter1.TabIndex = 6;
+            // 
+            // searchLookUpEdit2View
+            // 
+            this.searchLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit2View.Name = "searchLookUpEdit2View";
+            this.searchLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            // 
+            // icdFilter2
+            // 
+            this.icdFilter2.EditValue = "Wprowadz kod ICD";
+            this.icdFilter2.Location = new System.Drawing.Point(274, 250);
+            this.icdFilter2.Name = "icdFilter2";
+            this.icdFilter2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.icdFilter2.Properties.DataSource = this.iCDBindingSource;
+            this.icdFilter2.Properties.DisplayMember = "Kod_ICD";
+            this.icdFilter2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.icdFilter2.Properties.ValueMember = "idICD";
+            this.icdFilter2.Properties.View = this.gridView1;
+            this.icdFilter2.Size = new System.Drawing.Size(166, 20);
+            this.icdFilter2.TabIndex = 7;
+            // 
+            // gridView1
+            // 
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // icdFilter3
+            // 
+            this.icdFilter3.EditValue = "Wprowadz kod ICD";
+            this.icdFilter3.Location = new System.Drawing.Point(446, 250);
+            this.icdFilter3.Name = "icdFilter3";
+            this.icdFilter3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.icdFilter3.Properties.DataSource = this.iCDBindingSource;
+            this.icdFilter3.Properties.DisplayMember = "Kod_ICD";
+            this.icdFilter3.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.icdFilter3.Properties.ValueMember = "idICD";
+            this.icdFilter3.Properties.View = this.gridView2;
+            this.icdFilter3.Size = new System.Drawing.Size(166, 20);
+            this.icdFilter3.TabIndex = 9;
+            // 
+            // gridView2
+            // 
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // patientFilter
+            // 
+            this.patientFilter.Location = new System.Drawing.Point(102, 22);
+            this.patientFilter.Name = "patientFilter";
+            this.patientFilter.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.patientFilter.Properties.DataSource = this.pACJENTBindingSource;
+            this.patientFilter.Properties.DisplayMember = "Nazwisko";
+            this.patientFilter.Properties.KeyMember = "Adres;Kraj;Plec;PESEL;Karta_polaka;Dowod_osobisty;Paszport;ID_Ubezpieczenie;Telef" +
+    "on";
+            this.patientFilter.Properties.NullText = "";
+            this.patientFilter.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.patientFilter.Properties.ValueMember = "ID_Pacjent";
+            this.patientFilter.Properties.View = this.searchLookUpEdit1View;
+            this.patientFilter.Size = new System.Drawing.Size(126, 20);
+            this.patientFilter.TabIndex = 1;
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
             // AddVisit
             // 
@@ -330,28 +376,34 @@
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.nameSurnameLabel);
             this.Controls.Add(this.addVisitButton);
-            this.Controls.Add(this.icdFilter3);
-            this.Controls.Add(this.icdFilter2);
-            this.Controls.Add(this.patientFilter);
             this.Controls.Add(this.dateEdit1);
             this.Controls.Add(this.bpodTB);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.icdFilter1);
+            this.Controls.Add(this.icdFilter2);
+            this.Controls.Add(this.icdFilter3);
+            this.Controls.Add(this.patientFilter);
             this.Name = "AddVisit";
             this.Text = "AddVisit";
             this.Load += new System.EventHandler(this.AddVisit_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.icdFilter1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientFilter.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icdFilter2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icdFilter3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filteringUIContext1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wIZYTABindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.filteringUIContext1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icdFilter1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit2View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icdFilter2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icdFilter3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientFilter.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -363,16 +415,11 @@
         private PoradniaDataSet poradniaDataSet;
         private System.Windows.Forms.BindingSource iCDBindingSource;
         private PoradniaDataSetTableAdapters.ICDTableAdapter iCDTableAdapter;
-        private DevExpress.XtraEditors.LookUpEdit icdFilter1;
         private System.Windows.Forms.RichTextBox bpodTB;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.DateEdit dateEdit1;
-        private DevExpress.XtraEditors.LookUpEdit patientFilter;
         private System.Windows.Forms.BindingSource pACJENTBindingSource;
-        private PoradniaDataSetTableAdapters.PACJENTTableAdapter pACJENTTableAdapter;
-        private DevExpress.XtraEditors.LookUpEdit icdFilter2;
-        private DevExpress.XtraEditors.LookUpEdit icdFilter3;
         private System.Windows.Forms.Button addVisitButton;
         private DevExpress.XtraEditors.LabelControl nameSurnameLabel;
         private DevExpress.XtraEditors.LabelControl dateLabel;
@@ -386,5 +433,17 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private PoradniaDataSetTableAdapters.WIZYTATableAdapter wIZYTATableAdapter;
         private System.Windows.Forms.BindingSource wIZYTABindingSource;
+        private PoradniaDataSetTableAdapters.PACJENTTableAdapter pacjentTableAdapter1;
+        private System.Windows.Forms.BindingSource iCDBindingSource1;
+        private PoradniaDataSet poradniaDataSet1;
+        private PoradniaDataSetTableAdapters.ICDTableAdapter icdTableAdapter1;
+        private DevExpress.XtraEditors.SearchLookUpEdit icdFilter1;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit2View;
+        private DevExpress.XtraEditors.SearchLookUpEdit icdFilter2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.SearchLookUpEdit icdFilter3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraEditors.SearchLookUpEdit patientFilter;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
     }
 }

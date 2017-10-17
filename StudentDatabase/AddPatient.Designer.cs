@@ -62,9 +62,9 @@
             this.imieTB = new DevExpress.XtraEditors.TextEdit();
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pACJENTTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             this.plecRD = new DevExpress.XtraEditors.RadioGroup();
             this.addPatientButton = new System.Windows.Forms.Button();
+            this.pacjentTableAdapter1 = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.miastoTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kodTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mieszkanieTB.Properties)).BeginInit();
@@ -360,10 +360,6 @@
             this.pACJENTBindingSource.DataMember = "PACJENT";
             this.pACJENTBindingSource.DataSource = this.poradniaDataSet;
             // 
-            // pACJENTTableAdapter
-            // 
-            this.pACJENTTableAdapter.ClearBeforeFill = true;
-            // 
             // plecRD
             // 
             this.plecRD.Location = new System.Drawing.Point(11, 164);
@@ -384,6 +380,10 @@
             this.addPatientButton.Text = "Dodaj pacjenta";
             this.addPatientButton.UseVisualStyleBackColor = true;
             this.addPatientButton.Click += new System.EventHandler(this.addPatientButton_Click);
+            // 
+            // pacjentTableAdapter1
+            // 
+            this.pacjentTableAdapter1.ClearBeforeFill = true;
             // 
             // AddPatient
             // 
@@ -487,8 +487,8 @@
         private DevExpress.XtraEditors.TextEdit imieTB;
         private PoradniaDataSet poradniaDataSet;
         private System.Windows.Forms.BindingSource pACJENTBindingSource;
-        private PoradniaDataSetTableAdapters.PACJENTTableAdapter pACJENTTableAdapter;
         private DevExpress.XtraEditors.RadioGroup plecRD;
         private System.Windows.Forms.Button addPatientButton;
+        private PoradniaDataSetTableAdapters.PACJENTTableAdapter pacjentTableAdapter1;
     }
 }
