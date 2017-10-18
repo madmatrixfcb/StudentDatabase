@@ -54,9 +54,8 @@ namespace StudentDatabase
             string nr_kp = Convert.ToString(kartapolakaTB.Text);
             string dowod_osobisty = Convert.ToString(dowodTB.Text);
             string nr_paszportu = Convert.ToString(paszportTB.Text);
-            int plec = Convert.ToInt16(plecRD.SelectedIndex);
-            string plecc = Convert.ToString(plecRD.SelectedIndex);
-            int ubezpieczenie = Convert.ToInt16(ubezpRD.SelectedIndex);
+            string plec = Convert.ToString(plecSB);
+            string ubezpieczenie = Convert.ToString(ubezpieczenieSB);
 
             string adres = ulica + " " + nr_budynku + " " + nr_mieszkania + " " + kod_pocztowy + " " + miasto;
 
@@ -103,6 +102,15 @@ namespace StudentDatabase
                 }
             }
            
+        }
+
+        private void AddPatient_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'poradniaDataSet.UBEZPIECZENIE' table. You can move, or remove it, as needed.
+            this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
+            // TODO: This line of code loads data into the 'poradniaDataSet.PLEC' table. You can move, or remove it, as needed.
+            this.pLECTableAdapter.Fill(this.poradniaDataSet.PLEC);
+
         }
     }
 }

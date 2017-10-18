@@ -54,7 +54,6 @@
             this.dowodosobistyCB = new DevExpress.XtraEditors.CheckEdit();
             this.kartapolakaCB = new DevExpress.XtraEditors.CheckEdit();
             this.peselCB = new DevExpress.XtraEditors.CheckEdit();
-            this.ubezpRD = new DevExpress.XtraEditors.RadioGroup();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.nazwiskoTB = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -62,9 +61,18 @@
             this.imieTB = new DevExpress.XtraEditors.TextEdit();
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.plecRD = new DevExpress.XtraEditors.RadioGroup();
             this.addPatientButton = new System.Windows.Forms.Button();
             this.pacjentTableAdapter1 = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
+            this.plecSB = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.pLECBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pLECTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PLECTableAdapter();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.ubezpieczenieSB = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.uBEZPIECZENIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uBEZPIECZENIETableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UBEZPIECZENIETableAdapter();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.miastoTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kodTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mieszkanieTB.Properties)).BeginInit();
@@ -80,14 +88,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dowodosobistyCB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kartapolakaCB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peselCB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ubezpRD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nazwiskoTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataur.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataur.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imieTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plecRD.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plecSB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pLECBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ubezpieczenieSB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl11
@@ -295,19 +307,6 @@
             this.peselCB.Size = new System.Drawing.Size(75, 19);
             this.peselCB.TabIndex = 39;
             // 
-            // ubezpRD
-            // 
-            this.ubezpRD.Location = new System.Drawing.Point(12, 438);
-            this.ubezpRD.Name = "ubezpRD";
-            this.ubezpRD.Properties.Columns = 2;
-            this.ubezpRD.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Ubezpieczenie NFZ"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(2)), "Ubezpieczenie EKUZ"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(3)), "Ubezpieczenie prywatne"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(4)), "Brak ubezpieczenia")});
-            this.ubezpRD.Size = new System.Drawing.Size(299, 65);
-            this.ubezpRD.TabIndex = 38;
-            // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(12, 62);
@@ -360,17 +359,6 @@
             this.pACJENTBindingSource.DataMember = "PACJENT";
             this.pACJENTBindingSource.DataSource = this.poradniaDataSet;
             // 
-            // plecRD
-            // 
-            this.plecRD.Location = new System.Drawing.Point(11, 164);
-            this.plecRD.Name = "plecRD";
-            this.plecRD.Properties.Columns = 2;
-            this.plecRD.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Mężczyzna"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(2)), "Kobieta")});
-            this.plecRD.Size = new System.Drawing.Size(299, 37);
-            this.plecRD.TabIndex = 65;
-            // 
             // addPatientButton
             // 
             this.addPatientButton.Location = new System.Drawing.Point(114, 512);
@@ -385,13 +373,92 @@
             // 
             this.pacjentTableAdapter1.ClearBeforeFill = true;
             // 
+            // plecSB
+            // 
+            this.plecSB.Location = new System.Drawing.Point(105, 163);
+            this.plecSB.Name = "plecSB";
+            this.plecSB.Properties.AutoHeight = false;
+            this.plecSB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.plecSB.Properties.DataSource = this.pLECBindingSource;
+            this.plecSB.Properties.DisplayMember = "Plec";
+            this.plecSB.Properties.NullText = "";
+            this.plecSB.Properties.ValueMember = "ID_Plec";
+            this.plecSB.Properties.View = this.searchLookUpEdit1View;
+            this.plecSB.Size = new System.Drawing.Size(158, 20);
+            this.plecSB.TabIndex = 65;
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // pLECBindingSource
+            // 
+            this.pLECBindingSource.DataMember = "PLEC";
+            this.pLECBindingSource.DataSource = this.poradniaDataSet;
+            // 
+            // pLECTableAdapter
+            // 
+            this.pLECTableAdapter.ClearBeforeFill = true;
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Location = new System.Drawing.Point(12, 166);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(24, 13);
+            this.labelControl13.TabIndex = 67;
+            this.labelControl13.Text = "Płeć:";
+            // 
+            // ubezpieczenieSB
+            // 
+            this.ubezpieczenieSB.Location = new System.Drawing.Point(105, 456);
+            this.ubezpieczenieSB.Name = "ubezpieczenieSB";
+            this.ubezpieczenieSB.Properties.AutoHeight = false;
+            this.ubezpieczenieSB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ubezpieczenieSB.Properties.DataSource = this.uBEZPIECZENIEBindingSource;
+            this.ubezpieczenieSB.Properties.DisplayMember = "Rodzaj";
+            this.ubezpieczenieSB.Properties.NullText = "";
+            this.ubezpieczenieSB.Properties.ValueMember = "ID_Ubezpieczenie";
+            this.ubezpieczenieSB.Properties.View = this.gridView1;
+            this.ubezpieczenieSB.Size = new System.Drawing.Size(158, 20);
+            this.ubezpieczenieSB.TabIndex = 38;
+            // 
+            // gridView1
+            // 
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // uBEZPIECZENIEBindingSource
+            // 
+            this.uBEZPIECZENIEBindingSource.DataMember = "UBEZPIECZENIE";
+            this.uBEZPIECZENIEBindingSource.DataSource = this.poradniaDataSet;
+            // 
+            // uBEZPIECZENIETableAdapter
+            // 
+            this.uBEZPIECZENIETableAdapter.ClearBeforeFill = true;
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Location = new System.Drawing.Point(12, 459);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(72, 13);
+            this.labelControl14.TabIndex = 68;
+            this.labelControl14.Text = "Ubezpieczenie:";
+            // 
             // AddPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(323, 547);
+            this.Controls.Add(this.labelControl14);
+            this.Controls.Add(this.labelControl13);
             this.Controls.Add(this.addPatientButton);
-            this.Controls.Add(this.plecRD);
             this.Controls.Add(this.labelControl11);
             this.Controls.Add(this.miastoTB);
             this.Controls.Add(this.labelControl12);
@@ -417,14 +484,16 @@
             this.Controls.Add(this.dowodosobistyCB);
             this.Controls.Add(this.kartapolakaCB);
             this.Controls.Add(this.peselCB);
-            this.Controls.Add(this.ubezpRD);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.nazwiskoTB);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.dataur);
             this.Controls.Add(this.imieTB);
+            this.Controls.Add(this.plecSB);
+            this.Controls.Add(this.ubezpieczenieSB);
             this.Name = "AddPatient";
             this.Text = "AddPatient";
+            this.Load += new System.EventHandler(this.AddPatient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.miastoTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kodTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mieszkanieTB.Properties)).EndInit();
@@ -440,14 +509,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dowodosobistyCB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kartapolakaCB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peselCB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ubezpRD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nazwiskoTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataur.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataur.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imieTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plecRD.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plecSB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pLECBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ubezpieczenieSB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,7 +552,6 @@
         private DevExpress.XtraEditors.CheckEdit dowodosobistyCB;
         private DevExpress.XtraEditors.CheckEdit kartapolakaCB;
         private DevExpress.XtraEditors.CheckEdit peselCB;
-        private DevExpress.XtraEditors.RadioGroup ubezpRD;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit nazwiskoTB;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -487,8 +559,17 @@
         private DevExpress.XtraEditors.TextEdit imieTB;
         private PoradniaDataSet poradniaDataSet;
         private System.Windows.Forms.BindingSource pACJENTBindingSource;
-        private DevExpress.XtraEditors.RadioGroup plecRD;
         private System.Windows.Forms.Button addPatientButton;
         private PoradniaDataSetTableAdapters.PACJENTTableAdapter pacjentTableAdapter1;
+        private DevExpress.XtraEditors.SearchLookUpEdit plecSB;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private System.Windows.Forms.BindingSource pLECBindingSource;
+        private PoradniaDataSetTableAdapters.PLECTableAdapter pLECTableAdapter;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.SearchLookUpEdit ubezpieczenieSB;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.BindingSource uBEZPIECZENIEBindingSource;
+        private PoradniaDataSetTableAdapters.UBEZPIECZENIETableAdapter uBEZPIECZENIETableAdapter;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
     }
 }

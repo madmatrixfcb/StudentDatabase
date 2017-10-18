@@ -2370,11 +2370,13 @@ namespace StudentDatabase {
                 this.columnData_urodzenia.AllowDBNull = false;
                 this.columnData_urodzenia.MaxLength = 50;
                 this.columnPlec.AllowDBNull = false;
+                this.columnPlec.MaxLength = 50;
                 this.columnPESEL.MaxLength = 11;
                 this.columnKarta_polaka.MaxLength = 50;
                 this.columnDowod_osobisty.MaxLength = 50;
                 this.columnPaszport.MaxLength = 50;
                 this.columnID_Ubezpieczenie.AllowDBNull = false;
+                this.columnID_Ubezpieczenie.MaxLength = 50;
                 this.columnTelefon.AllowDBNull = false;
                 this.columnTelefon.MaxLength = 50;
             }
@@ -6925,8 +6927,9 @@ JOIN UBEZPIECZENIE AS U ON P.ID_Ubezpieczenie=U.ID_Ubezpieczenie";
             this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 1;
             param.IsNullable = true;
             param.SourceColumn = "Plec";
             this._commandCollection[2].Parameters.Add(param);
@@ -6964,8 +6967,9 @@ JOIN UBEZPIECZENIE AS U ON P.ID_Ubezpieczenie=U.ID_Ubezpieczenie";
             this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p11";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 1;
             param.IsNullable = true;
             param.SourceColumn = "ID_Ubezpieczenie";
             this._commandCollection[2].Parameters.Add(param);
@@ -7414,7 +7418,7 @@ JOIN UBEZPIECZENIE AS U ON P.ID_Ubezpieczenie=U.ID_Ubezpieczenie";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(string p1, string p2, string p3, string p4, string p5, int p6, string p7, string p8, string p9, string p10, int p11, string p12) {
+        public virtual int InsertQuery(string p1, string p2, string p3, string p4, string p5, string p6, string p7, string p8, string p9, string p10, string p11, string p12) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[2];
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
@@ -7446,7 +7450,12 @@ JOIN UBEZPIECZENIE AS U ON P.ID_Ubezpieczenie=U.ID_Ubezpieczenie";
             else {
                 command.Parameters[4].Value = ((string)(p5));
             }
-            command.Parameters[5].Value = ((int)(p6));
+            if ((p6 == null)) {
+                throw new global::System.ArgumentNullException("p6");
+            }
+            else {
+                command.Parameters[5].Value = ((string)(p6));
+            }
             if ((p7 == null)) {
                 command.Parameters[6].Value = global::System.DBNull.Value;
             }
@@ -7471,7 +7480,12 @@ JOIN UBEZPIECZENIE AS U ON P.ID_Ubezpieczenie=U.ID_Ubezpieczenie";
             else {
                 command.Parameters[9].Value = ((string)(p10));
             }
-            command.Parameters[10].Value = ((int)(p11));
+            if ((p11 == null)) {
+                throw new global::System.ArgumentNullException("p11");
+            }
+            else {
+                command.Parameters[10].Value = ((string)(p11));
+            }
             if ((p12 == null)) {
                 throw new global::System.ArgumentNullException("p12");
             }
