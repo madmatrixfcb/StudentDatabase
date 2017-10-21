@@ -54,12 +54,14 @@ namespace StudentDatabase
             string nr_kp = Convert.ToString(kartapolakaTB.Text);
             string dowod_osobisty = Convert.ToString(dowodTB.Text);
             string nr_paszportu = Convert.ToString(paszportTB.Text);
-            string plec = Convert.ToString(plecSB);
-            string ubezpieczenie = Convert.ToString(ubezpieczenieSB);
+            string plec = Convert.ToString(plecSB.EditValue);
+            string ubezpieczenie = Convert.ToString(ubezpieczenieSB.EditValue);
 
             string adres = ulica + " " + nr_budynku + " " + nr_mieszkania + " " + kod_pocztowy + " " + miasto;
 
-            if (String.IsNullOrEmpty(imieTB.Text) || String.IsNullOrEmpty(nazwiskoTB.Text) || String.IsNullOrEmpty(dataur.Text) || String.IsNullOrEmpty(krajTB.Text) || String.IsNullOrEmpty(telefonTB.Text) || String.IsNullOrEmpty(adres))
+            string wrong_phone = "+48";
+
+            if (String.IsNullOrEmpty(imieTB.Text) || String.IsNullOrEmpty(nazwiskoTB.Text) || String.IsNullOrEmpty(dataur.Text) || String.IsNullOrEmpty(krajTB.Text) || String.IsNullOrEmpty(telefonTB.Text) || String.Equals(telefonTB.Text,wrong_phone)  ||  String.IsNullOrEmpty(adres))
             {
                 MessageBox.Show("Wypełnij wszystkie pola by dodać pacjenta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -69,23 +71,7 @@ namespace StudentDatabase
                 try
                 {
                     pacjentTableAdapter1.InsertQuery(imie, nazwisko, adres, kraj, data_ur, plec, nr_pesel, nr_kp, dowod_osobisty, nr_paszportu, ubezpieczenie, telefon);
-                    MessageBox.Show("Pacjent dodany", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   /* imieTB.ResetText();
-                    nazwiskoTB.ResetText();
-                    dataur.ResetText();
-                    krajTB.ResetText();
-                    telefonTB.ResetText();
-                    ulicaTB.ResetText();
-                    budynekTB.ResetText();
-                    mieszkanieTB.ResetText();
-                    kodTB.ResetText();
-                    miastoTB.ResetText();
-                    peselCB.ResetText();
-                    kartapolakaTB.ResetText();
-                    dowodTB.ResetText();
-                    paszportTB.ResetText();
-                    plecRD.ResetText();
-                    ubezpRD.ResetText();*/
+                    
 
                     foreach(Control c in Controls)
                     {
@@ -94,6 +80,8 @@ namespace StudentDatabase
                             c.ResetText();
                         }
                     }
+
+                    MessageBox.Show("Pacjent dodany", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 catch (Exception ex)

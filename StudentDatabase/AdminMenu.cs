@@ -73,14 +73,22 @@ namespace StudentDatabase
 
         private void deleteButtonP_ItemClick(object sender, ItemClickEventArgs e)
         {
-            try
+            DialogResult warning = MessageBox.Show("Czy na pewno chcesz usunąć wybranego(ych) pacjenta(ów)?", "Potwierdzenie usunięcia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (warning == DialogResult.Yes)
             {
-                DeleteSelectedRows(gridView1);
-                MessageBox.Show("Pacjent(ci) usunięty", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
+                {
+                    DeleteSelectedRows(gridView1);
+                    MessageBox.Show("Pacjent(ci) usunięty(ci)", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 
