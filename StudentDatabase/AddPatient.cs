@@ -18,26 +18,6 @@ namespace StudentDatabase
             InitializeComponent();
         }
 
-        private void peselCB_CheckedChanged(object sender, EventArgs e)
-        {
-            peselTB.Enabled = (peselCB.CheckState == CheckState.Checked);
-        }
-
-        private void kartapolakaCB_CheckedChanged(object sender, EventArgs e)
-        {
-            kartapolakaTB.Enabled = (kartapolakaCB.CheckState == CheckState.Checked);
-        }
-
-        private void dowodosobistyCB_CheckedChanged(object sender, EventArgs e)
-        {
-            dowodTB.Enabled = (dowodosobistyCB.CheckState == CheckState.Checked);
-        }
-
-        private void paszportCB_CheckedChanged(object sender, EventArgs e)
-        {
-            paszportTB.Enabled = (paszportCB.CheckState == CheckState.Checked);
-        }
-
         private void addPatientButton_Click(object sender, EventArgs e)
         {
             string imie = Convert.ToString(imieTB.Text);
@@ -59,14 +39,14 @@ namespace StudentDatabase
 
             string adres = ulica + " " + nr_budynku + " " + nr_mieszkania + " " + kod_pocztowy + " " + miasto;
 
-            string wrong_phone = "+48";
+           // string wrong_phone = "+48";
 
-            if (String.IsNullOrEmpty(imieTB.Text) || String.IsNullOrEmpty(nazwiskoTB.Text) || String.IsNullOrEmpty(dataur.Text) || String.IsNullOrEmpty(krajTB.Text) || String.IsNullOrEmpty(telefonTB.Text) || String.Equals(telefonTB.Text,wrong_phone)  ||  String.IsNullOrEmpty(adres))
+          /*  if (String.IsNullOrEmpty(imieTB.Text) || String.IsNullOrEmpty(nazwiskoTB.Text) || String.IsNullOrEmpty(dataur.Text) || String.IsNullOrEmpty(krajTB.Text) || String.IsNullOrEmpty(telefonTB.Text) || String.Equals(telefonTB.Text,wrong_phone)  ||  String.IsNullOrEmpty(adres))
             {
                 MessageBox.Show("Wypełnij wszystkie pola by dodać pacjenta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-            {
+            {*/
                 
                 try
                 {
@@ -90,7 +70,7 @@ namespace StudentDatabase
                 }
             }
            
-        }
+     //   }
 
         private void AddPatient_Load(object sender, EventArgs e)
         {
@@ -99,6 +79,26 @@ namespace StudentDatabase
             // TODO: This line of code loads data into the 'poradniaDataSet.PLEC' table. You can move, or remove it, as needed.
             this.pLECTableAdapter.Fill(this.poradniaDataSet.PLEC);
 
+        }
+
+        private void peselCB_CheckedChanged(object sender, EventArgs e)
+        {
+            peselTB.Enabled = (peselCB.CheckState == CheckState.Checked);
+        }
+
+        private void kartapolakaCB_CheckedChanged(object sender, EventArgs e)
+        {
+            kartapolakaTB.Enabled = (kartapolakaCB.CheckState == CheckState.Checked);
+        }
+
+        private void dowodosobistyCB_CheckedChanged(object sender, EventArgs e)
+        {
+            dowodTB.Enabled = (dowodosobistyCB.CheckState == CheckState.Checked);
+        }
+
+        private void paszportCB_CheckedChanged(object sender, EventArgs e)
+        {
+            paszportTB.Enabled = (paszportCB.CheckState == CheckState.Checked);
         }
     }
 }
