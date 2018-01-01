@@ -27,7 +27,7 @@ namespace StudentDatabase
 
         //-----------------------FUNCTIONS----------------------------------/
 
-        private void DeleteSelectedRows(DevExpress.XtraGrid.Views.Grid.GridView view)
+        /*private void DeleteSelectedRows(DevExpress.XtraGrid.Views.Grid.GridView view)
         {
             if (view == null || view.SelectedRowsCount == 0) return;
 
@@ -46,7 +46,7 @@ namespace StudentDatabase
             finally
             {
             }
-        }
+        }*/
 
         //-----------------------------------PATIENT RIBBON-----------------------------------//
 
@@ -57,7 +57,7 @@ namespace StudentDatabase
 
         private void saveChanges_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
+            try
             {
                 pACJENTTableAdapter.Update(poradniaDataSet.PACJENT);
                 MessageBox.Show("Dane pacjentów zaktualizowanie", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -76,7 +76,7 @@ namespace StudentDatabase
                 try
                 {
                     gridView1.DeleteRow(gridView1.FocusedRowHandle);
-                    //DeleteSelectedRows(gridView1);
+                    this.pACJENTTableAdapter.Update(poradniaDataSet.PACJENT);
                     MessageBox.Show("Pacjent(ci) usunięty(ci)", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
@@ -107,7 +107,8 @@ namespace StudentDatabase
         {
             try
             {
-                DeleteSelectedRows(gridView2);
+                gridView2.DeleteRow(gridView2.FocusedRowHandle);
+                this.uBEZPIECZENIETableAdapter.Update(poradniaDataSet.UBEZPIECZENIE);
                 MessageBox.Show("Ubezpieczenie(a) usunięte", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -157,7 +158,8 @@ namespace StudentDatabase
         {
             try
             {
-                DeleteSelectedRows(gridView3);
+                gridView3.DeleteRow(gridView3.FocusedRowHandle);
+                this.iCDTableAdapter.Update(poradniaDataSet.ICD);
                 MessageBox.Show("Kod ICD usunięty", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -179,6 +181,18 @@ namespace StudentDatabase
             this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
         }
 
-
+        private void deleteButtonW_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            try
+            {
+                gridView4.DeleteRow(gridView4.FocusedRowHandle);
+                this.wIZYTATableAdapter.Update(poradniaDataSet.WIZYTA);
+                MessageBox.Show("Wizyta usunięta", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

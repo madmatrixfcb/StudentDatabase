@@ -268,6 +268,7 @@
             this.deleteButtonW.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("deleteButtonW.ImageOptions.Image")));
             this.deleteButtonW.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("deleteButtonW.ImageOptions.LargeImage")));
             this.deleteButtonW.Name = "deleteButtonW";
+            this.deleteButtonW.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteButtonW_ItemClick);
             // 
             // dodajUbezp
             // 
@@ -342,6 +343,7 @@
             // poradniaDataSet
             // 
             this.poradniaDataSet.DataSetName = "PoradniaDataSet";
+            this.poradniaDataSet.Locale = new System.Globalization.CultureInfo("pl");
             this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pACJENTBindingSource
