@@ -51,8 +51,6 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -151,8 +149,7 @@
             this.ribbon.MaxItemId = 19;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonAdmin,
-            this.ribbonPage2});
+            this.ribbonAdmin});
             this.ribbon.Size = new System.Drawing.Size(1123, 143);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
@@ -285,8 +282,8 @@
             // 
             this.editPatient.Caption = "Edytuj pacjenta";
             this.editPatient.Id = 18;
-            this.editPatient.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.editPatient.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.editPatient.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("editPatient.ImageOptions.Image")));
+            this.editPatient.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("editPatient.ImageOptions.LargeImage")));
             this.editPatient.Name = "editPatient";
             this.editPatient.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editPatient_ItemClick);
             // 
@@ -334,18 +331,6 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.deleteButtonW);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Wizyta";
-            // 
-            // ribbonPage2
-            // 
-            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup5});
-            this.ribbonPage2.Name = "ribbonPage2";
-            this.ribbonPage2.Text = "ribbonPage2";
-            // 
-            // ribbonPageGroup5
-            // 
-            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
-            this.ribbonPageGroup5.Text = "ribbonPageGroup5";
             // 
             // ribbonStatusBar
             // 
@@ -401,7 +386,6 @@
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.ribbon;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1105, 230);
             this.gridControl1.TabIndex = 0;
@@ -428,7 +412,6 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gridView1.OptionsSelection.MultiSelect = true;
-            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colID_Pacjent
@@ -437,7 +420,7 @@
             this.colID_Pacjent.Name = "colID_Pacjent";
             this.colID_Pacjent.Visible = true;
             this.colID_Pacjent.VisibleIndex = 0;
-            this.colID_Pacjent.Width = 40;
+            this.colID_Pacjent.Width = 88;
             // 
             // colImie
             // 
@@ -445,7 +428,7 @@
             this.colImie.Name = "colImie";
             this.colImie.Visible = true;
             this.colImie.VisibleIndex = 1;
-            this.colImie.Width = 37;
+            this.colImie.Width = 74;
             // 
             // colNazwisko
             // 
@@ -453,7 +436,7 @@
             this.colNazwisko.Name = "colNazwisko";
             this.colNazwisko.Visible = true;
             this.colNazwisko.VisibleIndex = 2;
-            this.colNazwisko.Width = 37;
+            this.colNazwisko.Width = 103;
             // 
             // colAdres
             // 
@@ -461,7 +444,7 @@
             this.colAdres.Name = "colAdres";
             this.colAdres.Visible = true;
             this.colAdres.VisibleIndex = 3;
-            this.colAdres.Width = 37;
+            this.colAdres.Width = 147;
             // 
             // colKraj
             // 
@@ -469,7 +452,7 @@
             this.colKraj.Name = "colKraj";
             this.colKraj.Visible = true;
             this.colKraj.VisibleIndex = 4;
-            this.colKraj.Width = 37;
+            this.colKraj.Width = 70;
             // 
             // colData_urodzenia
             // 
@@ -477,7 +460,7 @@
             this.colData_urodzenia.Name = "colData_urodzenia";
             this.colData_urodzenia.Visible = true;
             this.colData_urodzenia.VisibleIndex = 5;
-            this.colData_urodzenia.Width = 80;
+            this.colData_urodzenia.Width = 98;
             // 
             // colPlec
             // 
@@ -485,7 +468,7 @@
             this.colPlec.Name = "colPlec";
             this.colPlec.Visible = true;
             this.colPlec.VisibleIndex = 6;
-            this.colPlec.Width = 31;
+            this.colPlec.Width = 67;
             // 
             // colPESEL
             // 
@@ -493,7 +476,7 @@
             this.colPESEL.Name = "colPESEL";
             this.colPESEL.Visible = true;
             this.colPESEL.VisibleIndex = 7;
-            this.colPESEL.Width = 31;
+            this.colPESEL.Width = 67;
             // 
             // colKarta_polaka
             // 
@@ -501,7 +484,7 @@
             this.colKarta_polaka.Name = "colKarta_polaka";
             this.colKarta_polaka.Visible = true;
             this.colKarta_polaka.VisibleIndex = 8;
-            this.colKarta_polaka.Width = 31;
+            this.colKarta_polaka.Width = 67;
             // 
             // colDowod_osobisty
             // 
@@ -509,7 +492,7 @@
             this.colDowod_osobisty.Name = "colDowod_osobisty";
             this.colDowod_osobisty.Visible = true;
             this.colDowod_osobisty.VisibleIndex = 9;
-            this.colDowod_osobisty.Width = 31;
+            this.colDowod_osobisty.Width = 67;
             // 
             // colPaszport
             // 
@@ -517,7 +500,7 @@
             this.colPaszport.Name = "colPaszport";
             this.colPaszport.Visible = true;
             this.colPaszport.VisibleIndex = 10;
-            this.colPaszport.Width = 31;
+            this.colPaszport.Width = 67;
             // 
             // colID_Ubezpieczenie
             // 
@@ -525,7 +508,7 @@
             this.colID_Ubezpieczenie.Name = "colID_Ubezpieczenie";
             this.colID_Ubezpieczenie.Visible = true;
             this.colID_Ubezpieczenie.VisibleIndex = 11;
-            this.colID_Ubezpieczenie.Width = 31;
+            this.colID_Ubezpieczenie.Width = 72;
             // 
             // colTelefon
             // 
@@ -533,7 +516,7 @@
             this.colTelefon.Name = "colTelefon";
             this.colTelefon.Visible = true;
             this.colTelefon.VisibleIndex = 12;
-            this.colTelefon.Width = 40;
+            this.colTelefon.Width = 100;
             // 
             // Ubezpieczenie
             // 
@@ -884,8 +867,6 @@
         private DevExpress.XtraBars.BarButtonItem deleteButtonI;
         private DevExpress.XtraBars.BarButtonItem deleteButtonW;
         private DevExpress.XtraBars.BarButtonItem dodajUbezp;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private PoradniaDataSetTableAdapters.PACJENTTableAdapter pacjentTableAdapter1;
         private DevExpress.XtraBars.BarButtonItem editPatient;
     }

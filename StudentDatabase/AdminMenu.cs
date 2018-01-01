@@ -18,7 +18,7 @@ namespace StudentDatabase
             // TODO: This line of code loads data into the 'poradniaDataSet.WIZYTA' table. You can move, or remove it, as needed.
             this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
             // TODO: This line of code loads data into the 'poradniaDataSet.PACJENT' table. You can move, or remove it, as needed.
-            this.pACJENTTableAdapter.FillNazwy(this.poradniaDataSet.PACJENT);
+            this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
             // TODO: This line of code loads data into the 'poradniaDataSet.UBEZPIECZENIE' table. You can move, or remove it, as needed.
             this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
             // TODO: This line of code loads data into the 'poradniaDataSet.ICD' table. You can move, or remove it, as needed.
@@ -35,9 +35,7 @@ namespace StudentDatabase
 
             for (int i = 0; i < view.SelectedRowsCount; i++)
 
-                rows[i] = view.GetDataRow(view.GetSelectedRows()[i]);
-
-            view.BeginSort();
+                rows[i] = view.GetDataRow(gridView1.GetSelectedRows()[i]);
 
             try
             {
@@ -47,7 +45,6 @@ namespace StudentDatabase
             }
             finally
             {
-                view.EndSort();
             }
         }
 
@@ -55,14 +52,14 @@ namespace StudentDatabase
 
         private void refreshButton_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.pACJENTTableAdapter.FillNazwy(this.poradniaDataSet.PACJENT);
+            this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
         }
 
         private void saveChanges_ItemClick(object sender, ItemClickEventArgs e)
         {
-            try
+            
             {
-                this.pACJENTTableAdapter.Update(poradniaDataSet.PACJENT);
+                pACJENTTableAdapter.Update(poradniaDataSet.PACJENT);
                 MessageBox.Show("Dane pacjentów zaktualizowanie", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -72,13 +69,14 @@ namespace StudentDatabase
         }
 
         private void deleteButtonP_ItemClick(object sender, ItemClickEventArgs e)
-        {
+        { 
             DialogResult warning = MessageBox.Show("Czy na pewno chcesz usunąć wybranego(ych) pacjenta(ów)?", "Potwierdzenie usunięcia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (warning == DialogResult.Yes)
             {
                 try
                 {
-                    DeleteSelectedRows(gridView1);
+                    gridView1.DeleteRow(gridView1.FocusedRowHandle);
+                    //DeleteSelectedRows(gridView1);
                     MessageBox.Show("Pacjent(ci) usunięty(ci)", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
