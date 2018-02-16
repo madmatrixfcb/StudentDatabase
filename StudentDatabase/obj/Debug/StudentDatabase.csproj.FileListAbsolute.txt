@@ -36,7 +36,6 @@ F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\DevExpr
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\DevExpress.XtraScheduler.v17.1.xml
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\DevExpress.XtraScheduler.v17.1.Core.xml
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\DevExpress.XtraVerticalGrid.v17.1.xml
-F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\MySql.Data.xml
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\DevExpress.XtraTreeList.v17.1.xml
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\de\DevExpress.Data.v17.1.resources.dll
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\es\DevExpress.Data.v17.1.resources.dll
@@ -118,3 +117,5 @@ F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\Student
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.exe
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.pdb
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.csprojResolveAssemblyReference.cache
+F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.csproj.CoreCompileInputs.cache
+F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.EditPatient.resources

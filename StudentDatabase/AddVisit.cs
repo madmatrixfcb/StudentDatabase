@@ -45,7 +45,7 @@ namespace StudentDatabase
             string leki = Convert.ToString(lekiTB.Text);
 
             //string datawizyty = date + godzina;
-            string icd = icd1 + " " + icd2 + " " + icd3;
+            //string icd = icd1 + " " + icd2 + " " + icd3;
 
             if (String.IsNullOrEmpty(patientFilter.Text) || String.IsNullOrEmpty(objawyTB.Text) || String.IsNullOrEmpty(bprzedTB.Text) || String.IsNullOrEmpty(bpodTB.Text) || String.IsNullOrEmpty(icdFilter1.Text) || String.IsNullOrEmpty(rozpoznanieTB.Text) || String.IsNullOrEmpty(lekiTB.Text))
             {
@@ -56,7 +56,7 @@ namespace StudentDatabase
 
                 try
                 {
-                    wIZYTATableAdapter.InsertQuery(patient, date, objawy, bprzed, bpod, icd, rozpoznanie, leki);
+                    wIZYTATableAdapter.InsertQuery(patient, date, objawy, bprzed, bpod, icd1, icd2, icd3 ,rozpoznanie, leki);
                     MessageBox.Show("Wizyta dodana", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     /*patientFilter.ResetText();

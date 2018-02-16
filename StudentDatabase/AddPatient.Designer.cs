@@ -71,7 +71,6 @@
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.addPatientButton = new System.Windows.Forms.Button();
-            this.pacjentTableAdapter1 = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             this.pLECBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pLECTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PLECTableAdapter();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
@@ -82,6 +81,7 @@
             this.addPatient2 = new DevExpress.XtraEditors.SimpleButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.pACJENTTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.miastoTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kodTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mieszkanieTB.Properties)).BeginInit();
@@ -400,6 +400,7 @@
             // poradniaDataSet
             // 
             this.poradniaDataSet.DataSetName = "PoradniaDataSet";
+            this.poradniaDataSet.Locale = new System.Globalization.CultureInfo("pl");
             this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pACJENTBindingSource
@@ -416,10 +417,6 @@
             this.addPatientButton.Text = "Dodaj pacjenta";
             this.addPatientButton.UseVisualStyleBackColor = true;
             this.addPatientButton.Click += new System.EventHandler(this.addPatientButton_Click);
-            // 
-            // pacjentTableAdapter1
-            // 
-            this.pacjentTableAdapter1.ClearBeforeFill = true;
             // 
             // pLECBindingSource
             // 
@@ -489,6 +486,10 @@
             this.comboBox2.Size = new System.Drawing.Size(180, 21);
             this.comboBox2.TabIndex = 15;
             this.comboBox2.ValueMember = "Rodzaj";
+            // 
+            // pACJENTTableAdapter
+            // 
+            this.pACJENTTableAdapter.ClearBeforeFill = true;
             // 
             // AddPatient
             // 
@@ -597,7 +598,6 @@
         private PoradniaDataSet poradniaDataSet;
         private System.Windows.Forms.BindingSource pACJENTBindingSource;
         private System.Windows.Forms.Button addPatientButton;
-        private PoradniaDataSetTableAdapters.PACJENTTableAdapter pacjentTableAdapter1;
         private System.Windows.Forms.BindingSource pLECBindingSource;
         private PoradniaDataSetTableAdapters.PLECTableAdapter pLECTableAdapter;
         private DevExpress.XtraEditors.LabelControl labelControl13;
@@ -608,5 +608,6 @@
         private DevExpress.XtraEditors.SimpleButton addPatient2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private PoradniaDataSetTableAdapters.PACJENTTableAdapter pACJENTTableAdapter;
     }
 }

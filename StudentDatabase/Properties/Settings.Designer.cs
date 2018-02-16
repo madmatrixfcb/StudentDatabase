@@ -12,7 +12,7 @@ namespace StudentDatabase.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.5.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,20 +26,11 @@ namespace StudentDatabase.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"protocol=Socket;server=test1.swietarodzina.com.pl;port=3306;user id=01516561_test1;persistsecurityinfo=True;database=01516561_test1;sslmode=Prefered;certificatestorelocation=None;compress=False;allowuservariables=True;allowzerodatetime=False;Integrated Security=False;treattinyasboolean=False;defaultcommandtimeout=30;connectiontimeout=60")]
-        public string PoradniaConnection {
+        [global::System.Configuration.DefaultSettingValueAttribute("server=test1.swietarodzina.com.pl;user id=01516561_test1;password=BgJk9r7it2pE;pe" +
+            "rsistsecurityinfo=True;database=01516561_test1")]
+        public string _01516561_test1ConnectionString {
             get {
-                return ((string)(this["PoradniaConnection"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"protocol=Socket;server=test1.swietarodzina.com.pl;port=3306;user id=01516561_test1;password=BgJk9r7it2pE;persistsecurityinfo=True;database=01516561_test1;sslmode=Prefered;certificatestorelocation=None;compress=False;allowuservariables=True;allowzerodatetime=False;Integrated Security=False;treattinyasboolean=False;defaultcommandtimeout=30;connectiontimeout=60")]
-        public string PoradniaConnectionString {
-            get {
-                return ((string)(this["PoradniaConnectionString"]));
+                return ((string)(this["_01516561_test1ConnectionString"]));
             }
         }
     }

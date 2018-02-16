@@ -25,32 +25,37 @@ namespace StudentDatabase
             this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
         }
 
-        //-----------------------FUNCTIONS----------------------------------/
-
-        /*private void DeleteSelectedRows(DevExpress.XtraGrid.Views.Grid.GridView view)
+        //-----------------------RIBBON ENABLING----------------------------------/
+        private void tabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
         {
-            if (view == null || view.SelectedRowsCount == 0) return;
+            PacjenciGroup.Enabled = false;
+            UbezpieczenieGroup.Enabled = false;
+            ICDGroup.Enabled = false;
+            WizytaGroup.Enabled = false;
 
-            DataRow[] rows = new DataRow[view.SelectedRowsCount];
-
-            for (int i = 0; i < view.SelectedRowsCount; i++)
-
-                rows[i] = view.GetDataRow(gridView1.GetSelectedRows()[i]);
-
-            try
+            if (tabPane1.SelectedPage == PacjenciPage)
             {
-                foreach (DataRow row in rows)
-
-                    row.Delete();
+                PacjenciGroup.Enabled = true;
             }
-            finally
+
+            if (tabPane1.SelectedPage == UbezpieczeniePage)
             {
+                UbezpieczenieGroup.Enabled = true;
             }
-        }*/
 
-        //-----------------------------------PATIENT RIBBON-----------------------------------//
+            if (tabPane1.SelectedPage == ICDPage)
+            {
+                ICDGroup.Enabled = true;
+            }
 
-        private void refreshButton_ItemClick(object sender, ItemClickEventArgs e)
+            if (tabPane1.SelectedPage == WizytaPage)
+            {
+                WizytaGroup.Enabled = true;
+            }
+        }
+            //-----------------------------------PATIENT RIBBON-----------------------------------//
+
+            private void refreshButton_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
         }
@@ -98,6 +103,8 @@ namespace StudentDatabase
 
         private void editPatient_ItemClick(object sender, ItemClickEventArgs e)
         {
+            EditPatient editPat = new EditPatient();
+            editPat.ShowDialog();
 
         }
 
