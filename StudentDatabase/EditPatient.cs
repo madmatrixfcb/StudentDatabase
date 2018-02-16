@@ -40,22 +40,23 @@ namespace StudentDatabase
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            IDTB.EditValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "ID_Pacjent");
             imieTB.EditValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "Imie");
-            nazwiskoTB.EditValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "Nazwsko");
-            dataur.EditValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "Data");
-            string kraj = Convert.ToString(krajTB.Text);
-            string telefon = Convert.ToString(telefonTB.Text);
+            nazwiskoTB.EditValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "Nazwisko");
+            dataur.EditValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "Data_urodzenia");
+            krajTB.EditValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "Kraj");
+            telefonTB.EditValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "Telefon");
             string ulica = Convert.ToString(ulicaTB.Text);
             string nr_budynku = Convert.ToString(budynekTB.Text);
             string nr_mieszkania = Convert.ToString(mieszkanieTB.Text);
             string kod_pocztowy = Convert.ToString(kodTB.Text);
             string miasto = Convert.ToString(miastoTB.Text);
-            string nr_pesel = Convert.ToString(peselTB.Text);
-            string nr_kp = Convert.ToString(kartapolakaTB.Text);
-            string dowod_osobisty = Convert.ToString(dowodTB.Text);
-            string nr_paszportu = Convert.ToString(paszportTB.Text);
-            string plec = Convert.ToString(comboBox1.SelectedValue);
-            string ubezpieczenie = Convert.ToString(comboBox2.SelectedValue);
+            peselTB.EditValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "PESEL");
+            kartapolakaTB.EditValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "Karta_polaka");
+            dowodTB.EditValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "Dowod_osobisty");
+            paszportTB.EditValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "Paszport");
+            ubezpieczenieCB.SelectedValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "ID_Ubezpieczenie");
+            plecCB.SelectedValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "Plec");
 
             string adres = ulica + " " + nr_budynku + " " + "m. " + nr_mieszkania + " " + kod_pocztowy + " " + miasto;
 
@@ -80,8 +81,8 @@ namespace StudentDatabase
             string nr_kp = Convert.ToString(kartapolakaTB.Text);
             string dowod_osobisty = Convert.ToString(dowodTB.Text);
             string nr_paszportu = Convert.ToString(paszportTB.Text);
-            string plec = Convert.ToString(comboBox1.SelectedValue);
-            string ubezpieczenie = Convert.ToString(comboBox2.SelectedValue);
+            string plec = Convert.ToString(plecCB.SelectedValue);
+            string ubezpieczenie = Convert.ToString(ubezpieczenieCB.SelectedValue);
 
             string adres = ulica + " " + nr_budynku + " " + "m. " + nr_mieszkania + " " + kod_pocztowy + " " + miasto;
 

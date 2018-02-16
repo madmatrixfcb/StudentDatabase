@@ -187,7 +187,7 @@
             this.deleteButtonP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("deleteButtonP.ImageOptions.Image")));
             this.deleteButtonP.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("deleteButtonP.ImageOptions.LargeImage")));
             this.deleteButtonP.Name = "deleteButtonP";
-            this.deleteButtonP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteButtonP_ItemClick);
+            this.deleteButtonP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteButtonP_ItemClick);
             // 
             // refreshUbezp
             // 
@@ -292,14 +292,15 @@
             // 
             this.ribbonAdmin.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.PacjenciGroup,
+            this.WizytaGroup,
             this.UbezpieczenieGroup,
-            this.ICDGroup,
-            this.WizytaGroup});
+            this.ICDGroup});
             this.ribbonAdmin.Name = "ribbonAdmin";
             this.ribbonAdmin.Text = "Admin";
             // 
             // PacjenciGroup
             // 
+            this.PacjenciGroup.Enabled = false;
             this.PacjenciGroup.ItemLinks.Add(this.addPatient);
             this.PacjenciGroup.ItemLinks.Add(this.editPatient);
             this.PacjenciGroup.ItemLinks.Add(this.refreshButton);
@@ -310,6 +311,7 @@
             // 
             // UbezpieczenieGroup
             // 
+            this.UbezpieczenieGroup.Enabled = false;
             this.UbezpieczenieGroup.ItemLinks.Add(this.dodajUbezp);
             this.UbezpieczenieGroup.ItemLinks.Add(this.refreshUbezp);
             this.UbezpieczenieGroup.ItemLinks.Add(this.deleteButtonU);
@@ -318,6 +320,7 @@
             // 
             // ICDGroup
             // 
+            this.ICDGroup.Enabled = false;
             this.ICDGroup.ItemLinks.Add(this.addICD);
             this.ICDGroup.ItemLinks.Add(this.refreshICD);
             this.ICDGroup.ItemLinks.Add(this.saveChangesICD);
@@ -327,6 +330,7 @@
             // 
             // WizytaGroup
             // 
+            this.WizytaGroup.Enabled = false;
             this.WizytaGroup.ItemLinks.Add(this.addVisit);
             this.WizytaGroup.ItemLinks.Add(this.refreshVisit);
             this.WizytaGroup.ItemLinks.Add(this.deleteButtonW);
@@ -366,14 +370,15 @@
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.PacjenciPage,
+            this.WizytaPage,
             this.UbezpieczeniePage,
-            this.ICDPage,
-            this.WizytaPage});
+            this.ICDPage});
             this.tabPane1.RegularSize = new System.Drawing.Size(1123, 275);
-            this.tabPane1.SelectedPage = this.PacjenciPage;
+            this.tabPane1.SelectedPage = null;
             this.tabPane1.Size = new System.Drawing.Size(1123, 275);
             this.tabPane1.TabIndex = 6;
             this.tabPane1.Text = "tabPane1";
+            this.tabPane1.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.TabPane1_SelectedPageChanged);
             // 
             // PacjenciPage
             // 

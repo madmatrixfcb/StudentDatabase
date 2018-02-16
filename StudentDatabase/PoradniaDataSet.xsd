@@ -4,10 +4,10 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="PoradniaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PoradniaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.StudentDatabase.Properties.Settings.GlobalReference.Default.PoradniaConnectionString" Provider="MySql.Data.MySqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="PoradniaConnection" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="PoradniaConnection (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.StudentDatabase.Properties.Settings.GlobalReference.Default.PoradniaConnection" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="PoradniaConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="PoradniaConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.StudentDatabase.Properties.Settings.GlobalReference.Default.PoradniaConnectionString" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="PoradniaConnection" IsAppSettingsProperty="true" Modifier="Assembly" Name="PoradniaConnection (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.StudentDatabase.Properties.Settings.GlobalReference.Default.PoradniaConnection" Provider="MySql.Data.MySqlClient" />
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="_01516561_test1ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="_01516561_test1ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.StudentDatabase.Properties.Settings.GlobalReference.Default._01516561_test1ConnectionString" Provider="MySql.Data.MySqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="_01516561_test1ConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="_01516561_test1ConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.StudentDatabase.Properties.Settings.GlobalReference.Default._01516561_test1ConnectionString1" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="_01516561_test1ConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="_01516561_test1ConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.StudentDatabase.Properties.Settings.GlobalReference.Default._01516561_test1ConnectionString1" Provider="MySql.Data.MySqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PLECTableAdapter" GeneratorDataComponentClassName="PLECTableAdapter" Name="PLEC" UserDataComponentName="PLECTableAdapter">
@@ -894,10 +894,4 @@ WHERE        (U.Login = @login) AND (U.Haslo = @pass)</CommandText>
       <xs:field xpath="ID_ICD" />
     </xs:unique>
   </xs:element>
-  <xs:annotation>
-    <xs:appinfo>
-      <msdata:Relationship name="PLEC_PACJENT" msdata:parent="PLEC" msdata:child="PACJENT" msdata:parentkey="Plec" msdata:childkey="Plec" msprop:Generator_UserChildTable="PACJENT" msprop:Generator_ChildPropName="GetPACJENTRows" msprop:Generator_UserRelationName="PLEC_PACJENT" msprop:Generator_RelationVarName="relationPLEC_PACJENT" msprop:Generator_UserParentTable="PLEC" msprop:Generator_ParentPropName="PLECRow" />
-      <msdata:Relationship name="UBEZPIECZENIE_PACJENT" msdata:parent="UBEZPIECZENIE" msdata:child="PACJENT" msdata:parentkey="Rodzaj" msdata:childkey="ID_Ubezpieczenie" msprop:Generator_UserChildTable="PACJENT" msprop:Generator_ChildPropName="GetPACJENTRows" msprop:Generator_UserRelationName="UBEZPIECZENIE_PACJENT" msprop:Generator_RelationVarName="relationUBEZPIECZENIE_PACJENT" msprop:Generator_UserParentTable="UBEZPIECZENIE" msprop:Generator_ParentPropName="UBEZPIECZENIERow" />
-    </xs:appinfo>
-  </xs:annotation>
 </xs:schema>

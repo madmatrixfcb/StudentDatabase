@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ubezpieczenieCB = new System.Windows.Forms.ComboBox();
+            this.plecCB = new System.Windows.Forms.ComboBox();
             this.editPatient2 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
@@ -74,7 +74,7 @@
             this.pLECTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PLECTableAdapter();
             this.uBEZPIECZENIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uBEZPIECZENIETableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UBEZPIECZENIETableAdapter();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.IDTB = new DevExpress.XtraEditors.TextEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID_Pacjent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colImie = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -114,30 +114,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pLECBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox2
+            // ubezpieczenieCB
             // 
-            this.comboBox2.DisplayMember = "Rodzaj";
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(136, 467);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(180, 21);
-            this.comboBox2.TabIndex = 16;
-            this.comboBox2.ValueMember = "Rodzaj";
+            this.ubezpieczenieCB.DisplayMember = "Rodzaj";
+            this.ubezpieczenieCB.FormattingEnabled = true;
+            this.ubezpieczenieCB.Location = new System.Drawing.Point(136, 467);
+            this.ubezpieczenieCB.Name = "ubezpieczenieCB";
+            this.ubezpieczenieCB.Size = new System.Drawing.Size(180, 21);
+            this.ubezpieczenieCB.TabIndex = 16;
+            this.ubezpieczenieCB.ValueMember = "Rodzaj";
             // 
-            // comboBox1
+            // plecCB
             // 
-            this.comboBox1.DisplayMember = "Plec";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(117, 205);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(199, 21);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.ValueMember = "Plec";
+            this.plecCB.DisplayMember = "Plec";
+            this.plecCB.FormattingEnabled = true;
+            this.plecCB.Location = new System.Drawing.Point(117, 205);
+            this.plecCB.Name = "plecCB";
+            this.plecCB.Size = new System.Drawing.Size(199, 21);
+            this.plecCB.TabIndex = 6;
+            this.plecCB.ValueMember = "Plec";
             // 
             // editPatient2
             // 
@@ -465,13 +465,13 @@
             // 
             this.uBEZPIECZENIETableAdapter.ClearBeforeFill = true;
             // 
-            // textEdit1
+            // IDTB
             // 
-            this.textEdit1.Enabled = false;
-            this.textEdit1.Location = new System.Drawing.Point(117, 49);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(199, 20);
-            this.textEdit1.TabIndex = 107;
+            this.IDTB.Enabled = false;
+            this.IDTB.Location = new System.Drawing.Point(117, 49);
+            this.IDTB.Name = "IDTB";
+            this.IDTB.Size = new System.Drawing.Size(199, 20);
+            this.IDTB.TabIndex = 107;
             // 
             // gridView1
             // 
@@ -491,6 +491,7 @@
             this.colTelefon});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // colID_Pacjent
@@ -586,7 +587,7 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.DataMember = "PACJENT";
+            this.gridControl1.DataSource = this.pACJENTBindingSource;
             this.gridControl1.Location = new System.Drawing.Point(346, 26);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -601,10 +602,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1311, 593);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.IDTB);
             this.Controls.Add(this.labelControl15);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.ubezpieczenieCB);
+            this.Controls.Add(this.plecCB);
             this.Controls.Add(this.editPatient2);
             this.Controls.Add(this.labelControl14);
             this.Controls.Add(this.labelControl13);
@@ -666,7 +667,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pLECBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             this.ResumeLayout(false);
@@ -676,8 +677,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ubezpieczenieCB;
+        private System.Windows.Forms.ComboBox plecCB;
         private DevExpress.XtraEditors.SimpleButton editPatient2;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl13;
@@ -721,7 +722,7 @@
         private PoradniaDataSetTableAdapters.PLECTableAdapter pLECTableAdapter;
         private System.Windows.Forms.BindingSource uBEZPIECZENIEBindingSource;
         private PoradniaDataSetTableAdapters.UBEZPIECZENIETableAdapter uBEZPIECZENIETableAdapter;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit IDTB;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colID_Pacjent;
         private DevExpress.XtraGrid.Columns.GridColumn colImie;

@@ -26,7 +26,7 @@ namespace StudentDatabase
         }
 
         //-----------------------RIBBON ENABLING----------------------------------/
-        private void tabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
+        private void TabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
         {
             PacjenciGroup.Enabled = false;
             UbezpieczenieGroup.Enabled = false;
@@ -54,7 +54,6 @@ namespace StudentDatabase
             }
         }
             //-----------------------------------PATIENT RIBBON-----------------------------------//
-
             private void refreshButton_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
@@ -73,9 +72,9 @@ namespace StudentDatabase
             }
         }
 
-        private void deleteButtonP_ItemClick(object sender, ItemClickEventArgs e)
+        private void DeleteButtonP_ItemClick(object sender, ItemClickEventArgs e)
         { 
-            DialogResult warning = MessageBox.Show("Czy na pewno chcesz usunąć wybranego(ych) pacjenta(ów)?", "Potwierdzenie usunięcia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult warning = MessageBox.Show("Czy na pewno chcesz usunąć wybranego pacjenta?", "Potwierdzenie usunięcia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (warning == DialogResult.Yes)
             {
                 try

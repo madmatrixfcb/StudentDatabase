@@ -38,10 +38,6 @@ namespace StudentDatabase {
         
         private ICDDataTable tableICD;
         
-        private global::System.Data.DataRelation relationPLEC_PACJENT;
-        
-        private global::System.Data.DataRelation relationUBEZPIECZENIE_PACJENT;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -342,8 +338,6 @@ namespace StudentDatabase {
                     this.tableICD.InitVars();
                 }
             }
-            this.relationPLEC_PACJENT = this.Relations["PLEC_PACJENT"];
-            this.relationUBEZPIECZENIE_PACJENT = this.Relations["UBEZPIECZENIE_PACJENT"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -368,14 +362,6 @@ namespace StudentDatabase {
             base.Tables.Add(this.tableTYP_KONTA);
             this.tableICD = new ICDDataTable();
             base.Tables.Add(this.tableICD);
-            this.relationPLEC_PACJENT = new global::System.Data.DataRelation("PLEC_PACJENT", new global::System.Data.DataColumn[] {
-                        this.tablePLEC.PlecColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePACJENT.PlecColumn}, false);
-            this.Relations.Add(this.relationPLEC_PACJENT);
-            this.relationUBEZPIECZENIE_PACJENT = new global::System.Data.DataRelation("UBEZPIECZENIE_PACJENT", new global::System.Data.DataColumn[] {
-                        this.tableUBEZPIECZENIE.RodzajColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePACJENT.ID_UbezpieczenieColumn}, false);
-            this.Relations.Add(this.relationUBEZPIECZENIE_PACJENT);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1253,7 +1239,7 @@ namespace StudentDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PACJENTRow AddPACJENTRow(string Imie, string Nazwisko, string Adres, string Kraj, string Data_urodzenia, PLECRow parentPLECRowByPLEC_PACJENT, string PESEL, string Karta_polaka, string Dowod_osobisty, string Paszport, UBEZPIECZENIERow parentUBEZPIECZENIERowByUBEZPIECZENIE_PACJENT, string Telefon) {
+            public PACJENTRow AddPACJENTRow(string Imie, string Nazwisko, string Adres, string Kraj, string Data_urodzenia, string Plec, string PESEL, string Karta_polaka, string Dowod_osobisty, string Paszport, string ID_Ubezpieczenie, string Telefon) {
                 PACJENTRow rowPACJENTRow = ((PACJENTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1262,19 +1248,13 @@ namespace StudentDatabase {
                         Adres,
                         Kraj,
                         Data_urodzenia,
-                        null,
+                        Plec,
                         PESEL,
                         Karta_polaka,
                         Dowod_osobisty,
                         Paszport,
-                        null,
+                        ID_Ubezpieczenie,
                         Telefon};
-                if ((parentPLECRowByPLEC_PACJENT != null)) {
-                    columnValuesArray[6] = parentPLECRowByPLEC_PACJENT[1];
-                }
-                if ((parentUBEZPIECZENIERowByUBEZPIECZENIE_PACJENT != null)) {
-                    columnValuesArray[11] = parentUBEZPIECZENIERowByUBEZPIECZENIE_PACJENT[1];
-                }
                 rowPACJENTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPACJENTRow);
                 return rowPACJENTRow;
@@ -2894,17 +2874,6 @@ namespace StudentDatabase {
             public void SetPlecNull() {
                 this[this.tablePLEC.PlecColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PACJENTRow[] GetPACJENTRows() {
-                if ((this.Table.ChildRelations["PLEC_PACJENT"] == null)) {
-                    return new PACJENTRow[0];
-                }
-                else {
-                    return ((PACJENTRow[])(base.GetChildRows(this.Table.ChildRelations["PLEC_PACJENT"])));
-                }
-            }
         }
         
         /// <summary>
@@ -2940,17 +2909,6 @@ namespace StudentDatabase {
                 }
                 set {
                     this[this.tableUBEZPIECZENIE.RodzajColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PACJENTRow[] GetPACJENTRows() {
-                if ((this.Table.ChildRelations["UBEZPIECZENIE_PACJENT"] == null)) {
-                    return new PACJENTRow[0];
-                }
-                else {
-                    return ((PACJENTRow[])(base.GetChildRows(this.Table.ChildRelations["UBEZPIECZENIE_PACJENT"])));
                 }
             }
         }
@@ -3129,28 +3087,6 @@ namespace StudentDatabase {
                 }
                 set {
                     this[this.tablePACJENT.TelefonColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PLECRow PLECRow {
-                get {
-                    return ((PLECRow)(this.GetParentRow(this.Table.ParentRelations["PLEC_PACJENT"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["PLEC_PACJENT"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public UBEZPIECZENIERow UBEZPIECZENIERow {
-                get {
-                    return ((UBEZPIECZENIERow)(this.GetParentRow(this.Table.ParentRelations["UBEZPIECZENIE_PACJENT"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["UBEZPIECZENIE_PACJENT"]);
                 }
             }
             
