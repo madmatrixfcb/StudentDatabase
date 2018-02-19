@@ -48,16 +48,16 @@
             this.editPatient = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonAdmin = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PacjenciGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.WizytaGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.UbezpieczenieGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ICDGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.WizytaGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pACJENTTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.PacjenciPage = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridPacjenci = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID_Pacjent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colImie = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -73,20 +73,20 @@
             this.colID_Ubezpieczenie = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTelefon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UbezpieczeniePage = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridUbezpieczenie = new DevExpress.XtraGrid.GridControl();
             this.uBEZPIECZENIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID_Ubezpieczenie1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRodzaj = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ICDPage = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
+            this.gridICD = new DevExpress.XtraGrid.GridControl();
             this.iCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colidICD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKod_ICD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRozpoznanie = new DevExpress.XtraGrid.Columns.GridColumn();
             this.WizytaPage = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.gridControl4 = new DevExpress.XtraGrid.GridControl();
+            this.gridWizyta = new DevExpress.XtraGrid.GridControl();
             this.wIZYTABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colidWIZYTA = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -103,24 +103,26 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.wIZYTATableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
             this.pacjentTableAdapter1 = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
+            this.time = new System.Windows.Forms.Timer(this.components);
+            this.timeItem = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.PacjenciPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPacjenci)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.UbezpieczeniePage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridUbezpieczenie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.ICDPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridICD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.WizytaPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridWizyta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wIZYTABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
@@ -144,9 +146,10 @@
             this.deleteButtonI,
             this.deleteButtonW,
             this.dodajUbezp,
-            this.editPatient});
+            this.editPatient,
+            this.timeItem});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 19;
+            this.ribbon.MaxItemId = 2;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonAdmin});
@@ -309,6 +312,15 @@
             this.PacjenciGroup.Name = "PacjenciGroup";
             this.PacjenciGroup.Text = "Pacjenci";
             // 
+            // WizytaGroup
+            // 
+            this.WizytaGroup.Enabled = false;
+            this.WizytaGroup.ItemLinks.Add(this.addVisit);
+            this.WizytaGroup.ItemLinks.Add(this.refreshVisit);
+            this.WizytaGroup.ItemLinks.Add(this.deleteButtonW);
+            this.WizytaGroup.Name = "WizytaGroup";
+            this.WizytaGroup.Text = "Wizyta";
+            // 
             // UbezpieczenieGroup
             // 
             this.UbezpieczenieGroup.Enabled = false;
@@ -328,17 +340,9 @@
             this.ICDGroup.Name = "ICDGroup";
             this.ICDGroup.Text = "ICD";
             // 
-            // WizytaGroup
-            // 
-            this.WizytaGroup.Enabled = false;
-            this.WizytaGroup.ItemLinks.Add(this.addVisit);
-            this.WizytaGroup.ItemLinks.Add(this.refreshVisit);
-            this.WizytaGroup.ItemLinks.Add(this.deleteButtonW);
-            this.WizytaGroup.Name = "WizytaGroup";
-            this.WizytaGroup.Text = "Wizyta";
-            // 
             // ribbonStatusBar
             // 
+            this.ribbonStatusBar.ItemLinks.Add(this.timeItem);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 418);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
@@ -374,7 +378,7 @@
             this.UbezpieczeniePage,
             this.ICDPage});
             this.tabPane1.RegularSize = new System.Drawing.Size(1123, 275);
-            this.tabPane1.SelectedPage = null;
+            this.tabPane1.SelectedPage = this.PacjenciPage;
             this.tabPane1.Size = new System.Drawing.Size(1123, 275);
             this.tabPane1.TabIndex = 6;
             this.tabPane1.Text = "tabPane1";
@@ -383,20 +387,20 @@
             // PacjenciPage
             // 
             this.PacjenciPage.Caption = "Pacjenci";
-            this.PacjenciPage.Controls.Add(this.gridControl1);
+            this.PacjenciPage.Controls.Add(this.gridPacjenci);
             this.PacjenciPage.Name = "PacjenciPage";
             this.PacjenciPage.Size = new System.Drawing.Size(1105, 230);
             // 
-            // gridControl1
+            // gridPacjenci
             // 
-            this.gridControl1.DataSource = this.pACJENTBindingSource;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1105, 230);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridPacjenci.DataSource = this.pACJENTBindingSource;
+            this.gridPacjenci.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridPacjenci.Location = new System.Drawing.Point(0, 0);
+            this.gridPacjenci.MainView = this.gridView1;
+            this.gridPacjenci.Name = "gridPacjenci";
+            this.gridPacjenci.Size = new System.Drawing.Size(1105, 230);
+            this.gridPacjenci.TabIndex = 0;
+            this.gridPacjenci.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -415,7 +419,7 @@
             this.colPaszport,
             this.colID_Ubezpieczenie,
             this.colTelefon});
-            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GridControl = this.gridPacjenci;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gridView1.OptionsSelection.MultiSelect = true;
@@ -528,21 +532,21 @@
             // UbezpieczeniePage
             // 
             this.UbezpieczeniePage.Caption = "Ubezpieczenie";
-            this.UbezpieczeniePage.Controls.Add(this.gridControl2);
+            this.UbezpieczeniePage.Controls.Add(this.gridUbezpieczenie);
             this.UbezpieczeniePage.Name = "UbezpieczeniePage";
-            this.UbezpieczeniePage.Size = new System.Drawing.Size(1123, 275);
+            this.UbezpieczeniePage.Size = new System.Drawing.Size(1105, 230);
             // 
-            // gridControl2
+            // gridUbezpieczenie
             // 
-            this.gridControl2.DataSource = this.uBEZPIECZENIEBindingSource;
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(0, 0);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.MenuManager = this.ribbon;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1123, 275);
-            this.gridControl2.TabIndex = 0;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridUbezpieczenie.DataSource = this.uBEZPIECZENIEBindingSource;
+            this.gridUbezpieczenie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridUbezpieczenie.Location = new System.Drawing.Point(0, 0);
+            this.gridUbezpieczenie.MainView = this.gridView2;
+            this.gridUbezpieczenie.MenuManager = this.ribbon;
+            this.gridUbezpieczenie.Name = "gridUbezpieczenie";
+            this.gridUbezpieczenie.Size = new System.Drawing.Size(1105, 230);
+            this.gridUbezpieczenie.TabIndex = 0;
+            this.gridUbezpieczenie.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // uBEZPIECZENIEBindingSource
@@ -555,7 +559,7 @@
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colID_Ubezpieczenie1,
             this.colRodzaj});
-            this.gridView2.GridControl = this.gridControl2;
+            this.gridView2.GridControl = this.gridUbezpieczenie;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
@@ -576,21 +580,21 @@
             // ICDPage
             // 
             this.ICDPage.Caption = "Kody ICD";
-            this.ICDPage.Controls.Add(this.gridControl3);
+            this.ICDPage.Controls.Add(this.gridICD);
             this.ICDPage.Name = "ICDPage";
-            this.ICDPage.Size = new System.Drawing.Size(1123, 275);
+            this.ICDPage.Size = new System.Drawing.Size(1105, 230);
             // 
-            // gridControl3
+            // gridICD
             // 
-            this.gridControl3.DataSource = this.iCDBindingSource;
-            this.gridControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl3.Location = new System.Drawing.Point(0, 0);
-            this.gridControl3.MainView = this.gridView3;
-            this.gridControl3.MenuManager = this.ribbon;
-            this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(1123, 275);
-            this.gridControl3.TabIndex = 0;
-            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridICD.DataSource = this.iCDBindingSource;
+            this.gridICD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridICD.Location = new System.Drawing.Point(0, 0);
+            this.gridICD.MainView = this.gridView3;
+            this.gridICD.MenuManager = this.ribbon;
+            this.gridICD.Name = "gridICD";
+            this.gridICD.Size = new System.Drawing.Size(1105, 230);
+            this.gridICD.TabIndex = 0;
+            this.gridICD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
             // 
             // iCDBindingSource
@@ -604,7 +608,7 @@
             this.colidICD,
             this.colKod_ICD,
             this.colRozpoznanie});
-            this.gridView3.GridControl = this.gridControl3;
+            this.gridView3.GridControl = this.gridICD;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
@@ -635,21 +639,21 @@
             // WizytaPage
             // 
             this.WizytaPage.Caption = "Wizyta";
-            this.WizytaPage.Controls.Add(this.gridControl4);
+            this.WizytaPage.Controls.Add(this.gridWizyta);
             this.WizytaPage.Name = "WizytaPage";
-            this.WizytaPage.Size = new System.Drawing.Size(1123, 275);
+            this.WizytaPage.Size = new System.Drawing.Size(1105, 230);
             // 
-            // gridControl4
+            // gridWizyta
             // 
-            this.gridControl4.DataSource = this.wIZYTABindingSource;
-            this.gridControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl4.Location = new System.Drawing.Point(0, 0);
-            this.gridControl4.MainView = this.gridView4;
-            this.gridControl4.MenuManager = this.ribbon;
-            this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(1123, 275);
-            this.gridControl4.TabIndex = 0;
-            this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridWizyta.DataSource = this.wIZYTABindingSource;
+            this.gridWizyta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridWizyta.Location = new System.Drawing.Point(0, 0);
+            this.gridWizyta.MainView = this.gridView4;
+            this.gridWizyta.MenuManager = this.ribbon;
+            this.gridWizyta.Name = "gridWizyta";
+            this.gridWizyta.Size = new System.Drawing.Size(1105, 230);
+            this.gridWizyta.TabIndex = 0;
+            this.gridWizyta.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
             // 
             // wIZYTABindingSource
@@ -669,7 +673,7 @@
             this.colidICD1,
             this.colZalecenia,
             this.colLeki});
-            this.gridView4.GridControl = this.gridControl4;
+            this.gridView4.GridControl = this.gridWizyta;
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsView.ShowGroupPanel = false;
             this.gridView4.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
@@ -762,6 +766,15 @@
             // 
             this.pacjentTableAdapter1.ClearBeforeFill = true;
             // 
+            // time
+            // 
+            this.time.Tick += new System.EventHandler(this.time_Tick);
+            // 
+            // timeItem
+            // 
+            this.timeItem.Id = 1;
+            this.timeItem.Name = "timeItem";
+            // 
             // AdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -782,18 +795,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
             this.PacjenciPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPacjenci)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.UbezpieczeniePage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridUbezpieczenie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ICDPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridICD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.WizytaPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridWizyta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wIZYTABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
@@ -812,7 +825,7 @@
         private PoradniaDataSetTableAdapters.PACJENTTableAdapter pACJENTTableAdapter;
         private DevExpress.XtraBars.Navigation.TabPane tabPane1;
         private DevExpress.XtraBars.Navigation.TabNavigationPage PacjenciPage;
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl gridPacjenci;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colID_Pacjent;
         private DevExpress.XtraGrid.Columns.GridColumn colImie;
@@ -828,7 +841,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colID_Ubezpieczenie;
         private DevExpress.XtraGrid.Columns.GridColumn colTelefon;
         private DevExpress.XtraBars.Navigation.TabNavigationPage UbezpieczeniePage;
-        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.GridControl gridUbezpieczenie;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private System.Windows.Forms.BindingSource uBEZPIECZENIEBindingSource;
         private PoradniaDataSetTableAdapters.UBEZPIECZENIETableAdapter uBEZPIECZENIETableAdapter;
@@ -839,7 +852,7 @@
         private DevExpress.XtraBars.BarButtonItem saveChanges;
         private DevExpress.XtraBars.BarButtonItem deleteButtonP;
         private DevExpress.XtraBars.Navigation.TabNavigationPage ICDPage;
-        private DevExpress.XtraGrid.GridControl gridControl3;
+        private DevExpress.XtraGrid.GridControl gridICD;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private System.Windows.Forms.BindingSource iCDBindingSource;
         private PoradniaDataSetTableAdapters.ICDTableAdapter iCDTableAdapter;
@@ -858,7 +871,7 @@
         private System.Windows.Forms.BindingSource wIZYTABindingSource;
         private PoradniaDataSetTableAdapters.WIZYTATableAdapter wIZYTATableAdapter;
         private DevExpress.XtraBars.Navigation.TabNavigationPage WizytaPage;
-        private DevExpress.XtraGrid.GridControl gridControl4;
+        private DevExpress.XtraGrid.GridControl gridWizyta;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraGrid.Columns.GridColumn colidWIZYTA;
         private DevExpress.XtraGrid.Columns.GridColumn colidPACJENT;
@@ -876,5 +889,7 @@
         private DevExpress.XtraBars.BarButtonItem dodajUbezp;
         private PoradniaDataSetTableAdapters.PACJENTTableAdapter pacjentTableAdapter1;
         private DevExpress.XtraBars.BarButtonItem editPatient;
+        private System.Windows.Forms.Timer time;
+        private DevExpress.XtraBars.BarStaticItem timeItem;
     }
 }

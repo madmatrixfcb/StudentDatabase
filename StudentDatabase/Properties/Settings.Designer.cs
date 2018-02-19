@@ -33,5 +33,16 @@ namespace StudentDatabase.Properties {
                 return ((string)(this["_01516561_test1ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=test1.swietarodzina.com.pl;user id=01516561_test1;persistsecurityinfo=True" +
+            ";database=01516561_test1;allowuservariables=True")]
+        public string _01516561_test1ConnectionString1 {
+            get {
+                return ((string)(this["_01516561_test1ConnectionString1"]));
+            }
+        }
     }
 }

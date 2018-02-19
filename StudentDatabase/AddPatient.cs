@@ -87,10 +87,6 @@ namespace StudentDatabase
             string plec = Convert.ToString(comboBox1.SelectedValue);
             string ubezpieczenie = Convert.ToString(comboBox2.SelectedValue);
 
-            string adres = ulica + " " + nr_budynku + " " + "m. " + nr_mieszkania + " " + kod_pocztowy + " " + miasto;
-
-            // string wrong_phone = "+48";
-
             /*  if (String.IsNullOrEmpty(imieTB.Text) || String.IsNullOrEmpty(nazwiskoTB.Text) || String.IsNullOrEmpty(dataur.Text) || String.IsNullOrEmpty(krajTB.Text) || String.IsNullOrEmpty(telefonTB.Text) || String.Equals(telefonTB.Text,wrong_phone)  ||  String.IsNullOrEmpty(adres))
               else
               {*/
@@ -101,7 +97,7 @@ namespace StudentDatabase
             {
                 try
                 {
-                    pACJENTTableAdapter.InsertQuery(imie, nazwisko, adres, kraj, data_ur, plec, nr_pesel, nr_kp, dowod_osobisty, nr_paszportu, ubezpieczenie, telefon);
+                    pACJENTTableAdapter.InsertQuery(imie, nazwisko, data_ur, kraj, plec, ulica, nr_budynku, nr_mieszkania, kod_pocztowy, miasto, nr_pesel, nr_kp, dowod_osobisty, nr_paszportu, ubezpieczenie, telefon);
 
                     MessageBox.Show("Pacjent dodany", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

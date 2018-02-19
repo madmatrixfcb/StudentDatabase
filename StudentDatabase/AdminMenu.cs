@@ -10,6 +10,7 @@ namespace StudentDatabase
         public AdminMenu()
         {
             InitializeComponent();
+            time.Start();
         }
 
         private void AdminMenu_Load(object sender, EventArgs e)
@@ -23,6 +24,18 @@ namespace StudentDatabase
             this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
             // TODO: This line of code loads data into the 'poradniaDataSet.ICD' table. You can move, or remove it, as needed.
             this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
+        }
+
+        //-----------------------TIME----------------------------------/
+        private void time_Tick(object sender, EventArgs e)
+        {
+            timeItem.Caption = "Aktualna godzina "+DateTime.Now.ToLongTimeString();
+        }
+
+        //-----------------------FUNCTIONS----------------------------------/
+        public void refreshPacjenci()
+        {
+            gridPacjenci.RefreshDataSource();
         }
 
         //-----------------------RIBBON ENABLING----------------------------------/
@@ -200,5 +213,7 @@ namespace StudentDatabase
                 MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+       
     }
 }
