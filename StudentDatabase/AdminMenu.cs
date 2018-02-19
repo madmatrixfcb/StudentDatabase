@@ -111,6 +111,13 @@ namespace StudentDatabase
         {
             AddPatient addPat = new AddPatient();
             addPat.Show();
+            addPat.FormClosed += AddPat_FormClosed;
+
+        }
+
+        private void AddPat_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            refreshPacjenci();
         }
 
         private void editPatient_ItemClick(object sender, ItemClickEventArgs e)

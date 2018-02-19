@@ -58,22 +58,12 @@ namespace StudentDatabase
         }
 
         //-----------------------BUTTONS----------------------------------/
-
-        private void addPatientButton_Click(object sender, EventArgs e)
-        { }
-
-        //   }
-
-
-
-   
-
-        private void addPatient2_Click(object sender, EventArgs e)
+        private void checkButton_Click(object sender, EventArgs e)
         {
             string imie = Convert.ToString(imieTB.Text);
             string nazwisko = Convert.ToString(nazwiskoTB.Text);
             string data_ur = Convert.ToString(dataur.Text);
-            string kraj = Convert.ToString(krajTB.Text);
+            string kraj = Convert.ToString(krajSelect.Text);
             string telefon = Convert.ToString(telefonTB.Text);
             string ulica = Convert.ToString(ulicaTB.Text);
             string nr_budynku = Convert.ToString(budynekTB.Text);
@@ -84,18 +74,44 @@ namespace StudentDatabase
             string nr_kp = Convert.ToString(kartapolakaTB.Text);
             string dowod_osobisty = Convert.ToString(dowodTB.Text);
             string nr_paszportu = Convert.ToString(paszportTB.Text);
-            string plec = Convert.ToString(comboBox1.SelectedValue);
-            string ubezpieczenie = Convert.ToString(comboBox2.SelectedValue);
-
-            /*  if (String.IsNullOrEmpty(imieTB.Text) || String.IsNullOrEmpty(nazwiskoTB.Text) || String.IsNullOrEmpty(dataur.Text) || String.IsNullOrEmpty(krajTB.Text) || String.IsNullOrEmpty(telefonTB.Text) || String.Equals(telefonTB.Text,wrong_phone)  ||  String.IsNullOrEmpty(adres))
-              else
-              {*/
+            string plec = Convert.ToString(plecSelect.Text);
+            string ubezpieczenie = Convert.ToString(ubezpieczenieSelect.Text);
 
             bool isValid = dxValidationProvider1.Validate();
 
             if (isValid == true)
             {
-                try
+                addPatient2.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Wypełnij wszystkie pola by dodać pacjenta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void addPatient2_Click(object sender, EventArgs e)
+        {
+            string imie = Convert.ToString(imieTB.Text);
+            string nazwisko = Convert.ToString(nazwiskoTB.Text);
+            string data_ur = Convert.ToString(dataur.Text);
+            string kraj = Convert.ToString(krajSelect.Text);
+            string telefon = Convert.ToString(telefonTB.Text);
+            string ulica = Convert.ToString(ulicaTB.Text);
+            string nr_budynku = Convert.ToString(budynekTB.Text);
+            string nr_mieszkania = Convert.ToString(mieszkanieTB.Text);
+            string kod_pocztowy = Convert.ToString(kodTB.Text);
+            string miasto = Convert.ToString(miastoTB.Text);
+            string nr_pesel = Convert.ToString(peselTB.Text);
+            string nr_kp = Convert.ToString(kartapolakaTB.Text);
+            string dowod_osobisty = Convert.ToString(dowodTB.Text);
+            string nr_paszportu = Convert.ToString(paszportTB.Text);
+            string plec = Convert.ToString(plecSelect.Text);
+            string ubezpieczenie = Convert.ToString(ubezpieczenieSelect.Text);
+
+            /*  if (String.IsNullOrEmpty(imieTB.Text) || String.IsNullOrEmpty(nazwiskoTB.Text) || String.IsNullOrEmpty(dataur.Text) || String.IsNullOrEmpty(krajTB.Text) || String.IsNullOrEmpty(telefonTB.Text) || String.Equals(telefonTB.Text,wrong_phone)  ||  String.IsNullOrEmpty(adres))
+              else
+              {*/
+            try
                 {
                     pACJENTTableAdapter.InsertQuery(imie, nazwisko, data_ur, kraj, plec, ulica, nr_budynku, nr_mieszkania, kod_pocztowy, miasto, nr_pesel, nr_kp, dowod_osobisty, nr_paszportu, ubezpieczenie, telefon);
 
@@ -108,10 +124,8 @@ namespace StudentDatabase
                     MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
-            {
-                MessageBox.Show("Wypełnij wszystkie pola by dodać pacjenta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
+
+  
     }
-}

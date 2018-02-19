@@ -53,25 +53,9 @@
             this.ICDGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
-            this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pACJENTTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.PacjenciPage = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.gridPacjenci = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colID_Pacjent = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colImie = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNazwisko = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAdres = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colKraj = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colData_urodzenia = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPlec = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPESEL = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colKarta_polaka = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDowod_osobisty = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPaszport = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colID_Ubezpieczenie = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTelefon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.UbezpieczeniePage = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gridUbezpieczenie = new DevExpress.XtraGrid.GridControl();
             this.uBEZPIECZENIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -102,17 +86,34 @@
             this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.wIZYTATableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
-            this.pacjentTableAdapter1 = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             this.time = new System.Windows.Forms.Timer(this.components);
             this.timeItem = new DevExpress.XtraBars.BarStaticItem();
+            this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pacjentTableAdapter1 = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
+            this.gridPacjenci = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID_Pacjent = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colImie = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNazwisko = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colData_urodzenia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKraj = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTelefon = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPlec = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUlica = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNr_budynku = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNr_mieszkania = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKod_pocztowy = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMiasto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPESEL = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKarta_polaka = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDowod_osobisty = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPaszport = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUbezpieczenie = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.PacjenciPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridPacjenci)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.UbezpieczeniePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridUbezpieczenie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).BeginInit();
@@ -125,6 +126,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridWizyta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wIZYTABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPacjenci)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -354,11 +358,6 @@
             this.poradniaDataSet.Locale = new System.Globalization.CultureInfo("pl");
             this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // pACJENTBindingSource
-            // 
-            this.pACJENTBindingSource.DataMember = "PACJENT";
-            this.pACJENTBindingSource.DataSource = this.poradniaDataSet;
-            // 
             // pACJENTTableAdapter
             // 
             this.pACJENTTableAdapter.ClearBeforeFill = true;
@@ -390,144 +389,6 @@
             this.PacjenciPage.Controls.Add(this.gridPacjenci);
             this.PacjenciPage.Name = "PacjenciPage";
             this.PacjenciPage.Size = new System.Drawing.Size(1105, 230);
-            // 
-            // gridPacjenci
-            // 
-            this.gridPacjenci.DataSource = this.pACJENTBindingSource;
-            this.gridPacjenci.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridPacjenci.Location = new System.Drawing.Point(0, 0);
-            this.gridPacjenci.MainView = this.gridView1;
-            this.gridPacjenci.Name = "gridPacjenci";
-            this.gridPacjenci.Size = new System.Drawing.Size(1105, 230);
-            this.gridPacjenci.TabIndex = 0;
-            this.gridPacjenci.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colID_Pacjent,
-            this.colImie,
-            this.colNazwisko,
-            this.colAdres,
-            this.colKraj,
-            this.colData_urodzenia,
-            this.colPlec,
-            this.colPESEL,
-            this.colKarta_polaka,
-            this.colDowod_osobisty,
-            this.colPaszport,
-            this.colID_Ubezpieczenie,
-            this.colTelefon});
-            this.gridView1.GridControl = this.gridPacjenci;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
-            this.gridView1.OptionsSelection.MultiSelect = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // colID_Pacjent
-            // 
-            this.colID_Pacjent.FieldName = "ID_Pacjent";
-            this.colID_Pacjent.Name = "colID_Pacjent";
-            this.colID_Pacjent.Visible = true;
-            this.colID_Pacjent.VisibleIndex = 0;
-            this.colID_Pacjent.Width = 88;
-            // 
-            // colImie
-            // 
-            this.colImie.FieldName = "Imie";
-            this.colImie.Name = "colImie";
-            this.colImie.Visible = true;
-            this.colImie.VisibleIndex = 1;
-            this.colImie.Width = 74;
-            // 
-            // colNazwisko
-            // 
-            this.colNazwisko.FieldName = "Nazwisko";
-            this.colNazwisko.Name = "colNazwisko";
-            this.colNazwisko.Visible = true;
-            this.colNazwisko.VisibleIndex = 2;
-            this.colNazwisko.Width = 103;
-            // 
-            // colAdres
-            // 
-            this.colAdres.FieldName = "Adres";
-            this.colAdres.Name = "colAdres";
-            this.colAdres.Visible = true;
-            this.colAdres.VisibleIndex = 3;
-            this.colAdres.Width = 147;
-            // 
-            // colKraj
-            // 
-            this.colKraj.FieldName = "Kraj";
-            this.colKraj.Name = "colKraj";
-            this.colKraj.Visible = true;
-            this.colKraj.VisibleIndex = 4;
-            this.colKraj.Width = 70;
-            // 
-            // colData_urodzenia
-            // 
-            this.colData_urodzenia.FieldName = "Data_urodzenia";
-            this.colData_urodzenia.Name = "colData_urodzenia";
-            this.colData_urodzenia.Visible = true;
-            this.colData_urodzenia.VisibleIndex = 5;
-            this.colData_urodzenia.Width = 98;
-            // 
-            // colPlec
-            // 
-            this.colPlec.FieldName = "Plec";
-            this.colPlec.Name = "colPlec";
-            this.colPlec.Visible = true;
-            this.colPlec.VisibleIndex = 6;
-            this.colPlec.Width = 67;
-            // 
-            // colPESEL
-            // 
-            this.colPESEL.FieldName = "PESEL";
-            this.colPESEL.Name = "colPESEL";
-            this.colPESEL.Visible = true;
-            this.colPESEL.VisibleIndex = 7;
-            this.colPESEL.Width = 67;
-            // 
-            // colKarta_polaka
-            // 
-            this.colKarta_polaka.FieldName = "Karta_polaka";
-            this.colKarta_polaka.Name = "colKarta_polaka";
-            this.colKarta_polaka.Visible = true;
-            this.colKarta_polaka.VisibleIndex = 8;
-            this.colKarta_polaka.Width = 67;
-            // 
-            // colDowod_osobisty
-            // 
-            this.colDowod_osobisty.FieldName = "Dowod_osobisty";
-            this.colDowod_osobisty.Name = "colDowod_osobisty";
-            this.colDowod_osobisty.Visible = true;
-            this.colDowod_osobisty.VisibleIndex = 9;
-            this.colDowod_osobisty.Width = 67;
-            // 
-            // colPaszport
-            // 
-            this.colPaszport.FieldName = "Paszport";
-            this.colPaszport.Name = "colPaszport";
-            this.colPaszport.Visible = true;
-            this.colPaszport.VisibleIndex = 10;
-            this.colPaszport.Width = 67;
-            // 
-            // colID_Ubezpieczenie
-            // 
-            this.colID_Ubezpieczenie.FieldName = "ID_Ubezpieczenie";
-            this.colID_Ubezpieczenie.Name = "colID_Ubezpieczenie";
-            this.colID_Ubezpieczenie.Visible = true;
-            this.colID_Ubezpieczenie.VisibleIndex = 11;
-            this.colID_Ubezpieczenie.Width = 72;
-            // 
-            // colTelefon
-            // 
-            this.colTelefon.FieldName = "Telefon";
-            this.colTelefon.Name = "colTelefon";
-            this.colTelefon.Visible = true;
-            this.colTelefon.VisibleIndex = 12;
-            this.colTelefon.Width = 100;
             // 
             // UbezpieczeniePage
             // 
@@ -762,10 +623,6 @@
             // 
             this.wIZYTATableAdapter.ClearBeforeFill = true;
             // 
-            // pacjentTableAdapter1
-            // 
-            this.pacjentTableAdapter1.ClearBeforeFill = true;
-            // 
             // time
             // 
             this.time.Tick += new System.EventHandler(this.time_Tick);
@@ -774,6 +631,170 @@
             // 
             this.timeItem.Id = 1;
             this.timeItem.Name = "timeItem";
+            // 
+            // pACJENTBindingSource
+            // 
+            this.pACJENTBindingSource.DataMember = "PACJENT";
+            this.pACJENTBindingSource.DataSource = this.poradniaDataSet;
+            // 
+            // pacjentTableAdapter1
+            // 
+            this.pacjentTableAdapter1.ClearBeforeFill = true;
+            // 
+            // gridPacjenci
+            // 
+            this.gridPacjenci.DataSource = this.pACJENTBindingSource;
+            this.gridPacjenci.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridPacjenci.Location = new System.Drawing.Point(0, 0);
+            this.gridPacjenci.MainView = this.gridView1;
+            this.gridPacjenci.MenuManager = this.ribbon;
+            this.gridPacjenci.Name = "gridPacjenci";
+            this.gridPacjenci.Size = new System.Drawing.Size(1105, 230);
+            this.gridPacjenci.TabIndex = 0;
+            this.gridPacjenci.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID_Pacjent,
+            this.colImie,
+            this.colNazwisko,
+            this.colData_urodzenia,
+            this.colKraj,
+            this.colTelefon,
+            this.colPlec,
+            this.colUlica,
+            this.colNr_budynku,
+            this.colNr_mieszkania,
+            this.colKod_pocztowy,
+            this.colMiasto,
+            this.colPESEL,
+            this.colKarta_polaka,
+            this.colDowod_osobisty,
+            this.colPaszport,
+            this.colUbezpieczenie});
+            this.gridView1.GridControl = this.gridPacjenci;
+            this.gridView1.Name = "gridView1";
+            // 
+            // colID_Pacjent
+            // 
+            this.colID_Pacjent.FieldName = "ID_Pacjent";
+            this.colID_Pacjent.Name = "colID_Pacjent";
+            this.colID_Pacjent.Visible = true;
+            this.colID_Pacjent.VisibleIndex = 0;
+            // 
+            // colImie
+            // 
+            this.colImie.FieldName = "Imie";
+            this.colImie.Name = "colImie";
+            this.colImie.Visible = true;
+            this.colImie.VisibleIndex = 1;
+            // 
+            // colNazwisko
+            // 
+            this.colNazwisko.FieldName = "Nazwisko";
+            this.colNazwisko.Name = "colNazwisko";
+            this.colNazwisko.Visible = true;
+            this.colNazwisko.VisibleIndex = 2;
+            // 
+            // colData_urodzenia
+            // 
+            this.colData_urodzenia.FieldName = "Data_urodzenia";
+            this.colData_urodzenia.Name = "colData_urodzenia";
+            this.colData_urodzenia.Visible = true;
+            this.colData_urodzenia.VisibleIndex = 3;
+            // 
+            // colKraj
+            // 
+            this.colKraj.FieldName = "Kraj";
+            this.colKraj.Name = "colKraj";
+            this.colKraj.Visible = true;
+            this.colKraj.VisibleIndex = 4;
+            // 
+            // colTelefon
+            // 
+            this.colTelefon.FieldName = "Telefon";
+            this.colTelefon.Name = "colTelefon";
+            this.colTelefon.Visible = true;
+            this.colTelefon.VisibleIndex = 5;
+            // 
+            // colPlec
+            // 
+            this.colPlec.FieldName = "Plec";
+            this.colPlec.Name = "colPlec";
+            this.colPlec.Visible = true;
+            this.colPlec.VisibleIndex = 6;
+            // 
+            // colUlica
+            // 
+            this.colUlica.FieldName = "Ulica";
+            this.colUlica.Name = "colUlica";
+            this.colUlica.Visible = true;
+            this.colUlica.VisibleIndex = 7;
+            // 
+            // colNr_budynku
+            // 
+            this.colNr_budynku.FieldName = "Nr_budynku";
+            this.colNr_budynku.Name = "colNr_budynku";
+            this.colNr_budynku.Visible = true;
+            this.colNr_budynku.VisibleIndex = 8;
+            // 
+            // colNr_mieszkania
+            // 
+            this.colNr_mieszkania.FieldName = "Nr_mieszkania";
+            this.colNr_mieszkania.Name = "colNr_mieszkania";
+            this.colNr_mieszkania.Visible = true;
+            this.colNr_mieszkania.VisibleIndex = 9;
+            // 
+            // colKod_pocztowy
+            // 
+            this.colKod_pocztowy.FieldName = "Kod_pocztowy";
+            this.colKod_pocztowy.Name = "colKod_pocztowy";
+            this.colKod_pocztowy.Visible = true;
+            this.colKod_pocztowy.VisibleIndex = 10;
+            // 
+            // colMiasto
+            // 
+            this.colMiasto.FieldName = "Miasto";
+            this.colMiasto.Name = "colMiasto";
+            this.colMiasto.Visible = true;
+            this.colMiasto.VisibleIndex = 11;
+            // 
+            // colPESEL
+            // 
+            this.colPESEL.FieldName = "PESEL";
+            this.colPESEL.Name = "colPESEL";
+            this.colPESEL.Visible = true;
+            this.colPESEL.VisibleIndex = 12;
+            // 
+            // colKarta_polaka
+            // 
+            this.colKarta_polaka.FieldName = "Karta_polaka";
+            this.colKarta_polaka.Name = "colKarta_polaka";
+            this.colKarta_polaka.Visible = true;
+            this.colKarta_polaka.VisibleIndex = 13;
+            // 
+            // colDowod_osobisty
+            // 
+            this.colDowod_osobisty.FieldName = "Dowod_osobisty";
+            this.colDowod_osobisty.Name = "colDowod_osobisty";
+            this.colDowod_osobisty.Visible = true;
+            this.colDowod_osobisty.VisibleIndex = 14;
+            // 
+            // colPaszport
+            // 
+            this.colPaszport.FieldName = "Paszport";
+            this.colPaszport.Name = "colPaszport";
+            this.colPaszport.Visible = true;
+            this.colPaszport.VisibleIndex = 15;
+            // 
+            // colUbezpieczenie
+            // 
+            this.colUbezpieczenie.FieldName = "Ubezpieczenie";
+            this.colUbezpieczenie.Name = "colUbezpieczenie";
+            this.colUbezpieczenie.Visible = true;
+            this.colUbezpieczenie.VisibleIndex = 16;
             // 
             // AdminMenu
             // 
@@ -791,12 +812,9 @@
             this.Load += new System.EventHandler(this.AdminMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
             this.PacjenciPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridPacjenci)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.UbezpieczeniePage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridUbezpieczenie)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).EndInit();
@@ -809,6 +827,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridWizyta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wIZYTABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPacjenci)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -821,25 +842,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup PacjenciGroup;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private PoradniaDataSet poradniaDataSet;
-        private System.Windows.Forms.BindingSource pACJENTBindingSource;
         private PoradniaDataSetTableAdapters.PACJENTTableAdapter pACJENTTableAdapter;
         private DevExpress.XtraBars.Navigation.TabPane tabPane1;
         private DevExpress.XtraBars.Navigation.TabNavigationPage PacjenciPage;
-        private DevExpress.XtraGrid.GridControl gridPacjenci;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colID_Pacjent;
-        private DevExpress.XtraGrid.Columns.GridColumn colImie;
-        private DevExpress.XtraGrid.Columns.GridColumn colNazwisko;
-        private DevExpress.XtraGrid.Columns.GridColumn colAdres;
-        private DevExpress.XtraGrid.Columns.GridColumn colKraj;
-        private DevExpress.XtraGrid.Columns.GridColumn colData_urodzenia;
-        private DevExpress.XtraGrid.Columns.GridColumn colPlec;
-        private DevExpress.XtraGrid.Columns.GridColumn colPESEL;
-        private DevExpress.XtraGrid.Columns.GridColumn colKarta_polaka;
-        private DevExpress.XtraGrid.Columns.GridColumn colDowod_osobisty;
-        private DevExpress.XtraGrid.Columns.GridColumn colPaszport;
-        private DevExpress.XtraGrid.Columns.GridColumn colID_Ubezpieczenie;
-        private DevExpress.XtraGrid.Columns.GridColumn colTelefon;
         private DevExpress.XtraBars.Navigation.TabNavigationPage UbezpieczeniePage;
         private DevExpress.XtraGrid.GridControl gridUbezpieczenie;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
@@ -887,9 +892,29 @@
         private DevExpress.XtraBars.BarButtonItem deleteButtonI;
         private DevExpress.XtraBars.BarButtonItem deleteButtonW;
         private DevExpress.XtraBars.BarButtonItem dodajUbezp;
-        private PoradniaDataSetTableAdapters.PACJENTTableAdapter pacjentTableAdapter1;
         private DevExpress.XtraBars.BarButtonItem editPatient;
         private System.Windows.Forms.Timer time;
         private DevExpress.XtraBars.BarStaticItem timeItem;
+        private System.Windows.Forms.BindingSource pACJENTBindingSource;
+        private PoradniaDataSetTableAdapters.PACJENTTableAdapter pacjentTableAdapter1;
+        private DevExpress.XtraGrid.GridControl gridPacjenci;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colID_Pacjent;
+        private DevExpress.XtraGrid.Columns.GridColumn colImie;
+        private DevExpress.XtraGrid.Columns.GridColumn colNazwisko;
+        private DevExpress.XtraGrid.Columns.GridColumn colData_urodzenia;
+        private DevExpress.XtraGrid.Columns.GridColumn colKraj;
+        private DevExpress.XtraGrid.Columns.GridColumn colTelefon;
+        private DevExpress.XtraGrid.Columns.GridColumn colPlec;
+        private DevExpress.XtraGrid.Columns.GridColumn colUlica;
+        private DevExpress.XtraGrid.Columns.GridColumn colNr_budynku;
+        private DevExpress.XtraGrid.Columns.GridColumn colNr_mieszkania;
+        private DevExpress.XtraGrid.Columns.GridColumn colKod_pocztowy;
+        private DevExpress.XtraGrid.Columns.GridColumn colMiasto;
+        private DevExpress.XtraGrid.Columns.GridColumn colPESEL;
+        private DevExpress.XtraGrid.Columns.GridColumn colKarta_polaka;
+        private DevExpress.XtraGrid.Columns.GridColumn colDowod_osobisty;
+        private DevExpress.XtraGrid.Columns.GridColumn colPaszport;
+        private DevExpress.XtraGrid.Columns.GridColumn colUbezpieczenie;
     }
 }
