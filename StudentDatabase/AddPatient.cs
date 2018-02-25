@@ -37,28 +37,28 @@ namespace StudentDatabase
 
         //-----------------------CHECK BOXES----------------------------------/
 
-        private void peselCB_CheckedChanged(object sender, EventArgs e)
+        private void PeselCB_CheckedChanged(object sender, EventArgs e)
         {
             peselTB.Enabled = (peselCB.CheckState == CheckState.Checked);
         }
 
-        private void kartapolakaCB_CheckedChanged(object sender, EventArgs e)
+        private void KartapolakaCB_CheckedChanged(object sender, EventArgs e)
         {
             kartapolakaTB.Enabled = (kartapolakaCB.CheckState == CheckState.Checked);
         }
 
-        private void dowodosobistyCB_CheckedChanged(object sender, EventArgs e)
+        private void DowodosobistyCB_CheckedChanged(object sender, EventArgs e)
         {
             dowodTB.Enabled = (dowodosobistyCB.CheckState == CheckState.Checked);
         }
 
-        private void paszportCB_CheckedChanged(object sender, EventArgs e)
+        private void PaszportCB_CheckedChanged(object sender, EventArgs e)
         {
             paszportTB.Enabled = (paszportCB.CheckState == CheckState.Checked);
         }
 
         //-----------------------BUTTONS----------------------------------/
-        private void checkButton_Click(object sender, EventArgs e)
+        private void CheckButton_Click(object sender, EventArgs e)
         {
             string imie = Convert.ToString(imieTB.Text);
             string nazwisko = Convert.ToString(nazwiskoTB.Text);
@@ -89,7 +89,7 @@ namespace StudentDatabase
             }
         }
 
-        private void addPatient2_Click(object sender, EventArgs e)
+        private void AddPatient2_Click(object sender, EventArgs e)
         {
             string imie = Convert.ToString(imieTB.Text);
             string nazwisko = Convert.ToString(nazwiskoTB.Text);

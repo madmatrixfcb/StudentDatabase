@@ -311,7 +311,7 @@
             this.paszportCB.Properties.Caption = "Numer paszportu:";
             this.paszportCB.Size = new System.Drawing.Size(106, 19);
             this.paszportCB.TabIndex = 42;
-            this.paszportCB.CheckedChanged += new System.EventHandler(this.paszportCB_CheckedChanged);
+            this.paszportCB.CheckedChanged += new System.EventHandler(this.PaszportCB_CheckedChanged);
             // 
             // dowodosobistyCB
             // 
@@ -320,7 +320,7 @@
             this.dowodosobistyCB.Properties.Caption = "Dowód osobisty:";
             this.dowodosobistyCB.Size = new System.Drawing.Size(106, 19);
             this.dowodosobistyCB.TabIndex = 41;
-            this.dowodosobistyCB.CheckedChanged += new System.EventHandler(this.dowodosobistyCB_CheckedChanged);
+            this.dowodosobistyCB.CheckedChanged += new System.EventHandler(this.DowodosobistyCB_CheckedChanged);
             // 
             // kartapolakaCB
             // 
@@ -329,7 +329,7 @@
             this.kartapolakaCB.Properties.Caption = "Karta polaka:";
             this.kartapolakaCB.Size = new System.Drawing.Size(86, 19);
             this.kartapolakaCB.TabIndex = 40;
-            this.kartapolakaCB.CheckedChanged += new System.EventHandler(this.kartapolakaCB_CheckedChanged);
+            this.kartapolakaCB.CheckedChanged += new System.EventHandler(this.KartapolakaCB_CheckedChanged);
             // 
             // peselCB
             // 
@@ -338,7 +338,7 @@
             this.peselCB.Properties.Caption = "PESEL:";
             this.peselCB.Size = new System.Drawing.Size(75, 19);
             this.peselCB.TabIndex = 39;
-            this.peselCB.CheckedChanged += new System.EventHandler(this.peselCB_CheckedChanged);
+            this.peselCB.CheckedChanged += new System.EventHandler(this.PeselCB_CheckedChanged);
             // 
             // labelControl2
             // 
@@ -453,7 +453,7 @@
             this.addPatient2.Size = new System.Drawing.Size(99, 23);
             this.addPatient2.TabIndex = 69;
             this.addPatient2.Text = "Dodaj pacjenta";
-            this.addPatient2.Click += new System.EventHandler(this.addPatient2_Click);
+            this.addPatient2.Click += new System.EventHandler(this.AddPatient2_Click);
             // 
             // pACJENTTableAdapter
             // 
@@ -466,7 +466,7 @@
             this.checkButton.Size = new System.Drawing.Size(99, 23);
             this.checkButton.TabIndex = 70;
             this.checkButton.Text = "Sprawdź";
-            this.checkButton.Click += new System.EventHandler(this.checkButton_Click);
+            this.checkButton.Click += new System.EventHandler(this.CheckButton_Click);
             // 
             // plecSelect
             // 

@@ -167,7 +167,7 @@
             this.addPatient.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("addPatient.ImageOptions.Image")));
             this.addPatient.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("addPatient.ImageOptions.LargeImage")));
             this.addPatient.Name = "addPatient";
-            this.addPatient.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addPatient_ItemClick);
+            this.addPatient.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AddPatient_ItemClick);
             // 
             // refreshButton
             // 
@@ -176,7 +176,7 @@
             this.refreshButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("refreshButton.ImageOptions.Image")));
             this.refreshButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("refreshButton.ImageOptions.LargeImage")));
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.refreshButton_ItemClick);
+            this.refreshButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshButton_ItemClick);
             // 
             // saveChanges
             // 
@@ -185,7 +185,7 @@
             this.saveChanges.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("saveChanges.ImageOptions.Image")));
             this.saveChanges.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("saveChanges.ImageOptions.LargeImage")));
             this.saveChanges.Name = "saveChanges";
-            this.saveChanges.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveChanges_ItemClick);
+            this.saveChanges.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.SaveChanges_ItemClick);
             // 
             // deleteButtonP
             // 
@@ -203,7 +203,7 @@
             this.refreshUbezp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("refreshUbezp.ImageOptions.Image")));
             this.refreshUbezp.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("refreshUbezp.ImageOptions.LargeImage")));
             this.refreshUbezp.Name = "refreshUbezp";
-            this.refreshUbezp.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.refreshUbezp_ItemClick);
+            this.refreshUbezp.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshUbezp_ItemClick);
             // 
             // addICD
             // 
@@ -212,7 +212,7 @@
             this.addICD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("addICD.ImageOptions.Image")));
             this.addICD.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("addICD.ImageOptions.LargeImage")));
             this.addICD.Name = "addICD";
-            this.addICD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addICD_ItemClick);
+            this.addICD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AddICD_ItemClick);
             // 
             // refreshICD
             // 
@@ -221,7 +221,7 @@
             this.refreshICD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("refreshICD.ImageOptions.Image")));
             this.refreshICD.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("refreshICD.ImageOptions.LargeImage")));
             this.refreshICD.Name = "refreshICD";
-            this.refreshICD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.refreshICD_ItemClick);
+            this.refreshICD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshICD_ItemClick);
             // 
             // saveChangesICD
             // 
@@ -230,7 +230,7 @@
             this.saveChangesICD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("saveChangesICD.ImageOptions.Image")));
             this.saveChangesICD.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("saveChangesICD.ImageOptions.LargeImage")));
             this.saveChangesICD.Name = "saveChangesICD";
-            this.saveChangesICD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveChangesICD_ItemClick);
+            this.saveChangesICD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.SaveChangesICD_ItemClick);
             // 
             // addVisit
             // 
@@ -239,7 +239,7 @@
             this.addVisit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("addVisit.ImageOptions.Image")));
             this.addVisit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("addVisit.ImageOptions.LargeImage")));
             this.addVisit.Name = "addVisit";
-            this.addVisit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addVisit_ItemClick);
+            this.addVisit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AddVisit_ItemClick);
             // 
             // refreshVisit
             // 
@@ -248,7 +248,7 @@
             this.refreshVisit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("refreshVisit.ImageOptions.Image")));
             this.refreshVisit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("refreshVisit.ImageOptions.LargeImage")));
             this.refreshVisit.Name = "refreshVisit";
-            this.refreshVisit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.refreshVisit_ItemClick);
+            this.refreshVisit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshVisit_ItemClick);
             // 
             // deleteButtonU
             // 
@@ -257,7 +257,7 @@
             this.deleteButtonU.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("deleteButtonU.ImageOptions.Image")));
             this.deleteButtonU.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("deleteButtonU.ImageOptions.LargeImage")));
             this.deleteButtonU.Name = "deleteButtonU";
-            this.deleteButtonU.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteButtonU_ItemClick);
+            this.deleteButtonU.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteButtonU_ItemClick);
             // 
             // deleteButtonI
             // 
@@ -266,7 +266,7 @@
             this.deleteButtonI.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("deleteButtonI.ImageOptions.Image")));
             this.deleteButtonI.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("deleteButtonI.ImageOptions.LargeImage")));
             this.deleteButtonI.Name = "deleteButtonI";
-            this.deleteButtonI.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteButtonI_ItemClick);
+            this.deleteButtonI.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteButtonI_ItemClick);
             // 
             // deleteButtonW
             // 
@@ -275,7 +275,7 @@
             this.deleteButtonW.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("deleteButtonW.ImageOptions.Image")));
             this.deleteButtonW.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("deleteButtonW.ImageOptions.LargeImage")));
             this.deleteButtonW.Name = "deleteButtonW";
-            this.deleteButtonW.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteButtonW_ItemClick);
+            this.deleteButtonW.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteButtonW_ItemClick);
             // 
             // dodajUbezp
             // 
@@ -284,7 +284,7 @@
             this.dodajUbezp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("dodajUbezp.ImageOptions.Image")));
             this.dodajUbezp.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("dodajUbezp.ImageOptions.LargeImage")));
             this.dodajUbezp.Name = "dodajUbezp";
-            this.dodajUbezp.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.dodajUbezp_ItemClick);
+            this.dodajUbezp.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DodajUbezp_ItemClick);
             // 
             // editPatient
             // 
@@ -293,7 +293,7 @@
             this.editPatient.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("editPatient.ImageOptions.Image")));
             this.editPatient.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("editPatient.ImageOptions.LargeImage")));
             this.editPatient.Name = "editPatient";
-            this.editPatient.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editPatient_ItemClick);
+            this.editPatient.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.EditPatient_ItemClick);
             // 
             // ribbonAdmin
             // 
@@ -625,7 +625,7 @@
             // 
             // time
             // 
-            this.time.Tick += new System.EventHandler(this.time_Tick);
+            this.time.Tick += new System.EventHandler(this.Time_Tick);
             // 
             // timeItem
             // 

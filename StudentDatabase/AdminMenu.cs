@@ -27,13 +27,13 @@ namespace StudentDatabase
         }
 
         //-----------------------TIME----------------------------------/
-        private void time_Tick(object sender, EventArgs e)
+        private void Time_Tick(object sender, EventArgs e)
         {
             timeItem.Caption = "Aktualna godzina "+DateTime.Now.ToLongTimeString();
         }
 
         //-----------------------FUNCTIONS----------------------------------/
-        public void refreshPacjenci()
+        public void RefreshPacjenci()
         {
             gridPacjenci.RefreshDataSource();
         }
@@ -67,12 +67,12 @@ namespace StudentDatabase
             }
         }
             //-----------------------------------PATIENT RIBBON-----------------------------------//
-            private void refreshButton_ItemClick(object sender, ItemClickEventArgs e)
+            private void RefreshButton_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
         }
 
-        private void saveChanges_ItemClick(object sender, ItemClickEventArgs e)
+        private void SaveChanges_ItemClick(object sender, ItemClickEventArgs e)
         {
             try
             {
@@ -107,7 +107,7 @@ namespace StudentDatabase
             }
         }
 
-        private void addPatient_ItemClick(object sender, ItemClickEventArgs e)
+        private void AddPatient_ItemClick(object sender, ItemClickEventArgs e)
         {
             AddPatient addPat = new AddPatient();
             addPat.Show();
@@ -117,10 +117,10 @@ namespace StudentDatabase
 
         private void AddPat_FormClosed(object sender, FormClosedEventArgs e)
         {
-            refreshPacjenci();
+            RefreshPacjenci();
         }
 
-        private void editPatient_ItemClick(object sender, ItemClickEventArgs e)
+        private void EditPatient_ItemClick(object sender, ItemClickEventArgs e)
         {
             EditPatient editPat = new EditPatient();
             editPat.ShowDialog();
@@ -129,7 +129,7 @@ namespace StudentDatabase
 
         //-----------------------------------UBEZPIECZENIE RIBBON-----------------------------------//
 
-        private void deleteButtonU_ItemClick(object sender, ItemClickEventArgs e)
+        private void DeleteButtonU_ItemClick(object sender, ItemClickEventArgs e)
         {
             try
             {
@@ -143,12 +143,12 @@ namespace StudentDatabase
             }
         }
 
-        private void refreshUbezp_ItemClick(object sender, ItemClickEventArgs e)
+        private void RefreshUbezp_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
         }
 
-        private void dodajUbezp_ItemClick(object sender, ItemClickEventArgs e)
+        private void DodajUbezp_ItemClick(object sender, ItemClickEventArgs e)
         {
             AddUbezp addUbezp = new AddUbezp();
             addUbezp.Show();
@@ -156,18 +156,18 @@ namespace StudentDatabase
 
         //-----------------------------------ICD RIBBON-----------------------------------//
 
-        private void addICD_ItemClick(object sender, ItemClickEventArgs e)
+        private void AddICD_ItemClick(object sender, ItemClickEventArgs e)
         {
             AddICD addICD = new AddICD();
             addICD.Show();
         }
 
-        private void refreshICD_ItemClick(object sender, ItemClickEventArgs e)
+        private void RefreshICD_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
         }
 
-        private void saveChangesICD_ItemClick(object sender, ItemClickEventArgs e)
+        private void SaveChangesICD_ItemClick(object sender, ItemClickEventArgs e)
         {
             try
             {
@@ -180,7 +180,7 @@ namespace StudentDatabase
             }
         }
 
-        private void deleteButtonI_ItemClick(object sender, ItemClickEventArgs e)
+        private void DeleteButtonI_ItemClick(object sender, ItemClickEventArgs e)
         {
             try
             {
@@ -196,18 +196,18 @@ namespace StudentDatabase
 
         //-----------------------------------VIST RIBBON-----------------------------------//
 
-        private void addVisit_ItemClick(object sender, ItemClickEventArgs e)
+        private void AddVisit_ItemClick(object sender, ItemClickEventArgs e)
         {
             AddVisit add_Visit = new AddVisit();
             add_Visit.Show();
         }
 
-        private void refreshVisit_ItemClick(object sender, ItemClickEventArgs e)
+        private void RefreshVisit_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
         }
 
-        private void deleteButtonW_ItemClick(object sender, ItemClickEventArgs e)
+        private void DeleteButtonW_ItemClick(object sender, ItemClickEventArgs e)
         {
             try
             {
