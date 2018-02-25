@@ -113,7 +113,7 @@ namespace StudentDatabase
               {*/
             try
                 {
-                    pACJENTTableAdapter.InsertQuery(imie, nazwisko, data_ur, kraj, plec, ulica, nr_budynku, nr_mieszkania, kod_pocztowy, miasto, nr_pesel, nr_kp, dowod_osobisty, nr_paszportu, ubezpieczenie, telefon);
+                    pACJENTTableAdapter.InsertQuery(imie, nazwisko, data_ur, kraj, telefon, plec, ulica, nr_budynku, nr_mieszkania, kod_pocztowy, miasto, nr_pesel, nr_kp, dowod_osobisty, nr_paszportu, ubezpieczenie);
 
                     MessageBox.Show("Pacjent dodany", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -124,8 +124,5 @@ namespace StudentDatabase
                     MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
         }
-
-  
     }

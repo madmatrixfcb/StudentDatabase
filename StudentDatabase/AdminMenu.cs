@@ -29,7 +29,7 @@ namespace StudentDatabase
         //-----------------------TIME----------------------------------/
         private void Time_Tick(object sender, EventArgs e)
         {
-            timeItem.Caption = "Aktualna godzina "+DateTime.Now.ToLongTimeString();
+            timeItem.Caption = "Aktualna godzina: "+DateTime.Now.ToLongTimeString();
         }
 
         //-----------------------FUNCTIONS----------------------------------/
