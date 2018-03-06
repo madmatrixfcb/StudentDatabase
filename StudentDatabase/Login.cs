@@ -24,7 +24,7 @@ namespace StudentDatabase
         private void Login_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'poradniaDataSet.UZYTKOWNIK' table. You can move, or remove it, as needed.
-            this.uZYTKOWNIKTableAdapter.Fill(this.poradniaDataSet.UZYTKOWNIK);
+            this.uzytkownikTableAdapter.Fill(this.poradniaDataSet.UZYTKOWNIK);
             this.AcceptButton = loginButton;
 
         }
@@ -43,7 +43,7 @@ namespace StudentDatabase
         {
             String login = Convert.ToString(loginBox.Text);
             String pass = Convert.ToString(passBox.Text);
-            String userType = Convert.ToString(uZYTKOWNIKTableAdapter.SelectLogin(login, pass));
+            String userType = Convert.ToString(uzytkownikTableAdapter.SelectLogin(login, pass));
 
             if (userType == "Admin")
             {

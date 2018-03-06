@@ -28,23 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.loginButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.passBox = new System.Windows.Forms.TextBox();
             this.loginBox = new System.Windows.Forms.TextBox();
-            this.uZYTKOWNIKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
-            this.uZYTKOWNIKTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.uzytkownikTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.uZYTKOWNIKBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,6 +75,14 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(285, 205);
             this.panel2.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(93, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -114,27 +119,15 @@
             this.loginBox.TabIndex = 0;
             this.loginBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // uZYTKOWNIKBindingSource
-            // 
-            this.uZYTKOWNIKBindingSource.DataMember = "UZYTKOWNIK";
-            this.uZYTKOWNIKBindingSource.DataSource = this.poradniaDataSet;
-            // 
             // poradniaDataSet
             // 
             this.poradniaDataSet.DataSetName = "PoradniaDataSet";
+            this.poradniaDataSet.Locale = new System.Globalization.CultureInfo("pl");
             this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // uZYTKOWNIKTableAdapter
+            // uzytkownikTableAdapter
             // 
-            this.uZYTKOWNIKTableAdapter.ClearBeforeFill = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(93, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.uzytkownikTableAdapter.ClearBeforeFill = true;
             // 
             // Login
             // 
@@ -149,9 +142,8 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.uZYTKOWNIKBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -163,11 +155,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox passBox;
         private System.Windows.Forms.TextBox loginBox;
-        private PoradniaDataSet poradniaDataSet;
-        private System.Windows.Forms.BindingSource uZYTKOWNIKBindingSource;
-        private PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter uZYTKOWNIKTableAdapter;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private PoradniaDataSet poradniaDataSet;
+        private PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter uzytkownikTableAdapter;
     }
 }

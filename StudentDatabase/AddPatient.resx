@@ -139,12 +139,15 @@
     <value>861, 16</value>
   </metadata>
   <metadata name="pACJENTTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1240, 16</value>
+    <value>17, 55</value>
   </metadata>
   <metadata name="kRAJBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>161, 41</value>
+    <value>191, 55</value>
+  </metadata>
+  <metadata name="poradniaDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>347, 55</value>
   </metadata>
   <metadata name="krajTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 41</value>
+    <value>496, 55</value>
   </metadata>
 </root>
