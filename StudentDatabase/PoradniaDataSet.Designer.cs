@@ -3537,10 +3537,10 @@ namespace StudentDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public WIZYTARow AddWIZYTARow(int ID_Wizyta, int ID_Pacjent, System.DateTime Data, System.DateTime Godzina, string Objawy, string BPrzedmiotowe, string BPodmiotowe, int ID_ICD_1, int ID_ICD_2, int ID_ICD_3, string Zalecenia, string Leki) {
+            public WIZYTARow AddWIZYTARow(int ID_Pacjent, System.DateTime Data, System.DateTime Godzina, string Objawy, string BPrzedmiotowe, string BPodmiotowe, int ID_ICD_1, int ID_ICD_2, int ID_ICD_3, string Zalecenia, string Leki) {
                 WIZYTARow rowWIZYTARow = ((WIZYTARow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID_Wizyta,
+                        null,
                         ID_Pacjent,
                         Data,
                         Godzina,
@@ -3624,6 +3624,9 @@ namespace StudentDatabase {
                 base.Columns.Add(this.columnLeki);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_Wizyta}, true));
+                this.columnID_Wizyta.AutoIncrement = true;
+                this.columnID_Wizyta.AutoIncrementSeed = -1;
+                this.columnID_Wizyta.AutoIncrementStep = -1;
                 this.columnID_Wizyta.AllowDBNull = false;
                 this.columnID_Wizyta.Unique = true;
                 this.columnID_Pacjent.AllowDBNull = false;
@@ -9867,8 +9870,8 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.Time;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Time;
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "Godzina";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -9957,89 +9960,82 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `WIZYTA` (`ID_Wizyta`, `ID_Pacjent`, `Data`, `Godzina`, `Objawy`, `BP" +
-                "rzedmiotowe`, `BPodmiotowe`, `ID_ICD_1`, `ID_ICD_2`, `ID_ICD_3`, `Zalecenia`, `L" +
-                "eki`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `WIZYTA` (`ID_Pacjent`, `Data`, `Godzina`, `Objawy`, `BPrzedmiotowe`," +
+                " `BPodmiotowe`, `ID_ICD_1`, `ID_ICD_2`, `ID_ICD_3`, `Zalecenia`, `Leki`) VALUES " +
+                "(@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "ID_Wizyta";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
             param.SourceColumn = "ID_Pacjent";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "Data";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.Time;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Time;
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "Godzina";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
+            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Objawy";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p6";
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "BPrzedmiotowe";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p7";
+            param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "BPodmiotowe";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p8";
+            param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "ID_ICD_1";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p9";
+            param.ParameterName = "@p8";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "ID_ICD_2";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p10";
+            param.ParameterName = "@p9";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "ID_ICD_3";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p11";
+            param.ParameterName = "@p10";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Zalecenia";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p12";
+            param.ParameterName = "@p11";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -10047,94 +10043,87 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `WIZYTA` SET `ID_Wizyta` = @p1, `ID_Pacjent` = @p2, `Data` = @p3, `Godzina` = @p4, `Objawy` = @p5, `BPrzedmiotowe` = @p6, `BPodmiotowe` = @p7, `ID_ICD_1` = @p8, `ID_ICD_2` = @p9, `ID_ICD_3` = @p10, `Zalecenia` = @p11, `Leki` = @p12 WHERE ((`ID_Wizyta` = @p13) AND (`ID_Pacjent` = @p14) AND (`Data` = @p15) AND (`Godzina` = @p16) AND (`Objawy` = @p17) AND (`BPrzedmiotowe` = @p18) AND (`BPodmiotowe` = @p19) AND (`ID_ICD_1` = @p20) AND ((@p21 = 1 AND `ID_ICD_2` IS NULL) OR (`ID_ICD_2` = @p22)) AND ((@p23 = 1 AND `ID_ICD_3` IS NULL) OR (`ID_ICD_3` = @p24)) AND (`Zalecenia` = @p25) AND (`Leki` = @p26))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `WIZYTA` SET `ID_Pacjent` = @p1, `Data` = @p2, `Godzina` = @p3, `Objawy` = @p4, `BPrzedmiotowe` = @p5, `BPodmiotowe` = @p6, `ID_ICD_1` = @p7, `ID_ICD_2` = @p8, `ID_ICD_3` = @p9, `Zalecenia` = @p10, `Leki` = @p11 WHERE ((`ID_Wizyta` = @p12) AND (`ID_Pacjent` = @p13) AND (`Data` = @p14) AND (`Godzina` = @p15) AND (`Objawy` = @p16) AND (`BPrzedmiotowe` = @p17) AND (`BPodmiotowe` = @p18) AND (`ID_ICD_1` = @p19) AND ((@p20 = 1 AND `ID_ICD_2` IS NULL) OR (`ID_ICD_2` = @p21)) AND ((@p22 = 1 AND `ID_ICD_3` IS NULL) OR (`ID_ICD_3` = @p23)) AND (`Zalecenia` = @p24) AND (`Leki` = @p25))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "ID_Wizyta";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
             param.SourceColumn = "ID_Pacjent";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
+            param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "Data";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.Time;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Time;
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "Godzina";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
+            param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Objawy";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p6";
+            param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "BPrzedmiotowe";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p7";
+            param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "BPodmiotowe";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p8";
+            param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "ID_ICD_1";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p9";
+            param.ParameterName = "@p8";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "ID_ICD_2";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p10";
+            param.ParameterName = "@p9";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "ID_ICD_3";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p11";
+            param.ParameterName = "@p10";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Zalecenia";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p12";
+            param.ParameterName = "@p11";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
             param.SourceColumn = "Leki";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p13";
+            param.ParameterName = "@p12";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
@@ -10142,11 +10131,19 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p14";
+            param.ParameterName = "@p13";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "ID_Pacjent";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p14";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "Data";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -10154,19 +10151,11 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
-            param.SourceColumn = "Data";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p16";
-            param.DbType = global::System.Data.DbType.Time;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Time;
-            param.IsNullable = true;
             param.SourceColumn = "Godzina";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p17";
+            param.ParameterName = "@p16";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -10174,7 +10163,7 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p18";
+            param.ParameterName = "@p17";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -10182,7 +10171,7 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p19";
+            param.ParameterName = "@p18";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -10190,12 +10179,21 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p20";
+            param.ParameterName = "@p19";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "ID_ICD_1";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p20";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ID_ICD_2";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p21";
@@ -10204,15 +10202,15 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             param.IsNullable = true;
             param.SourceColumn = "ID_ICD_2";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p22";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
-            param.SourceColumn = "ID_ICD_2";
+            param.SourceColumn = "ID_ICD_3";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p23";
@@ -10221,18 +10219,9 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             param.IsNullable = true;
             param.SourceColumn = "ID_ICD_3";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p24";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "ID_ICD_3";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p25";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -10240,7 +10229,7 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p26";
+            param.ParameterName = "@p25";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
@@ -10253,7 +10242,7 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::StudentDatabase.Properties.Settings.Default._01516561_test1ConnectionString5;
+            this._connection.ConnectionString = global::StudentDatabase.Properties.Settings.Default._01516561_test1ConnectionString6;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10268,9 +10257,9 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO `WIZYTA` ( `ID_Pacjent`, `Data`, `Godzina`, `Objawy`, `BPrzedmiotowe`" +
-                ", `BPodmiotowe`, `ID_ICD_1`, `ID_ICD_2`, `ID_ICD_3`, `Zalecenia`, `Leki`) VALUES" +
-                " (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11)";
+            this._commandCollection[1].CommandText = "INSERT INTO `WIZYTA` (`ID_Pacjent`, `Data`, `Godzina`, `Objawy`, `BPrzedmiotowe`," +
+                " `BPodmiotowe`, `ID_ICD_1`, `ID_ICD_2`, `ID_ICD_3`, `Zalecenia`, `Leki`) VALUES " +
+                "(@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -10485,11 +10474,16 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int p1, int p2, System.DateTime p3, System.DateTime p4, string p5, string p6, string p7, int p8, global::System.Nullable<int> p9, global::System.Nullable<int> p10, string p11, string p12) {
+        public virtual int Insert(int p1, System.DateTime p2, System.DateTime p3, string p4, string p5, string p6, int p7, global::System.Nullable<int> p8, global::System.Nullable<int> p9, string p10, string p11) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(p1));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(p2));
             this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(p3));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(p4));
+            if ((p4 == null)) {
+                throw new global::System.ArgumentNullException("p4");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p4));
+            }
             if ((p5 == null)) {
                 throw new global::System.ArgumentNullException("p5");
             }
@@ -10502,36 +10496,30 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(p6));
             }
-            if ((p7 == null)) {
-                throw new global::System.ArgumentNullException("p7");
+            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(p7));
+            if ((p8.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(p8.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(p7));
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(p8));
             if ((p9.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = ((int)(p9.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((p10.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((int)(p10.Value));
+            if ((p10 == null)) {
+                throw new global::System.ArgumentNullException("p10");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(p10));
             }
             if ((p11 == null)) {
                 throw new global::System.ArgumentNullException("p11");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = ((string)(p11));
-            }
-            if ((p12 == null)) {
-                throw new global::System.ArgumentNullException("p12");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(p12));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -10555,33 +10543,37 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
                     int p1, 
-                    int p2, 
+                    System.DateTime p2, 
                     System.DateTime p3, 
-                    System.DateTime p4, 
+                    string p4, 
                     string p5, 
                     string p6, 
-                    string p7, 
-                    int p8, 
+                    int p7, 
+                    global::System.Nullable<int> p8, 
                     global::System.Nullable<int> p9, 
-                    global::System.Nullable<int> p10, 
+                    string p10, 
                     string p11, 
-                    string p12, 
+                    int p12, 
                     int p13, 
-                    int p14, 
+                    System.DateTime p14, 
                     System.DateTime p15, 
-                    System.DateTime p16, 
+                    string p16, 
                     string p17, 
                     string p18, 
-                    string p19, 
-                    int p20, 
-                    global::System.Nullable<int> p22, 
-                    global::System.Nullable<int> p24, 
-                    string p25, 
-                    string p26) {
+                    int p19, 
+                    global::System.Nullable<int> p21, 
+                    global::System.Nullable<int> p23, 
+                    string p24, 
+                    string p25) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(p1));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(p2));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(p2));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(p3));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(p4));
+            if ((p4 == null)) {
+                throw new global::System.ArgumentNullException("p4");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p4));
+            }
             if ((p5 == null)) {
                 throw new global::System.ArgumentNullException("p5");
             }
@@ -10594,24 +10586,24 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p6));
             }
-            if ((p7 == null)) {
-                throw new global::System.ArgumentNullException("p7");
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(p7));
+            if ((p8.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(p8.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(p7));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(p8));
             if ((p9.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(p9.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((p10.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(p10.Value));
+            if ((p10 == null)) {
+                throw new global::System.ArgumentNullException("p10");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(p10));
             }
             if ((p11 == null)) {
                 throw new global::System.ArgumentNullException("p11");
@@ -10619,16 +10611,16 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(p11));
             }
-            if ((p12 == null)) {
-                throw new global::System.ArgumentNullException("p12");
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(p12));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(p13));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(p14));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(p15));
+            if ((p16 == null)) {
+                throw new global::System.ArgumentNullException("p16");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(p12));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(p16));
             }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(p13));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(p14));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(p15));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(p16));
             if ((p17 == null)) {
                 throw new global::System.ArgumentNullException("p17");
             }
@@ -10641,40 +10633,34 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(p18));
             }
-            if ((p19 == null)) {
-                throw new global::System.ArgumentNullException("p19");
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(p19));
+            if ((p21.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(p21.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(p19));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(p20));
-            if ((p22.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(p22.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
-            if ((p24.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(p24.Value));
+            if ((p23.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(p23.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((p24 == null)) {
+                throw new global::System.ArgumentNullException("p24");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(p24));
             }
             if ((p25 == null)) {
                 throw new global::System.ArgumentNullException("p25");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(p25));
-            }
-            if ((p26 == null)) {
-                throw new global::System.ArgumentNullException("p26");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(p26));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -10690,37 +10676,6 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int p2, 
-                    System.DateTime p3, 
-                    System.DateTime p4, 
-                    string p5, 
-                    string p6, 
-                    string p7, 
-                    int p8, 
-                    global::System.Nullable<int> p9, 
-                    global::System.Nullable<int> p10, 
-                    string p11, 
-                    string p12, 
-                    int p13, 
-                    int p14, 
-                    System.DateTime p15, 
-                    System.DateTime p16, 
-                    string p17, 
-                    string p18, 
-                    string p19, 
-                    int p20, 
-                    global::System.Nullable<int> p22, 
-                    global::System.Nullable<int> p24, 
-                    string p25, 
-                    string p26) {
-            return this.Update(p13, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p22, p24, p25, p26);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

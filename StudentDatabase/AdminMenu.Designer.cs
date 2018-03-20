@@ -173,7 +173,7 @@
             this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemToggleSwitch1,
             this.repositoryItemCheckEdit1});
-            this.ribbon.Size = new System.Drawing.Size(1125, 147);
+            this.ribbon.Size = new System.Drawing.Size(1131, 147);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // addPatient
@@ -403,7 +403,7 @@
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 426);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1125, 23);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1131, 23);
             // 
             // poradniaDataSet
             // 
@@ -413,21 +413,28 @@
             // 
             // tabPane1
             // 
+            this.tabPane1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.tabPane1.Appearance.Options.UseBackColor = true;
+            this.tabPane1.Appearance.Options.UseTextOptions = true;
+            this.tabPane1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.tabPane1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.tabPane1.Controls.Add(this.PacjenciPage);
             this.tabPane1.Controls.Add(this.UbezpieczeniePage);
             this.tabPane1.Controls.Add(this.ICDPage);
             this.tabPane1.Controls.Add(this.WizytaPage);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPane1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabPane1.Location = new System.Drawing.Point(0, 147);
             this.tabPane1.Name = "tabPane1";
+            this.tabPane1.PageProperties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.Text;
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.PacjenciPage,
             this.WizytaPage,
             this.UbezpieczeniePage,
             this.ICDPage});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1125, 279);
-            this.tabPane1.SelectedPage = this.PacjenciPage;
-            this.tabPane1.Size = new System.Drawing.Size(1125, 279);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1131, 279);
+            this.tabPane1.SelectedPage = this.ICDPage;
+            this.tabPane1.Size = new System.Drawing.Size(1131, 279);
             this.tabPane1.TabIndex = 6;
             this.tabPane1.Text = "tabPane1";
             this.tabPane1.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.TabPane1_SelectedPageChanged);
@@ -437,7 +444,7 @@
             this.PacjenciPage.Caption = "Pacjenci";
             this.PacjenciPage.Controls.Add(this.gridPacjenci);
             this.PacjenciPage.Name = "PacjenciPage";
-            this.PacjenciPage.Size = new System.Drawing.Size(1105, 240);
+            this.PacjenciPage.Size = new System.Drawing.Size(1113, 234);
             // 
             // gridPacjenci
             // 
@@ -447,7 +454,7 @@
             this.gridPacjenci.MainView = this.gridView1;
             this.gridPacjenci.MenuManager = this.ribbon;
             this.gridPacjenci.Name = "gridPacjenci";
-            this.gridPacjenci.Size = new System.Drawing.Size(1105, 240);
+            this.gridPacjenci.Size = new System.Drawing.Size(1113, 234);
             this.gridPacjenci.TabIndex = 0;
             this.gridPacjenci.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -619,7 +626,7 @@
             this.UbezpieczeniePage.Caption = "Ubezpieczenie";
             this.UbezpieczeniePage.Controls.Add(this.gridUbezpieczenie);
             this.UbezpieczeniePage.Name = "UbezpieczeniePage";
-            this.UbezpieczeniePage.Size = new System.Drawing.Size(1105, 230);
+            this.UbezpieczeniePage.Size = new System.Drawing.Size(1113, 234);
             // 
             // gridUbezpieczenie
             // 
@@ -629,7 +636,7 @@
             this.gridUbezpieczenie.MainView = this.gridView2;
             this.gridUbezpieczenie.MenuManager = this.ribbon;
             this.gridUbezpieczenie.Name = "gridUbezpieczenie";
-            this.gridUbezpieczenie.Size = new System.Drawing.Size(1105, 230);
+            this.gridUbezpieczenie.Size = new System.Drawing.Size(1113, 234);
             this.gridUbezpieczenie.TabIndex = 0;
             this.gridUbezpieczenie.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -667,7 +674,7 @@
             this.ICDPage.Caption = "Kody ICD";
             this.ICDPage.Controls.Add(this.gridICD);
             this.ICDPage.Name = "ICDPage";
-            this.ICDPage.Size = new System.Drawing.Size(1105, 230);
+            this.ICDPage.Size = new System.Drawing.Size(1131, 279);
             // 
             // gridICD
             // 
@@ -677,7 +684,7 @@
             this.gridICD.MainView = this.gridView3;
             this.gridICD.MenuManager = this.ribbon;
             this.gridICD.Name = "gridICD";
-            this.gridICD.Size = new System.Drawing.Size(1105, 230);
+            this.gridICD.Size = new System.Drawing.Size(1131, 279);
             this.gridICD.TabIndex = 0;
             this.gridICD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -726,7 +733,7 @@
             this.WizytaPage.Caption = "Wizyta";
             this.WizytaPage.Controls.Add(this.gridWizyta);
             this.WizytaPage.Name = "WizytaPage";
-            this.WizytaPage.Size = new System.Drawing.Size(1105, 230);
+            this.WizytaPage.Size = new System.Drawing.Size(1113, 234);
             // 
             // gridWizyta
             // 
@@ -736,7 +743,7 @@
             this.gridWizyta.MainView = this.gridView4;
             this.gridWizyta.MenuManager = this.ribbon;
             this.gridWizyta.Name = "gridWizyta";
-            this.gridWizyta.Size = new System.Drawing.Size(1105, 230);
+            this.gridWizyta.Size = new System.Drawing.Size(1113, 234);
             this.gridWizyta.TabIndex = 0;
             this.gridWizyta.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -884,13 +891,13 @@
             // 
             // defaultLookAndFeel1
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Black";
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013 Dark Gray";
             // 
             // AdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1125, 449);
+            this.ClientSize = new System.Drawing.Size(1131, 449);
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
