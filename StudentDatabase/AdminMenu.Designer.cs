@@ -47,11 +47,15 @@
             this.dodajUbezp = new DevExpress.XtraBars.BarButtonItem();
             this.editPatient = new DevExpress.XtraBars.BarButtonItem();
             this.timeItem = new DevExpress.XtraBars.BarStaticItem();
+            this.deleteModeBar = new DevExpress.XtraBars.BarToggleSwitchItem();
+            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonAdmin = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PacjenciGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.WizytaGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.UbezpieczenieGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ICDGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.repositoryItemToggleSwitch1 = new DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
@@ -112,9 +116,10 @@
             this.pACJENTTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             this.admin_viewTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.admin_viewTableAdapter();
             this.wizytaTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
-            this.poradniaDataSet1 = new StudentDatabase.PoradniaDataSet();
-            this.wizytaTableAdapter1 = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
@@ -135,7 +140,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.wIZYTABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -158,13 +162,18 @@
             this.deleteButtonW,
             this.dodajUbezp,
             this.editPatient,
-            this.timeItem});
+            this.timeItem,
+            this.deleteModeBar,
+            this.barStaticItem1});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 2;
+            this.ribbon.MaxItemId = 13;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonAdmin});
-            this.ribbon.Size = new System.Drawing.Size(1123, 143);
+            this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemToggleSwitch1,
+            this.repositoryItemCheckEdit1});
+            this.ribbon.Size = new System.Drawing.Size(1125, 147);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // addPatient
@@ -196,7 +205,7 @@
             // 
             // deleteButtonP
             // 
-            this.deleteButtonP.Caption = "Usun";
+            this.deleteButtonP.Caption = "Usuń";
             this.deleteButtonP.Id = 6;
             this.deleteButtonP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("deleteButtonP.ImageOptions.Image")));
             this.deleteButtonP.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("deleteButtonP.ImageOptions.LargeImage")));
@@ -307,6 +316,18 @@
             this.timeItem.Id = 1;
             this.timeItem.Name = "timeItem";
             // 
+            // deleteModeBar
+            // 
+            this.deleteModeBar.Id = 9;
+            this.deleteModeBar.Name = "deleteModeBar";
+            this.deleteModeBar.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteModeBar_CheckedChanged);
+            // 
+            // barStaticItem1
+            // 
+            this.barStaticItem1.Caption = "Tryb usuwania";
+            this.barStaticItem1.Id = 10;
+            this.barStaticItem1.Name = "barStaticItem1";
+            // 
             // ribbonAdmin
             // 
             this.ribbonAdmin.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -325,6 +346,8 @@
             this.PacjenciGroup.ItemLinks.Add(this.refreshButton);
             this.PacjenciGroup.ItemLinks.Add(this.saveChanges);
             this.PacjenciGroup.ItemLinks.Add(this.deleteButtonP);
+            this.PacjenciGroup.ItemLinks.Add(this.deleteModeBar);
+            this.PacjenciGroup.ItemLinks.Add(this.barStaticItem1);
             this.PacjenciGroup.Name = "PacjenciGroup";
             this.PacjenciGroup.Text = "Pacjenci";
             // 
@@ -356,13 +379,31 @@
             this.ICDGroup.Name = "ICDGroup";
             this.ICDGroup.Text = "ICD";
             // 
+            // repositoryItemToggleSwitch1
+            // 
+            this.repositoryItemToggleSwitch1.AutoHeight = false;
+            this.repositoryItemToggleSwitch1.Name = "repositoryItemToggleSwitch1";
+            this.repositoryItemToggleSwitch1.OffText = "Wyłączony";
+            this.repositoryItemToggleSwitch1.OnText = "Włączony";
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Caption = "";
+            this.repositoryItemCheckEdit1.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.UserDefined;
+            this.repositoryItemCheckEdit1.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            this.repositoryItemCheckEdit1.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.repositoryItemCheckEdit1.PictureChecked = ((System.Drawing.Image)(resources.GetObject("repositoryItemCheckEdit1.PictureChecked")));
+            this.repositoryItemCheckEdit1.PictureUnchecked = ((System.Drawing.Image)(resources.GetObject("repositoryItemCheckEdit1.PictureUnchecked")));
+            // 
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.timeItem);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 418);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 426);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1123, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1125, 23);
             // 
             // poradniaDataSet
             // 
@@ -377,16 +418,16 @@
             this.tabPane1.Controls.Add(this.ICDPage);
             this.tabPane1.Controls.Add(this.WizytaPage);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane1.Location = new System.Drawing.Point(0, 143);
+            this.tabPane1.Location = new System.Drawing.Point(0, 147);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.PacjenciPage,
             this.WizytaPage,
             this.UbezpieczeniePage,
             this.ICDPage});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1123, 275);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1125, 279);
             this.tabPane1.SelectedPage = this.PacjenciPage;
-            this.tabPane1.Size = new System.Drawing.Size(1123, 275);
+            this.tabPane1.Size = new System.Drawing.Size(1125, 279);
             this.tabPane1.TabIndex = 6;
             this.tabPane1.Text = "tabPane1";
             this.tabPane1.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.TabPane1_SelectedPageChanged);
@@ -396,7 +437,7 @@
             this.PacjenciPage.Caption = "Pacjenci";
             this.PacjenciPage.Controls.Add(this.gridPacjenci);
             this.PacjenciPage.Name = "PacjenciPage";
-            this.PacjenciPage.Size = new System.Drawing.Size(1105, 230);
+            this.PacjenciPage.Size = new System.Drawing.Size(1105, 240);
             // 
             // gridPacjenci
             // 
@@ -406,7 +447,7 @@
             this.gridPacjenci.MainView = this.gridView1;
             this.gridPacjenci.MenuManager = this.ribbon;
             this.gridPacjenci.Name = "gridPacjenci";
-            this.gridPacjenci.Size = new System.Drawing.Size(1105, 230);
+            this.gridPacjenci.Size = new System.Drawing.Size(1105, 240);
             this.gridPacjenci.TabIndex = 0;
             this.gridPacjenci.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -841,21 +882,15 @@
             // 
             this.wizytaTableAdapter.ClearBeforeFill = true;
             // 
-            // poradniaDataSet1
+            // defaultLookAndFeel1
             // 
-            this.poradniaDataSet1.DataSetName = "PoradniaDataSet";
-            this.poradniaDataSet1.Locale = new System.Globalization.CultureInfo("pl");
-            this.poradniaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // wizytaTableAdapter1
-            // 
-            this.wizytaTableAdapter1.ClearBeforeFill = true;
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Black";
             // 
             // AdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 449);
+            this.ClientSize = new System.Drawing.Size(1125, 449);
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
@@ -866,6 +901,8 @@
             this.Text = "AdminMenu";
             this.Load += new System.EventHandler(this.AdminMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
@@ -886,7 +923,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.wIZYTABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -963,8 +999,6 @@
         private PoradniaDataSetTableAdapters.admin_viewTableAdapter admin_viewTableAdapter;
         private System.Windows.Forms.BindingSource wIZYTABindingSource;
         private PoradniaDataSetTableAdapters.WIZYTATableAdapter wizytaTableAdapter;
-        private PoradniaDataSet poradniaDataSet1;
-        private PoradniaDataSetTableAdapters.WIZYTATableAdapter wizytaTableAdapter1;
         private DevExpress.XtraGrid.GridControl gridWizyta;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraGrid.Columns.GridColumn colID_Wizyta;
@@ -978,5 +1012,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colID_ICD_3;
         private DevExpress.XtraGrid.Columns.GridColumn colZalecenia;
         private DevExpress.XtraGrid.Columns.GridColumn colLeki;
+        private DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch repositoryItemToggleSwitch1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraBars.BarToggleSwitchItem deleteModeBar;
+        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }

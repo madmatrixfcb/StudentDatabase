@@ -119,3 +119,4 @@ F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\Student
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.csprojResolveAssemblyReference.cache
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.csproj.CoreCompileInputs.cache
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.EditPatient.resources
+F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.csproj.CopyComplete

@@ -28,25 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.loginButton = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.passBox = new System.Windows.Forms.TextBox();
-            this.loginBox = new System.Windows.Forms.TextBox();
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.uzytkownikTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.loginBox = new System.Windows.Forms.TextBox();
+            this.passBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel1.Controls.Add(this.loginButton);
             this.panel1.Location = new System.Drawing.Point(0, 201);
             this.panel1.Name = "panel1";
@@ -63,44 +65,27 @@
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
-            // panel2
+            // poradniaDataSet
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkGray;
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.passBox);
-            this.panel2.Controls.Add(this.loginBox);
-            this.panel2.Location = new System.Drawing.Point(0, -1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(285, 205);
-            this.panel2.TabIndex = 1;
+            this.poradniaDataSet.DataSetName = "PoradniaDataSet";
+            this.poradniaDataSet.Locale = new System.Globalization.CultureInfo("pl");
+            this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // pictureBox1
+            // uzytkownikTableAdapter
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(93, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.uzytkownikTableAdapter.ClearBeforeFill = true;
             // 
-            // label2
+            // defaultLookAndFeel1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(125, 132);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Hasło:";
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Black";
             // 
-            // label1
+            // loginBox
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(125, 84);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Login:";
+            this.loginBox.Location = new System.Drawing.Point(39, 100);
+            this.loginBox.Name = "loginBox";
+            this.loginBox.Size = new System.Drawing.Size(212, 21);
+            this.loginBox.TabIndex = 0;
+            this.loginBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // passBox
             // 
@@ -111,23 +96,44 @@
             this.passBox.TabIndex = 1;
             this.passBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // loginBox
+            // label1
             // 
-            this.loginBox.Location = new System.Drawing.Point(39, 100);
-            this.loginBox.Name = "loginBox";
-            this.loginBox.Size = new System.Drawing.Size(212, 21);
-            this.loginBox.TabIndex = 0;
-            this.loginBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(125, 84);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Login:";
             // 
-            // poradniaDataSet
+            // label2
             // 
-            this.poradniaDataSet.DataSetName = "PoradniaDataSet";
-            this.poradniaDataSet.Locale = new System.Globalization.CultureInfo("pl");
-            this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(125, 132);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Hasło:";
             // 
-            // uzytkownikTableAdapter
+            // pictureBox1
             // 
-            this.uzytkownikTableAdapter.ClearBeforeFill = true;
+            this.pictureBox1.Location = new System.Drawing.Point(93, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.passBox);
+            this.panel2.Controls.Add(this.loginBox);
+            this.panel2.Location = new System.Drawing.Point(0, -1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(285, 205);
+            this.panel2.TabIndex = 1;
             // 
             // Login
             // 
@@ -140,10 +146,10 @@
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -152,13 +158,14 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button loginButton;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox passBox;
-        private System.Windows.Forms.TextBox loginBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private PoradniaDataSet poradniaDataSet;
         private PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter uzytkownikTableAdapter;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private System.Windows.Forms.TextBox loginBox;
+        private System.Windows.Forms.TextBox passBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
