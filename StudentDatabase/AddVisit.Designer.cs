@@ -73,10 +73,10 @@
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dateEdit = new DevExpress.XtraEditors.DateEdit();
             this.timeEdit = new DevExpress.XtraEditors.TimeEdit();
-            this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
-            this.pacjentTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
-            this.wizytaTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.pacjentTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
+            this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
+            this.wizytaTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pacjentCB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
@@ -472,21 +472,21 @@
             this.timeEdit.TabIndex = 3;
             this.timeEdit.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.timeEdit_Spin);
             // 
-            // iCDTableAdapter
+            // defaultLookAndFeel1
             // 
-            this.iCDTableAdapter.ClearBeforeFill = true;
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013 Dark Gray";
             // 
             // pacjentTableAdapter
             // 
             this.pacjentTableAdapter.ClearBeforeFill = true;
             // 
+            // iCDTableAdapter
+            // 
+            this.iCDTableAdapter.ClearBeforeFill = true;
+            // 
             // wizytaTableAdapter
             // 
             this.wizytaTableAdapter.ClearBeforeFill = true;
-            // 
-            // defaultLookAndFeel1
-            // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013 Dark Gray";
             // 
             // AddVisit
             // 

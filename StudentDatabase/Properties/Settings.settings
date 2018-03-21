@@ -53,6 +53,22 @@
     <Setting Name="_01516561_test1ConnectionString6" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;server=test1.swietarodzina.com.pl;user id=01516561_test1;password=BgJk9r7it2pE;persistsecurityinfo=True;database=01516561_test1;allowuservariables=True;Convert Zero Datetime=true;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">server=test1.swietarodzina.com.pl;user id=01516561_test1;password=BgJk9r7it2pE;persistsecurityinfo=True;database=01516561_test1;allowuservariables=True;Convert Zero Datetime=true;</Value>
+    </Setting>
+    <Setting Name="_01516561_test1ConnectionString7" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;server=test1.swietarodzina.com.pl;user id=01516561_test1;password=BgJk9r7it2pE;persistsecurityinfo=True;database=01516561_test1;allowuservariables=True;Convert Zero Datetime=true;&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">server=test1.swietarodzina.com.pl;user id=01516561_test1;password=BgJk9r7it2pE;persistsecurityinfo=True;database=01516561_test1;allowuservariables=True;Convert Zero Datetime=true;</Value>
+    </Setting>
+    <Setting Name="_01516561_test1ConnectionString8" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;ConnectionString&gt;server=test1.swietarodzina.com.pl;user id=01516561_test1;persistsecurityinfo=True;database=01516561_test1;allowuservariables=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;MySql.Data.MySqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>

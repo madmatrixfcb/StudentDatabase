@@ -16,6 +16,8 @@ namespace StudentDatabase
 
         private void AdminMenu_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'poradniaDataSet.visit_view' table. You can move, or remove it, as needed.
+            this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
             // TODO: This line of code loads data into the 'poradniaDataSet.admin_view' table. You can move, or remove it, as needed.
             this.admin_viewTableAdapter.Fill(this.poradniaDataSet.admin_view);
             // TODO: This line of code loads data into the 'poradniaDataSet.PACJENT' table. You can move, or remove it, as needed.
@@ -91,6 +93,22 @@ namespace StudentDatabase
                 gridPacjenci.DataSource = this.poradniaDataSet.admin_view;
                 gridPacjenci.Refresh();
                 deleteButtonP.Enabled = false;
+            }
+        }
+
+        private void deleteBarWizyta_CheckedChanged(object sender, ItemClickEventArgs e)
+        {
+            if (deleteBarWizyta.Checked == true)
+            {
+                gridWizyta.DataSource = this.poradniaDataSet.WIZYTA;
+                gridWizyta.Refresh();
+                deleteButtonW.Enabled = true;
+            }
+            else
+            {
+                gridWizyta.DataSource = this.poradniaDataSet.visit_view;
+                gridWizyta.Refresh();
+                deleteButtonW.Enabled = false;
             }
         }
         //-----------------------------------PATIENT RIBBON-----------------------------------//
