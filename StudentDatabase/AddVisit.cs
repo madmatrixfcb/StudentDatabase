@@ -106,5 +106,16 @@ namespace StudentDatabase
                 timeEdit.Time = new DateTime(time.Year, time.Month, time.Day, time.Hour, minute, time.Second);
             }
         }
+
+        private void pacjentCB_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            int theIndex = pacjentCB.Properties.GetIndexByKeyValue(pacjentCB.EditValue);
+            if (pacjentCB.Properties.View.IsDataRow(theIndex))
+            {
+                DataRow row = pacjentCB.Properties.View.GetDataRow(theIndex);
+                e.DisplayText = row["Imie"].ToString() + " " + row["Nazwisko"].ToString();
+            }
+        }
+
     }
 }

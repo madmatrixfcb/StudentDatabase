@@ -79,6 +79,8 @@
             this.krajSelect = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.kRAJBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID_Kraj = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKraj = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pACJENTTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             this.poradniaDataSet1 = new StudentDatabase.PoradniaDataSet();
             this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -269,6 +271,7 @@
             // 
             // paszportTB
             // 
+            this.paszportTB.Enabled = false;
             this.paszportTB.Location = new System.Drawing.Point(124, 425);
             this.paszportTB.Name = "paszportTB";
             this.paszportTB.Size = new System.Drawing.Size(180, 20);
@@ -490,10 +493,28 @@
             // 
             // gridView2
             // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID_Kraj,
+            this.colKraj});
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colID_Kraj, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // colID_Kraj
+            // 
+            this.colID_Kraj.FieldName = "ID_Kraj";
+            this.colID_Kraj.Name = "colID_Kraj";
+            // 
+            // colKraj
+            // 
+            this.colKraj.FieldName = "Kraj";
+            this.colKraj.Name = "colKraj";
+            this.colKraj.Visible = true;
+            this.colKraj.VisibleIndex = 0;
+            this.colKraj.Width = 76;
             // 
             // pACJENTTableAdapter
             // 
@@ -564,7 +585,7 @@
             this.Controls.Add(this.dataur);
             this.Controls.Add(this.imieTB);
             this.Name = "AddPatient";
-            this.Text = "AddPatient";
+            this.Text = "Dodaj pacjenta";
             this.Load += new System.EventHandler(this.AddPatient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.miastoTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kodTB.Properties)).EndInit();
@@ -647,5 +668,7 @@
         private System.Windows.Forms.ComboBox plecSelect;
         private DevExpress.XtraEditors.SearchLookUpEdit krajSelect;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn colID_Kraj;
+        private DevExpress.XtraGrid.Columns.GridColumn colKraj;
     }
 }

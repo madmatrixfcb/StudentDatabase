@@ -219,8 +219,9 @@
             this.pacjentCB.Properties.NullText = "";
             this.pacjentCB.Properties.ValueMember = "ID_Pacjent";
             this.pacjentCB.Properties.View = this.searchLookUpEdit1View;
-            this.pacjentCB.Size = new System.Drawing.Size(126, 20);
+            this.pacjentCB.Size = new System.Drawing.Size(360, 20);
             this.pacjentCB.TabIndex = 1;
+            this.pacjentCB.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.pacjentCB_CustomDisplayText);
             // 
             // pACJENTBindingSource
             // 
@@ -472,10 +473,6 @@
             this.timeEdit.TabIndex = 3;
             this.timeEdit.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.timeEdit_Spin);
             // 
-            // defaultLookAndFeel1
-            // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013 Dark Gray";
-            // 
             // pacjentTableAdapter
             // 
             this.pacjentTableAdapter.ClearBeforeFill = true;
@@ -492,7 +489,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 442);
+            this.ClientSize = new System.Drawing.Size(1217, 554);
             this.Controls.Add(this.timeEdit);
             this.Controls.Add(this.dateEdit);
             this.Controls.Add(this.ICDCB3);
