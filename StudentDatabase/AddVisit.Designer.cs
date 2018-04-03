@@ -44,8 +44,6 @@
             this.objawyTB = new System.Windows.Forms.RichTextBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.pacjentCB = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID_Pacjent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colImie = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -65,24 +63,32 @@
             this.colPaszport = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUbezpieczenie = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ICDCB1 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.iCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID_ICD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKod_ICD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRozpoznanie = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ICDCB2 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ICDCB3 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dateEdit = new DevExpress.XtraEditors.DateEdit();
-            this.timeEdit = new DevExpress.XtraEditors.TimeEdit();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.timeEdit = new DevExpress.XtraEditors.TimeEdit();
+            this.iCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
+            this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pacjentTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
             this.wizytaTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pacjentCB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICDCB1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICDCB2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -91,6 +97,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // bpodTB
@@ -195,7 +204,7 @@
             // 
             this.objawyTB.Location = new System.Drawing.Point(140, 83);
             this.objawyTB.Name = "objawyTB";
-            this.objawyTB.Size = new System.Drawing.Size(158, 67);
+            this.objawyTB.Size = new System.Drawing.Size(462, 67);
             this.objawyTB.TabIndex = 4;
             this.objawyTB.Text = "";
             // 
@@ -222,17 +231,6 @@
             this.pacjentCB.Size = new System.Drawing.Size(360, 20);
             this.pacjentCB.TabIndex = 1;
             this.pacjentCB.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.pacjentCB_CustomDisplayText);
-            // 
-            // pACJENTBindingSource
-            // 
-            this.pACJENTBindingSource.DataMember = "PACJENT";
-            this.pACJENTBindingSource.DataSource = this.poradniaDataSet;
-            // 
-            // poradniaDataSet
-            // 
-            this.poradniaDataSet.DataSetName = "PoradniaDataSet";
-            this.poradniaDataSet.Locale = new System.Globalization.CultureInfo("pl");
-            this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // searchLookUpEdit1View
             // 
@@ -385,13 +383,12 @@
             this.ICDCB1.Size = new System.Drawing.Size(158, 20);
             this.ICDCB1.TabIndex = 7;
             // 
-            // iCDBindingSource
-            // 
-            this.iCDBindingSource.DataMember = "ICD";
-            this.iCDBindingSource.DataSource = this.poradniaDataSet;
-            // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID_ICD,
+            this.colKod_ICD,
+            this.colRozpoznanie});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.FindNullPrompt = "Wpisz co chcesz wyszukać...";
@@ -399,6 +396,25 @@
             this.gridView1.OptionsFind.ShowFindButton = false;
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colID_ICD
+            // 
+            this.colID_ICD.FieldName = "ID_ICD";
+            this.colID_ICD.Name = "colID_ICD";
+            // 
+            // colKod_ICD
+            // 
+            this.colKod_ICD.FieldName = "Kod_ICD";
+            this.colKod_ICD.Name = "colKod_ICD";
+            this.colKod_ICD.Visible = true;
+            this.colKod_ICD.VisibleIndex = 0;
+            // 
+            // colRozpoznanie
+            // 
+            this.colRozpoznanie.FieldName = "Rozpoznanie";
+            this.colRozpoznanie.Name = "colRozpoznanie";
+            this.colRozpoznanie.Visible = true;
+            this.colRozpoznanie.VisibleIndex = 1;
             // 
             // ICDCB2
             // 
@@ -416,6 +432,10 @@
             // 
             // gridView2
             // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3});
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsFind.FindNullPrompt = "Wpisz co chcesz wyszukać...";
@@ -423,6 +443,27 @@
             this.gridView2.OptionsFind.ShowFindButton = false;
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn1, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.FieldName = "ID_ICD";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.FieldName = "Kod_ICD";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.FieldName = "Rozpoznanie";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 1;
             // 
             // ICDCB3
             // 
@@ -440,6 +481,10 @@
             // 
             // gridView3
             // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6});
             this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsFind.FindNullPrompt = "Wpisz co chcesz wyszukać...";
@@ -447,6 +492,25 @@
             this.gridView3.OptionsFind.ShowFindButton = false;
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.FieldName = "ID_ICD";
+            this.gridColumn4.Name = "gridColumn4";
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.FieldName = "Kod_ICD";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 0;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.FieldName = "Rozpoznanie";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 1;
             // 
             // dateEdit
             // 
@@ -460,18 +524,37 @@
             this.dateEdit.Size = new System.Drawing.Size(126, 20);
             this.dateEdit.TabIndex = 2;
             // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013 Dark Gray";
+            // 
             // timeEdit
             // 
-            this.timeEdit.EditValue = new System.DateTime(2018, 3, 5, 0, 0, 0, 0);
-            this.timeEdit.Location = new System.Drawing.Point(260, 58);
+            this.timeEdit.EditValue = new System.DateTime(2018, 3, 27, 0, 0, 0, 0);
+            this.timeEdit.Location = new System.Drawing.Point(249, 57);
             this.timeEdit.Name = "timeEdit";
             this.timeEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.timeEdit.Properties.Mask.EditMask = "t";
-            this.timeEdit.Properties.TouchUIMinuteIncrement = 5;
             this.timeEdit.Size = new System.Drawing.Size(100, 20);
-            this.timeEdit.TabIndex = 3;
+            this.timeEdit.TabIndex = 89;
             this.timeEdit.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.timeEdit_Spin);
+            // 
+            // iCDBindingSource
+            // 
+            this.iCDBindingSource.DataMember = "ICD";
+            this.iCDBindingSource.DataSource = this.poradniaDataSet;
+            // 
+            // poradniaDataSet
+            // 
+            this.poradniaDataSet.DataSetName = "PoradniaDataSet";
+            this.poradniaDataSet.Locale = new System.Globalization.CultureInfo("pl");
+            this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pACJENTBindingSource
+            // 
+            this.pACJENTBindingSource.DataMember = "PACJENT";
+            this.pACJENTBindingSource.DataSource = this.poradniaDataSet;
             // 
             // pacjentTableAdapter
             // 
@@ -514,11 +597,8 @@
             this.Text = "AddVisit";
             this.Load += new System.EventHandler(this.AddVisit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pacjentCB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICDCB1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICDCB2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
@@ -527,6 +607,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -561,7 +644,6 @@
         private DevExpress.XtraEditors.SearchLookUpEdit ICDCB3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraEditors.DateEdit dateEdit;
-        private DevExpress.XtraEditors.TimeEdit timeEdit;
         private DevExpress.XtraGrid.Columns.GridColumn colID_Pacjent;
         private DevExpress.XtraGrid.Columns.GridColumn colImie;
         private DevExpress.XtraGrid.Columns.GridColumn colNazwisko;
@@ -581,5 +663,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn colUbezpieczenie;
         private PoradniaDataSetTableAdapters.WIZYTATableAdapter wizytaTableAdapter;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private DevExpress.XtraEditors.TimeEdit timeEdit;
+        private DevExpress.XtraGrid.Columns.GridColumn colID_ICD;
+        private DevExpress.XtraGrid.Columns.GridColumn colKod_ICD;
+        private DevExpress.XtraGrid.Columns.GridColumn colRozpoznanie;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
     }
 }

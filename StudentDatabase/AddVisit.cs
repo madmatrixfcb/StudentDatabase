@@ -30,7 +30,6 @@ namespace StudentDatabase
             this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
             timeEdit.EditValue = DateTime.Now;
             dateEdit.EditValue = DateTime.Now;
-            checkTime(timeEdit);
         }
 
         private void addVisitButton_Click(object sender, EventArgs e)
@@ -84,6 +83,22 @@ namespace StudentDatabase
                 var time = timeEdit.Time;
                 var minuteIncrement = 15;
                 int minute = time.AddMinutes((e.IsSpinUp ? 1 : -1) * minuteIncrement).Minute;
+                if (minute >= 45)
+                {
+                    minute = 45;
+                }
+                else if(minute >= 30)
+                {
+                    minute = 30;
+                }
+                else if (minute >= 15)
+                {
+                    minute = 15;
+                }
+                else
+                {
+                    minute = 0;
+                }
 
                 var selectionStart = timeEdit.SelectionStart;
                 var selectionLength = timeEdit.SelectionLength;
@@ -93,7 +108,7 @@ namespace StudentDatabase
             }
         }
 
-        private void checkTime(object sender)
+       /* private void timeEdit_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
         {
             var timeEdit = sender as TimeEdit;
             var time = timeEdit.Time;
@@ -105,7 +120,7 @@ namespace StudentDatabase
                 minute = minute + rest;
                 timeEdit.Time = new DateTime(time.Year, time.Month, time.Day, time.Hour, minute, time.Second);
             }
-        }
+        }*/
 
         private void pacjentCB_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
         {
@@ -116,6 +131,5 @@ namespace StudentDatabase
                 e.DisplayText = row["Imie"].ToString() + " " + row["Nazwisko"].ToString();
             }
         }
-
     }
 }

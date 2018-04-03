@@ -15,7 +15,7 @@
     <Shape ID="DesignTable:PACJENT" ZOrder="4" X="38" Y="13" Height="362" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:admin_view" ZOrder="3" X="183" Y="415" Height="187" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="97" />
     <Shape ID="DesignTable:WIZYTA" ZOrder="2" X="828" Y="376" Height="324" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:visit_view" ZOrder="1" X="363" Y="427" Height="286" Width="200" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
+    <Shape ID="DesignTable:visit_view" ZOrder="1" X="379" Y="418" Height="287" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="197" />
   </Shapes>
   <Connectors />
 </DiagramLayout>
