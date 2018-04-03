@@ -503,7 +503,7 @@ WHERE        (U.Login = @login) AND (U.Haslo = @pass)</CommandText>
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="_01516561_test1ConnectionString2 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="mainFill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="mainGetData" GeneratorSourceName="mainFill" GetMethodModifier="Public" GetMethodName="mainGetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="mainGetData" UserSourceName="mainFill">
+              <DbSource ConnectionRef="_01516561_test1ConnectionString2 (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="mainFill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="mainGetData" GeneratorSourceName="mainFill" GetMethodModifier="Public" GetMethodName="mainGetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="mainGetData" UserSourceName="mainFill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT P.ID_Pacjent, P.Imie, P.Nazwisko, P.Data_urodzenia, K.Kraj, P.Telefon, PL.Plec, P.Ulica, P.Nr_budynku, P.Nr_mieszkania, P.Kod_pocztowy, P.Miasto, P.PESEL, P.Karta_polaka, P.Dowod_osobisty, P.Paszport, U.Rodzaj as Ubezpieczenie
@@ -675,7 +675,7 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie</CommandTe
               <DbSource ConnectionRef="01516561_test1ConnectionString" DbObjectName="`01516561_test1`.visit_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT `ID_Wizyta`, `Pacjent`, `Data`, `Godzina`, `Objawy`, `BPrzedmiotowe`, `BPodmiotowe`, `ICD`, `Zalecenia`, `Leki` FROM `01516561_test1`.`visit_view`</CommandText>
+                    <CommandText>SELECT `ID_Wizyta`, `ID_Pacjent`, `Data`, `Godzina`, `Objawy`, `BPrzedmiotowe`, `BPodmiotowe`, `ID_ICD_1`, `ID_ICD_2`, `ID_ICD_3`, `Zalecenia`, `Leki` FROM `01516561_test1`.`visit_view`</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -683,13 +683,15 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie</CommandTe
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="ID_Wizyta" DataSetColumn="ID_Wizyta" />
-              <Mapping SourceColumn="Pacjent" DataSetColumn="Pacjent" />
+              <Mapping SourceColumn="ID_Pacjent" DataSetColumn="ID_Pacjent" />
               <Mapping SourceColumn="Data" DataSetColumn="Data" />
               <Mapping SourceColumn="Godzina" DataSetColumn="Godzina" />
               <Mapping SourceColumn="Objawy" DataSetColumn="Objawy" />
               <Mapping SourceColumn="BPrzedmiotowe" DataSetColumn="BPrzedmiotowe" />
               <Mapping SourceColumn="BPodmiotowe" DataSetColumn="BPodmiotowe" />
-              <Mapping SourceColumn="ICD" DataSetColumn="ICD" />
+              <Mapping SourceColumn="ID_ICD_1" DataSetColumn="ID_ICD_1" />
+              <Mapping SourceColumn="ID_ICD_2" DataSetColumn="ID_ICD_2" />
+              <Mapping SourceColumn="ID_ICD_3" DataSetColumn="ID_ICD_3" />
               <Mapping SourceColumn="Zalecenia" DataSetColumn="Zalecenia" />
               <Mapping SourceColumn="Leki" DataSetColumn="Leki" />
             </Mappings>
@@ -1119,7 +1121,7 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie</CommandTe
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID_Wizyta" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID_Wizyta" msprop:Generator_ColumnPropNameInRow="ID_Wizyta" msprop:Generator_ColumnPropNameInTable="ID_WizytaColumn" msprop:Generator_UserColumnName="ID_Wizyta" type="xs:int" />
-              <xs:element name="Pacjent" msprop:Generator_ColumnVarNameInTable="columnPacjent" msprop:Generator_ColumnPropNameInRow="Pacjent" msprop:Generator_ColumnPropNameInTable="PacjentColumn" msprop:Generator_UserColumnName="Pacjent">
+              <xs:element name="ID_Pacjent" msprop:Generator_ColumnVarNameInTable="columnID_Pacjent" msprop:Generator_ColumnPropNameInRow="ID_Pacjent" msprop:Generator_ColumnPropNameInTable="ID_PacjentColumn" msprop:Generator_UserColumnName="ID_Pacjent">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="101" />
@@ -1155,10 +1157,24 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie</CommandTe
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ICD" msprop:Generator_ColumnVarNameInTable="columnICD" msprop:Generator_ColumnPropNameInRow="ICD" msprop:Generator_ColumnPropNameInTable="ICDColumn" msprop:Generator_UserColumnName="ICD">
+              <xs:element name="ID_ICD_1" msprop:Generator_ColumnVarNameInTable="columnID_ICD_1" msprop:Generator_ColumnPropNameInRow="ID_ICD_1" msprop:Generator_ColumnPropNameInTable="ID_ICD_1Column" msprop:Generator_UserColumnName="ID_ICD_1">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="587" />
+                    <xs:maxLength value="193" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_ICD_2" msprop:Generator_ColumnVarNameInTable="columnID_ICD_2" msprop:Generator_ColumnPropNameInRow="ID_ICD_2" msprop:Generator_ColumnPropNameInTable="ID_ICD_2Column" msprop:Generator_UserColumnName="ID_ICD_2">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="193" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID_ICD_3" msprop:Generator_ColumnVarNameInTable="columnID_ICD_3" msprop:Generator_ColumnPropNameInRow="ID_ICD_3" msprop:Generator_ColumnPropNameInTable="ID_ICD_3Column" msprop:Generator_UserColumnName="ID_ICD_3">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="193" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

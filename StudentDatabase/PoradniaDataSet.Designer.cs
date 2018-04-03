@@ -3813,7 +3813,7 @@ namespace StudentDatabase {
             
             private global::System.Data.DataColumn columnID_Wizyta;
             
-            private global::System.Data.DataColumn columnPacjent;
+            private global::System.Data.DataColumn columnID_Pacjent;
             
             private global::System.Data.DataColumn columnData;
             
@@ -3825,7 +3825,11 @@ namespace StudentDatabase {
             
             private global::System.Data.DataColumn columnBPodmiotowe;
             
-            private global::System.Data.DataColumn columnICD;
+            private global::System.Data.DataColumn columnID_ICD_1;
+            
+            private global::System.Data.DataColumn columnID_ICD_2;
+            
+            private global::System.Data.DataColumn columnID_ICD_3;
             
             private global::System.Data.DataColumn columnZalecenia;
             
@@ -3874,9 +3878,9 @@ namespace StudentDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PacjentColumn {
+            public global::System.Data.DataColumn ID_PacjentColumn {
                 get {
-                    return this.columnPacjent;
+                    return this.columnID_Pacjent;
                 }
             }
             
@@ -3922,9 +3926,25 @@ namespace StudentDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ICDColumn {
+            public global::System.Data.DataColumn ID_ICD_1Column {
                 get {
-                    return this.columnICD;
+                    return this.columnID_ICD_1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ID_ICD_2Column {
+                get {
+                    return this.columnID_ICD_2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ID_ICD_3Column {
+                get {
+                    return this.columnID_ICD_3;
                 }
             }
             
@@ -3981,17 +4001,19 @@ namespace StudentDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public visit_viewRow Addvisit_viewRow(string Pacjent, System.DateTime Data, string Godzina, string Objawy, string BPrzedmiotowe, string BPodmiotowe, string ICD, string Zalecenia, string Leki) {
+            public visit_viewRow Addvisit_viewRow(string ID_Pacjent, System.DateTime Data, string Godzina, string Objawy, string BPrzedmiotowe, string BPodmiotowe, string ID_ICD_1, string ID_ICD_2, string ID_ICD_3, string Zalecenia, string Leki) {
                 visit_viewRow rowvisit_viewRow = ((visit_viewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Pacjent,
+                        ID_Pacjent,
                         Data,
                         Godzina,
                         Objawy,
                         BPrzedmiotowe,
                         BPodmiotowe,
-                        ICD,
+                        ID_ICD_1,
+                        ID_ICD_2,
+                        ID_ICD_3,
                         Zalecenia,
                         Leki};
                 rowvisit_viewRow.ItemArray = columnValuesArray;
@@ -4024,13 +4046,15 @@ namespace StudentDatabase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
                 this.columnID_Wizyta = base.Columns["ID_Wizyta"];
-                this.columnPacjent = base.Columns["Pacjent"];
+                this.columnID_Pacjent = base.Columns["ID_Pacjent"];
                 this.columnData = base.Columns["Data"];
                 this.columnGodzina = base.Columns["Godzina"];
                 this.columnObjawy = base.Columns["Objawy"];
                 this.columnBPrzedmiotowe = base.Columns["BPrzedmiotowe"];
                 this.columnBPodmiotowe = base.Columns["BPodmiotowe"];
-                this.columnICD = base.Columns["ICD"];
+                this.columnID_ICD_1 = base.Columns["ID_ICD_1"];
+                this.columnID_ICD_2 = base.Columns["ID_ICD_2"];
+                this.columnID_ICD_3 = base.Columns["ID_ICD_3"];
                 this.columnZalecenia = base.Columns["Zalecenia"];
                 this.columnLeki = base.Columns["Leki"];
             }
@@ -4040,8 +4064,8 @@ namespace StudentDatabase {
             private void InitClass() {
                 this.columnID_Wizyta = new global::System.Data.DataColumn("ID_Wizyta", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Wizyta);
-                this.columnPacjent = new global::System.Data.DataColumn("Pacjent", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPacjent);
+                this.columnID_Pacjent = new global::System.Data.DataColumn("ID_Pacjent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Pacjent);
                 this.columnData = new global::System.Data.DataColumn("Data", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnData);
                 this.columnGodzina = new global::System.Data.DataColumn("Godzina", typeof(string), null, global::System.Data.MappingType.Element);
@@ -4052,8 +4076,12 @@ namespace StudentDatabase {
                 base.Columns.Add(this.columnBPrzedmiotowe);
                 this.columnBPodmiotowe = new global::System.Data.DataColumn("BPodmiotowe", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBPodmiotowe);
-                this.columnICD = new global::System.Data.DataColumn("ICD", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnICD);
+                this.columnID_ICD_1 = new global::System.Data.DataColumn("ID_ICD_1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_ICD_1);
+                this.columnID_ICD_2 = new global::System.Data.DataColumn("ID_ICD_2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_ICD_2);
+                this.columnID_ICD_3 = new global::System.Data.DataColumn("ID_ICD_3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_ICD_3);
                 this.columnZalecenia = new global::System.Data.DataColumn("Zalecenia", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnZalecenia);
                 this.columnLeki = new global::System.Data.DataColumn("Leki", typeof(string), null, global::System.Data.MappingType.Element);
@@ -4065,8 +4093,8 @@ namespace StudentDatabase {
                 this.columnID_Wizyta.AutoIncrementStep = -1;
                 this.columnID_Wizyta.AllowDBNull = false;
                 this.columnID_Wizyta.Unique = true;
-                this.columnPacjent.AllowDBNull = false;
-                this.columnPacjent.MaxLength = 101;
+                this.columnID_Pacjent.AllowDBNull = false;
+                this.columnID_Pacjent.MaxLength = 101;
                 this.columnData.AllowDBNull = false;
                 this.columnGodzina.AllowDBNull = false;
                 this.columnGodzina.MaxLength = 10;
@@ -4076,8 +4104,12 @@ namespace StudentDatabase {
                 this.columnBPrzedmiotowe.MaxLength = 145;
                 this.columnBPodmiotowe.AllowDBNull = false;
                 this.columnBPodmiotowe.MaxLength = 145;
-                this.columnICD.AllowDBNull = false;
-                this.columnICD.MaxLength = 587;
+                this.columnID_ICD_1.AllowDBNull = false;
+                this.columnID_ICD_1.MaxLength = 193;
+                this.columnID_ICD_2.AllowDBNull = false;
+                this.columnID_ICD_2.MaxLength = 193;
+                this.columnID_ICD_3.AllowDBNull = false;
+                this.columnID_ICD_3.MaxLength = 193;
                 this.columnZalecenia.AllowDBNull = false;
                 this.columnZalecenia.MaxLength = 145;
                 this.columnLeki.AllowDBNull = false;
@@ -5397,12 +5429,12 @@ namespace StudentDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Pacjent {
+            public string ID_Pacjent {
                 get {
-                    return ((string)(this[this.tablevisit_view.PacjentColumn]));
+                    return ((string)(this[this.tablevisit_view.ID_PacjentColumn]));
                 }
                 set {
-                    this[this.tablevisit_view.PacjentColumn] = value;
+                    this[this.tablevisit_view.ID_PacjentColumn] = value;
                 }
             }
             
@@ -5463,12 +5495,34 @@ namespace StudentDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string ICD {
+            public string ID_ICD_1 {
                 get {
-                    return ((string)(this[this.tablevisit_view.ICDColumn]));
+                    return ((string)(this[this.tablevisit_view.ID_ICD_1Column]));
                 }
                 set {
-                    this[this.tablevisit_view.ICDColumn] = value;
+                    this[this.tablevisit_view.ID_ICD_1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ID_ICD_2 {
+                get {
+                    return ((string)(this[this.tablevisit_view.ID_ICD_2Column]));
+                }
+                set {
+                    this[this.tablevisit_view.ID_ICD_2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ID_ICD_3 {
+                get {
+                    return ((string)(this[this.tablevisit_view.ID_ICD_3Column]));
+                }
+                set {
+                    this[this.tablevisit_view.ID_ICD_3Column] = value;
                 }
             }
             
@@ -11468,13 +11522,15 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "visit_view";
             tableMapping.ColumnMappings.Add("ID_Wizyta", "ID_Wizyta");
-            tableMapping.ColumnMappings.Add("Pacjent", "Pacjent");
+            tableMapping.ColumnMappings.Add("ID_Pacjent", "ID_Pacjent");
             tableMapping.ColumnMappings.Add("Data", "Data");
             tableMapping.ColumnMappings.Add("Godzina", "Godzina");
             tableMapping.ColumnMappings.Add("Objawy", "Objawy");
             tableMapping.ColumnMappings.Add("BPrzedmiotowe", "BPrzedmiotowe");
             tableMapping.ColumnMappings.Add("BPodmiotowe", "BPodmiotowe");
-            tableMapping.ColumnMappings.Add("ICD", "ICD");
+            tableMapping.ColumnMappings.Add("ID_ICD_1", "ID_ICD_1");
+            tableMapping.ColumnMappings.Add("ID_ICD_2", "ID_ICD_2");
+            tableMapping.ColumnMappings.Add("ID_ICD_3", "ID_ICD_3");
             tableMapping.ColumnMappings.Add("Zalecenia", "Zalecenia");
             tableMapping.ColumnMappings.Add("Leki", "Leki");
             this._adapter.TableMappings.Add(tableMapping);
@@ -11493,8 +11549,9 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `ID_Wizyta`, `Pacjent`, `Data`, `Godzina`, `Objawy`, `BPrzedmiotowe`, `BPo" +
-                "dmiotowe`, `ICD`, `Zalecenia`, `Leki` FROM `01516561_test1`.`visit_view`";
+            this._commandCollection[0].CommandText = "SELECT `ID_Wizyta`, `ID_Pacjent`, `Data`, `Godzina`, `Objawy`, `BPrzedmiotowe`, `" +
+                "BPodmiotowe`, `ID_ICD_1`, `ID_ICD_2`, `ID_ICD_3`, `Zalecenia`, `Leki` FROM `0151" +
+                "6561_test1`.`visit_view`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
