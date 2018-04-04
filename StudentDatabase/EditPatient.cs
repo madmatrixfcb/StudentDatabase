@@ -32,6 +32,8 @@ namespace StudentDatabase
 
         }
 
+        //-----------------------OTHER----------------------------------/
+
         public void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             IDTB.EditValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "ID_Pacjent");
@@ -52,6 +54,8 @@ namespace StudentDatabase
             ubezpieczenieSelect.EditValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "Ubezpieczenie");
             plecSelect.EditValue = gridView1.GetRowCellValue(e.FocusedRowHandle, "Plec");
         }
+
+        //-----------------------BUTTONS----------------------------------/
 
         private void EditPatient2_Click(object sender, EventArgs e)
         {
@@ -102,6 +106,8 @@ namespace StudentDatabase
         {
             this.Close();
         }
+
+        //-----------------------TEXT BOXES----------------------------------/
 
         private void paszportTB_EditValueChanged(object sender, EventArgs e)
         {

@@ -39,13 +39,21 @@ namespace StudentDatabase
 
 
 
-        private void loginButton_Click(object sender, EventArgs e)
+        public void loginButton_Click(object sender, EventArgs e)
         {
             String login = Convert.ToString(loginBox.Text);
             String pass = Convert.ToString(passBox.Text);
             String userType = Convert.ToString(uzytkownikTableAdapter.SelectLogin(login, pass));
 
             if (userType == "Admin")
+            {
+                AdminMenu adminMenu = new AdminMenu();
+                this.Hide();
+                adminMenu.ShowDialog();
+                this.Close();
+            }
+
+            else if (userType == "Lekarz")
             {
                 AdminMenu adminMenu = new AdminMenu();
                 this.Hide();

@@ -107,20 +107,6 @@ namespace StudentDatabase
             }
         }
 
-       /* private void timeEdit_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
-        {
-            var timeEdit = sender as TimeEdit;
-            var time = timeEdit.Time;
-            int minute = time.Minute;
-            int rest;
-            if (minute % 15 > 0)
-            {
-                rest = minute - (minute % 15);
-                minute = minute + rest;
-                timeEdit.Time = new DateTime(time.Year, time.Month, time.Day, time.Hour, minute, time.Second);
-            }
-        }*/
-
         private void pacjentCB_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
         {
             int theIndex = pacjentCB.Properties.GetIndexByKeyValue(pacjentCB.EditValue);

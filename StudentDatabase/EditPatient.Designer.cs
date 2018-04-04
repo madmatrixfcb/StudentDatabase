@@ -39,9 +39,11 @@
             this.kRAJBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kRAJTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.KRAJTableAdapter();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.closeButton = new DevExpress.XtraEditors.SimpleButton();
+            this.ubezpieczenieSelect = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.plecSelect = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.CheckButton = new DevExpress.XtraEditors.SimpleButton();
             this.krajSelect = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID_Kraj = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -100,9 +102,8 @@
             this.colPaszport = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUbezpieczenie = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pacjentTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
-            this.ubezpieczenieSelect = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.closeButton = new DevExpress.XtraEditors.SimpleButton();
+            this.colID_Ubezpieczenie = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRodzaj = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pLECBindingSource)).BeginInit();
@@ -111,6 +112,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.kRAJBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ubezpieczenieSelect.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plecSelect.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.krajSelect.Properties)).BeginInit();
@@ -136,8 +139,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imieTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridEditPatient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ubezpieczenieSelect.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // uBEZPIECZENIEBindingSource
@@ -190,7 +191,6 @@
             this.splitContainerControl1.Panel1.Controls.Add(this.closeButton);
             this.splitContainerControl1.Panel1.Controls.Add(this.ubezpieczenieSelect);
             this.splitContainerControl1.Panel1.Controls.Add(this.plecSelect);
-            this.splitContainerControl1.Panel1.Controls.Add(this.CheckButton);
             this.splitContainerControl1.Panel1.Controls.Add(this.krajSelect);
             this.splitContainerControl1.Panel1.Controls.Add(this.IDTB);
             this.splitContainerControl1.Panel1.Controls.Add(this.labelControl15);
@@ -234,6 +234,43 @@
             this.splitContainerControl1.TabIndex = 112;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(126, 567);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(99, 23);
+            this.closeButton.TabIndex = 155;
+            this.closeButton.Text = "Zamknij";
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
+            // ubezpieczenieSelect
+            // 
+            this.ubezpieczenieSelect.EditValue = "";
+            this.ubezpieczenieSelect.Location = new System.Drawing.Point(145, 463);
+            this.ubezpieczenieSelect.Name = "ubezpieczenieSelect";
+            this.ubezpieczenieSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ubezpieczenieSelect.Properties.DataSource = this.uBEZPIECZENIEBindingSource;
+            this.ubezpieczenieSelect.Properties.DisplayMember = "Rodzaj";
+            this.ubezpieczenieSelect.Properties.ValueMember = "ID_Ubezpieczenie";
+            this.ubezpieczenieSelect.Properties.View = this.gridView4;
+            this.ubezpieczenieSelect.Size = new System.Drawing.Size(180, 20);
+            this.ubezpieczenieSelect.TabIndex = 154;
+            // 
+            // gridView4
+            // 
+            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID_Ubezpieczenie,
+            this.colRodzaj});
+            this.gridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsCustomization.AllowFilter = false;
+            this.gridView4.OptionsFind.AllowFindPanel = false;
+            this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView4.OptionsView.ShowGroupPanel = false;
+            this.gridView4.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colID_Ubezpieczenie, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
             // plecSelect
             // 
             this.plecSelect.EditValue = "";
@@ -252,15 +289,9 @@
             // 
             this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsFind.AllowFindPanel = false;
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
-            // 
-            // CheckButton
-            // 
-            this.CheckButton.Location = new System.Drawing.Point(0, 0);
-            this.CheckButton.Name = "CheckButton";
-            this.CheckButton.Size = new System.Drawing.Size(75, 23);
-            this.CheckButton.TabIndex = 153;
             // 
             // krajSelect
             // 
@@ -626,6 +657,7 @@
             this.colUbezpieczenie});
             this.gridView1.GridControl = this.gridEditPatient;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
@@ -752,35 +784,17 @@
             // 
             this.pacjentTableAdapter.ClearBeforeFill = true;
             // 
-            // ubezpieczenieSelect
+            // colID_Ubezpieczenie
             // 
-            this.ubezpieczenieSelect.EditValue = "";
-            this.ubezpieczenieSelect.Location = new System.Drawing.Point(145, 463);
-            this.ubezpieczenieSelect.Name = "ubezpieczenieSelect";
-            this.ubezpieczenieSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ubezpieczenieSelect.Properties.DataSource = this.uBEZPIECZENIEBindingSource;
-            this.ubezpieczenieSelect.Properties.DisplayMember = "Rodzaj";
-            this.ubezpieczenieSelect.Properties.ValueMember = "ID_Ubezpieczenie";
-            this.ubezpieczenieSelect.Properties.View = this.gridView4;
-            this.ubezpieczenieSelect.Size = new System.Drawing.Size(180, 20);
-            this.ubezpieczenieSelect.TabIndex = 154;
+            this.colID_Ubezpieczenie.FieldName = "ID_Ubezpieczenie";
+            this.colID_Ubezpieczenie.Name = "colID_Ubezpieczenie";
             // 
-            // gridView4
+            // colRodzaj
             // 
-            this.gridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView4.Name = "gridView4";
-            this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView4.OptionsView.ShowGroupPanel = false;
-            // 
-            // closeButton
-            // 
-            this.closeButton.Location = new System.Drawing.Point(126, 567);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(99, 23);
-            this.closeButton.TabIndex = 155;
-            this.closeButton.Text = "Zamknij";
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.colRodzaj.FieldName = "Rodzaj";
+            this.colRodzaj.Name = "colRodzaj";
+            this.colRodzaj.Visible = true;
+            this.colRodzaj.VisibleIndex = 0;
             // 
             // EditPatient
             // 
@@ -799,6 +813,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.kRAJBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ubezpieczenieSelect.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plecSelect.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.krajSelect.Properties)).EndInit();
@@ -824,8 +840,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.imieTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridEditPatient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ubezpieczenieSelect.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -841,7 +855,6 @@
         private System.Windows.Forms.BindingSource kRAJBindingSource;
         private PoradniaDataSetTableAdapters.KRAJTableAdapter kRAJTableAdapter;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraEditors.SimpleButton CheckButton;
         private DevExpress.XtraEditors.SearchLookUpEdit krajSelect;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colID_Kraj;
@@ -905,5 +918,7 @@
         private DevExpress.XtraEditors.SearchLookUpEdit ubezpieczenieSelect;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraEditors.SimpleButton closeButton;
+        private DevExpress.XtraGrid.Columns.GridColumn colID_Ubezpieczenie;
+        private DevExpress.XtraGrid.Columns.GridColumn colRodzaj;
     }
 }

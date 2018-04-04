@@ -506,6 +506,7 @@
             this.colUbezpieczenie});
             this.gridView1.GridControl = this.gridPacjenci;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsFind.FindNullPrompt = "Wpisz co chcesz wyszukać...";
             this.gridView1.OptionsFind.ShowClearButton = false;
             this.gridView1.OptionsFind.ShowFindButton = false;
@@ -676,6 +677,7 @@
             this.colRodzaj});
             this.gridView2.GridControl = this.gridUbezpieczenie;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.Editable = false;
             this.gridView2.OptionsFind.FindNullPrompt = "Wpisz co chcesz wyszukać...";
             this.gridView2.OptionsFind.ShowClearButton = false;
             this.gridView2.OptionsFind.ShowFindButton = false;
@@ -700,7 +702,7 @@
             this.ICDPage.Caption = "Kody ICD";
             this.ICDPage.Controls.Add(this.gridICD);
             this.ICDPage.Name = "ICDPage";
-            this.ICDPage.Size = new System.Drawing.Size(1258, 352);
+            this.ICDPage.Size = new System.Drawing.Size(1266, 356);
             // 
             // gridICD
             // 
@@ -710,7 +712,7 @@
             this.gridICD.MainView = this.gridView3;
             this.gridICD.MenuManager = this.ribbon;
             this.gridICD.Name = "gridICD";
-            this.gridICD.Size = new System.Drawing.Size(1258, 352);
+            this.gridICD.Size = new System.Drawing.Size(1266, 356);
             this.gridICD.TabIndex = 0;
             this.gridICD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -728,6 +730,7 @@
             this.colRozpoznanie});
             this.gridView3.GridControl = this.gridICD;
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsBehavior.Editable = false;
             this.gridView3.OptionsFind.FindNullPrompt = "Wpisz co chcesz wyszukać...";
             this.gridView3.OptionsFind.ShowClearButton = false;
             this.gridView3.OptionsFind.ShowFindButton = false;
@@ -799,6 +802,7 @@
             this.colLeki});
             this.gridView4.GridControl = this.gridWizyta;
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsBehavior.Editable = false;
             this.gridView4.OptionsView.ShowGroupPanel = false;
             // 
             // colID_Wizyta

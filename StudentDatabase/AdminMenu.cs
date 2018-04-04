@@ -51,6 +51,8 @@ namespace StudentDatabase
             gridWizyta.RefreshDataSource();
         }
 
+        public void 
+
         //-----------------------RIBBON ENABLING----------------------------------/
         private void TabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
         {
