@@ -37,7 +37,6 @@ namespace StudentDatabase
             string patient = Convert.ToString(pacjentCB.EditValue);
             DateTime date = Convert.ToDateTime(dateEdit.Text);
             DateTime time = Convert.ToDateTime(timeEdit.Text);
-           // string godzina = Convert.ToString(timeEdit1.Text);
             string objawy = Convert.ToString(objawyTB.Text);
             string bprzed = Convert.ToString(bprzedTB.Text);
             string bpod = Convert.ToString(bpodTB.Text);

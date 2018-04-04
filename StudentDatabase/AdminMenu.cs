@@ -11,6 +11,7 @@ namespace StudentDatabase
         {
             InitializeComponent();
             time.Start();
+            tabPane1.SelectedPage = null;
 
         }
 
@@ -170,7 +171,13 @@ namespace StudentDatabase
         {
             EditPatient editPat = new EditPatient();
             editPat.ShowDialog();
+            editPat.FormClosed += EditPat_FormClosed;
 
+        }
+
+        private void EditPat_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RefreshPacjenci();
         }
 
         //-----------------------------------UBEZPIECZENIE RIBBON-----------------------------------//

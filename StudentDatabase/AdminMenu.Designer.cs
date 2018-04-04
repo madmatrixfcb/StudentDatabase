@@ -799,9 +799,11 @@
             this.colLeki});
             this.gridView4.GridControl = this.gridWizyta;
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsView.ShowGroupPanel = false;
             // 
             // colID_Wizyta
             // 
+            this.colID_Wizyta.Caption = "Wizyta";
             this.colID_Wizyta.FieldName = "ID_Wizyta";
             this.colID_Wizyta.Name = "colID_Wizyta";
             this.colID_Wizyta.Visible = true;
@@ -809,6 +811,7 @@
             // 
             // colD_Pacjent
             // 
+            this.colD_Pacjent.Caption = "Pacjent";
             this.colD_Pacjent.FieldName = "ID_Pacjent";
             this.colD_Pacjent.Name = "colD_Pacjent";
             this.colD_Pacjent.Visible = true;
@@ -837,6 +840,7 @@
             // 
             // colBPrzedmiotowe
             // 
+            this.colBPrzedmiotowe.Caption = "Badanie przedmiotowe";
             this.colBPrzedmiotowe.FieldName = "BPrzedmiotowe";
             this.colBPrzedmiotowe.Name = "colBPrzedmiotowe";
             this.colBPrzedmiotowe.Visible = true;
@@ -844,6 +848,7 @@
             // 
             // colBPodmiotowe
             // 
+            this.colBPodmiotowe.Caption = "Badanie podmiotowe";
             this.colBPodmiotowe.FieldName = "BPodmiotowe";
             this.colBPodmiotowe.Name = "colBPodmiotowe";
             this.colBPodmiotowe.Visible = true;
@@ -851,6 +856,7 @@
             // 
             // colID_ICD_1
             // 
+            this.colID_ICD_1.Caption = "ICD 1";
             this.colID_ICD_1.FieldName = "ID_ICD_1";
             this.colID_ICD_1.Name = "colID_ICD_1";
             this.colID_ICD_1.Visible = true;
@@ -858,6 +864,7 @@
             // 
             // colID_ICD_2
             // 
+            this.colID_ICD_2.Caption = "ICD 2";
             this.colID_ICD_2.FieldName = "ID_ICD_2";
             this.colID_ICD_2.Name = "colID_ICD_2";
             this.colID_ICD_2.Visible = true;
@@ -865,6 +872,7 @@
             // 
             // colID_ICD_3
             // 
+            this.colID_ICD_3.Caption = "ICD 3";
             this.colID_ICD_3.FieldName = "ID_ICD_3";
             this.colID_ICD_3.Name = "colID_ICD_3";
             this.colID_ICD_3.Visible = true;
