@@ -49,7 +49,7 @@ namespace StudentDatabase
             {
                 try
                 {
-                    AdminMenu adminMenu = new AdminMenu();
+                AdminMenu adminMenu = new AdminMenu();
                 this.Hide();
                 adminMenu.ShowDialog();
                 this.Close();
@@ -65,9 +65,9 @@ namespace StudentDatabase
             {
                 try
                 {
-                    DoctorMenu doctorMenu = new DoctorMenu();
+                    AdminMenu adminMenu = new AdminMenu();
                     this.Hide();
-                    doctorMenu.ShowDialog();
+                    adminMenu.ShowDialog();
                     this.Close();
                 }
 
