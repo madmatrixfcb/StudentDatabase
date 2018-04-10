@@ -28,78 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.addUbezpButton = new System.Windows.Forms.Button();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.kodTB = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.kodTB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            this.nameUbezpTB = new DevExpress.XtraEditors.TextEdit();
+            this.ubezpAdd_button = new DevExpress.XtraEditors.SimpleButton();
+            this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
+            this.ubezpieczenieTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UBEZPIECZENIETableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.nameUbezpTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // addUbezpButton
-            // 
-            this.addUbezpButton.Location = new System.Drawing.Point(107, 91);
-            this.addUbezpButton.Name = "addUbezpButton";
-            this.addUbezpButton.Size = new System.Drawing.Size(97, 35);
-            this.addUbezpButton.TabIndex = 73;
-            this.addUbezpButton.Text = "Dodaj ubezpieczenie";
-            this.addUbezpButton.UseVisualStyleBackColor = true;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(19, 68);
+            this.labelControl2.Location = new System.Drawing.Point(15, 40);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(36, 13);
+            this.labelControl2.Size = new System.Drawing.Size(106, 13);
             this.labelControl2.TabIndex = 71;
-            this.labelControl2.Text = "Nazwa:";
+            this.labelControl2.Text = "Nazwa ubezpieczenia:";
             // 
-            // labelControl1
+            // nameUbezpTB
             // 
-            this.labelControl1.Location = new System.Drawing.Point(19, 42);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(105, 13);
-            this.labelControl1.TabIndex = 70;
-            this.labelControl1.Text = "Numer ubezpieczenia:";
+            this.nameUbezpTB.Location = new System.Drawing.Point(126, 37);
+            this.nameUbezpTB.Name = "nameUbezpTB";
+            this.nameUbezpTB.Size = new System.Drawing.Size(158, 20);
+            this.nameUbezpTB.TabIndex = 1;
             // 
-            // kodTB
+            // ubezpAdd_button
             // 
-            this.kodTB.Location = new System.Drawing.Point(130, 39);
-            this.kodTB.Name = "kodTB";
-            this.kodTB.Size = new System.Drawing.Size(158, 20);
-            this.kodTB.TabIndex = 68;
+            this.ubezpAdd_button.Location = new System.Drawing.Point(89, 91);
+            this.ubezpAdd_button.Name = "ubezpAdd_button";
+            this.ubezpAdd_button.Size = new System.Drawing.Size(114, 31);
+            this.ubezpAdd_button.TabIndex = 72;
+            this.ubezpAdd_button.Text = "Dodaj ubezpieczenie";
+            this.ubezpAdd_button.Click += new System.EventHandler(this.ubezpAdd_button_Click);
             // 
-            // textEdit1
+            // poradniaDataSet
             // 
-            this.textEdit1.Location = new System.Drawing.Point(130, 65);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(158, 20);
-            this.textEdit1.TabIndex = 74;
+            this.poradniaDataSet.DataSetName = "PoradniaDataSet";
+            this.poradniaDataSet.Locale = new System.Globalization.CultureInfo("pl");
+            this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ubezpieczenieTableAdapter
+            // 
+            this.ubezpieczenieTableAdapter.ClearBeforeFill = true;
             // 
             // AddUbezp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(305, 134);
-            this.Controls.Add(this.textEdit1);
-            this.Controls.Add(this.addUbezpButton);
+            this.Controls.Add(this.ubezpAdd_button);
+            this.Controls.Add(this.nameUbezpTB);
             this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.kodTB);
             this.Name = "AddUbezp";
             this.Text = "AddUbezp";
-            ((System.ComponentModel.ISupportInitialize)(this.kodTB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nameUbezpTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button addUbezpButton;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit kodTB;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit nameUbezpTB;
+        private DevExpress.XtraEditors.SimpleButton ubezpAdd_button;
+        private PoradniaDataSet poradniaDataSet;
+        private PoradniaDataSetTableAdapters.UBEZPIECZENIETableAdapter ubezpieczenieTableAdapter;
     }
 }

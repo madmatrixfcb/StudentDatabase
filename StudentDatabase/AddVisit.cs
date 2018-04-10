@@ -36,7 +36,7 @@ namespace StudentDatabase
         {
             string patient = Convert.ToString(pacjentCB.EditValue);
             DateTime date = Convert.ToDateTime(dateEdit.Text);
-            DateTime time = Convert.ToDateTime(timeEdit.Text);
+            string time = Convert.ToString(timeEdit.Text);
             string objawy = Convert.ToString(objawyTB.Text);
             string bprzed = Convert.ToString(bprzedTB.Text);
             string bpod = Convert.ToString(bpodTB.Text);
@@ -56,7 +56,7 @@ namespace StudentDatabase
 
                 try
                 {
-                    wizytaTableAdapter.InsertQuery(Convert.ToInt16(patient), date, time, objawy, bprzed, bpod, Convert.ToInt16(icd1), Convert.ToInt16(icd2), Convert.ToInt16(icd3), rozpoznanie, leki);
+                    wizytaTableAdapter.InsertQuery(patient, date, time, objawy, bprzed, bpod, icd1, icd2, icd3, rozpoznanie, leki);
                     MessageBox.Show("Wizyta dodana", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Close();

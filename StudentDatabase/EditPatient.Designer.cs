@@ -42,6 +42,8 @@
             this.closeButton = new DevExpress.XtraEditors.SimpleButton();
             this.ubezpieczenieSelect = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID_Ubezpieczenie = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRodzaj = new DevExpress.XtraGrid.Columns.GridColumn();
             this.plecSelect = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.krajSelect = new DevExpress.XtraEditors.SearchLookUpEdit();
@@ -102,8 +104,6 @@
             this.colPaszport = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUbezpieczenie = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pacjentTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
-            this.colID_Ubezpieczenie = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRodzaj = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pLECBindingSource)).BeginInit();
@@ -270,6 +270,18 @@
             this.gridView4.OptionsView.ShowGroupPanel = false;
             this.gridView4.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colID_Ubezpieczenie, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // colID_Ubezpieczenie
+            // 
+            this.colID_Ubezpieczenie.FieldName = "ID_Ubezpieczenie";
+            this.colID_Ubezpieczenie.Name = "colID_Ubezpieczenie";
+            // 
+            // colRodzaj
+            // 
+            this.colRodzaj.FieldName = "Rodzaj";
+            this.colRodzaj.Name = "colRodzaj";
+            this.colRodzaj.Visible = true;
+            this.colRodzaj.VisibleIndex = 0;
             // 
             // plecSelect
             // 
@@ -783,18 +795,6 @@
             // pacjentTableAdapter
             // 
             this.pacjentTableAdapter.ClearBeforeFill = true;
-            // 
-            // colID_Ubezpieczenie
-            // 
-            this.colID_Ubezpieczenie.FieldName = "ID_Ubezpieczenie";
-            this.colID_Ubezpieczenie.Name = "colID_Ubezpieczenie";
-            // 
-            // colRodzaj
-            // 
-            this.colRodzaj.FieldName = "Rodzaj";
-            this.colRodzaj.Name = "colRodzaj";
-            this.colRodzaj.Visible = true;
-            this.colRodzaj.VisibleIndex = 0;
             // 
             // EditPatient
             // 

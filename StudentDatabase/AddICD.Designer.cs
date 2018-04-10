@@ -33,11 +33,11 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.kodTB = new DevExpress.XtraEditors.TextEdit();
-            this.addICDButton = new System.Windows.Forms.Button();
             this.rozpoznanieTB = new System.Windows.Forms.RichTextBox();
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
-            this.iCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
+            this.addICD_button = new DevExpress.XtraEditors.SimpleButton();
+            this.iCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kodTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).BeginInit();
@@ -76,16 +76,6 @@
             this.kodTB.Size = new System.Drawing.Size(158, 20);
             this.kodTB.TabIndex = 1;
             // 
-            // addICDButton
-            // 
-            this.addICDButton.Location = new System.Drawing.Point(117, 143);
-            this.addICDButton.Name = "addICDButton";
-            this.addICDButton.Size = new System.Drawing.Size(97, 23);
-            this.addICDButton.TabIndex = 67;
-            this.addICDButton.Text = "Dodaj kod ICD";
-            this.addICDButton.UseVisualStyleBackColor = true;
-            this.addICDButton.Click += new System.EventHandler(this.addICDButton_Click);
-            // 
             // rozpoznanieTB
             // 
             this.rozpoznanieTB.Location = new System.Drawing.Point(117, 70);
@@ -97,24 +87,34 @@
             // poradniaDataSet
             // 
             this.poradniaDataSet.DataSetName = "PoradniaDataSet";
+            this.poradniaDataSet.Locale = new System.Globalization.CultureInfo("pl");
             this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // iCDTableAdapter
+            // 
+            this.iCDTableAdapter.ClearBeforeFill = true;
+            // 
+            // addICD_button
+            // 
+            this.addICD_button.Location = new System.Drawing.Point(117, 143);
+            this.addICD_button.Name = "addICD_button";
+            this.addICD_button.Size = new System.Drawing.Size(75, 23);
+            this.addICD_button.TabIndex = 62;
+            this.addICD_button.Text = "Dodaj kod ICD";
+            this.addICD_button.Click += new System.EventHandler(this.addICD_button_Click);
             // 
             // iCDBindingSource
             // 
             this.iCDBindingSource.DataMember = "ICD";
             this.iCDBindingSource.DataSource = this.poradniaDataSet;
             // 
-            // iCDTableAdapter
-            // 
-            this.iCDTableAdapter.ClearBeforeFill = true;
-            // 
             // AddICD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(311, 178);
+            this.Controls.Add(this.addICD_button);
             this.Controls.Add(this.rozpoznanieTB);
-            this.Controls.Add(this.addICDButton);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
@@ -135,10 +135,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit kodTB;
-        private System.Windows.Forms.Button addICDButton;
         private System.Windows.Forms.RichTextBox rozpoznanieTB;
         private PoradniaDataSet poradniaDataSet;
         private System.Windows.Forms.BindingSource iCDBindingSource;
         private PoradniaDataSetTableAdapters.ICDTableAdapter iCDTableAdapter;
+        private DevExpress.XtraEditors.SimpleButton addICD_button;
     }
 }

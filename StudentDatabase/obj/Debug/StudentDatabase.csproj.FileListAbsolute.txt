@@ -120,3 +120,5 @@ F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\Student
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.csproj.CoreCompileInputs.cache
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.EditPatient.resources
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.csproj.CopyComplete
+F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\DevExpress.Images.v17.1.dll
+F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.DoctorMenu.resources

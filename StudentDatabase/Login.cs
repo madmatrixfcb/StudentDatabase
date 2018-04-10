@@ -47,44 +47,41 @@ namespace StudentDatabase
 
             if (userType == "Admin")
             {
-                AdminMenu adminMenu = new AdminMenu();
+                try
+                {
+                    AdminMenu adminMenu = new AdminMenu();
                 this.Hide();
                 adminMenu.ShowDialog();
                 this.Close();
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
             else if (userType == "Lekarz")
             {
-                AdminMenu adminMenu = new AdminMenu();
-                this.Hide();
-                adminMenu.ShowDialog();
-                this.Close();
+                try
+                {
+                    DoctorMenu doctorMenu = new DoctorMenu();
+                    this.Hide();
+                    doctorMenu.ShowDialog();
+                    this.Close();
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
 
             else
             {
                 MessageBox.Show("Wprowadzono nieprawidłowe dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-        }
-
-        private void loginBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void passBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
 
         }
     }

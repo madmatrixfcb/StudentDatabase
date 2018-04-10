@@ -18,21 +18,23 @@ namespace StudentDatabase
             InitializeComponent();
         }
 
-        private void addICDButton_Click(object sender, EventArgs e)
+        private void addICD_button_Click(object sender, EventArgs e)
         {
-
             string kodICD = Convert.ToString(kodTB.Text);
             string rozpoznanie = Convert.ToString(rozpoznanieTB.Text);
 
-            iCDTableAdapter.InsertQuery(kodICD, rozpoznanie);
-
-
-            foreach (Control c in Controls)
+            try
             {
-                if (c is TextBox)
-                {
-                    c.ResetText();
-                }
+                iCDTableAdapter.InsertQuery(kodICD, rozpoznanie);
+                MessageBox.Show("Kod ICD dodany", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
+                this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

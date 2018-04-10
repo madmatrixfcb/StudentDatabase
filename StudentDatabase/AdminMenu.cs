@@ -47,12 +47,22 @@ namespace StudentDatabase
 
         public void RefreshWizyta()
         {
+            this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
             this.wizytaTableAdapter.Fill(this.poradniaDataSet.WIZYTA);
             gridWizyta.RefreshDataSource();
         }
 
-        public void 
+        public void RefreshUbezpieczenie()
+        {
+            this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
+            gridUbezpieczenie.RefreshDataSource();
+        }
 
+        public void RefreshICD()
+        {
+            this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
+            gridICD.RefreshDataSource();
+        }
         //-----------------------RIBBON ENABLING----------------------------------/
         private void TabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
         {
@@ -172,7 +182,7 @@ namespace StudentDatabase
         private void EditPatient_ItemClick(object sender, ItemClickEventArgs e)
         {
             EditPatient editPat = new EditPatient();
-            editPat.ShowDialog();
+            editPat.Show();
             editPat.FormClosed += EditPat_FormClosed;
 
         }
@@ -186,66 +196,100 @@ namespace StudentDatabase
 
         private void DeleteButtonU_ItemClick(object sender, ItemClickEventArgs e)
         {
-            try
+            DialogResult warning = MessageBox.Show("Czy na pewno chcesz usunąć wybrane ubezpieczenie?", "Potwierdzenie usunięcia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (warning == DialogResult.Yes)
             {
-                gridView2.DeleteRow(gridView2.FocusedRowHandle);
-                this.uBEZPIECZENIETableAdapter.Update(poradniaDataSet.UBEZPIECZENIE);
-                MessageBox.Show("Ubezpieczenie(a) usunięte", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
+                {
+                    gridView2.DeleteRow(gridView2.FocusedRowHandle);
+                    this.uBEZPIECZENIETableAdapter.Update(poradniaDataSet.UBEZPIECZENIE);
+                    MessageBox.Show("Ubezpieczenie(a) usunięte", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RefreshUbezpieczenie();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 
         private void RefreshUbezp_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
+            RefreshUbezpieczenie();
         }
 
         private void DodajUbezp_ItemClick(object sender, ItemClickEventArgs e)
         {
-            AddUbezp addUbezp = new AddUbezp();
-            addUbezp.Show();
+            DialogResult warning = MessageBox.Show("Czy na pewno chcesz dodać nowy typ ubezpieczenia?", "Potwierdzenie dodania", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (warning == DialogResult.Yes)
+            {
+                AddUbezp addUbezp = new AddUbezp();
+                addUbezp.Show();
+                addUbezp.FormClosed += AddUbezp_FormClosed;
+            }
+            else
+            {
+                return;
+            }
         }
+
+        private void AddUbezp_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RefreshUbezpieczenie();
+        }
+
 
         //-----------------------------------ICD RIBBON-----------------------------------//
 
         private void AddICD_ItemClick(object sender, ItemClickEventArgs e)
         {
-            AddICD addICD = new AddICD();
-            addICD.Show();
+            DialogResult warning = MessageBox.Show("Czy na pewno chcesz dodać nowy kod ICD?", "Potwierdzenie dodania", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (warning == DialogResult.Yes)
+            {
+                AddICD addICD = new AddICD();
+                addICD.Show();
+                addICD.FormClosed += AddICD_FormClosed;
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void AddICD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RefreshICD();
         }
 
         private void RefreshICD_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
-        }
-
-        private void SaveChangesICD_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            try
-            {
-                this.iCDTableAdapter.Update(poradniaDataSet.ICD);
-                MessageBox.Show("Dane kodów ICD zaktualizowanie", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            RefreshICD();
         }
 
         private void DeleteButtonI_ItemClick(object sender, ItemClickEventArgs e)
         {
-            try
+            DialogResult warning = MessageBox.Show("Czy na pewno chcesz usunąć wybrany kod ICD?", "Potwierdzenie usunięcia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (warning == DialogResult.Yes)
             {
-                gridView3.DeleteRow(gridView3.FocusedRowHandle);
-                this.iCDTableAdapter.Update(poradniaDataSet.ICD);
-                MessageBox.Show("Kod ICD usunięty", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
+                {
+                    gridView3.DeleteRow(gridView3.FocusedRowHandle);
+                    this.iCDTableAdapter.Update(poradniaDataSet.ICD);
+                    MessageBox.Show("Kod ICD usunięty", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RefreshICD();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
 
@@ -272,18 +316,25 @@ namespace StudentDatabase
 
         private void DeleteButtonW_ItemClick(object sender, ItemClickEventArgs e)
         {
-            try
+            DialogResult warning = MessageBox.Show("Czy na pewno chcesz usunąć wybraną wizytę?", "Potwierdzenie usunięcia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (warning == DialogResult.Yes)
             {
-                gridView4.DeleteRow(gridView4.FocusedRowHandle);
-                this.wizytaTableAdapter.Update(poradniaDataSet.WIZYTA);
-                MessageBox.Show("Wizyta usunięta", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
+                {
+                    gridView4.DeleteRow(gridView4.FocusedRowHandle);
+                    this.wizytaTableAdapter.Update(poradniaDataSet.WIZYTA);
+                    MessageBox.Show("Wizyta usunięta", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RefreshWizyta();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
-
-
     }
 }

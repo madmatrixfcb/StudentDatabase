@@ -33,7 +33,6 @@
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.addPatient = new DevExpress.XtraBars.BarButtonItem();
             this.refreshButton = new DevExpress.XtraBars.BarButtonItem();
-            this.saveChanges = new DevExpress.XtraBars.BarButtonItem();
             this.deleteButtonP = new DevExpress.XtraBars.BarButtonItem();
             this.refreshUbezp = new DevExpress.XtraBars.BarButtonItem();
             this.addICD = new DevExpress.XtraBars.BarButtonItem();
@@ -153,7 +152,6 @@
             this.ribbon.ExpandCollapseItem,
             this.addPatient,
             this.refreshButton,
-            this.saveChanges,
             this.deleteButtonP,
             this.refreshUbezp,
             this.addICD,
@@ -172,14 +170,14 @@
             this.deleteBarWizyta,
             this.barStaticItem2});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 15;
+            this.ribbon.MaxItemId = 16;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonAdmin});
             this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemToggleSwitch1,
             this.repositoryItemCheckEdit1});
-            this.ribbon.Size = new System.Drawing.Size(1284, 147);
+            this.ribbon.Size = new System.Drawing.Size(1278, 147);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // addPatient
@@ -199,15 +197,6 @@
             this.refreshButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("refreshButton.ImageOptions.LargeImage")));
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshButton_ItemClick);
-            // 
-            // saveChanges
-            // 
-            this.saveChanges.Caption = "Zapisz zmiany";
-            this.saveChanges.Id = 5;
-            this.saveChanges.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("saveChanges.ImageOptions.Image")));
-            this.saveChanges.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("saveChanges.ImageOptions.LargeImage")));
-            this.saveChanges.Name = "saveChanges";
-            this.saveChanges.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.SaveChanges_ItemClick);
             // 
             // deleteButtonP
             // 
@@ -247,12 +236,8 @@
             // 
             // saveChangesICD
             // 
-            this.saveChangesICD.Caption = "Zapisz";
-            this.saveChangesICD.Id = 10;
-            this.saveChangesICD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("saveChangesICD.ImageOptions.Image")));
-            this.saveChangesICD.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("saveChangesICD.ImageOptions.LargeImage")));
+            this.saveChangesICD.Id = 15;
             this.saveChangesICD.Name = "saveChangesICD";
-            this.saveChangesICD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.SaveChangesICD_ItemClick);
             // 
             // addVisit
             // 
@@ -362,7 +347,6 @@
             this.PacjenciGroup.ItemLinks.Add(this.addPatient);
             this.PacjenciGroup.ItemLinks.Add(this.editPatient);
             this.PacjenciGroup.ItemLinks.Add(this.refreshButton);
-            this.PacjenciGroup.ItemLinks.Add(this.saveChanges);
             this.PacjenciGroup.ItemLinks.Add(this.deleteButtonP);
             this.PacjenciGroup.ItemLinks.Add(this.deleteModeBar);
             this.PacjenciGroup.ItemLinks.Add(this.barStaticItem1);
@@ -394,7 +378,6 @@
             this.ICDGroup.Enabled = false;
             this.ICDGroup.ItemLinks.Add(this.addICD);
             this.ICDGroup.ItemLinks.Add(this.refreshICD);
-            this.ICDGroup.ItemLinks.Add(this.saveChangesICD);
             this.ICDGroup.ItemLinks.Add(this.deleteButtonI);
             this.ICDGroup.Name = "ICDGroup";
             this.ICDGroup.Text = "ICD";
@@ -420,10 +403,10 @@
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.timeItem);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 548);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 696);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1284, 23);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1278, 23);
             // 
             // poradniaDataSet
             // 
@@ -452,9 +435,9 @@
             this.WizytaPage,
             this.UbezpieczeniePage,
             this.ICDPage});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1284, 401);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1278, 549);
             this.tabPane1.SelectedPage = this.WizytaPage;
-            this.tabPane1.Size = new System.Drawing.Size(1284, 401);
+            this.tabPane1.Size = new System.Drawing.Size(1278, 549);
             this.tabPane1.TabIndex = 6;
             this.tabPane1.Text = "tabPane1";
             this.tabPane1.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.TabPane1_SelectedPageChanged);
@@ -464,7 +447,7 @@
             this.PacjenciPage.Caption = "Pacjenci";
             this.PacjenciPage.Controls.Add(this.gridPacjenci);
             this.PacjenciPage.Name = "PacjenciPage";
-            this.PacjenciPage.Size = new System.Drawing.Size(1266, 356);
+            this.PacjenciPage.Size = new System.Drawing.Size(1260, 504);
             // 
             // gridPacjenci
             // 
@@ -474,7 +457,7 @@
             this.gridPacjenci.MainView = this.gridView1;
             this.gridPacjenci.MenuManager = this.ribbon;
             this.gridPacjenci.Name = "gridPacjenci";
-            this.gridPacjenci.Size = new System.Drawing.Size(1266, 356);
+            this.gridPacjenci.Size = new System.Drawing.Size(1260, 504);
             this.gridPacjenci.TabIndex = 0;
             this.gridPacjenci.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -650,7 +633,7 @@
             this.UbezpieczeniePage.Caption = "Ubezpieczenie";
             this.UbezpieczeniePage.Controls.Add(this.gridUbezpieczenie);
             this.UbezpieczeniePage.Name = "UbezpieczeniePage";
-            this.UbezpieczeniePage.Size = new System.Drawing.Size(1266, 356);
+            this.UbezpieczeniePage.Size = new System.Drawing.Size(1260, 504);
             // 
             // gridUbezpieczenie
             // 
@@ -660,7 +643,7 @@
             this.gridUbezpieczenie.MainView = this.gridView2;
             this.gridUbezpieczenie.MenuManager = this.ribbon;
             this.gridUbezpieczenie.Name = "gridUbezpieczenie";
-            this.gridUbezpieczenie.Size = new System.Drawing.Size(1266, 356);
+            this.gridUbezpieczenie.Size = new System.Drawing.Size(1260, 504);
             this.gridUbezpieczenie.TabIndex = 0;
             this.gridUbezpieczenie.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -702,7 +685,7 @@
             this.ICDPage.Caption = "Kody ICD";
             this.ICDPage.Controls.Add(this.gridICD);
             this.ICDPage.Name = "ICDPage";
-            this.ICDPage.Size = new System.Drawing.Size(1266, 356);
+            this.ICDPage.Size = new System.Drawing.Size(1260, 504);
             // 
             // gridICD
             // 
@@ -712,7 +695,7 @@
             this.gridICD.MainView = this.gridView3;
             this.gridICD.MenuManager = this.ribbon;
             this.gridICD.Name = "gridICD";
-            this.gridICD.Size = new System.Drawing.Size(1266, 356);
+            this.gridICD.Size = new System.Drawing.Size(1260, 504);
             this.gridICD.TabIndex = 0;
             this.gridICD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -765,7 +748,7 @@
             this.WizytaPage.Caption = "Wizyta";
             this.WizytaPage.Controls.Add(this.gridWizyta);
             this.WizytaPage.Name = "WizytaPage";
-            this.WizytaPage.Size = new System.Drawing.Size(1266, 356);
+            this.WizytaPage.Size = new System.Drawing.Size(1260, 504);
             // 
             // gridWizyta
             // 
@@ -775,7 +758,7 @@
             this.gridWizyta.MainView = this.gridView4;
             this.gridWizyta.MenuManager = this.ribbon;
             this.gridWizyta.Name = "gridWizyta";
-            this.gridWizyta.Size = new System.Drawing.Size(1266, 356);
+            this.gridWizyta.Size = new System.Drawing.Size(1260, 504);
             this.gridWizyta.TabIndex = 0;
             this.gridWizyta.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -945,15 +928,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 571);
+            this.ClientSize = new System.Drawing.Size(1278, 719);
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IsMdiContainer = true;
             this.Name = "AdminMenu";
             this.Ribbon = this.ribbon;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
-            this.Text = "AdminMenu";
+            this.Text = "Menu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AdminMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).EndInit();
@@ -1001,7 +986,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colRodzaj;
         private DevExpress.XtraBars.BarButtonItem addPatient;
         private DevExpress.XtraBars.BarButtonItem refreshButton;
-        private DevExpress.XtraBars.BarButtonItem saveChanges;
         private DevExpress.XtraBars.BarButtonItem deleteButtonP;
         private DevExpress.XtraBars.Navigation.TabNavigationPage ICDPage;
         private DevExpress.XtraGrid.GridControl gridICD;

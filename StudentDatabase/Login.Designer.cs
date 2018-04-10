@@ -41,6 +41,7 @@
             this.loginBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tyP_KONTATableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.TYP_KONTATableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,7 +93,6 @@
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Hasło:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -102,7 +102,6 @@
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Login:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // passBox
             // 
@@ -112,7 +111,6 @@
             this.passBox.Size = new System.Drawing.Size(200, 21);
             this.passBox.TabIndex = 1;
             this.passBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.passBox.TextChanged += new System.EventHandler(this.passBox_TextChanged);
             // 
             // loginBox
             // 
@@ -121,7 +119,6 @@
             this.loginBox.Size = new System.Drawing.Size(200, 21);
             this.loginBox.TabIndex = 0;
             this.loginBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.loginBox.TextChanged += new System.EventHandler(this.loginBox_TextChanged);
             // 
             // loginButton
             // 
@@ -141,6 +138,10 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(285, 55);
             this.panel1.TabIndex = 0;
+            // 
+            // tyP_KONTATableAdapter
+            // 
+            this.tyP_KONTATableAdapter.ClearBeforeFill = true;
             // 
             // Login
             // 
@@ -174,5 +175,6 @@
         private System.Windows.Forms.TextBox loginBox;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Panel panel1;
+        private PoradniaDataSetTableAdapters.TYP_KONTATableAdapter tyP_KONTATableAdapter;
     }
 }
