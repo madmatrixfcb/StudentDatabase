@@ -57,10 +57,6 @@
             this.dowodTB = new DevExpress.XtraEditors.TextEdit();
             this.kartapolakaTB = new DevExpress.XtraEditors.TextEdit();
             this.peselTB = new DevExpress.XtraEditors.TextEdit();
-            this.paszportCB = new DevExpress.XtraEditors.CheckEdit();
-            this.dowodosobistyCB = new DevExpress.XtraEditors.CheckEdit();
-            this.kartapolakaCB = new DevExpress.XtraEditors.CheckEdit();
-            this.peselCB = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.nazwiskoTB = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -71,22 +67,26 @@
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.addPatient2 = new DevExpress.XtraEditors.SimpleButton();
             this.ubezpieczenieSelect = new System.Windows.Forms.ComboBox();
+            this.uBEZPIECZENIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.plecSelect = new System.Windows.Forms.ComboBox();
+            this.pLECBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.krajSelect = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.kRAJBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID_Kraj = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKraj = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pACJENTTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.poradniaDataSet1 = new StudentDatabase.PoradniaDataSet();
-            this.kRAJBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pLECBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uBEZPIECZENIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pLECTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PLECTableAdapter();
             this.uBEZPIECZENIETableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UBEZPIECZENIETableAdapter();
             this.krajTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.KRAJTableAdapter();
+            this.peselCB = new DevExpress.XtraEditors.CheckButton();
+            this.kartapolakaCB = new DevExpress.XtraEditors.CheckButton();
+            this.dowodosobistyCB = new DevExpress.XtraEditors.CheckButton();
+            this.paszportCB = new DevExpress.XtraEditors.CheckButton();
             ((System.ComponentModel.ISupportInitialize)(this.miastoTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kodTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mieszkanieTB.Properties)).BeginInit();
@@ -97,22 +97,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dowodTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kartapolakaTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.peselTB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paszportCB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dowodosobistyCB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kartapolakaCB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.peselCB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nazwiskoTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataur.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataur.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imieTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.krajSelect.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kRAJBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pLECBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pLECBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.krajSelect.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kRAJBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -303,42 +299,6 @@
             this.peselTB.Size = new System.Drawing.Size(180, 20);
             this.peselTB.TabIndex = 13;
             // 
-            // paszportCB
-            // 
-            this.paszportCB.Location = new System.Drawing.Point(12, 425);
-            this.paszportCB.Name = "paszportCB";
-            this.paszportCB.Properties.Caption = "Numer paszportu:";
-            this.paszportCB.Size = new System.Drawing.Size(106, 19);
-            this.paszportCB.TabIndex = 18;
-            this.paszportCB.CheckedChanged += new System.EventHandler(this.PaszportCB_CheckedChanged);
-            // 
-            // dowodosobistyCB
-            // 
-            this.dowodosobistyCB.Location = new System.Drawing.Point(12, 400);
-            this.dowodosobistyCB.Name = "dowodosobistyCB";
-            this.dowodosobistyCB.Properties.Caption = "Dowód osobisty:";
-            this.dowodosobistyCB.Size = new System.Drawing.Size(106, 19);
-            this.dowodosobistyCB.TabIndex = 16;
-            this.dowodosobistyCB.CheckedChanged += new System.EventHandler(this.DowodosobistyCB_CheckedChanged);
-            // 
-            // kartapolakaCB
-            // 
-            this.kartapolakaCB.Location = new System.Drawing.Point(12, 375);
-            this.kartapolakaCB.Name = "kartapolakaCB";
-            this.kartapolakaCB.Properties.Caption = "Karta polaka:";
-            this.kartapolakaCB.Size = new System.Drawing.Size(86, 19);
-            this.kartapolakaCB.TabIndex = 14;
-            this.kartapolakaCB.CheckedChanged += new System.EventHandler(this.KartapolakaCB_CheckedChanged);
-            // 
-            // peselCB
-            // 
-            this.peselCB.Location = new System.Drawing.Point(12, 350);
-            this.peselCB.Name = "peselCB";
-            this.peselCB.Properties.Caption = "PESEL:";
-            this.peselCB.Size = new System.Drawing.Size(75, 19);
-            this.peselCB.TabIndex = 12;
-            this.peselCB.CheckedChanged += new System.EventHandler(this.PeselCB_CheckedChanged);
-            // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(12, 62);
@@ -417,7 +377,6 @@
             // 
             // addPatient2
             // 
-            this.addPatient2.Enabled = false;
             this.addPatient2.Location = new System.Drawing.Point(114, 512);
             this.addPatient2.Name = "addPatient2";
             this.addPatient2.Size = new System.Drawing.Size(99, 23);
@@ -436,6 +395,17 @@
             this.ubezpieczenieSelect.TabIndex = 20;
             this.ubezpieczenieSelect.ValueMember = "ID_Ubezpieczenie";
             // 
+            // uBEZPIECZENIEBindingSource
+            // 
+            this.uBEZPIECZENIEBindingSource.DataMember = "UBEZPIECZENIE";
+            this.uBEZPIECZENIEBindingSource.DataSource = this.poradniaDataSet;
+            // 
+            // poradniaDataSet
+            // 
+            this.poradniaDataSet.DataSetName = "PoradniaDataSet";
+            this.poradniaDataSet.Locale = new System.Globalization.CultureInfo("pl");
+            this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // plecSelect
             // 
             this.plecSelect.DataSource = this.pLECBindingSource;
@@ -446,6 +416,11 @@
             this.plecSelect.Size = new System.Drawing.Size(199, 21);
             this.plecSelect.TabIndex = 6;
             this.plecSelect.ValueMember = "ID_Plec";
+            // 
+            // pLECBindingSource
+            // 
+            this.pLECBindingSource.DataMember = "PLEC";
+            this.pLECBindingSource.DataSource = this.poradniaDataSet;
             // 
             // krajSelect
             // 
@@ -460,6 +435,11 @@
             this.krajSelect.Properties.View = this.gridView2;
             this.krajSelect.Size = new System.Drawing.Size(199, 20);
             this.krajSelect.TabIndex = 4;
+            // 
+            // kRAJBindingSource
+            // 
+            this.kRAJBindingSource.DataMember = "KRAJ";
+            this.kRAJBindingSource.DataSource = this.poradniaDataSet;
             // 
             // gridView2
             // 
@@ -500,32 +480,11 @@
             this.labelControl15.TabIndex = 69;
             this.labelControl15.Text = "Pozostałe";
             // 
-            // poradniaDataSet
-            // 
-            this.poradniaDataSet.DataSetName = "PoradniaDataSet";
-            this.poradniaDataSet.Locale = new System.Globalization.CultureInfo("pl");
-            this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // poradniaDataSet1
             // 
             this.poradniaDataSet1.DataSetName = "PoradniaDataSet";
             this.poradniaDataSet1.Locale = new System.Globalization.CultureInfo("pl");
             this.poradniaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kRAJBindingSource
-            // 
-            this.kRAJBindingSource.DataMember = "KRAJ";
-            this.kRAJBindingSource.DataSource = this.poradniaDataSet;
-            // 
-            // pLECBindingSource
-            // 
-            this.pLECBindingSource.DataMember = "PLEC";
-            this.pLECBindingSource.DataSource = this.poradniaDataSet;
-            // 
-            // uBEZPIECZENIEBindingSource
-            // 
-            this.uBEZPIECZENIEBindingSource.DataMember = "UBEZPIECZENIE";
-            this.uBEZPIECZENIEBindingSource.DataSource = this.poradniaDataSet;
             // 
             // pACJENTBindingSource
             // 
@@ -544,11 +503,51 @@
             // 
             this.krajTableAdapter.ClearBeforeFill = true;
             // 
+            // peselCB
+            // 
+            this.peselCB.Location = new System.Drawing.Point(16, 345);
+            this.peselCB.Name = "peselCB";
+            this.peselCB.Size = new System.Drawing.Size(102, 23);
+            this.peselCB.TabIndex = 70;
+            this.peselCB.Text = "PESEL:";
+            this.peselCB.CheckedChanged += new System.EventHandler(this.PeselCB_CheckedChanged);
+            // 
+            // kartapolakaCB
+            // 
+            this.kartapolakaCB.Location = new System.Drawing.Point(16, 371);
+            this.kartapolakaCB.Name = "kartapolakaCB";
+            this.kartapolakaCB.Size = new System.Drawing.Size(102, 23);
+            this.kartapolakaCB.TabIndex = 71;
+            this.kartapolakaCB.Text = "Karta Polaka:";
+            this.kartapolakaCB.CheckedChanged += new System.EventHandler(this.KartapolakaCB_CheckedChanged);
+            // 
+            // dowodosobistyCB
+            // 
+            this.dowodosobistyCB.Location = new System.Drawing.Point(16, 397);
+            this.dowodosobistyCB.Name = "dowodosobistyCB";
+            this.dowodosobistyCB.Size = new System.Drawing.Size(102, 23);
+            this.dowodosobistyCB.TabIndex = 72;
+            this.dowodosobistyCB.Text = "Dowód osobisty:";
+            this.dowodosobistyCB.CheckedChanged += new System.EventHandler(this.DowodosobistyCB_CheckedChanged);
+            // 
+            // paszportCB
+            // 
+            this.paszportCB.Location = new System.Drawing.Point(16, 423);
+            this.paszportCB.Name = "paszportCB";
+            this.paszportCB.Size = new System.Drawing.Size(102, 23);
+            this.paszportCB.TabIndex = 73;
+            this.paszportCB.Text = "Paszport:";
+            this.paszportCB.CheckedChanged += new System.EventHandler(this.PaszportCB_CheckedChanged);
+            // 
             // AddPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(323, 547);
+            this.Controls.Add(this.paszportCB);
+            this.Controls.Add(this.dowodosobistyCB);
+            this.Controls.Add(this.kartapolakaCB);
+            this.Controls.Add(this.peselCB);
             this.Controls.Add(this.labelControl15);
             this.Controls.Add(this.krajSelect);
             this.Controls.Add(this.plecSelect);
@@ -576,10 +575,6 @@
             this.Controls.Add(this.dowodTB);
             this.Controls.Add(this.kartapolakaTB);
             this.Controls.Add(this.peselTB);
-            this.Controls.Add(this.paszportCB);
-            this.Controls.Add(this.dowodosobistyCB);
-            this.Controls.Add(this.kartapolakaCB);
-            this.Controls.Add(this.peselCB);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.nazwiskoTB);
             this.Controls.Add(this.labelControl1);
@@ -587,6 +582,7 @@
             this.Controls.Add(this.imieTB);
             this.Name = "AddPatient";
             this.Text = "Dodaj pacjenta";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddPatient_FormClosing);
             this.Load += new System.EventHandler(this.AddPatient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.miastoTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kodTB.Properties)).EndInit();
@@ -598,22 +594,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dowodTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kartapolakaTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.peselTB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.paszportCB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dowodosobistyCB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kartapolakaCB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.peselCB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nazwiskoTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataur.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataur.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imieTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.krajSelect.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kRAJBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pLECBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pLECBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.krajSelect.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kRAJBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -641,10 +633,6 @@
         private DevExpress.XtraEditors.TextEdit dowodTB;
         private DevExpress.XtraEditors.TextEdit kartapolakaTB;
         private DevExpress.XtraEditors.TextEdit peselTB;
-        private DevExpress.XtraEditors.CheckEdit paszportCB;
-        private DevExpress.XtraEditors.CheckEdit dowodosobistyCB;
-        private DevExpress.XtraEditors.CheckEdit kartapolakaCB;
-        private DevExpress.XtraEditors.CheckEdit peselCB;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit nazwiskoTB;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -671,5 +659,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colID_Kraj;
         private DevExpress.XtraGrid.Columns.GridColumn colKraj;
         private DevExpress.XtraEditors.LabelControl labelControl15;
+        private DevExpress.XtraEditors.CheckButton peselCB;
+        private DevExpress.XtraEditors.CheckButton kartapolakaCB;
+        private DevExpress.XtraEditors.CheckButton dowodosobistyCB;
+        private DevExpress.XtraEditors.CheckButton paszportCB;
     }
 }

@@ -336,5 +336,16 @@ namespace StudentDatabase
                 return;
             }
         }
+
+        //-----------------------------------POTWIERDZENIE WYJŚCIA Z APLIKAJCI-----------------------------------//
+        private void AdminMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult warning = MessageBox.Show("Czy na pewno chcesz wyjść z aplikacji", "Potwierdzenie wyjścia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (warning == DialogResult.No)
+            {
+                e.Cancel = true;
+                return;
+            }
+        }
     }
 }

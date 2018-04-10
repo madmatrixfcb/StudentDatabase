@@ -41,22 +41,22 @@ namespace StudentDatabase
 
         private void PeselCB_CheckedChanged(object sender, EventArgs e)
         {
-            peselTB.Enabled = (peselCB.CheckState == CheckState.Checked);
+            peselTB.Enabled = (peselCB.Checked == true);
         }
 
         private void KartapolakaCB_CheckedChanged(object sender, EventArgs e)
         {
-            kartapolakaTB.Enabled = (kartapolakaCB.CheckState == CheckState.Checked);
+            kartapolakaTB.Enabled = (kartapolakaCB.Checked == true);
         }
 
         private void DowodosobistyCB_CheckedChanged(object sender, EventArgs e)
         {
-            dowodTB.Enabled = (dowodosobistyCB.CheckState == CheckState.Checked);
+            dowodTB.Enabled = (dowodosobistyCB.Checked == true);
         }
 
         private void PaszportCB_CheckedChanged(object sender, EventArgs e)
         {
-            paszportTB.Enabled = (paszportCB.CheckState == CheckState.Checked);
+            paszportTB.Enabled = (paszportCB.Checked == true);
         }
 
         //-----------------------BUTTONS----------------------------------/
@@ -99,6 +99,16 @@ namespace StudentDatabase
             else
             {
                 MessageBox.Show("Wypełnij wszystkie pola by dodać pacjenta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AddPatient_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult warning = MessageBox.Show("Czy na pewno chcesz wyjść bez dodawania pacjenta", "Potwierdzenie wyjścia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (warning == DialogResult.No)
+            {
+                e.Cancel = true;
+                return;
             }
         }
     }
