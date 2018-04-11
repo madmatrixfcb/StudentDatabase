@@ -86,6 +86,20 @@
             this.pacjentTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
             this.wizytaTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.uZYTKOWNIKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uZYTKOWNIKTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter();
+            this.userCB = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID_Uzytkownik = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTytul = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNr_Pozwolenia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLogin = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHaslo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTyp_konta = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pacjentCB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
@@ -100,19 +114,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uZYTKOWNIKBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userCB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // bpodTB
             // 
-            this.bpodTB.Location = new System.Drawing.Point(413, 159);
+            this.bpodTB.Location = new System.Drawing.Point(229, 190);
             this.bpodTB.Name = "bpodTB";
-            this.bpodTB.Size = new System.Drawing.Size(158, 67);
+            this.bpodTB.Size = new System.Drawing.Size(233, 67);
             this.bpodTB.TabIndex = 6;
             this.bpodTB.Text = "";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(304, 189);
+            this.labelControl2.Location = new System.Drawing.Point(229, 174);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(103, 13);
             this.labelControl2.TabIndex = 71;
@@ -120,7 +137,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(12, 189);
+            this.labelControl1.Location = new System.Drawing.Point(9, 174);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(112, 13);
             this.labelControl1.TabIndex = 70;
@@ -128,11 +145,11 @@
             // 
             // addVisitButton
             // 
-            this.addVisitButton.Location = new System.Drawing.Point(274, 410);
+            this.addVisitButton.Location = new System.Drawing.Point(176, 519);
             this.addVisitButton.Name = "addVisitButton";
-            this.addVisitButton.Size = new System.Drawing.Size(75, 23);
-            this.addVisitButton.TabIndex = 12;
-            this.addVisitButton.Text = "Dodaj pacjenta";
+            this.addVisitButton.Size = new System.Drawing.Size(126, 23);
+            this.addVisitButton.TabIndex = 13;
+            this.addVisitButton.Text = "Dodaj wizytę";
             this.addVisitButton.UseVisualStyleBackColor = true;
             this.addVisitButton.Click += new System.EventHandler(this.addVisitButton_Click);
             // 
@@ -154,15 +171,15 @@
             // 
             // bprzedTB
             // 
-            this.bprzedTB.Location = new System.Drawing.Point(140, 159);
+            this.bprzedTB.Location = new System.Drawing.Point(9, 190);
             this.bprzedTB.Name = "bprzedTB";
-            this.bprzedTB.Size = new System.Drawing.Size(158, 67);
+            this.bprzedTB.Size = new System.Drawing.Size(214, 67);
             this.bprzedTB.TabIndex = 5;
             this.bprzedTB.Text = "";
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(9, 253);
+            this.labelControl5.Location = new System.Drawing.Point(31, 303);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(22, 13);
             this.labelControl5.TabIndex = 81;
@@ -170,23 +187,23 @@
             // 
             // rozpoznanieTB
             // 
-            this.rozpoznanieTB.Location = new System.Drawing.Point(102, 299);
+            this.rozpoznanieTB.Location = new System.Drawing.Point(9, 373);
             this.rozpoznanieTB.Name = "rozpoznanieTB";
-            this.rozpoznanieTB.Size = new System.Drawing.Size(158, 67);
+            this.rozpoznanieTB.Size = new System.Drawing.Size(214, 67);
             this.rozpoznanieTB.TabIndex = 10;
             this.rozpoznanieTB.Text = "";
             // 
             // lekiTB
             // 
-            this.lekiTB.Location = new System.Drawing.Point(396, 299);
+            this.lekiTB.Location = new System.Drawing.Point(229, 373);
             this.lekiTB.Name = "lekiTB";
-            this.lekiTB.Size = new System.Drawing.Size(158, 67);
+            this.lekiTB.Size = new System.Drawing.Size(233, 67);
             this.lekiTB.TabIndex = 11;
             this.lekiTB.Text = "";
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(340, 333);
+            this.labelControl8.Location = new System.Drawing.Point(229, 354);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(22, 13);
             this.labelControl8.TabIndex = 85;
@@ -194,7 +211,7 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(9, 333);
+            this.labelControl9.Location = new System.Drawing.Point(9, 354);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(65, 13);
             this.labelControl9.TabIndex = 84;
@@ -202,9 +219,9 @@
             // 
             // objawyTB
             // 
-            this.objawyTB.Location = new System.Drawing.Point(140, 83);
+            this.objawyTB.Location = new System.Drawing.Point(102, 86);
             this.objawyTB.Name = "objawyTB";
-            this.objawyTB.Size = new System.Drawing.Size(462, 67);
+            this.objawyTB.Size = new System.Drawing.Size(360, 67);
             this.objawyTB.TabIndex = 4;
             this.objawyTB.Text = "";
             // 
@@ -383,7 +400,7 @@
             // ICDCB1
             // 
             this.ICDCB1.EditValue = "";
-            this.ICDCB1.Location = new System.Drawing.Point(102, 251);
+            this.ICDCB1.Location = new System.Drawing.Point(102, 274);
             this.ICDCB1.Name = "ICDCB1";
             this.ICDCB1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -391,8 +408,9 @@
             this.ICDCB1.Properties.DisplayMember = "Kod_ICD";
             this.ICDCB1.Properties.ValueMember = "ID_ICD";
             this.ICDCB1.Properties.View = this.gridView1;
-            this.ICDCB1.Size = new System.Drawing.Size(158, 20);
+            this.ICDCB1.Size = new System.Drawing.Size(286, 20);
             this.ICDCB1.TabIndex = 7;
+            this.ICDCB1.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.ICDCB1_CustomDisplayText);
             // 
             // iCDBindingSource
             // 
@@ -435,7 +453,7 @@
             // ICDCB2
             // 
             this.ICDCB2.EditValue = "";
-            this.ICDCB2.Location = new System.Drawing.Point(266, 251);
+            this.ICDCB2.Location = new System.Drawing.Point(102, 300);
             this.ICDCB2.Name = "ICDCB2";
             this.ICDCB2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -443,8 +461,9 @@
             this.ICDCB2.Properties.DisplayMember = "Kod_ICD";
             this.ICDCB2.Properties.ValueMember = "ID_ICD";
             this.ICDCB2.Properties.View = this.gridView2;
-            this.ICDCB2.Size = new System.Drawing.Size(158, 20);
+            this.ICDCB2.Size = new System.Drawing.Size(286, 20);
             this.ICDCB2.TabIndex = 8;
+            this.ICDCB2.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.ICDCB2_CustomDisplayText);
             // 
             // gridView2
             // 
@@ -484,7 +503,7 @@
             // ICDCB3
             // 
             this.ICDCB3.EditValue = "";
-            this.ICDCB3.Location = new System.Drawing.Point(430, 251);
+            this.ICDCB3.Location = new System.Drawing.Point(102, 328);
             this.ICDCB3.Name = "ICDCB3";
             this.ICDCB3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -492,8 +511,9 @@
             this.ICDCB3.Properties.DisplayMember = "Kod_ICD";
             this.ICDCB3.Properties.ValueMember = "ID_ICD";
             this.ICDCB3.Properties.View = this.gridView3;
-            this.ICDCB3.Size = new System.Drawing.Size(158, 20);
+            this.ICDCB3.Size = new System.Drawing.Size(286, 20);
             this.ICDCB3.TabIndex = 9;
+            this.ICDCB3.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.ICDCB3_CustomDisplayText);
             // 
             // gridView3
             // 
@@ -548,13 +568,13 @@
             // timeEdit
             // 
             this.timeEdit.EditValue = new System.DateTime(2018, 3, 27, 0, 0, 0, 0);
-            this.timeEdit.Location = new System.Drawing.Point(249, 57);
+            this.timeEdit.Location = new System.Drawing.Point(362, 57);
             this.timeEdit.Name = "timeEdit";
             this.timeEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.timeEdit.Properties.Mask.EditMask = "t";
             this.timeEdit.Size = new System.Drawing.Size(100, 20);
-            this.timeEdit.TabIndex = 89;
+            this.timeEdit.TabIndex = 3;
             this.timeEdit.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.timeEdit_Spin);
             // 
             // pacjentTableAdapter
@@ -569,11 +589,116 @@
             // 
             this.wizytaTableAdapter.ClearBeforeFill = true;
             // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(9, 473);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(49, 13);
+            this.labelControl4.TabIndex = 91;
+            this.labelControl4.Text = "Dodający:";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(304, 60);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(42, 13);
+            this.labelControl6.TabIndex = 92;
+            this.labelControl6.Text = "Godzina:";
+            // 
+            // uZYTKOWNIKBindingSource
+            // 
+            this.uZYTKOWNIKBindingSource.DataMember = "UZYTKOWNIK";
+            this.uZYTKOWNIKBindingSource.DataSource = this.poradniaDataSet;
+            // 
+            // uZYTKOWNIKTableAdapter
+            // 
+            this.uZYTKOWNIKTableAdapter.ClearBeforeFill = true;
+            // 
+            // userCB
+            // 
+            this.userCB.EditValue = "";
+            this.userCB.Location = new System.Drawing.Point(102, 470);
+            this.userCB.Name = "userCB";
+            this.userCB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.userCB.Properties.DataSource = this.uZYTKOWNIKBindingSource;
+            this.userCB.Properties.DisplayMember = "Nazwisko";
+            this.userCB.Properties.ValueMember = "ID_Uzytkownik";
+            this.userCB.Properties.View = this.gridView4;
+            this.userCB.Size = new System.Drawing.Size(360, 20);
+            this.userCB.TabIndex = 93;
+            this.userCB.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.userCB_CustomDisplayText);
+            // 
+            // gridView4
+            // 
+            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID_Uzytkownik,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.colTytul,
+            this.colNr_Pozwolenia,
+            this.colLogin,
+            this.colHaslo,
+            this.colTyp_konta});
+            this.gridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView4.OptionsView.ShowGroupPanel = false;
+            // 
+            // colID_Uzytkownik
+            // 
+            this.colID_Uzytkownik.FieldName = "ID_Uzytkownik";
+            this.colID_Uzytkownik.Name = "colID_Uzytkownik";
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.FieldName = "Imie";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 1;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.FieldName = "Nazwisko";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 2;
+            // 
+            // colTytul
+            // 
+            this.colTytul.FieldName = "Tytul";
+            this.colTytul.Name = "colTytul";
+            this.colTytul.Visible = true;
+            this.colTytul.VisibleIndex = 0;
+            // 
+            // colNr_Pozwolenia
+            // 
+            this.colNr_Pozwolenia.FieldName = "Nr_Pozwolenia";
+            this.colNr_Pozwolenia.Name = "colNr_Pozwolenia";
+            // 
+            // colLogin
+            // 
+            this.colLogin.FieldName = "Login";
+            this.colLogin.Name = "colLogin";
+            // 
+            // colHaslo
+            // 
+            this.colHaslo.FieldName = "Haslo";
+            this.colHaslo.Name = "colHaslo";
+            // 
+            // colTyp_konta
+            // 
+            this.colTyp_konta.FieldName = "Typ_konta";
+            this.colTyp_konta.Name = "colTyp_konta";
+            // 
             // AddVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1217, 554);
+            this.ClientSize = new System.Drawing.Size(476, 554);
+            this.Controls.Add(this.userCB);
+            this.Controls.Add(this.labelControl6);
+            this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.timeEdit);
             this.Controls.Add(this.dateEdit);
             this.Controls.Add(this.ICDCB3);
@@ -611,6 +736,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uZYTKOWNIKBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userCB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -674,5 +802,19 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private System.Windows.Forms.BindingSource uZYTKOWNIKBindingSource;
+        private PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter uZYTKOWNIKTableAdapter;
+        private DevExpress.XtraEditors.SearchLookUpEdit userCB;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraGrid.Columns.GridColumn colID_Uzytkownik;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn colTytul;
+        private DevExpress.XtraGrid.Columns.GridColumn colNr_Pozwolenia;
+        private DevExpress.XtraGrid.Columns.GridColumn colLogin;
+        private DevExpress.XtraGrid.Columns.GridColumn colHaslo;
+        private DevExpress.XtraGrid.Columns.GridColumn colTyp_konta;
     }
 }

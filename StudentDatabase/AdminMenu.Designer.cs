@@ -88,12 +88,6 @@
             this.colID_Ubezpieczenie1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRodzaj = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ICDPage = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.gridICD = new DevExpress.XtraGrid.GridControl();
-            this.iCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colidICD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colKod_ICD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRozpoznanie = new DevExpress.XtraGrid.Columns.GridColumn();
             this.WizytaPage = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gridWizyta = new DevExpress.XtraGrid.GridControl();
             this.visitviewBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -112,7 +106,6 @@
             this.colLeki = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uBEZPIECZENIETableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UBEZPIECZENIETableAdapter();
-            this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.time = new System.Windows.Forms.Timer(this.components);
             this.pACJENTTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
@@ -120,6 +113,13 @@
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.wizytaTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
             this.visit_viewTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.visit_viewTableAdapter();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colidICD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKod_ICD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRozpoznanie = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridICD = new DevExpress.XtraGrid.GridControl();
+            this.iCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -135,14 +135,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.ICDPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridICD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.WizytaPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridWizyta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitviewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridICD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -687,62 +687,6 @@
             this.ICDPage.Name = "ICDPage";
             this.ICDPage.Size = new System.Drawing.Size(1260, 504);
             // 
-            // gridICD
-            // 
-            this.gridICD.DataSource = this.iCDBindingSource;
-            this.gridICD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridICD.Location = new System.Drawing.Point(0, 0);
-            this.gridICD.MainView = this.gridView3;
-            this.gridICD.MenuManager = this.ribbon;
-            this.gridICD.Name = "gridICD";
-            this.gridICD.Size = new System.Drawing.Size(1260, 504);
-            this.gridICD.TabIndex = 0;
-            this.gridICD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
-            // 
-            // iCDBindingSource
-            // 
-            this.iCDBindingSource.DataMember = "ICD";
-            this.iCDBindingSource.DataSource = this.poradniaDataSet;
-            // 
-            // gridView3
-            // 
-            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colidICD,
-            this.colKod_ICD,
-            this.colRozpoznanie});
-            this.gridView3.GridControl = this.gridICD;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsBehavior.Editable = false;
-            this.gridView3.OptionsFind.FindNullPrompt = "Wpisz co chcesz wyszukać...";
-            this.gridView3.OptionsFind.ShowClearButton = false;
-            this.gridView3.OptionsFind.ShowFindButton = false;
-            this.gridView3.OptionsView.ShowGroupPanel = false;
-            // 
-            // colidICD
-            // 
-            this.colidICD.FieldName = "idICD";
-            this.colidICD.Name = "colidICD";
-            this.colidICD.Visible = true;
-            this.colidICD.VisibleIndex = 0;
-            this.colidICD.Width = 91;
-            // 
-            // colKod_ICD
-            // 
-            this.colKod_ICD.FieldName = "Kod_ICD";
-            this.colKod_ICD.Name = "colKod_ICD";
-            this.colKod_ICD.Visible = true;
-            this.colKod_ICD.VisibleIndex = 1;
-            this.colKod_ICD.Width = 108;
-            // 
-            // colRozpoznanie
-            // 
-            this.colRozpoznanie.FieldName = "Rozpoznanie";
-            this.colRozpoznanie.Name = "colRozpoznanie";
-            this.colRozpoznanie.Visible = true;
-            this.colRozpoznanie.VisibleIndex = 2;
-            this.colRozpoznanie.Width = 888;
-            // 
             // WizytaPage
             // 
             this.WizytaPage.Caption = "Wizyta";
@@ -888,10 +832,6 @@
             // 
             this.uBEZPIECZENIETableAdapter.ClearBeforeFill = true;
             // 
-            // iCDTableAdapter
-            // 
-            this.iCDTableAdapter.ClearBeforeFill = true;
-            // 
             // barButtonItem1
             // 
             this.barButtonItem1.Caption = "Odswiez";
@@ -923,6 +863,66 @@
             // visit_viewTableAdapter
             // 
             this.visit_viewTableAdapter.ClearBeforeFill = true;
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colidICD,
+            this.colKod_ICD,
+            this.colRozpoznanie});
+            this.gridView3.GridControl = this.gridICD;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsBehavior.Editable = false;
+            this.gridView3.OptionsFind.FindNullPrompt = "Wpisz co chcesz wyszukać...";
+            this.gridView3.OptionsFind.ShowClearButton = false;
+            this.gridView3.OptionsFind.ShowFindButton = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // colidICD
+            // 
+            this.colidICD.FieldName = "idICD";
+            this.colidICD.Name = "colidICD";
+            this.colidICD.Visible = true;
+            this.colidICD.VisibleIndex = 0;
+            this.colidICD.Width = 91;
+            // 
+            // colKod_ICD
+            // 
+            this.colKod_ICD.FieldName = "Kod_ICD";
+            this.colKod_ICD.Name = "colKod_ICD";
+            this.colKod_ICD.Visible = true;
+            this.colKod_ICD.VisibleIndex = 1;
+            this.colKod_ICD.Width = 108;
+            // 
+            // colRozpoznanie
+            // 
+            this.colRozpoznanie.FieldName = "Rozpoznanie";
+            this.colRozpoznanie.Name = "colRozpoznanie";
+            this.colRozpoznanie.Visible = true;
+            this.colRozpoznanie.VisibleIndex = 2;
+            this.colRozpoznanie.Width = 888;
+            // 
+            // gridICD
+            // 
+            this.gridICD.DataSource = this.iCDBindingSource;
+            this.gridICD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridICD.Location = new System.Drawing.Point(0, 0);
+            this.gridICD.MainView = this.gridView3;
+            this.gridICD.MenuManager = this.ribbon;
+            this.gridICD.Name = "gridICD";
+            this.gridICD.Size = new System.Drawing.Size(1260, 504);
+            this.gridICD.TabIndex = 0;
+            this.gridICD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // iCDBindingSource
+            // 
+            this.iCDBindingSource.DataMember = "ICD";
+            this.iCDBindingSource.DataSource = this.poradniaDataSet;
+            // 
+            // iCDTableAdapter
+            // 
+            this.iCDTableAdapter.ClearBeforeFill = true;
             // 
             // AdminMenu
             // 
@@ -956,14 +956,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ICDPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridICD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.WizytaPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridWizyta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitviewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridICD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -989,13 +989,6 @@
         private DevExpress.XtraBars.BarButtonItem refreshButton;
         private DevExpress.XtraBars.BarButtonItem deleteButtonP;
         private DevExpress.XtraBars.Navigation.TabNavigationPage ICDPage;
-        private DevExpress.XtraGrid.GridControl gridICD;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
-        private System.Windows.Forms.BindingSource iCDBindingSource;
-        private PoradniaDataSetTableAdapters.ICDTableAdapter iCDTableAdapter;
-        private DevExpress.XtraGrid.Columns.GridColumn colidICD;
-        private DevExpress.XtraGrid.Columns.GridColumn colKod_ICD;
-        private DevExpress.XtraGrid.Columns.GridColumn colRozpoznanie;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup UbezpieczenieGroup;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ICDGroup;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
@@ -1061,5 +1054,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn colID_ICD_3;
         private DevExpress.XtraGrid.Columns.GridColumn colZalecenia;
         private DevExpress.XtraGrid.Columns.GridColumn colLeki;
+        private DevExpress.XtraGrid.GridControl gridICD;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.Columns.GridColumn colidICD;
+        private DevExpress.XtraGrid.Columns.GridColumn colKod_ICD;
+        private DevExpress.XtraGrid.Columns.GridColumn colRozpoznanie;
+        private System.Windows.Forms.BindingSource iCDBindingSource;
+        private PoradniaDataSetTableAdapters.ICDTableAdapter iCDTableAdapter;
     }
 }

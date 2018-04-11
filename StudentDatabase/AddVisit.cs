@@ -24,6 +24,8 @@ namespace StudentDatabase
 
         private void AddVisit_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'poradniaDataSet.UZYTKOWNIK' table. You can move, or remove it, as needed.
+            this.uZYTKOWNIKTableAdapter.Fill(this.poradniaDataSet.UZYTKOWNIK);
             // TODO: This line of code loads data into the 'poradniaDataSet.PACJENT' table. You can move, or remove it, as needed.
             this.pacjentTableAdapter.Fill(this.poradniaDataSet.PACJENT);
             // TODO: This line of code loads data into the 'poradniaDataSet.ICD' table. You can move, or remove it, as needed.
@@ -45,6 +47,7 @@ namespace StudentDatabase
             string icd3 = Convert.ToString(ICDCB3.EditValue);
             string rozpoznanie = Convert.ToString(rozpoznanieTB.Text);
             string leki = Convert.ToString(lekiTB.Text);
+            string user = Convert.ToString(userCB.EditValue);
 
 
             if (String.IsNullOrEmpty(pacjentCB.Text) || String.IsNullOrEmpty(objawyTB.Text) || String.IsNullOrEmpty(bprzedTB.Text) || String.IsNullOrEmpty(bpodTB.Text) || String.IsNullOrEmpty(ICDCB1.Text) || String.IsNullOrEmpty(rozpoznanieTB.Text) || String.IsNullOrEmpty(lekiTB.Text))
@@ -114,6 +117,46 @@ namespace StudentDatabase
             {
                 DataRow row = pacjentCB.Properties.View.GetDataRow(theIndex);
                 e.DisplayText = row["Imie"].ToString() + " " + row["Nazwisko"].ToString();
+            }
+        }
+
+        private void userCB_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            int theIndex = userCB.Properties.GetIndexByKeyValue(userCB.EditValue);
+            if (userCB.Properties.View.IsDataRow(theIndex))
+            {
+                DataRow row = userCB.Properties.View.GetDataRow(theIndex);
+                e.DisplayText =row ["Tytul"].ToString() + " " + row["Imie"].ToString() + " " + row["Nazwisko"].ToString();
+            }
+
+        }
+
+        private void ICDCB1_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            int theIndex = ICDCB1.Properties.GetIndexByKeyValue(ICDCB1.EditValue);
+            if (ICDCB1.Properties.View.IsDataRow(theIndex))
+            {
+                DataRow row = ICDCB1.Properties.View.GetDataRow(theIndex);
+                e.DisplayText = row["Kod_ICD"].ToString() + " - " + row["Rozpoznanie"].ToString();
+            }
+        }
+
+        private void ICDCB2_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            int theIndex = ICDCB2.Properties.GetIndexByKeyValue(ICDCB2.EditValue);
+            if (ICDCB2.Properties.View.IsDataRow(theIndex))
+            {
+                DataRow row = ICDCB2.Properties.View.GetDataRow(theIndex);
+                e.DisplayText = row["Kod_ICD"].ToString() + " - " + row["Rozpoznanie"].ToString();
+            }
+        }
+        private void ICDCB3_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            int theIndex = ICDCB3.Properties.GetIndexByKeyValue(ICDCB3.EditValue);
+            if (ICDCB3.Properties.View.IsDataRow(theIndex))
+            {
+                DataRow row = ICDCB3.Properties.View.GetDataRow(theIndex);
+                e.DisplayText = row["Kod_ICD"].ToString() + " - " + row["Rozpoznanie"].ToString();
             }
         }
     }

@@ -17,6 +17,8 @@ namespace StudentDatabase
 
         private void AdminMenu_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'poradniaDataSet.ICD' table. You can move, or remove it, as needed.
+            this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
             // TODO: This line of code loads data into the 'poradniaDataSet.visit_view' table. You can move, or remove it, as needed.
             this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
             // TODO: This line of code loads data into the 'poradniaDataSet.admin_view' table. You can move, or remove it, as needed.
