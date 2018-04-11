@@ -67,9 +67,12 @@
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.addPatient2 = new DevExpress.XtraEditors.SimpleButton();
             this.ubezpieczenieSelect = new System.Windows.Forms.ComboBox();
+            this.uBEZPIECZENIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.plecSelect = new System.Windows.Forms.ComboBox();
+            this.pLECBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.krajSelect = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.kRAJBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID_Kraj = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKraj = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -80,9 +83,6 @@
             this.kartapolakaCB = new DevExpress.XtraEditors.CheckButton();
             this.dowodosobistyCB = new DevExpress.XtraEditors.CheckButton();
             this.paszportCB = new DevExpress.XtraEditors.CheckButton();
-            this.kRAJBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pLECBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uBEZPIECZENIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pACJENTTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             this.pLECTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PLECTableAdapter();
@@ -102,13 +102,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataur.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imieTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pLECBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.krajSelect.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kRAJBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kRAJBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pLECBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -395,6 +395,11 @@
             this.ubezpieczenieSelect.TabIndex = 20;
             this.ubezpieczenieSelect.ValueMember = "ID_Ubezpieczenie";
             // 
+            // uBEZPIECZENIEBindingSource
+            // 
+            this.uBEZPIECZENIEBindingSource.DataMember = "UBEZPIECZENIE";
+            this.uBEZPIECZENIEBindingSource.DataSource = this.poradniaDataSet;
+            // 
             // poradniaDataSet
             // 
             this.poradniaDataSet.DataSetName = "PoradniaDataSet";
@@ -412,6 +417,11 @@
             this.plecSelect.TabIndex = 6;
             this.plecSelect.ValueMember = "ID_Plec";
             // 
+            // pLECBindingSource
+            // 
+            this.pLECBindingSource.DataMember = "PLEC";
+            this.pLECBindingSource.DataSource = this.poradniaDataSet;
+            // 
             // krajSelect
             // 
             this.krajSelect.EditValue = "";
@@ -425,6 +435,11 @@
             this.krajSelect.Properties.View = this.gridView2;
             this.krajSelect.Size = new System.Drawing.Size(199, 20);
             this.krajSelect.TabIndex = 4;
+            // 
+            // kRAJBindingSource
+            // 
+            this.kRAJBindingSource.DataMember = "KRAJ";
+            this.kRAJBindingSource.DataSource = this.poradniaDataSet;
             // 
             // gridView2
             // 
@@ -507,21 +522,6 @@
             this.paszportCB.Text = "Paszport:";
             this.paszportCB.CheckedChanged += new System.EventHandler(this.PaszportCB_CheckedChanged);
             // 
-            // kRAJBindingSource
-            // 
-            this.kRAJBindingSource.DataMember = "KRAJ";
-            this.kRAJBindingSource.DataSource = this.poradniaDataSet;
-            // 
-            // pLECBindingSource
-            // 
-            this.pLECBindingSource.DataMember = "PLEC";
-            this.pLECBindingSource.DataSource = this.poradniaDataSet;
-            // 
-            // uBEZPIECZENIEBindingSource
-            // 
-            this.uBEZPIECZENIEBindingSource.DataMember = "UBEZPIECZENIE";
-            this.uBEZPIECZENIEBindingSource.DataSource = this.poradniaDataSet;
-            // 
             // pACJENTBindingSource
             // 
             this.pACJENTBindingSource.DataMember = "PACJENT";
@@ -599,13 +599,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataur.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imieTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pLECBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.krajSelect.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kRAJBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kRAJBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pLECBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

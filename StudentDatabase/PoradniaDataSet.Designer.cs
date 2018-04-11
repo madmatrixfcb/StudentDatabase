@@ -10555,8 +10555,7 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "server=test1.swietarodzina.com.pl;user id=01516561_test1;persistsecurityinfo=True" +
-                ";database=01516561_test1;allowuservariables=True";
+            this._connection.ConnectionString = global::StudentDatabase.Properties.Settings.Default._01516561_test1ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11282,8 +11281,7 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "server=test1.swietarodzina.com.pl;user id=01516561_test1;persistsecurityinfo=True" +
-                ";database=01516561_test1;allowuservariables=True";
+            this._connection.ConnectionString = global::StudentDatabase.Properties.Settings.Default._01516561_test1ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11467,8 +11465,7 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "server=test1.swietarodzina.com.pl;user id=01516561_test1;persistsecurityinfo=True" +
-                ";database=01516561_test1;allowuservariables=True";
+            this._connection.ConnectionString = global::StudentDatabase.Properties.Settings.Default._01516561_test1ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11730,8 +11727,7 @@ INNER JOIN UBEZPIECZENIE as U ON P.Ubezpieczenie = U.ID_Ubezpieczenie";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = "server=test1.swietarodzina.com.pl;user id=01516561_test1;persistsecurityinfo=True" +
-                ";database=01516561_test1;allowuservariables=True";
+            this._connection.ConnectionString = global::StudentDatabase.Properties.Settings.Default._01516561_test1ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
