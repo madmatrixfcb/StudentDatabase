@@ -13,8 +13,6 @@ namespace StudentDatabase
 {
     public partial class Login : DevExpress.XtraEditors.XtraForm
     {
-        public bool isAdmin { get; private set; }
-
         public Login()
         {
             InitializeComponent();
@@ -37,16 +35,23 @@ namespace StudentDatabase
             }
         }
 
+        public static class LoginInfo
+        {
+            public static string login;
+            public static string pass;
+            public static string userType;
+        }
+
 
 
         public void loginButton_Click(object sender, EventArgs e)
         {
-            String login = Convert.ToString(loginBox.Text);
-            String pass = Convert.ToString(passBox.Text);
-            String userType = Convert.ToString(uzytkownikTableAdapter.SelectLogin(login, pass));
+            LoginInfo.login = Convert.ToString(loginBox.Text);
+            LoginInfo.pass = Convert.ToString(passBox.Text);
+            LoginInfo.userType = Convert.ToString(uzytkownikTableAdapter.SelectLogin(LoginInfo.login, LoginInfo.pass));
 
-            if (userType == "Admin")
-            {
+          //  if (LoginInfo.userType == "Admin")
+          //  {
                 try
                 {
                 AdminMenu adminMenu = new AdminMenu();
@@ -59,9 +64,9 @@ namespace StudentDatabase
                 {
                     MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-
-            else if (userType == "Lekarz")
+            //}
+/*
+            else if (LoginInfo.userType == "Lekarz")
             {
                 try
                 {
@@ -81,8 +86,9 @@ namespace StudentDatabase
             else
             {
                 MessageBox.Show("Wprowadzono nieprawidłowe dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
 
         }
+
     }
 }

@@ -50,7 +50,7 @@
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.deleteBarWizyta = new DevExpress.XtraBars.BarToggleSwitchItem();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
-            this.ribbonAdmin = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonMenu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PacjenciGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.WizytaGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.UbezpieczenieGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -88,12 +88,29 @@
             this.colID_Ubezpieczenie1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRodzaj = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ICDPage = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.gridICD = new DevExpress.XtraGrid.GridControl();
+            this.iCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colidICD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKod_ICD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRozpoznanie = new DevExpress.XtraGrid.Columns.GridColumn();
             this.WizytaPage = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uBEZPIECZENIETableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UBEZPIECZENIETableAdapter();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.time = new System.Windows.Forms.Timer(this.components);
+            this.pACJENTTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
+            this.admin_viewTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.admin_viewTableAdapter();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
+            this.wizytaTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
             this.gridWizyta = new DevExpress.XtraGrid.GridControl();
-            this.visitviewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.poradniaDataSet1 = new StudentDatabase.PoradniaDataSet();
+            this.visitviewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.visit_viewTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.visit_viewTableAdapter();
             this.colID_Wizyta = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colD_Pacjent = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colID_Pacjent1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colData = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGodzina = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colObjawy = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -104,22 +121,7 @@
             this.colID_ICD_3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colZalecenia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLeki = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uBEZPIECZENIETableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UBEZPIECZENIETableAdapter();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.time = new System.Windows.Forms.Timer(this.components);
-            this.pACJENTTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
-            this.admin_viewTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.admin_viewTableAdapter();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.wizytaTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
-            this.visit_viewTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.visit_viewTableAdapter();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colidICD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colKod_ICD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colRozpoznanie = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridICD = new DevExpress.XtraGrid.GridControl();
-            this.iCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
+            this.colID_Lekarz = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -135,14 +137,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.ICDPage.SuspendLayout();
-            this.WizytaPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridWizyta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.visitviewBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridICD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            this.WizytaPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridWizyta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visitviewBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -173,7 +176,7 @@
             this.ribbon.MaxItemId = 16;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonAdmin});
+            this.ribbonMenu});
             this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemToggleSwitch1,
             this.repositoryItemCheckEdit1});
@@ -201,6 +204,7 @@
             // deleteButtonP
             // 
             this.deleteButtonP.Caption = "Usuń";
+            this.deleteButtonP.Enabled = false;
             this.deleteButtonP.Id = 6;
             this.deleteButtonP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("deleteButtonP.ImageOptions.Image")));
             this.deleteButtonP.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("deleteButtonP.ImageOptions.LargeImage")));
@@ -278,6 +282,7 @@
             // deleteButtonW
             // 
             this.deleteButtonW.Caption = "Usuń";
+            this.deleteButtonW.Enabled = false;
             this.deleteButtonW.Id = 16;
             this.deleteButtonW.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("deleteButtonW.ImageOptions.Image")));
             this.deleteButtonW.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("deleteButtonW.ImageOptions.LargeImage")));
@@ -331,15 +336,15 @@
             this.barStaticItem2.Id = 14;
             this.barStaticItem2.Name = "barStaticItem2";
             // 
-            // ribbonAdmin
+            // ribbonMenu
             // 
-            this.ribbonAdmin.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonMenu.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.PacjenciGroup,
             this.WizytaGroup,
             this.UbezpieczenieGroup,
             this.ICDGroup});
-            this.ribbonAdmin.Name = "ribbonAdmin";
-            this.ribbonAdmin.Text = "Admin";
+            this.ribbonMenu.Name = "ribbonMenu";
+            this.ribbonMenu.Text = "Menu";
             // 
             // PacjenciGroup
             // 
@@ -687,182 +692,23 @@
             this.ICDPage.Name = "ICDPage";
             this.ICDPage.Size = new System.Drawing.Size(1260, 504);
             // 
-            // WizytaPage
+            // gridICD
             // 
-            this.WizytaPage.Caption = "Wizyta";
-            this.WizytaPage.Controls.Add(this.gridWizyta);
-            this.WizytaPage.Name = "WizytaPage";
-            this.WizytaPage.Size = new System.Drawing.Size(1260, 504);
+            this.gridICD.DataSource = this.iCDBindingSource;
+            this.gridICD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridICD.Location = new System.Drawing.Point(0, 0);
+            this.gridICD.MainView = this.gridView3;
+            this.gridICD.MenuManager = this.ribbon;
+            this.gridICD.Name = "gridICD";
+            this.gridICD.Size = new System.Drawing.Size(1260, 504);
+            this.gridICD.TabIndex = 0;
+            this.gridICD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
             // 
-            // gridWizyta
+            // iCDBindingSource
             // 
-            this.gridWizyta.DataSource = this.visitviewBindingSource;
-            this.gridWizyta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridWizyta.Location = new System.Drawing.Point(0, 0);
-            this.gridWizyta.MainView = this.gridView4;
-            this.gridWizyta.MenuManager = this.ribbon;
-            this.gridWizyta.Name = "gridWizyta";
-            this.gridWizyta.Size = new System.Drawing.Size(1260, 504);
-            this.gridWizyta.TabIndex = 0;
-            this.gridWizyta.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView4});
-            // 
-            // visitviewBindingSource
-            // 
-            this.visitviewBindingSource.DataMember = "visit_view";
-            this.visitviewBindingSource.DataSource = this.poradniaDataSet;
-            // 
-            // gridView4
-            // 
-            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colID_Wizyta,
-            this.colD_Pacjent,
-            this.colData,
-            this.colGodzina,
-            this.colObjawy,
-            this.colBPrzedmiotowe,
-            this.colBPodmiotowe,
-            this.colID_ICD_1,
-            this.colID_ICD_2,
-            this.colID_ICD_3,
-            this.colZalecenia,
-            this.colLeki});
-            this.gridView4.GridControl = this.gridWizyta;
-            this.gridView4.Name = "gridView4";
-            this.gridView4.OptionsBehavior.Editable = false;
-            this.gridView4.OptionsView.ShowGroupPanel = false;
-            // 
-            // colID_Wizyta
-            // 
-            this.colID_Wizyta.Caption = "Wizyta";
-            this.colID_Wizyta.FieldName = "ID_Wizyta";
-            this.colID_Wizyta.Name = "colID_Wizyta";
-            this.colID_Wizyta.Visible = true;
-            this.colID_Wizyta.VisibleIndex = 0;
-            // 
-            // colD_Pacjent
-            // 
-            this.colD_Pacjent.Caption = "Pacjent";
-            this.colD_Pacjent.FieldName = "ID_Pacjent";
-            this.colD_Pacjent.Name = "colD_Pacjent";
-            this.colD_Pacjent.Visible = true;
-            this.colD_Pacjent.VisibleIndex = 1;
-            // 
-            // colData
-            // 
-            this.colData.FieldName = "Data";
-            this.colData.Name = "colData";
-            this.colData.Visible = true;
-            this.colData.VisibleIndex = 2;
-            // 
-            // colGodzina
-            // 
-            this.colGodzina.FieldName = "Godzina";
-            this.colGodzina.Name = "colGodzina";
-            this.colGodzina.Visible = true;
-            this.colGodzina.VisibleIndex = 3;
-            // 
-            // colObjawy
-            // 
-            this.colObjawy.FieldName = "Objawy";
-            this.colObjawy.Name = "colObjawy";
-            this.colObjawy.Visible = true;
-            this.colObjawy.VisibleIndex = 4;
-            // 
-            // colBPrzedmiotowe
-            // 
-            this.colBPrzedmiotowe.Caption = "Badanie przedmiotowe";
-            this.colBPrzedmiotowe.FieldName = "BPrzedmiotowe";
-            this.colBPrzedmiotowe.Name = "colBPrzedmiotowe";
-            this.colBPrzedmiotowe.Visible = true;
-            this.colBPrzedmiotowe.VisibleIndex = 5;
-            // 
-            // colBPodmiotowe
-            // 
-            this.colBPodmiotowe.Caption = "Badanie podmiotowe";
-            this.colBPodmiotowe.FieldName = "BPodmiotowe";
-            this.colBPodmiotowe.Name = "colBPodmiotowe";
-            this.colBPodmiotowe.Visible = true;
-            this.colBPodmiotowe.VisibleIndex = 6;
-            // 
-            // colID_ICD_1
-            // 
-            this.colID_ICD_1.Caption = "ICD 1";
-            this.colID_ICD_1.FieldName = "ID_ICD_1";
-            this.colID_ICD_1.Name = "colID_ICD_1";
-            this.colID_ICD_1.Visible = true;
-            this.colID_ICD_1.VisibleIndex = 7;
-            // 
-            // colID_ICD_2
-            // 
-            this.colID_ICD_2.Caption = "ICD 2";
-            this.colID_ICD_2.FieldName = "ID_ICD_2";
-            this.colID_ICD_2.Name = "colID_ICD_2";
-            this.colID_ICD_2.Visible = true;
-            this.colID_ICD_2.VisibleIndex = 8;
-            // 
-            // colID_ICD_3
-            // 
-            this.colID_ICD_3.Caption = "ICD 3";
-            this.colID_ICD_3.FieldName = "ID_ICD_3";
-            this.colID_ICD_3.Name = "colID_ICD_3";
-            this.colID_ICD_3.Visible = true;
-            this.colID_ICD_3.VisibleIndex = 9;
-            // 
-            // colZalecenia
-            // 
-            this.colZalecenia.FieldName = "Zalecenia";
-            this.colZalecenia.Name = "colZalecenia";
-            this.colZalecenia.Visible = true;
-            this.colZalecenia.VisibleIndex = 10;
-            // 
-            // colLeki
-            // 
-            this.colLeki.FieldName = "Leki";
-            this.colLeki.Name = "colLeki";
-            this.colLeki.Visible = true;
-            this.colLeki.VisibleIndex = 11;
-            // 
-            // pACJENTBindingSource
-            // 
-            this.pACJENTBindingSource.DataMember = "PACJENT";
-            this.pACJENTBindingSource.DataSource = this.poradniaDataSet;
-            // 
-            // uBEZPIECZENIETableAdapter
-            // 
-            this.uBEZPIECZENIETableAdapter.ClearBeforeFill = true;
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Odswiez";
-            this.barButtonItem1.Id = 2;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // time
-            // 
-            this.time.Tick += new System.EventHandler(this.Time_Tick);
-            // 
-            // pACJENTTableAdapter
-            // 
-            this.pACJENTTableAdapter.ClearBeforeFill = true;
-            // 
-            // admin_viewTableAdapter
-            // 
-            this.admin_viewTableAdapter.ClearBeforeFill = true;
-            // 
-            // defaultLookAndFeel1
-            // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013 Dark Gray";
-            // 
-            // wizytaTableAdapter
-            // 
-            this.wizytaTableAdapter.ClearBeforeFill = true;
-            // 
-            // visit_viewTableAdapter
-            // 
-            this.visit_viewTableAdapter.ClearBeforeFill = true;
+            this.iCDBindingSource.DataMember = "ICD";
+            this.iCDBindingSource.DataSource = this.poradniaDataSet;
             // 
             // gridView3
             // 
@@ -902,27 +748,192 @@
             this.colRozpoznanie.VisibleIndex = 2;
             this.colRozpoznanie.Width = 888;
             // 
-            // gridICD
+            // WizytaPage
             // 
-            this.gridICD.DataSource = this.iCDBindingSource;
-            this.gridICD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridICD.Location = new System.Drawing.Point(0, 0);
-            this.gridICD.MainView = this.gridView3;
-            this.gridICD.MenuManager = this.ribbon;
-            this.gridICD.Name = "gridICD";
-            this.gridICD.Size = new System.Drawing.Size(1260, 504);
-            this.gridICD.TabIndex = 0;
-            this.gridICD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
+            this.WizytaPage.Caption = "Wizyta";
+            this.WizytaPage.Controls.Add(this.gridWizyta);
+            this.WizytaPage.Name = "WizytaPage";
+            this.WizytaPage.Size = new System.Drawing.Size(1260, 504);
             // 
-            // iCDBindingSource
+            // pACJENTBindingSource
             // 
-            this.iCDBindingSource.DataMember = "ICD";
-            this.iCDBindingSource.DataSource = this.poradniaDataSet;
+            this.pACJENTBindingSource.DataMember = "PACJENT";
+            this.pACJENTBindingSource.DataSource = this.poradniaDataSet;
+            // 
+            // uBEZPIECZENIETableAdapter
+            // 
+            this.uBEZPIECZENIETableAdapter.ClearBeforeFill = true;
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Odswiez";
+            this.barButtonItem1.Id = 2;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // time
+            // 
+            this.time.Tick += new System.EventHandler(this.Time_Tick);
+            // 
+            // pACJENTTableAdapter
+            // 
+            this.pACJENTTableAdapter.ClearBeforeFill = true;
+            // 
+            // admin_viewTableAdapter
+            // 
+            this.admin_viewTableAdapter.ClearBeforeFill = true;
+            // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013 Dark Gray";
             // 
             // iCDTableAdapter
             // 
             this.iCDTableAdapter.ClearBeforeFill = true;
+            // 
+            // wizytaTableAdapter
+            // 
+            this.wizytaTableAdapter.ClearBeforeFill = true;
+            // 
+            // gridWizyta
+            // 
+            this.gridWizyta.DataSource = this.visitviewBindingSource;
+            this.gridWizyta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridWizyta.Location = new System.Drawing.Point(0, 0);
+            this.gridWizyta.MainView = this.gridView4;
+            this.gridWizyta.MenuManager = this.ribbon;
+            this.gridWizyta.Name = "gridWizyta";
+            this.gridWizyta.Size = new System.Drawing.Size(1260, 504);
+            this.gridWizyta.TabIndex = 0;
+            this.gridWizyta.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView4});
+            // 
+            // gridView4
+            // 
+            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID_Wizyta,
+            this.colID_Pacjent1,
+            this.colData,
+            this.colGodzina,
+            this.colObjawy,
+            this.colBPrzedmiotowe,
+            this.colBPodmiotowe,
+            this.colID_ICD_1,
+            this.colID_ICD_2,
+            this.colID_ICD_3,
+            this.colZalecenia,
+            this.colLeki,
+            this.colID_Lekarz});
+            this.gridView4.GridControl = this.gridWizyta;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsView.ShowGroupPanel = false;
+            // 
+            // poradniaDataSet1
+            // 
+            this.poradniaDataSet1.DataSetName = "PoradniaDataSet";
+            this.poradniaDataSet1.Locale = new System.Globalization.CultureInfo("pl");
+            this.poradniaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // visitviewBindingSource
+            // 
+            this.visitviewBindingSource.DataMember = "visit_view";
+            this.visitviewBindingSource.DataSource = this.poradniaDataSet1;
+            // 
+            // visit_viewTableAdapter
+            // 
+            this.visit_viewTableAdapter.ClearBeforeFill = true;
+            // 
+            // colID_Wizyta
+            // 
+            this.colID_Wizyta.FieldName = "ID_Wizyta";
+            this.colID_Wizyta.Name = "colID_Wizyta";
+            this.colID_Wizyta.Visible = true;
+            this.colID_Wizyta.VisibleIndex = 0;
+            // 
+            // colID_Pacjent1
+            // 
+            this.colID_Pacjent1.FieldName = "ID_Pacjent";
+            this.colID_Pacjent1.Name = "colID_Pacjent1";
+            this.colID_Pacjent1.Visible = true;
+            this.colID_Pacjent1.VisibleIndex = 1;
+            // 
+            // colData
+            // 
+            this.colData.FieldName = "Data";
+            this.colData.Name = "colData";
+            this.colData.Visible = true;
+            this.colData.VisibleIndex = 2;
+            // 
+            // colGodzina
+            // 
+            this.colGodzina.FieldName = "Godzina";
+            this.colGodzina.Name = "colGodzina";
+            this.colGodzina.Visible = true;
+            this.colGodzina.VisibleIndex = 3;
+            // 
+            // colObjawy
+            // 
+            this.colObjawy.FieldName = "Objawy";
+            this.colObjawy.Name = "colObjawy";
+            this.colObjawy.Visible = true;
+            this.colObjawy.VisibleIndex = 4;
+            // 
+            // colBPrzedmiotowe
+            // 
+            this.colBPrzedmiotowe.FieldName = "BPrzedmiotowe";
+            this.colBPrzedmiotowe.Name = "colBPrzedmiotowe";
+            this.colBPrzedmiotowe.Visible = true;
+            this.colBPrzedmiotowe.VisibleIndex = 5;
+            // 
+            // colBPodmiotowe
+            // 
+            this.colBPodmiotowe.FieldName = "BPodmiotowe";
+            this.colBPodmiotowe.Name = "colBPodmiotowe";
+            this.colBPodmiotowe.Visible = true;
+            this.colBPodmiotowe.VisibleIndex = 6;
+            // 
+            // colID_ICD_1
+            // 
+            this.colID_ICD_1.FieldName = "ID_ICD_1";
+            this.colID_ICD_1.Name = "colID_ICD_1";
+            this.colID_ICD_1.Visible = true;
+            this.colID_ICD_1.VisibleIndex = 7;
+            // 
+            // colID_ICD_2
+            // 
+            this.colID_ICD_2.FieldName = "ID_ICD_2";
+            this.colID_ICD_2.Name = "colID_ICD_2";
+            this.colID_ICD_2.Visible = true;
+            this.colID_ICD_2.VisibleIndex = 8;
+            // 
+            // colID_ICD_3
+            // 
+            this.colID_ICD_3.FieldName = "ID_ICD_3";
+            this.colID_ICD_3.Name = "colID_ICD_3";
+            this.colID_ICD_3.Visible = true;
+            this.colID_ICD_3.VisibleIndex = 9;
+            // 
+            // colZalecenia
+            // 
+            this.colZalecenia.FieldName = "Zalecenia";
+            this.colZalecenia.Name = "colZalecenia";
+            this.colZalecenia.Visible = true;
+            this.colZalecenia.VisibleIndex = 10;
+            // 
+            // colLeki
+            // 
+            this.colLeki.FieldName = "Leki";
+            this.colLeki.Name = "colLeki";
+            this.colLeki.Visible = true;
+            this.colLeki.VisibleIndex = 11;
+            // 
+            // colID_Lekarz
+            // 
+            this.colID_Lekarz.FieldName = "ID_Lekarz";
+            this.colID_Lekarz.Name = "colID_Lekarz";
+            this.colID_Lekarz.Visible = true;
+            this.colID_Lekarz.VisibleIndex = 12;
             // 
             // AdminMenu
             // 
@@ -956,14 +967,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ICDPage.ResumeLayout(false);
-            this.WizytaPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridWizyta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.visitviewBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridICD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            this.WizytaPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridWizyta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.visitviewBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -972,7 +984,7 @@
         #endregion
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbon;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonAdmin;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonMenu;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup PacjenciGroup;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
         private PoradniaDataSet poradniaDataSet;
@@ -1037,13 +1049,21 @@
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraBars.BarToggleSwitchItem deleteBarWizyta;
         private DevExpress.XtraBars.BarStaticItem barStaticItem2;
+        private DevExpress.XtraGrid.GridControl gridICD;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.Columns.GridColumn colidICD;
+        private DevExpress.XtraGrid.Columns.GridColumn colKod_ICD;
+        private DevExpress.XtraGrid.Columns.GridColumn colRozpoznanie;
+        private System.Windows.Forms.BindingSource iCDBindingSource;
+        private PoradniaDataSetTableAdapters.ICDTableAdapter iCDTableAdapter;
         private PoradniaDataSetTableAdapters.WIZYTATableAdapter wizytaTableAdapter;
         private DevExpress.XtraGrid.GridControl gridWizyta;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private PoradniaDataSet poradniaDataSet1;
         private System.Windows.Forms.BindingSource visitviewBindingSource;
         private PoradniaDataSetTableAdapters.visit_viewTableAdapter visit_viewTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colID_Wizyta;
-        private DevExpress.XtraGrid.Columns.GridColumn colD_Pacjent;
+        private DevExpress.XtraGrid.Columns.GridColumn colID_Pacjent1;
         private DevExpress.XtraGrid.Columns.GridColumn colData;
         private DevExpress.XtraGrid.Columns.GridColumn colGodzina;
         private DevExpress.XtraGrid.Columns.GridColumn colObjawy;
@@ -1054,12 +1074,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colID_ICD_3;
         private DevExpress.XtraGrid.Columns.GridColumn colZalecenia;
         private DevExpress.XtraGrid.Columns.GridColumn colLeki;
-        private DevExpress.XtraGrid.GridControl gridICD;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
-        private DevExpress.XtraGrid.Columns.GridColumn colidICD;
-        private DevExpress.XtraGrid.Columns.GridColumn colKod_ICD;
-        private DevExpress.XtraGrid.Columns.GridColumn colRozpoznanie;
-        private System.Windows.Forms.BindingSource iCDBindingSource;
-        private PoradniaDataSetTableAdapters.ICDTableAdapter iCDTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colID_Lekarz;
     }
 }
