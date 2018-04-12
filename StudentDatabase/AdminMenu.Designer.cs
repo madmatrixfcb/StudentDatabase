@@ -675,8 +675,6 @@
             // 
             this.colID_Ubezpieczenie1.FieldName = "ID_Ubezpieczenie";
             this.colID_Ubezpieczenie1.Name = "colID_Ubezpieczenie1";
-            this.colID_Ubezpieczenie1.Visible = true;
-            this.colID_Ubezpieczenie1.VisibleIndex = 0;
             // 
             // colRodzaj
             // 
@@ -729,8 +727,6 @@
             // 
             this.colidICD.FieldName = "idICD";
             this.colidICD.Name = "colidICD";
-            this.colidICD.Visible = true;
-            this.colidICD.VisibleIndex = 0;
             this.colidICD.Width = 91;
             // 
             // colKod_ICD
@@ -747,7 +743,7 @@
             this.colRozpoznanie.FieldName = "Rozpoznanie";
             this.colRozpoznanie.Name = "colRozpoznanie";
             this.colRozpoznanie.Visible = true;
-            this.colRozpoznanie.VisibleIndex = 2;
+            this.colRozpoznanie.VisibleIndex = 1;
             this.colRozpoznanie.Width = 888;
             // 
             // WizytaPage
@@ -829,6 +825,7 @@
             this.colID_Lekarz});
             this.gridView4.GridControl = this.gridWizyta;
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsBehavior.Editable = false;
             this.gridView4.OptionsView.ShowGroupPanel = false;
             // 
             // poradniaDataSet1
