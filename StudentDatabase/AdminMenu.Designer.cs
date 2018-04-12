@@ -680,10 +680,11 @@
             // 
             // colRodzaj
             // 
+            this.colRodzaj.Caption = "Rodzaj ubezpieczenia";
             this.colRodzaj.FieldName = "Rodzaj";
             this.colRodzaj.Name = "colRodzaj";
             this.colRodzaj.Visible = true;
-            this.colRodzaj.VisibleIndex = 1;
+            this.colRodzaj.VisibleIndex = 0;
             // 
             // ICDPage
             // 
@@ -734,10 +735,11 @@
             // 
             // colKod_ICD
             // 
+            this.colKod_ICD.Caption = "Kod ICD";
             this.colKod_ICD.FieldName = "Kod_ICD";
             this.colKod_ICD.Name = "colKod_ICD";
             this.colKod_ICD.Visible = true;
-            this.colKod_ICD.VisibleIndex = 1;
+            this.colKod_ICD.VisibleIndex = 0;
             this.colKod_ICD.Width = 108;
             // 
             // colRozpoznanie
@@ -846,6 +848,7 @@
             // 
             // colID_Wizyta
             // 
+            this.colID_Wizyta.Caption = "Wizyta";
             this.colID_Wizyta.FieldName = "ID_Wizyta";
             this.colID_Wizyta.Name = "colID_Wizyta";
             this.colID_Wizyta.Visible = true;
@@ -853,6 +856,7 @@
             // 
             // colID_Pacjent1
             // 
+            this.colID_Pacjent1.Caption = "Pacjent";
             this.colID_Pacjent1.FieldName = "ID_Pacjent";
             this.colID_Pacjent1.Name = "colID_Pacjent1";
             this.colID_Pacjent1.Visible = true;
@@ -881,6 +885,7 @@
             // 
             // colBPrzedmiotowe
             // 
+            this.colBPrzedmiotowe.Caption = "Badanie przedmiotowe";
             this.colBPrzedmiotowe.FieldName = "BPrzedmiotowe";
             this.colBPrzedmiotowe.Name = "colBPrzedmiotowe";
             this.colBPrzedmiotowe.Visible = true;
@@ -888,6 +893,7 @@
             // 
             // colBPodmiotowe
             // 
+            this.colBPodmiotowe.Caption = "Badanie podmiotowe";
             this.colBPodmiotowe.FieldName = "BPodmiotowe";
             this.colBPodmiotowe.Name = "colBPodmiotowe";
             this.colBPodmiotowe.Visible = true;
@@ -895,6 +901,7 @@
             // 
             // colID_ICD_1
             // 
+            this.colID_ICD_1.Caption = "Kod ICD 1";
             this.colID_ICD_1.FieldName = "ID_ICD_1";
             this.colID_ICD_1.Name = "colID_ICD_1";
             this.colID_ICD_1.Visible = true;
@@ -902,6 +909,7 @@
             // 
             // colID_ICD_2
             // 
+            this.colID_ICD_2.Caption = "Kod ICD 2";
             this.colID_ICD_2.FieldName = "ID_ICD_2";
             this.colID_ICD_2.Name = "colID_ICD_2";
             this.colID_ICD_2.Visible = true;
@@ -909,6 +917,7 @@
             // 
             // colID_ICD_3
             // 
+            this.colID_ICD_3.Caption = "Kod ICD 3";
             this.colID_ICD_3.FieldName = "ID_ICD_3";
             this.colID_ICD_3.Name = "colID_ICD_3";
             this.colID_ICD_3.Visible = true;
@@ -930,6 +939,7 @@
             // 
             // colID_Lekarz
             // 
+            this.colID_Lekarz.Caption = "Przyjmujący";
             this.colID_Lekarz.FieldName = "ID_Lekarz";
             this.colID_Lekarz.Name = "colID_Lekarz";
             this.colID_Lekarz.Visible = true;
