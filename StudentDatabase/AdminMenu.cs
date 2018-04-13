@@ -17,13 +17,14 @@ namespace StudentDatabase
 
         private void AdminMenu_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'poradniaDataSet1.WIZYTA' table. You can move, or remove it, as needed.
+            this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
             // TODO: This line of code loads data into the 'poradniaDataSet1.visit_view' table. You can move, or remove it, as needed.
-            this.visit_viewTableAdapter.Fill(this.poradniaDataSet1.visit_view);
             this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
-            this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
-            this.admin_viewTableAdapter.Fill(this.poradniaDataSet.admin_view);
+            // TODO: This line of code loads data into the 'poradniaDataSet1.PACJENT' table. You can move, or remove it, as needed.
             this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
-            this.wizytaTableAdapter.Fill(poradniaDataSet.WIZYTA);
+            // TODO: This line of code loads data into the 'poradniaDataSet1.admin_view' table. You can move, or remove it, as needed.
+            this.admin_viewTableAdapter.Fill(this.poradniaDataSet.admin_view);
             this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
             this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
 
@@ -55,7 +56,7 @@ namespace StudentDatabase
         public void RefreshWizyta()
         {
             this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
-            this.wizytaTableAdapter.Fill(this.poradniaDataSet.WIZYTA);
+            this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
             gridWizyta.RefreshDataSource();
         }
 
@@ -322,7 +323,7 @@ namespace StudentDatabase
 
         private void RefreshVisit_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.wizytaTableAdapter.Fill(this.poradniaDataSet.WIZYTA);
+            this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
         }
 
         private void DeleteButtonW_ItemClick(object sender, ItemClickEventArgs e)
@@ -333,7 +334,7 @@ namespace StudentDatabase
                 try
                 {
                     gridView4.DeleteRow(gridView4.FocusedRowHandle);
-                    this.wizytaTableAdapter.Update(poradniaDataSet.WIZYTA);
+                    this.wIZYTATableAdapter.Update(poradniaDataSet.WIZYTA);
                     MessageBox.Show("Wizyta usunięta", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     RefreshWizyta();
                 }

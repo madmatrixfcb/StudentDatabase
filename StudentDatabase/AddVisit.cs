@@ -26,11 +26,8 @@ namespace StudentDatabase
 
         private void AddVisit_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'poradniaDataSet.UZYTKOWNIK' table. You can move, or remove it, as needed.
             this.uzytkownikTableAdapter.Fill(this.poradniaDataSet.UZYTKOWNIK);
-            // TODO: This line of code loads data into the 'poradniaDataSet.PACJENT' table. You can move, or remove it, as needed.
             this.pacjentTableAdapter.Fill(this.poradniaDataSet.PACJENT);
-            // TODO: This line of code loads data into the 'poradniaDataSet.ICD' table. You can move, or remove it, as needed.
             this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
             timeEdit.EditValue = DateTime.Now;
             dateEdit.EditValue = DateTime.Now;
@@ -50,6 +47,7 @@ namespace StudentDatabase
             string icd3 = Convert.ToString(ICDCB3.EditValue);
             string rozpoznanie = Convert.ToString(rozpoznanieTB.Text);
             string leki = Convert.ToString(lekiTB.Text);
+            string zalecenia = Convert.ToString(zaleceniaTB.Text);
             string user = Convert.ToString(userCB.EditValue);
 
 
@@ -62,7 +60,7 @@ namespace StudentDatabase
 
                 try
                 {
-                    wizytaTableAdapter.InsertQuery(patient, date, time, objawy, bprzed, bpod, icd1, icd2, icd3, rozpoznanie, leki, user);
+                    wizytaTableAdapter.InsertQuery(patient, date, time, objawy, bprzed, bpod, icd1, icd2, icd3, rozpoznanie, leki, zalecenia, user);
                     MessageBox.Show("Wizyta dodana", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Close();
@@ -162,8 +160,8 @@ namespace StudentDatabase
             }
         }
         /* private void DefaultUserLoad(int userID)
-         {
-             userID = Convert.ToInt16(uzytkownikTableAdapter.SelectUserID(Login.LoginInfo.login, Login.LoginInfo.pass));
-         }*/
+{
+    userID = Convert.ToInt16(uzytkownikTableAdapter.SelectUserID(Login.LoginInfo.login, Login.LoginInfo.pass));
+}*/
     }
 }

@@ -21,10 +21,12 @@ namespace StudentDatabase
 
         private void EditPatient_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'poradniaDataSet.PACJENT' table. You can move, or remove it, as needed.
+            this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
             // TODO: This line of code loads data into the 'poradniaDataSet.KRAJ' table. You can move, or remove it, as needed.
             this.kRAJTableAdapter.Fill(this.poradniaDataSet.KRAJ);
             // TODO: This line of code loads data into the 'poradniaDataSet.PACJENT' table. You can move, or remove it, as needed.
-            this.pacjentTableAdapter.Fill(this.poradniaDataSet.PACJENT);
+            this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
             // TODO: This line of code loads data into the 'poradniaDataSet.UBEZPIECZENIE' table. You can move, or remove it, as needed.
             this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
             // TODO: This line of code loads data into the 'poradniaDataSet.PLEC' table. You can move, or remove it, as needed.
@@ -61,7 +63,7 @@ namespace StudentDatabase
         {
             string imie = Convert.ToString(imieTB.Text);
             string nazwisko = Convert.ToString(nazwiskoTB.Text);
-            string data_ur = Convert.ToString(dataur.Text);
+            DateTime data_ur = Convert.ToDateTime(dataur.Text);
             string kraj = Convert.ToString(krajSelect.EditValue);
             string telefon = Convert.ToString(telefonTB.Text);
             string ulica = Convert.ToString(ulicaTB.Text);
@@ -83,11 +85,11 @@ namespace StudentDatabase
             {
                 try
                 {
-                    pacjentTableAdapter.UpdateQuery(imie, nazwisko, data_ur, kraj, telefon, plec, ulica, nr_budynku, nr_mieszkania, kod_pocztowy, miasto, nr_pesel, nr_kp, dowod_osobisty, nr_paszportu, ubezpieczenie, Convert.ToInt16(IDTB.EditValue));
+                    pACJENTTableAdapter.UpdateQuery(imie, nazwisko, data_ur, kraj, telefon, plec, ulica, nr_budynku, nr_mieszkania, kod_pocztowy, miasto, nr_pesel, nr_kp, dowod_osobisty, nr_paszportu, ubezpieczenie, Convert.ToInt16(IDTB.EditValue));
 
                     MessageBox.Show("Pacjent zaktualizowany", "Zaktualizowano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.pacjentTableAdapter.Fill(this.poradniaDataSet.PACJENT);
+                    this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
                 }
                 catch (Exception ex)
                 {
@@ -169,22 +171,22 @@ namespace StudentDatabase
 
         private void peselCB_CheckedChanged(object sender, EventArgs e)
         {
-            peselTB.Enabled = (peselCB.CheckState == CheckState.Checked);
+            peselTB.Enabled = (peselCB.Checked == true);
         }
 
         private void kartapolakaCB_CheckedChanged(object sender, EventArgs e)
         {
-            kartapolakaTB.Enabled = (kartapolakaCB.CheckState == CheckState.Checked);
+            kartapolakaTB.Enabled = (kartapolakaCB.Checked == true);
         }
 
         private void dowodosobistyCB_CheckedChanged(object sender, EventArgs e)
         {
-            dowodTB.Enabled = (dowodosobistyCB.CheckState == CheckState.Checked);
+            dowodTB.Enabled = (dowodosobistyCB.Checked == true);
         }
 
         private void paszportCB_CheckedChanged(object sender, EventArgs e)
         {
-            paszportTB.Enabled = (paszportCB.CheckState == CheckState.Checked);
+            paszportTB.Enabled = (paszportCB.Checked == true);
         }
     }
 }
