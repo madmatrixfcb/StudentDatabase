@@ -12,11 +12,16 @@ namespace StudentDatabase
             InitializeComponent();
             time.Start();
             tabPane1.SelectedPage = null;
+            UserInfo();
 
         }
 
         private void AdminMenu_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'poradniaDataSet.admin_view' table. You can move, or remove it, as needed.
+            this.admin_viewTableAdapter.Fill(this.poradniaDataSet.admin_view);
+            // TODO: This line of code loads data into the 'poradniaDataSet.visit_view' table. You can move, or remove it, as needed.
+            this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
             // TODO: This line of code loads data into the 'poradniaDataSet1.WIZYTA' table. You can move, or remove it, as needed.
             this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
             // TODO: This line of code loads data into the 'poradniaDataSet1.visit_view' table. You can move, or remove it, as needed.
@@ -43,6 +48,13 @@ namespace StudentDatabase
         private void Time_Tick(object sender, EventArgs e)
         {
             timeItem.Caption = "Aktualna godzina: "+DateTime.Now.ToLongTimeString();
+        }
+
+        //-----------------------USER----------------------------------/
+
+        private void UserInfo()
+        {
+            loggedAsText.Caption = "Zalogowany jako: " + Convert.ToString(this.uzytkownikTableAdapter.SelectUserInfo(Login.LoginInfo.userID));
         }
 
         //-----------------------FUNCTIONS----------------------------------/

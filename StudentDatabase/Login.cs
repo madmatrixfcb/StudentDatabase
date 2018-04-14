@@ -40,6 +40,7 @@ namespace StudentDatabase
             public static string login;
             public static string pass;
             public static string userType;
+            public static sbyte userID;
         }
 
 
@@ -49,6 +50,7 @@ namespace StudentDatabase
             LoginInfo.login = Convert.ToString(loginBox.Text);
             LoginInfo.pass = Convert.ToString(passBox.Text);
             LoginInfo.userType = Convert.ToString(uzytkownikTableAdapter.SelectLogin(LoginInfo.login, LoginInfo.pass));
+            LoginInfo.userID = Convert.ToSByte(uzytkownikTableAdapter.SelectUserID(LoginInfo.login, LoginInfo.pass));
 
           //  if (LoginInfo.userType == "Admin")
           //  {
