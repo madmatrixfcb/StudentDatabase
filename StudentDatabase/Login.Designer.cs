@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.uzytkownikTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
@@ -37,15 +39,19 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.passBox = new System.Windows.Forms.TextBox();
-            this.loginBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tyP_KONTATableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.TYP_KONTATableAdapter();
+            this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.loginBox = new DevExpress.XtraEditors.TextEdit();
+            this.passBox = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passBox.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // poradniaDataSet
@@ -65,11 +71,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.passBox);
+            this.panel2.Controls.Add(this.loginBox);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.passBox);
-            this.panel2.Controls.Add(this.loginBox);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(285, 275);
@@ -103,23 +109,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Login:";
             // 
-            // passBox
-            // 
-            this.passBox.Location = new System.Drawing.Point(42, 235);
-            this.passBox.Name = "passBox";
-            this.passBox.PasswordChar = '*';
-            this.passBox.Size = new System.Drawing.Size(200, 21);
-            this.passBox.TabIndex = 1;
-            this.passBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // loginBox
-            // 
-            this.loginBox.Location = new System.Drawing.Point(42, 187);
-            this.loginBox.Name = "loginBox";
-            this.loginBox.Size = new System.Drawing.Size(200, 21);
-            this.loginBox.TabIndex = 0;
-            this.loginBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // loginButton
             // 
             this.loginButton.Location = new System.Drawing.Point(42, 15);
@@ -143,6 +132,28 @@
             // 
             this.tyP_KONTATableAdapter.ClearBeforeFill = true;
             // 
+            // loginBox
+            // 
+            this.loginBox.Location = new System.Drawing.Point(42, 187);
+            this.loginBox.Name = "loginBox";
+            this.loginBox.Size = new System.Drawing.Size(200, 20);
+            this.loginBox.TabIndex = 6;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule2.ErrorText = "Nieprawidłowy login!";
+            this.dxValidationProvider1.SetValidationRule(this.loginBox, conditionValidationRule2);
+            // 
+            // passBox
+            // 
+            this.passBox.Location = new System.Drawing.Point(42, 235);
+            this.passBox.Name = "passBox";
+            this.passBox.Properties.PasswordChar = '*';
+            this.passBox.Properties.UseSystemPasswordChar = true;
+            this.passBox.Size = new System.Drawing.Size(200, 20);
+            this.passBox.TabIndex = 7;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule1.ErrorText = "Nieprawidłowe hasło!";
+            this.dxValidationProvider1.SetValidationRule(this.passBox, conditionValidationRule1);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,6 +171,9 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passBox.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -172,10 +186,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox passBox;
-        private System.Windows.Forms.TextBox loginBox;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Panel panel1;
         private PoradniaDataSetTableAdapters.TYP_KONTATableAdapter tyP_KONTATableAdapter;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider1;
+        private DevExpress.XtraEditors.TextEdit passBox;
+        private DevExpress.XtraEditors.TextEdit loginBox;
     }
 }

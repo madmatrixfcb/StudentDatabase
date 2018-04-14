@@ -18,30 +18,14 @@ namespace StudentDatabase
 
         private void AdminMenu_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'poradniaDataSet.admin_view' table. You can move, or remove it, as needed.
-            this.admin_viewTableAdapter.Fill(this.poradniaDataSet.admin_view);
-            // TODO: This line of code loads data into the 'poradniaDataSet.visit_view' table. You can move, or remove it, as needed.
+           /* this.admin_viewTableAdapter.Fill(this.poradniaDataSet.admin_view);
             this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
-            // TODO: This line of code loads data into the 'poradniaDataSet1.WIZYTA' table. You can move, or remove it, as needed.
             this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
-            // TODO: This line of code loads data into the 'poradniaDataSet1.visit_view' table. You can move, or remove it, as needed.
             this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
-            // TODO: This line of code loads data into the 'poradniaDataSet1.PACJENT' table. You can move, or remove it, as needed.
             this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
-            // TODO: This line of code loads data into the 'poradniaDataSet1.admin_view' table. You can move, or remove it, as needed.
             this.admin_viewTableAdapter.Fill(this.poradniaDataSet.admin_view);
             this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
-            this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
-
-            /*if (Login.LoginInfo.userType == "Admin")
-            {
-                MessageBox.Show("Witaj "+ Login.LoginInfo.login+"!", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            if (Login.LoginInfo.userType == "Lekarz")
-            {
-                MessageBox.Show("Witaj " + Login.LoginInfo.userType + "!", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }*/
+            this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);*/
         }
 
         //-----------------------TIME----------------------------------/
@@ -216,6 +200,11 @@ namespace StudentDatabase
             RefreshPacjenci();
         }
 
+        private void findPatientButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            gridPacjenci.ExportToXls("F:/Visual Studio 2015/Projects/StudentDatabase/StudentDatabase/PDF/a.xls");
+        }
+
         //-----------------------------------UBEZPIECZENIE RIBBON-----------------------------------//
 
         private void DeleteButtonU_ItemClick(object sender, ItemClickEventArgs e)
@@ -338,6 +327,18 @@ namespace StudentDatabase
             this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
         }
 
+        private void editVisit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            EditVisit edit_Visit = new EditVisit();
+            edit_Visit.Show();
+            edit_Visit.FormClosed += Edit_Visit_FormClosed;
+        }
+
+        private void Edit_Visit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RefreshWizyta();
+        }
+
         private void DeleteButtonW_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogResult warning = MessageBox.Show("Czy na pewno chcesz usunąć wybraną wizytę?", "Potwierdzenie usunięcia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -371,5 +372,7 @@ namespace StudentDatabase
                 return;
             }
         }
+
+
     }
 }

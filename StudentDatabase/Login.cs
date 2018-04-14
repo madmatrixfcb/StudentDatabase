@@ -43,8 +43,6 @@ namespace StudentDatabase
             public static sbyte userID;
         }
 
-
-
         public void loginButton_Click(object sender, EventArgs e)
         {
             LoginInfo.login = Convert.ToString(loginBox.Text);
@@ -52,43 +50,52 @@ namespace StudentDatabase
             LoginInfo.userType = Convert.ToString(uzytkownikTableAdapter.SelectLogin(LoginInfo.login, LoginInfo.pass));
             LoginInfo.userID = Convert.ToSByte(uzytkownikTableAdapter.SelectUserID(LoginInfo.login, LoginInfo.pass));
 
-          //  if (LoginInfo.userType == "Admin")
-          //  {
-                try
-                {
-                AdminMenu adminMenu = new AdminMenu();
-                this.Hide();
-                adminMenu.ShowDialog();
-                this.Close();
-                }
+            bool isValid = dxValidationProvider1.Validate();
 
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            //}
-/*
-            else if (LoginInfo.userType == "Lekarz")
+            if (isValid == true)
             {
-                try
+                if (LoginInfo.userType == "Admin")
                 {
-                    AdminMenu adminMenu = new AdminMenu();
-                    this.Hide();
-                    adminMenu.ShowDialog();
-                    this.Close();
+                    try
+                    {
+                        AdminMenu adminMenu = new AdminMenu();
+                        this.Hide();
+                        adminMenu.ShowDialog();
+                        this.Close();
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else if (LoginInfo.userType == "Lekarz")
+                {
+                    try
+                    {
+                        AdminMenu adminMenu = new AdminMenu();
+                        this.Hide();
+                        adminMenu.ShowDialog();
+                        this.Close();
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
 
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Wprowadzono nieprawidłowe dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    loginBox.ResetText();
+                    passBox.ResetText();
                 }
-
             }
-
             else
             {
                 MessageBox.Show("Wprowadzono nieprawidłowe dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+            }
 
         }
 

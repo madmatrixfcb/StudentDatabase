@@ -128,6 +128,7 @@
             this.visit_viewTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.visit_viewTableAdapter();
             this.admin_viewTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.admin_viewTableAdapter();
             this.uzytkownikTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter();
+            this.findPatientButton = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -181,9 +182,10 @@
             this.viewVisit,
             this.editVisit,
             this.barHeaderItem1,
-            this.loggedAsText});
+            this.loggedAsText,
+            this.findPatientButton});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 21;
+            this.ribbon.MaxItemId = 22;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.loggedAsText);
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -362,6 +364,7 @@
             this.editVisit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("editVisit.ImageOptions.Image")));
             this.editVisit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("editVisit.ImageOptions.LargeImage")));
             this.editVisit.Name = "editVisit";
+            this.editVisit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editVisit_ItemClick);
             // 
             // barHeaderItem1
             // 
@@ -390,6 +393,7 @@
             this.PacjenciGroup.Enabled = false;
             this.PacjenciGroup.ItemLinks.Add(this.addPatient);
             this.PacjenciGroup.ItemLinks.Add(this.editPatient);
+            this.PacjenciGroup.ItemLinks.Add(this.findPatientButton);
             this.PacjenciGroup.ItemLinks.Add(this.refreshButton);
             this.PacjenciGroup.ItemLinks.Add(this.deleteButtonP);
             this.PacjenciGroup.ItemLinks.Add(this.deleteModeBar);
@@ -831,6 +835,11 @@
             this.colID_Lekarz});
             this.gridView4.GridControl = this.gridWizyta;
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.gridView4.OptionsBehavior.Editable = false;
+            this.gridView4.OptionsFind.FindNullPrompt = "Wpisz co chcesz wyszukać...";
+            this.gridView4.OptionsFind.ShowClearButton = false;
+            this.gridView4.OptionsFind.ShowFindButton = false;
             this.gridView4.OptionsView.ShowGroupPanel = false;
             // 
             // colID_Wizyta
@@ -974,6 +983,15 @@
             // uzytkownikTableAdapter
             // 
             this.uzytkownikTableAdapter.ClearBeforeFill = true;
+            // 
+            // findPatientButton
+            // 
+            this.findPatientButton.Caption = "Wyszukaj pacjenta";
+            this.findPatientButton.Id = 21;
+            this.findPatientButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.findPatientButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.findPatientButton.Name = "findPatientButton";
+            this.findPatientButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.findPatientButton_ItemClick);
             // 
             // AdminMenu
             // 
@@ -1121,5 +1139,6 @@
         private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
         private DevExpress.XtraBars.BarStaticItem loggedAsText;
         private PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter uzytkownikTableAdapter;
+        private DevExpress.XtraBars.BarButtonItem findPatientButton;
     }
 }

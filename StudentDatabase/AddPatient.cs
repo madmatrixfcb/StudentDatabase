@@ -18,23 +18,6 @@ namespace StudentDatabase
             this.krajTableAdapter.Fill(this.poradniaDataSet.KRAJ);
         }
 
-        //-----------------------FUNCTIONS----------------------------------/
-
-        void ClearAllControls(Control container)
-        {
-            foreach (var control in container.Controls)
-            {
-                if (control is TextBox)
-                {
-                    ((TextBox)control).Text = string.Empty;
-                }
-                if (control is Label)
-                {
-                    ((Label)control).Text = string.Empty;
-                }
-            }
-        }
-
         //-----------------------CHECK BOXES----------------------------------/
 
         private void PeselCB_CheckedChanged(object sender, EventArgs e)

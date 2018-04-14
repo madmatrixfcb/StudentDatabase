@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.closeButton = new DevExpress.XtraEditors.SimpleButton();
+            this.editVisitButton = new DevExpress.XtraEditors.SimpleButton();
             this.lookUpEdit1 = new DevExpress.XtraEditors.LookUpEdit();
             this.uZYTKOWNIKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
@@ -98,7 +100,6 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridWizyta = new DevExpress.XtraGrid.GridControl();
-            this.visitviewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID_Wizyta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colID_Pacjent1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -113,11 +114,12 @@
             this.colZalecenia = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLeki = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colID_Lekarz = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.visit_viewTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.visit_viewTableAdapter();
             this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
             this.uZYTKOWNIKTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter();
-            this.editVisitButton = new DevExpress.XtraEditors.SimpleButton();
-            this.closeButton = new DevExpress.XtraEditors.SimpleButton();
+            this.wIZYTABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wIZYTATableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
+            this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pACJENTTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -141,8 +143,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pacjentCB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridWizyta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.visitviewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wIZYTABindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -188,6 +191,22 @@
             this.splitContainer1.SplitterDistance = 465;
             this.splitContainer1.TabIndex = 117;
             // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(175, 575);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(75, 23);
+            this.closeButton.TabIndex = 147;
+            this.closeButton.Text = "Zamknij";
+            // 
+            // editVisitButton
+            // 
+            this.editVisitButton.Location = new System.Drawing.Point(159, 546);
+            this.editVisitButton.Name = "editVisitButton";
+            this.editVisitButton.Size = new System.Drawing.Size(103, 23);
+            this.editVisitButton.TabIndex = 146;
+            this.editVisitButton.Text = "Edytuj wizytę";
+            // 
             // lookUpEdit1
             // 
             this.lookUpEdit1.Location = new System.Drawing.Point(101, 470);
@@ -199,6 +218,7 @@
             this.lookUpEdit1.Properties.ValueMember = "ID_Uzytkownik";
             this.lookUpEdit1.Size = new System.Drawing.Size(360, 20);
             this.lookUpEdit1.TabIndex = 144;
+            this.lookUpEdit1.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.userCB_CustomDisplayText);
             // 
             // uZYTKOWNIKBindingSource
             // 
@@ -240,6 +260,7 @@
             this.userCB.Properties.View = this.gridView4;
             this.userCB.Size = new System.Drawing.Size(360, 20);
             this.userCB.TabIndex = 139;
+            this.userCB.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.userCB_CustomDisplayText);
             // 
             // gridView4
             // 
@@ -332,6 +353,7 @@
             this.timeEdit.Properties.Mask.EditMask = "t";
             this.timeEdit.Size = new System.Drawing.Size(100, 20);
             this.timeEdit.TabIndex = 119;
+            this.timeEdit.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.timeEdit_Spin);
             // 
             // dateEdit
             // 
@@ -359,6 +381,7 @@
             this.ICDCB3.Properties.View = this.gridView3;
             this.ICDCB3.Size = new System.Drawing.Size(286, 20);
             this.ICDCB3.TabIndex = 125;
+            this.ICDCB3.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.ICDCB3_CustomDisplayText);
             // 
             // iCDBindingSource
             // 
@@ -411,6 +434,7 @@
             this.ICDCB2.Properties.View = this.gridView2;
             this.ICDCB2.Size = new System.Drawing.Size(286, 20);
             this.ICDCB2.TabIndex = 124;
+            this.ICDCB2.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.ICDCB2_CustomDisplayText);
             // 
             // gridView2
             // 
@@ -460,6 +484,7 @@
             this.ICDCB1.Properties.View = this.gridView1;
             this.ICDCB1.Size = new System.Drawing.Size(286, 20);
             this.ICDCB1.TabIndex = 123;
+            this.ICDCB1.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.ICDCB1_CustomDisplayText);
             // 
             // gridView1
             // 
@@ -501,12 +526,14 @@
             this.pacjentCB.Name = "pacjentCB";
             this.pacjentCB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.pacjentCB.Properties.DataSource = this.pACJENTBindingSource;
             this.pacjentCB.Properties.DisplayMember = "Nazwisko";
             this.pacjentCB.Properties.NullText = "";
             this.pacjentCB.Properties.ValueMember = "ID_Pacjent";
             this.pacjentCB.Properties.View = this.searchLookUpEdit1View;
             this.pacjentCB.Size = new System.Drawing.Size(360, 20);
             this.pacjentCB.TabIndex = 117;
+            this.pacjentCB.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.pacjentCB_CustomDisplayText);
             // 
             // searchLookUpEdit1View
             // 
@@ -751,7 +778,7 @@
             // 
             // gridWizyta
             // 
-            this.gridWizyta.DataSource = this.visitviewBindingSource;
+            this.gridWizyta.DataSource = this.wIZYTABindingSource;
             this.gridWizyta.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridWizyta.Location = new System.Drawing.Point(0, 0);
             this.gridWizyta.MainView = this.gridView5;
@@ -760,11 +787,6 @@
             this.gridWizyta.TabIndex = 0;
             this.gridWizyta.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
-            // 
-            // visitviewBindingSource
-            // 
-            this.visitviewBindingSource.DataMember = "visit_view";
-            this.visitviewBindingSource.DataSource = this.poradniaDataSet;
             // 
             // gridView5
             // 
@@ -784,6 +806,11 @@
             this.colID_Lekarz});
             this.gridView5.GridControl = this.gridWizyta;
             this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.gridView5.OptionsBehavior.Editable = false;
+            this.gridView5.OptionsFind.FindNullPrompt = "Wpisz co chcesz wyszukać...";
+            this.gridView5.OptionsFind.ShowClearButton = false;
+            this.gridView5.OptionsFind.ShowFindButton = false;
             this.gridView5.OptionsView.ShowGroupPanel = false;
             this.gridView5.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView5_FocusedRowChanged);
             // 
@@ -878,10 +905,6 @@
             this.colID_Lekarz.Visible = true;
             this.colID_Lekarz.VisibleIndex = 12;
             // 
-            // visit_viewTableAdapter
-            // 
-            this.visit_viewTableAdapter.ClearBeforeFill = true;
-            // 
             // iCDTableAdapter
             // 
             this.iCDTableAdapter.ClearBeforeFill = true;
@@ -890,21 +913,23 @@
             // 
             this.uZYTKOWNIKTableAdapter.ClearBeforeFill = true;
             // 
-            // editVisitButton
+            // wIZYTABindingSource
             // 
-            this.editVisitButton.Location = new System.Drawing.Point(159, 546);
-            this.editVisitButton.Name = "editVisitButton";
-            this.editVisitButton.Size = new System.Drawing.Size(103, 23);
-            this.editVisitButton.TabIndex = 146;
-            this.editVisitButton.Text = "Edytuj wizytę";
+            this.wIZYTABindingSource.DataMember = "WIZYTA";
+            this.wIZYTABindingSource.DataSource = this.poradniaDataSet;
             // 
-            // closeButton
+            // wIZYTATableAdapter
             // 
-            this.closeButton.Location = new System.Drawing.Point(175, 575);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(75, 23);
-            this.closeButton.TabIndex = 147;
-            this.closeButton.Text = "Zamknij";
+            this.wIZYTATableAdapter.ClearBeforeFill = true;
+            // 
+            // pACJENTBindingSource
+            // 
+            this.pACJENTBindingSource.DataMember = "PACJENT";
+            this.pACJENTBindingSource.DataSource = this.poradniaDataSet;
+            // 
+            // pACJENTTableAdapter
+            // 
+            this.pACJENTTableAdapter.ClearBeforeFill = true;
             // 
             // EditVisit
             // 
@@ -940,8 +965,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pacjentCB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridWizyta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.visitviewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wIZYTABindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1013,8 +1039,6 @@
         private DevExpress.XtraGrid.GridControl gridWizyta;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
         private PoradniaDataSet poradniaDataSet;
-        private System.Windows.Forms.BindingSource visitviewBindingSource;
-        private PoradniaDataSetTableAdapters.visit_viewTableAdapter visit_viewTableAdapter;
         private DevExpress.XtraEditors.TextEdit wizytaTB;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraGrid.Columns.GridColumn colID_Wizyta;
@@ -1037,5 +1061,9 @@
         private DevExpress.XtraEditors.LookUpEdit lookUpEdit1;
         private DevExpress.XtraEditors.SimpleButton closeButton;
         private DevExpress.XtraEditors.SimpleButton editVisitButton;
+        private System.Windows.Forms.BindingSource wIZYTABindingSource;
+        private PoradniaDataSetTableAdapters.WIZYTATableAdapter wIZYTATableAdapter;
+        private System.Windows.Forms.BindingSource pACJENTBindingSource;
+        private PoradniaDataSetTableAdapters.PACJENTTableAdapter pACJENTTableAdapter;
     }
 }
