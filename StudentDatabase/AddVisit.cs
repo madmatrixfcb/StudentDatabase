@@ -159,9 +159,5 @@ namespace StudentDatabase
                 e.DisplayText = row["Tytul"].ToString() + " " + row["Imie"].ToString() + " " + row["Nazwisko"].ToString();
             }
         }
-        /* private void DefaultUserLoad(int userID)
-{
-    userID = Convert.ToInt16(uzytkownikTableAdapter.SelectUserID(Login.LoginInfo.login, Login.LoginInfo.pass));
-}*/
     }
 }

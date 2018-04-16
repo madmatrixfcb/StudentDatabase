@@ -19,6 +19,12 @@ namespace StudentDatabase
 
         private void EditVisit_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'poradniaDataSet.WIZYTA' table. You can move, or remove it, as needed.
+            this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
+            // TODO: This line of code loads data into the 'poradniaDataSet.WIZYTA' table. You can move, or remove it, as needed.
+            this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
+            // TODO: This line of code loads data into the 'poradniaDataSet.WIZYTA' table. You can move, or remove it, as needed.
+            this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
             // TODO: This line of code loads data into the 'poradniaDataSet.PACJENT' table. You can move, or remove it, as needed.
             this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
             // TODO: This line of code loads data into the 'poradniaDataSet.WIZYTA' table. You can move, or remove it, as needed.
@@ -32,25 +38,29 @@ namespace StudentDatabase
 
         private void gridView5_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            wizytaTB.EditValue = gridView5.GetRowCellValue(e.FocusedRowHandle, "ID_Wizyta");
-            pacjentCB.EditValue = gridView5.GetRowCellValue(e.FocusedRowHandle, "ID_Pacjent");
-            dateEdit.EditValue = gridView5.GetRowCellValue(e.FocusedRowHandle, "Data");
-            timeEdit.EditValue = gridView5.GetRowCellValue(e.FocusedRowHandle, "Godzina");
-            objawyTB.Text = Convert.ToString(gridView5.GetRowCellValue(e.FocusedRowHandle, "Objawy"));
-            bprzedTB.Text = Convert.ToString(gridView5.GetRowCellValue(e.FocusedRowHandle, "BPrzedmiotowe"));
-            bpodTB.Text = Convert.ToString(gridView5.GetRowCellValue(e.FocusedRowHandle, "BPodmiotowe"));
-            ICDCB1.EditValue = gridView5.GetRowCellValue(e.FocusedRowHandle, "ID_ICD_1");
-            ICDCB2.EditValue = gridView5.GetRowCellValue(e.FocusedRowHandle, "ID_ICD_2");
-            ICDCB3.EditValue = gridView5.GetRowCellValue(e.FocusedRowHandle, "ID_ICD_3");
-            rozpoznanieTB.Text = Convert.ToString(gridView5.GetRowCellValue(e.FocusedRowHandle, "Rozpoznanie"));
-            lekiTB.Text = Convert.ToString(gridView5.GetRowCellValue(e.FocusedRowHandle, "Leki"));
-            lookUpEdit1.EditValue = gridView5.GetRowCellValue(e.FocusedRowHandle, "ID_Lekarz");
-            userCB.EditValue = gridView5.GetRowCellValue(e.FocusedRowHandle, "ID_Lekarz");
+            wizytaTB.EditValue = gridViewEditWizyta.GetRowCellValue(e.FocusedRowHandle, "ID_Wizyta");
+            pacjentCB.EditValue = gridViewEditWizyta.GetRowCellValue(e.FocusedRowHandle, "ID_Pacjent");
+            pacjentCB.ForceInitialize();
+            dateEdit.EditValue = gridViewEditWizyta.GetRowCellValue(e.FocusedRowHandle, "Data");
+            timeEdit.EditValue = gridViewEditWizyta.GetRowCellValue(e.FocusedRowHandle, "Godzina");
+            objawyTB.Text = Convert.ToString(gridViewEditWizyta.GetRowCellValue(e.FocusedRowHandle, "Objawy"));
+            bprzedTB.Text = Convert.ToString(gridViewEditWizyta.GetRowCellValue(e.FocusedRowHandle, "BPrzedmiotowe"));
+            bpodTB.Text = Convert.ToString(gridViewEditWizyta.GetRowCellValue(e.FocusedRowHandle, "BPodmiotowe"));
+            ICDCB1.EditValue = gridViewEditWizyta.GetRowCellValue(e.FocusedRowHandle, "ID_ICD_1");
+            ICDCB1.ForceInitialize();
+            ICDCB2.EditValue = gridViewEditWizyta.GetRowCellValue(e.FocusedRowHandle, "ID_ICD_2");
+            ICDCB2.ForceInitialize();
+            ICDCB3.EditValue = gridViewEditWizyta.GetRowCellValue(e.FocusedRowHandle, "ID_ICD_3");
+            ICDCB3.ForceInitialize();
+            rozpoznanieTB.Text = Convert.ToString(gridViewEditWizyta.GetRowCellValue(e.FocusedRowHandle, "Rozpoznanie"));
+            lekiTB.Text = Convert.ToString(gridViewEditWizyta.GetRowCellValue(e.FocusedRowHandle, "Leki"));
+            zaleceniaTB.Text = Convert.ToString(gridViewEditWizyta.GetRowCellValue(e.FocusedRowHandle, "Zalecenia"));
+            userCB.EditValue = gridViewEditWizyta.GetRowCellValue(e.FocusedRowHandle, "ID_Lekarz");
+            userCB.ForceInitialize();
         }
 
         private void timeEdit_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
         {
-            //var timeEdit = sender as timeEdit;
             var minuteStart = timeEdit.Text.IndexOf(":") + 1;
             if (timeEdit.SelectionStart == minuteStart)
             {

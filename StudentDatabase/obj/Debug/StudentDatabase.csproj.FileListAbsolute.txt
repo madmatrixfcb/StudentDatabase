@@ -138,3 +138,4 @@ F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\ru\DevE
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\itextsharp.dll
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\itextsharp.xml
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.EditVisit.resources
+F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.ViewVisit.resources

@@ -44,7 +44,6 @@
             this.objawyTB = new System.Windows.Forms.RichTextBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.pacjentCB = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID_Pacjent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colImie = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -93,10 +92,11 @@
             this.colLogin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHaslo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTyp_konta = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.pacjentTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             this.closeButton = new System.Windows.Forms.Button();
             this.zaleceniaTB = new System.Windows.Forms.RichTextBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
+            this.pacjentTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             this.uZYTKOWNIKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -104,7 +104,6 @@
             this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
             this.wizytaTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pacjentCB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICDCB1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -117,6 +116,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.timeEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userCB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uZYTKOWNIKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
@@ -251,12 +251,6 @@
             this.pacjentCB.Size = new System.Drawing.Size(360, 20);
             this.pacjentCB.TabIndex = 1;
             this.pacjentCB.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.pacjentCB_CustomDisplayText);
-            // 
-            // poradniaDataSet
-            // 
-            this.poradniaDataSet.DataSetName = "PoradniaDataSet";
-            this.poradniaDataSet.Locale = new System.Globalization.CultureInfo("pl");
-            this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // searchLookUpEdit1View
             // 
@@ -663,10 +657,6 @@
             this.colTyp_konta.FieldName = "Typ_konta";
             this.colTyp_konta.Name = "colTyp_konta";
             // 
-            // pacjentTableAdapter
-            // 
-            this.pacjentTableAdapter.ClearBeforeFill = true;
-            // 
             // closeButton
             // 
             this.closeButton.Location = new System.Drawing.Point(172, 759);
@@ -691,6 +681,16 @@
             this.labelControl7.Size = new System.Drawing.Size(49, 13);
             this.labelControl7.TabIndex = 96;
             this.labelControl7.Text = "Zalecenia:";
+            // 
+            // poradniaDataSet
+            // 
+            this.poradniaDataSet.DataSetName = "PoradniaDataSet";
+            this.poradniaDataSet.Locale = new System.Globalization.CultureInfo("pl");
+            this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pacjentTableAdapter
+            // 
+            this.pacjentTableAdapter.ClearBeforeFill = true;
             // 
             // uZYTKOWNIKBindingSource
             // 
@@ -754,7 +754,6 @@
             this.Text = "AddVisit";
             this.Load += new System.EventHandler(this.AddVisit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pacjentCB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICDCB1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -767,6 +766,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.timeEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userCB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uZYTKOWNIKBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();

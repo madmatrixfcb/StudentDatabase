@@ -18,14 +18,15 @@ namespace StudentDatabase
 
         private void AdminMenu_Load(object sender, EventArgs e)
         {
-           /* this.admin_viewTableAdapter.Fill(this.poradniaDataSet.admin_view);
             this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
-            this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
-            this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
-            this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
-            this.admin_viewTableAdapter.Fill(this.poradniaDataSet.admin_view);
-            this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
-            this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);*/
+            this.patient_viewTableAdapter.Fill(this.poradniaDataSet.patient_view);
+            /*
+             this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
+             this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
+             this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
+             this.patient_viewTableAdapter.Fill(this.poradniaDataSet.patient_view);
+             this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
+             this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);*/
         }
 
         //-----------------------TIME----------------------------------/
@@ -44,7 +45,7 @@ namespace StudentDatabase
         //-----------------------FUNCTIONS----------------------------------/
         public void RefreshPacjenci()
         {
-            this.admin_viewTableAdapter.Fill(this.poradniaDataSet.admin_view);
+            this.patient_viewTableAdapter.Fill(this.poradniaDataSet.patient_view);
             this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
             gridPacjenci.RefreshDataSource();
         }
@@ -81,17 +82,25 @@ namespace StudentDatabase
                 RefreshPacjenci();
             }
 
-            if (tabPane1.SelectedPage == UbezpieczeniePage && Login.LoginInfo.userType == "Admin")
+            if (tabPane1.SelectedPage == UbezpieczeniePage)
             {
-                UbezpieczenieGroup.Enabled = true;
+                
                 RefreshUbezpieczenie();
+                if (Login.LoginInfo.userType == "Admin")
+                {
+                    UbezpieczenieGroup.Enabled = true;
+                }
             }
 
-            if (tabPane1.SelectedPage == ICDPage && Login.LoginInfo.userType == "Admin")
+            if (tabPane1.SelectedPage == ICDPage)
             {
-                ICDGroup.Enabled = true;
                 RefreshICD();
+                if (Login.LoginInfo.userType == "Admin")
+                {
+                    ICDGroup.Enabled = true;
+                }
             }
+            
 
             if (tabPane1.SelectedPage == WizytaPage)
             {
@@ -111,7 +120,7 @@ namespace StudentDatabase
             }
             else
             {
-                gridPacjenci.DataSource = this.poradniaDataSet.admin_view;
+                gridPacjenci.DataSource = this.poradniaDataSet.patient_view;
                 gridPacjenci.Refresh();
                 deleteButtonP.Enabled = false;
             }
@@ -158,7 +167,7 @@ namespace StudentDatabase
             {
                 try
                 {
-                    gridView1.DeleteRow(gridView1.FocusedRowHandle);
+                    gridViewPacjent.DeleteRow(gridViewPacjent.FocusedRowHandle);
                     this.pACJENTTableAdapter.Update(poradniaDataSet.PACJENT);
                     MessageBox.Show("Pacjent(ci) usunięty(ci)", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     RefreshPacjenci();
@@ -214,7 +223,7 @@ namespace StudentDatabase
             {
                 try
                 {
-                    gridView2.DeleteRow(gridView2.FocusedRowHandle);
+                    gridViewUbezpieczenie.DeleteRow(gridViewUbezpieczenie.FocusedRowHandle);
                     this.uBEZPIECZENIETableAdapter.Update(poradniaDataSet.UBEZPIECZENIE);
                     MessageBox.Show("Ubezpieczenie(a) usunięte", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     RefreshUbezpieczenie();
@@ -290,7 +299,7 @@ namespace StudentDatabase
             {
                 try
                 {
-                    gridView3.DeleteRow(gridView3.FocusedRowHandle);
+                    gridViewICD.DeleteRow(gridViewICD.FocusedRowHandle);
                     this.iCDTableAdapter.Update(poradniaDataSet.ICD);
                     MessageBox.Show("Kod ICD usunięty", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     RefreshICD();
@@ -339,14 +348,37 @@ namespace StudentDatabase
             RefreshWizyta();
         }
 
-        private void DeleteButtonW_ItemClick(object sender, ItemClickEventArgs e)
+        private void viewVisit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            gridViewPacjent.ApplyFindFilter(Convert.ToString(VisitPreview.patientID));
+            VisitPreview.patientRow = gridViewPacjent.GetFocusedDataRow();
+            VisitPreview.visitRow = gridViewWizyta.GetFocusedDataRow();
+            ViewVisit view_Visit = new ViewVisit();
+            view_Visit.Show();
+        }
+
+        private void gridViewWizyta_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            VisitPreview.patientID = gridViewWizyta.GetRowCellValue(e.FocusedRowHandle, "ID_Pacjent");
+            VisitPreview.visitID = gridViewWizyta.GetRowCellValue(e.FocusedRowHandle, "ID_Wizyta");
+        }
+
+        public static class VisitPreview
+        {
+            public static object patientID;
+            public static object visitID;
+            public static DataRow visitRow;
+            public static DataRow patientRow;
+        }
+
+            private void DeleteButtonW_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogResult warning = MessageBox.Show("Czy na pewno chcesz usunąć wybraną wizytę?", "Potwierdzenie usunięcia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (warning == DialogResult.Yes)
             {
                 try
                 {
-                    gridView4.DeleteRow(gridView4.FocusedRowHandle);
+                    gridViewWizyta.DeleteRow(gridViewWizyta.FocusedRowHandle);
                     this.wIZYTATableAdapter.Update(poradniaDataSet.WIZYTA);
                     MessageBox.Show("Wizyta usunięta", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     RefreshWizyta();
