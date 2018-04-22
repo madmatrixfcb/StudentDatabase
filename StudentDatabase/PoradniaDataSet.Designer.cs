@@ -3219,9 +3219,9 @@ namespace StudentDatabase {
                 this.columnObjawy.AllowDBNull = false;
                 this.columnObjawy.MaxLength = 145;
                 this.columnBPrzedmiotowe.AllowDBNull = false;
-                this.columnBPrzedmiotowe.MaxLength = 145;
+                this.columnBPrzedmiotowe.MaxLength = 500;
                 this.columnBPodmiotowe.AllowDBNull = false;
-                this.columnBPodmiotowe.MaxLength = 145;
+                this.columnBPodmiotowe.MaxLength = 1100;
                 this.columnID_ICD_1.AllowDBNull = false;
                 this.columnID_ICD_1.MaxLength = 6;
                 this.columnID_ICD_2.MaxLength = 6;
@@ -4226,9 +4226,9 @@ namespace StudentDatabase {
                 this.columnObjawy.AllowDBNull = false;
                 this.columnObjawy.MaxLength = 145;
                 this.columnBPrzedmiotowe.AllowDBNull = false;
-                this.columnBPrzedmiotowe.MaxLength = 145;
+                this.columnBPrzedmiotowe.MaxLength = 500;
                 this.columnBPodmiotowe.AllowDBNull = false;
-                this.columnBPodmiotowe.MaxLength = 145;
+                this.columnBPodmiotowe.MaxLength = 1100;
                 this.columnID_ICD_1.MaxLength = 193;
                 this.columnID_ICD_2.MaxLength = 193;
                 this.columnID_ICD_3.MaxLength = 45;
@@ -9649,7 +9649,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[4];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[5];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `ID_Pacjent`, `Imie`, `Nazwisko`, `Data_urodzenia`, `Kraj`, `Telefon`, `Pl" +
@@ -9658,138 +9658,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"INSERT INTO `PACJENT` (`Imie`, `Nazwisko`, `Data_urodzenia`, `Kraj`, `Telefon`, `Plec`, `Ulica`, `Nr_budynku`, `Nr_mieszkania`, `Kod_pocztowy`, `Miasto`, `PESEL`, `Karta_polaka`, `Dowod_osobisty`, `Paszport`, `Ubezpieczenie`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16)";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "Imie";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p2";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "Nazwisko";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p3";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
-            param.IsNullable = true;
-            param.SourceColumn = "Data_urodzenia";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p4";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "Kraj";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p5";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 15;
-            param.IsNullable = true;
-            param.SourceColumn = "Telefon";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p6";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 2;
-            param.IsNullable = true;
-            param.SourceColumn = "Plec";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p7";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "Ulica";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p8";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 5;
-            param.IsNullable = true;
-            param.SourceColumn = "Nr_budynku";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p9";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 5;
-            param.IsNullable = true;
-            param.SourceColumn = "Nr_mieszkania";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p10";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 6;
-            param.IsNullable = true;
-            param.SourceColumn = "Kod_pocztowy";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p11";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 30;
-            param.IsNullable = true;
-            param.SourceColumn = "Miasto";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p12";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 11;
-            param.IsNullable = true;
-            param.SourceColumn = "PESEL";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p13";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "Karta_polaka";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p14";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "Dowod_osobisty";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p15";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "Paszport";
-            this._commandCollection[1].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p16";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 2;
-            param.IsNullable = true;
-            param.SourceColumn = "Ubezpieczenie";
-            this._commandCollection[1].Parameters.Add(param);
-            this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"    SELECT 
+            this._commandCollection[1].CommandText = @"    SELECT 
       `P`.`ID_Pacjent` AS `ID_Pacjent`, `P`.`Imie` AS `Imie`,
         `P`.`Nazwisko` AS `Nazwisko`,
         `P`.`Data_urodzenia` AS `Data_urodzenia`,
@@ -9811,18 +9680,19 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
         JOIN `KRAJ` `K` ON ((`P`.`Kraj` = `K`.`ID_Kraj`)))
         JOIN `PLEC` `PL` ON ((`P`.`Plec` = `PL`.`ID_Plec`)))
         JOIN `UBEZPIECZENIE` `U` ON ((`P`.`Ubezpieczenie` = `U`.`ID_Ubezpieczenie`))) WHERE P.ID_Pacjent = @patient_id";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@patient_id";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.Size = 4;
             param.IsNullable = true;
             param.SourceColumn = "ID_Pacjent";
-            this._commandCollection[2].Parameters.Add(param);
-            this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"UPDATE `PACJENT` SET `Imie` = @p1, `Nazwisko` = @p2, `Data_urodzenia` = @p3, `Kraj` = @p4, `Telefon` = @p5, `Plec` = @p6, `Ulica` = @p7, `Nr_budynku` = @p8, `Nr_mieszkania` = @p9, `Kod_pocztowy` = @p10, `Miasto` = @p11, `PESEL` = @p12, `Karta_polaka` = @p13, `Dowod_osobisty` = @p14, `Paszport` = @p15, `Ubezpieczenie` = @p16 WHERE (`ID_Pacjent` = @p17)";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"INSERT INTO `PACJENT` (`Imie`, `Nazwisko`, `Data_urodzenia`, `Kraj`, `Telefon`, `Plec`, `Ulica`, `Nr_budynku`, `Nr_mieszkania`, `Kod_pocztowy`, `Miasto`, `PESEL`, `Karta_polaka`, `Dowod_osobisty`, `Paszport`, `Ubezpieczenie`) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
             param.DbType = global::System.Data.DbType.String;
@@ -9830,7 +9700,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "Imie";
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p2";
             param.DbType = global::System.Data.DbType.String;
@@ -9838,14 +9708,14 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "Nazwisko";
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p3";
             param.DbType = global::System.Data.DbType.DateTime;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
             param.IsNullable = true;
             param.SourceColumn = "Data_urodzenia";
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p4";
             param.DbType = global::System.Data.DbType.String;
@@ -9853,7 +9723,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "Kraj";
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
             param.DbType = global::System.Data.DbType.String;
@@ -9861,7 +9731,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.Size = 15;
             param.IsNullable = true;
             param.SourceColumn = "Telefon";
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p6";
             param.DbType = global::System.Data.DbType.String;
@@ -9869,7 +9739,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.Size = 2;
             param.IsNullable = true;
             param.SourceColumn = "Plec";
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p7";
             param.DbType = global::System.Data.DbType.String;
@@ -9877,7 +9747,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "Ulica";
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p8";
             param.DbType = global::System.Data.DbType.String;
@@ -9885,7 +9755,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.Size = 5;
             param.IsNullable = true;
             param.SourceColumn = "Nr_budynku";
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p9";
             param.DbType = global::System.Data.DbType.String;
@@ -9893,7 +9763,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.Size = 5;
             param.IsNullable = true;
             param.SourceColumn = "Nr_mieszkania";
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p10";
             param.DbType = global::System.Data.DbType.String;
@@ -9901,7 +9771,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.Size = 6;
             param.IsNullable = true;
             param.SourceColumn = "Kod_pocztowy";
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p11";
             param.DbType = global::System.Data.DbType.String;
@@ -9909,7 +9779,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.Size = 30;
             param.IsNullable = true;
             param.SourceColumn = "Miasto";
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p12";
             param.DbType = global::System.Data.DbType.String;
@@ -9917,7 +9787,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.Size = 11;
             param.IsNullable = true;
             param.SourceColumn = "PESEL";
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p13";
             param.DbType = global::System.Data.DbType.String;
@@ -9925,7 +9795,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "Karta_polaka";
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p14";
             param.DbType = global::System.Data.DbType.String;
@@ -9933,7 +9803,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "Dowod_osobisty";
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p15";
             param.DbType = global::System.Data.DbType.String;
@@ -9941,7 +9811,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "Paszport";
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[2].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p16";
             param.DbType = global::System.Data.DbType.String;
@@ -9949,7 +9819,170 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.Size = 2;
             param.IsNullable = true;
             param.SourceColumn = "Ubezpieczenie";
+            this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"    SELECT 
+      `P`.`ID_Pacjent` AS `ID_Pacjent`, `P`.`Imie` AS `Imie`,
+        `P`.`Nazwisko` AS `Nazwisko`,
+        `P`.`Data_urodzenia` AS `Data_urodzenia`,
+        `K`.`Kraj` AS `Kraj`,
+        `P`.`Telefon` AS `Telefon`,
+        `PL`.`Plec` AS `Plec`,
+        `P`.`Ulica` AS `Ulica`,
+        `P`.`Nr_budynku` AS `Nr_budynku`,
+        `P`.`Nr_mieszkania` AS `Nr_mieszkania`,
+        `P`.`Kod_pocztowy` AS `Kod_pocztowy`,
+        `P`.`Miasto` AS `Miasto`,
+        `P`.`PESEL` AS `PESEL`,
+        `P`.`Karta_polaka` AS `Karta_polaka`,
+        `P`.`Dowod_osobisty` AS `Dowod_osobisty`,
+        `P`.`Paszport` AS `Paszport`,
+        `U`.`Rodzaj` AS `Ubezpieczenie`
+    FROM
+        (((`PACJENT` `P`
+        JOIN `KRAJ` `K` ON ((`P`.`Kraj` = `K`.`ID_Kraj`)))
+        JOIN `PLEC` `PL` ON ((`P`.`Plec` = `PL`.`ID_Plec`)))
+        JOIN `UBEZPIECZENIE` `U` ON ((`P`.`Ubezpieczenie` = `U`.`ID_Ubezpieczenie`))) WHERE P.ID_Pacjent = @patient_id";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@patient_id";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "ID_Pacjent";
             this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[4] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"UPDATE `PACJENT` SET `Imie` = @p1, `Nazwisko` = @p2, `Data_urodzenia` = @p3, `Kraj` = @p4, `Telefon` = @p5, `Plec` = @p6, `Ulica` = @p7, `Nr_budynku` = @p8, `Nr_mieszkania` = @p9, `Kod_pocztowy` = @p10, `Miasto` = @p11, `PESEL` = @p12, `Karta_polaka` = @p13, `Dowod_osobisty` = @p14, `Paszport` = @p15, `Ubezpieczenie` = @p16 WHERE (`ID_Pacjent` = @p17)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p1";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "Imie";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p2";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "Nazwisko";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p3";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "Data_urodzenia";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p4";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "Kraj";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p5";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 15;
+            param.IsNullable = true;
+            param.SourceColumn = "Telefon";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p6";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 2;
+            param.IsNullable = true;
+            param.SourceColumn = "Plec";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p7";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "Ulica";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p8";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 5;
+            param.IsNullable = true;
+            param.SourceColumn = "Nr_budynku";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p9";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 5;
+            param.IsNullable = true;
+            param.SourceColumn = "Nr_mieszkania";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p10";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 6;
+            param.IsNullable = true;
+            param.SourceColumn = "Kod_pocztowy";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p11";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "Miasto";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p12";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 11;
+            param.IsNullable = true;
+            param.SourceColumn = "PESEL";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p13";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "Karta_polaka";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p14";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "Dowod_osobisty";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p15";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceColumn = "Paszport";
+            this._commandCollection[4].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@p16";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 2;
+            param.IsNullable = true;
+            param.SourceColumn = "Ubezpieczenie";
+            this._commandCollection[4].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p17";
             param.DbType = global::System.Data.DbType.Int32;
@@ -9957,7 +9990,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "ID_Pacjent";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[4].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9982,6 +10015,46 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             PoradniaDataSet.PACJENTDataTable dataTable = new PoradniaDataSet.PACJENTDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByPatient(PoradniaDataSet.PACJENTDataTable dataTable, int patient_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(patient_id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual PoradniaDataSet.PACJENTDataTable GetDataByPatient(int patient_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(patient_id));
+            PoradniaDataSet.PACJENTDataTable dataTable = new PoradniaDataSet.PACJENTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int SelectPatientInfo(PoradniaDataSet.PACJENTDataTable dataTable, int patient_id) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(patient_id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10557,7 +10630,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
                     string p14, 
                     string p15, 
                     string p16) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[1];
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[2];
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }
@@ -10669,35 +10742,6 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object SelectPatientInfo(int patient_id) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[2];
-            command.Parameters[0].Value = ((int)(patient_id));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            object returnValue;
-            try {
-                returnValue = command.ExecuteScalar();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            if (((returnValue == null) 
-                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return null;
-            }
-            else {
-                return ((object)(returnValue));
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(
                     string p1, 
@@ -10717,7 +10761,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
                     string p15, 
                     string p16, 
                     int p17) {
-            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[3];
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[4];
             if ((p1 == null)) {
                 throw new global::System.ArgumentNullException("p1");
             }

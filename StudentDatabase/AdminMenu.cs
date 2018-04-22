@@ -350,8 +350,6 @@ namespace StudentDatabase
 
         private void viewVisit_ItemClick(object sender, ItemClickEventArgs e)
         {
-            gridViewPacjent.ApplyFindFilter(Convert.ToString(VisitPreview.patientID));
-            VisitPreview.patientRow = gridViewPacjent.GetFocusedDataRow();
             VisitPreview.visitRow = gridViewWizyta.GetFocusedDataRow();
             ViewVisit view_Visit = new ViewVisit();
             view_Visit.Show();
