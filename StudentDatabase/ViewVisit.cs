@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Base;
-using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraLayout;
 
 namespace StudentDatabase
 {
@@ -36,20 +36,20 @@ namespace StudentDatabase
         private void LoadPatientInfo()
         {
 
-            patientIDLabel.Text = PatientData.pacjentRow["ID_Pacjent"].ToString();
-            nameLabel.Text = PatientData.pacjentRow["Imie"].ToString();
-            surnameLabel.Text = PatientData.pacjentRow["Nazwisko"].ToString();
+            patientIDLabelTB.Text = PatientData.pacjentRow["ID_Pacjent"].ToString();
+            nameLabelTB.Text = PatientData.pacjentRow["Imie"].ToString();
+            surnameLabelTB.Text = PatientData.pacjentRow["Nazwisko"].ToString();
             string data_ur = PatientData.pacjentRow["Data_urodzenia"].ToString();
-            birthLabel.Text = data_ur.Substring(0, 10);
-            countryLabel.Text = PatientData.pacjentRow["Kraj"].ToString();
-            sexLabel.Text = PatientData.pacjentRow["Plec"].ToString();
-            addressLabel.Text = PatientData.pacjentRow["Ulica"].ToString() + " " + PatientData.pacjentRow["Nr_budynku"].ToString() + "/" + PatientData.pacjentRow["Nr_mieszkania"].ToString() + " " + PatientData.pacjentRow["Kod_pocztowy"].ToString() + " " + PatientData.pacjentRow["Miasto"].ToString();
-            phoneLabel.Text = PatientData.pacjentRow["Telefon"].ToString();
-            peselLabel.Text = PatientData.pacjentRow["PESEL"].ToString();
-            poleCardLabel.Text = PatientData.pacjentRow["Karta_polaka"].ToString();
-            dowodLabel.Text = PatientData.pacjentRow["Dowod_osobisty"].ToString();
-            passportLabel.Text = PatientData.pacjentRow["Paszport"].ToString();
-            insuranceLabel.Text = PatientData.pacjentRow["Ubezpieczenie"].ToString();
+            birthLabelTB.Text = data_ur.Substring(0, 10);
+            countryLabelTB.Text = PatientData.pacjentRow["Kraj"].ToString();
+            sexLabelTB.Text = PatientData.pacjentRow["Plec"].ToString();
+            addressLabelTB.Text = PatientData.pacjentRow["Ulica"].ToString() + " " + PatientData.pacjentRow["Nr_budynku"].ToString() + "/" + PatientData.pacjentRow["Nr_mieszkania"].ToString() + " " + PatientData.pacjentRow["Kod_pocztowy"].ToString() + " " + PatientData.pacjentRow["Miasto"].ToString();
+            phoneLabelTB.Text = PatientData.pacjentRow["Telefon"].ToString();
+            peselLabelTB.Text = PatientData.pacjentRow["PESEL"].ToString();
+            poleCardLabelTB.Text = PatientData.pacjentRow["Karta_polaka"].ToString();
+            dowodLabelTB.Text = PatientData.pacjentRow["Dowod_osobisty"].ToString();
+            passportLabelTB.Text = PatientData.pacjentRow["Paszport"].ToString();
+            insuranceLabelTB.Text = PatientData.pacjentRow["Ubezpieczenie"].ToString();
             gridControl1.Visible = false;
         }
 
@@ -85,6 +85,42 @@ namespace StudentDatabase
             {
                 MessageBox.Show("Wystąpił błąd, spróbuj jeszcze raz", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void wizytaGroup_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            ShowLayoutControlPreview(layoutControl1);
+        }
+
+        private void ShowLayoutControlPreview(LayoutControl layout)
+        {
+            // Check whether the LayoutControl can be previewed.
+            if (!layout.IsPrintingAvailable)
+            {
+                MessageBox.Show("The 'DevExpress.XtraPrinting' library is not found", "Error");
+                return;
+            }
+
+            // Open the Preview window.
+            layout.ShowPrintPreview();
+        }
+
+        private void PrintLayoutControl(LayoutControl layout)
+        {
+            // Check whether the LayoutControl can be printed.
+            if (!layout.IsPrintingAvailable)
+            {
+                MessageBox.Show("The 'DevExpress.XtraPrinting' library is not found", "Error");
+                return;
+            }
+
+            // Print.
+            layout.Print();
         }
     }
 }
