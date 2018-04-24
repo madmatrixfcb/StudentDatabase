@@ -53,23 +53,22 @@ namespace StudentDatabase
             gridControl1.Visible = false;
         }
 
-
         private void LoadVisitInfo()
         {
             DataRow visit = AdminMenu.VisitPreview.visitRow;
-            visitIDLabel.Text = visit["ID_Wizyta"].ToString();
+            visitIDLabelTB.Text = visit["ID_Wizyta"].ToString();
             string data = visit["Data"].ToString();
-            dateLabel.Text =  data.Substring(0,10) + " " + visit["Godzina"].ToString();
-            objawyLabel.Text = visit["Objawy"].ToString();
-            bprzedmiotoweLabel.Text = visit["BPrzedmiotowe"].ToString();
-            bpodmiotowe.Text = visit["Bpodmiotowe"].ToString();
-            ICD1Label.Text = visit["ID_ICD_1"].ToString();
-            ICD2Label.Text = visit["ID_ICD_2"].ToString();
-            ICD3Label.Text = visit["ID_ICD_3"].ToString();
-            rozpoznanieLabel.Text = visit["Rozpoznanie"].ToString();
-            lekiLabel.Text = visit["Leki"].ToString();
-            zaleceniaLabel.Text = visit["Zalecenia"].ToString();
-            przyrjmujacyLabel.Text = visit["ID_Lekarz"].ToString();
+            dateLabelTB.Text =  data.Substring(0,10) + " " + visit["Godzina"].ToString();
+            objawyLabelTB.Text = visit["Objawy"].ToString();
+            bprzedmiotoweLabelTB.Text = visit["BPrzedmiotowe"].ToString();
+            bpodmiotoweLabelTB.Text = visit["Bpodmiotowe"].ToString();
+            ICD1LabelTB.Text = visit["ID_ICD_1"].ToString();
+            ICD2LabelTB.Text = visit["ID_ICD_2"].ToString();
+            ICD3LabelTB.Text = visit["ID_ICD_3"].ToString();
+            rozpoznanieLabelTB.Text = visit["Rozpoznanie"].ToString();
+            lekiLabelTB.Text = visit["Leki"].ToString();
+            zaleceniaLabelTB.Text = visit["Zalecenia"].ToString();
+            przyrjmujacyLabelTB.Text = visit["ID_Lekarz"].ToString();
         }
 
         private void gridView1_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
@@ -121,6 +120,33 @@ namespace StudentDatabase
 
             // Print.
             layout.Print();
+        }
+
+        private void ExportToPDFLayoutControl(LayoutControl layout)
+        {
+            // Check whether the LayoutControl can be printed.
+            if (!layout.IsPrintingAvailable)
+            {
+                MessageBox.Show("The 'DevExpress.XtraPrinting' library is not found", "Error");
+                return;
+            }
+
+            // Print.
+            folderBrowserDialog1.ShowDialog();
+            if (folderBrowserDialog1.SelectedPath != null)
+            {
+                string directory = folderBrowserDialog1.SelectedPath;
+                string filename = visitIDLabelTB.Text + " - " + nameLabelTB.Text + " " + surnameLabelTB.Text;
+                //MessageBox.Show(directory + "/" + filename);
+                layout.ExportToPdf(directory + "/" + filename + ".pdf");
+            }
+
+
+        }
+
+        private void exportToPDFButton_Click(object sender, EventArgs e)
+        {
+            ExportToPDFLayoutControl(layoutControl1);
         }
     }
 }

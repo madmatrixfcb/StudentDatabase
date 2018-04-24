@@ -211,7 +211,8 @@ namespace StudentDatabase
 
         private void findPatientButton_ItemClick(object sender, ItemClickEventArgs e)
         {
-            gridPacjenci.ExportToXls("F:/Visual Studio 2015/Projects/StudentDatabase/StudentDatabase/PDF/a.xls");
+            gridViewPacjent.Focus();
+            SendKeys.Send("^(F)");
         }
 
         //-----------------------------------UBEZPIECZENIE RIBBON-----------------------------------//

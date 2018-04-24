@@ -29,21 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.bpodTB = new System.Windows.Forms.RichTextBox();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.addVisitButton = new System.Windows.Forms.Button();
             this.nameSurnameLabel = new DevExpress.XtraEditors.LabelControl();
             this.dateLabel = new DevExpress.XtraEditors.LabelControl();
-            this.bprzedTB = new System.Windows.Forms.RichTextBox();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.rozpoznanieTB = new System.Windows.Forms.RichTextBox();
-            this.lekiTB = new System.Windows.Forms.RichTextBox();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.objawyTB = new System.Windows.Forms.RichTextBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.pacjentCB = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID_Pacjent = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colImie = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,6 +60,7 @@
             this.colPaszport = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUbezpieczenie = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ICDCB1 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.iCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID_ICD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKod_ICD = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -83,6 +81,7 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.userCB = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.uZYTKOWNIKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID_Uzytkownik = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -93,19 +92,23 @@
             this.colHaslo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTyp_konta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.closeButton = new System.Windows.Forms.Button();
-            this.zaleceniaTB = new System.Windows.Forms.RichTextBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.pacjentTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
-            this.uZYTKOWNIKBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uzytkownikTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter();
             this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
             this.wizytaTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
+            this.bprzedTB = new DevExpress.XtraEditors.MemoEdit();
+            this.bpodTB = new DevExpress.XtraEditors.MemoEdit();
+            this.objawyTB = new DevExpress.XtraEditors.MemoEdit();
+            this.rozpoznanieTB = new DevExpress.XtraEditors.MemoEdit();
+            this.lekiTB = new DevExpress.XtraEditors.MemoEdit();
+            this.zaleceniaTB = new DevExpress.XtraEditors.MemoEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pacjentCB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICDCB1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICDCB2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -115,20 +118,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userCB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uZYTKOWNIKBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bprzedTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bpodTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objawyTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rozpoznanieTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lekiTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zaleceniaTB.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bpodTB
-            // 
-            this.bpodTB.Location = new System.Drawing.Point(229, 190);
-            this.bpodTB.Name = "bpodTB";
-            this.bpodTB.Size = new System.Drawing.Size(233, 106);
-            this.bpodTB.TabIndex = 6;
-            this.bpodTB.Text = "";
             // 
             // labelControl2
             // 
@@ -172,14 +170,6 @@
             this.dateLabel.TabIndex = 79;
             this.dateLabel.Text = "Data:";
             // 
-            // bprzedTB
-            // 
-            this.bprzedTB.Location = new System.Drawing.Point(9, 190);
-            this.bprzedTB.Name = "bprzedTB";
-            this.bprzedTB.Size = new System.Drawing.Size(214, 106);
-            this.bprzedTB.TabIndex = 5;
-            this.bprzedTB.Text = "";
-            // 
             // labelControl5
             // 
             this.labelControl5.Location = new System.Drawing.Point(206, 302);
@@ -187,22 +177,6 @@
             this.labelControl5.Size = new System.Drawing.Size(22, 13);
             this.labelControl5.TabIndex = 81;
             this.labelControl5.Text = "ICD:";
-            // 
-            // rozpoznanieTB
-            // 
-            this.rozpoznanieTB.Location = new System.Drawing.Point(9, 420);
-            this.rozpoznanieTB.Name = "rozpoznanieTB";
-            this.rozpoznanieTB.Size = new System.Drawing.Size(453, 67);
-            this.rozpoznanieTB.TabIndex = 10;
-            this.rozpoznanieTB.Text = "";
-            // 
-            // lekiTB
-            // 
-            this.lekiTB.Location = new System.Drawing.Point(9, 512);
-            this.lekiTB.Name = "lekiTB";
-            this.lekiTB.Size = new System.Drawing.Size(453, 67);
-            this.lekiTB.TabIndex = 11;
-            this.lekiTB.Text = "";
             // 
             // labelControl8
             // 
@@ -219,14 +193,6 @@
             this.labelControl9.Size = new System.Drawing.Size(65, 13);
             this.labelControl9.TabIndex = 84;
             this.labelControl9.Text = "Rozpoznanie:";
-            // 
-            // objawyTB
-            // 
-            this.objawyTB.Location = new System.Drawing.Point(102, 86);
-            this.objawyTB.Name = "objawyTB";
-            this.objawyTB.Size = new System.Drawing.Size(360, 67);
-            this.objawyTB.TabIndex = 4;
-            this.objawyTB.Text = "";
             // 
             // labelControl3
             // 
@@ -251,6 +217,17 @@
             this.pacjentCB.Size = new System.Drawing.Size(360, 20);
             this.pacjentCB.TabIndex = 1;
             this.pacjentCB.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.pacjentCB_CustomDisplayText);
+            // 
+            // pACJENTBindingSource
+            // 
+            this.pACJENTBindingSource.DataMember = "PACJENT";
+            this.pACJENTBindingSource.DataSource = this.poradniaDataSet;
+            // 
+            // poradniaDataSet
+            // 
+            this.poradniaDataSet.DataSetName = "PoradniaDataSet";
+            this.poradniaDataSet.Locale = new System.Globalization.CultureInfo("pl");
+            this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // searchLookUpEdit1View
             // 
@@ -403,6 +380,11 @@
             this.ICDCB1.Size = new System.Drawing.Size(450, 20);
             this.ICDCB1.TabIndex = 7;
             this.ICDCB1.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.ICDCB1_CustomDisplayText);
+            // 
+            // iCDBindingSource
+            // 
+            this.iCDBindingSource.DataMember = "ICD";
+            this.iCDBindingSource.DataSource = this.poradniaDataSet;
             // 
             // gridView1
             // 
@@ -595,6 +577,11 @@
             this.userCB.TabIndex = 93;
             this.userCB.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.userCB_CustomDisplayText);
             // 
+            // uZYTKOWNIKBindingSource
+            // 
+            this.uZYTKOWNIKBindingSource.DataMember = "UZYTKOWNIK";
+            this.uZYTKOWNIKBindingSource.DataSource = this.poradniaDataSet;
+            // 
             // gridView4
             // 
             this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -666,14 +653,6 @@
             this.closeButton.Text = "Zamknij";
             this.closeButton.UseVisualStyleBackColor = true;
             // 
-            // zaleceniaTB
-            // 
-            this.zaleceniaTB.Location = new System.Drawing.Point(9, 604);
-            this.zaleceniaTB.Name = "zaleceniaTB";
-            this.zaleceniaTB.Size = new System.Drawing.Size(453, 67);
-            this.zaleceniaTB.TabIndex = 95;
-            this.zaleceniaTB.Text = "";
-            // 
             // labelControl7
             // 
             this.labelControl7.Location = new System.Drawing.Point(9, 585);
@@ -682,30 +661,9 @@
             this.labelControl7.TabIndex = 96;
             this.labelControl7.Text = "Zalecenia:";
             // 
-            // poradniaDataSet
-            // 
-            this.poradniaDataSet.DataSetName = "PoradniaDataSet";
-            this.poradniaDataSet.Locale = new System.Globalization.CultureInfo("pl");
-            this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // pacjentTableAdapter
             // 
             this.pacjentTableAdapter.ClearBeforeFill = true;
-            // 
-            // uZYTKOWNIKBindingSource
-            // 
-            this.uZYTKOWNIKBindingSource.DataMember = "UZYTKOWNIK";
-            this.uZYTKOWNIKBindingSource.DataSource = this.poradniaDataSet;
-            // 
-            // iCDBindingSource
-            // 
-            this.iCDBindingSource.DataMember = "ICD";
-            this.iCDBindingSource.DataSource = this.poradniaDataSet;
-            // 
-            // pACJENTBindingSource
-            // 
-            this.pACJENTBindingSource.DataMember = "PACJENT";
-            this.pACJENTBindingSource.DataSource = this.poradniaDataSet;
             // 
             // uzytkownikTableAdapter
             // 
@@ -719,12 +677,59 @@
             // 
             this.wizytaTableAdapter.ClearBeforeFill = true;
             // 
+            // bprzedTB
+            // 
+            this.bprzedTB.Location = new System.Drawing.Point(8, 193);
+            this.bprzedTB.Name = "bprzedTB";
+            this.bprzedTB.Size = new System.Drawing.Size(215, 96);
+            this.bprzedTB.TabIndex = 97;
+            // 
+            // bpodTB
+            // 
+            this.bpodTB.Location = new System.Drawing.Point(229, 193);
+            this.bpodTB.Name = "bpodTB";
+            this.bpodTB.Size = new System.Drawing.Size(233, 96);
+            this.bpodTB.TabIndex = 98;
+            // 
+            // objawyTB
+            // 
+            this.objawyTB.Location = new System.Drawing.Point(102, 83);
+            this.objawyTB.Name = "objawyTB";
+            this.objawyTB.Size = new System.Drawing.Size(360, 85);
+            this.objawyTB.TabIndex = 99;
+            // 
+            // rozpoznanieTB
+            // 
+            this.rozpoznanieTB.Location = new System.Drawing.Point(8, 421);
+            this.rozpoznanieTB.Name = "rozpoznanieTB";
+            this.rozpoznanieTB.Size = new System.Drawing.Size(454, 66);
+            this.rozpoznanieTB.TabIndex = 100;
+            // 
+            // lekiTB
+            // 
+            this.lekiTB.Location = new System.Drawing.Point(8, 513);
+            this.lekiTB.Name = "lekiTB";
+            this.lekiTB.Size = new System.Drawing.Size(454, 66);
+            this.lekiTB.TabIndex = 101;
+            // 
+            // zaleceniaTB
+            // 
+            this.zaleceniaTB.Location = new System.Drawing.Point(8, 604);
+            this.zaleceniaTB.Name = "zaleceniaTB";
+            this.zaleceniaTB.Size = new System.Drawing.Size(454, 66);
+            this.zaleceniaTB.TabIndex = 102;
+            // 
             // AddVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 789);
             this.Controls.Add(this.zaleceniaTB);
+            this.Controls.Add(this.lekiTB);
+            this.Controls.Add(this.rozpoznanieTB);
+            this.Controls.Add(this.objawyTB);
+            this.Controls.Add(this.bpodTB);
+            this.Controls.Add(this.bprzedTB);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.userCB);
@@ -736,26 +741,24 @@
             this.Controls.Add(this.ICDCB2);
             this.Controls.Add(this.ICDCB1);
             this.Controls.Add(this.pacjentCB);
-            this.Controls.Add(this.objawyTB);
             this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.rozpoznanieTB);
-            this.Controls.Add(this.lekiTB);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.bprzedTB);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.nameSurnameLabel);
             this.Controls.Add(this.addVisitButton);
-            this.Controls.Add(this.bpodTB);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Name = "AddVisit";
             this.Text = "AddVisit";
             this.Load += new System.EventHandler(this.AddVisit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pacjentCB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICDCB1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICDCB2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
@@ -765,11 +768,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userCB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uZYTKOWNIKBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bprzedTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bpodTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.objawyTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rozpoznanieTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lekiTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.zaleceniaTB.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -779,20 +785,15 @@
         private PoradniaDataSet poradniaDataSet;
         private System.Windows.Forms.BindingSource iCDBindingSource;
         private PoradniaDataSetTableAdapters.ICDTableAdapter iCDTableAdapter;
-        private System.Windows.Forms.RichTextBox bpodTB;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.BindingSource pACJENTBindingSource;
         private System.Windows.Forms.Button addVisitButton;
         private DevExpress.XtraEditors.LabelControl nameSurnameLabel;
         private DevExpress.XtraEditors.LabelControl dateLabel;
-        private System.Windows.Forms.RichTextBox bprzedTB;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private System.Windows.Forms.RichTextBox rozpoznanieTB;
-        private System.Windows.Forms.RichTextBox lekiTB;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private System.Windows.Forms.RichTextBox objawyTB;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private PoradniaDataSetTableAdapters.PACJENTTableAdapter pacjentTableAdapter;
         private DevExpress.XtraEditors.SearchLookUpEdit pacjentCB;
@@ -848,7 +849,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTyp_konta;
         private PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter uzytkownikTableAdapter;
         private System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.RichTextBox zaleceniaTB;
         private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.MemoEdit bprzedTB;
+        private DevExpress.XtraEditors.MemoEdit bpodTB;
+        private DevExpress.XtraEditors.MemoEdit objawyTB;
+        private DevExpress.XtraEditors.MemoEdit rozpoznanieTB;
+        private DevExpress.XtraEditors.MemoEdit lekiTB;
+        private DevExpress.XtraEditors.MemoEdit zaleceniaTB;
     }
 }
