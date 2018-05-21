@@ -21,7 +21,7 @@ namespace StudentDatabase
 
         private void VisitView_Load(object sender, EventArgs e)
         {
-            
+
             this.patient_viewTableAdapter.Fill(this.poradniaDataSet.patient_view);
             LoadVisitInfo();
             int userID = Convert.ToInt16(AdminMenu.VisitPreview.patientID);
@@ -53,12 +53,18 @@ namespace StudentDatabase
             gridControl1.Visible = false;
         }
 
-        private void LoadVisitInfo()
+        public static class DataGet
+            {
+            public static string data;
+            }
+
+
+        public void LoadVisitInfo()
         {
             DataRow visit = AdminMenu.VisitPreview.visitRow;
             visitIDLabelTB.Text = visit["ID_Wizyta"].ToString();
-            string data = visit["Data"].ToString();
-            dateLabelTB.Text =  data.Substring(0,10) + " " + visit["Godzina"].ToString();
+            DataGet.data = visit["Data"].ToString();
+            dateLabelTB.Text = DataGet.data.Substring(0,10) + " " + visit["Godzina"].ToString();
             objawyLabelTB.Text = visit["Objawy"].ToString();
             bprzedmiotoweLabelTB.Text = visit["BPrzedmiotowe"].ToString();
             bpodmiotoweLabelTB.Text = visit["Bpodmiotowe"].ToString();
@@ -136,7 +142,7 @@ namespace StudentDatabase
             if (folderBrowserDialog1.SelectedPath != null)
             {
                 string directory = folderBrowserDialog1.SelectedPath;
-                string filename = visitIDLabelTB.Text + " - " + nameLabelTB.Text + " " + surnameLabelTB.Text;
+                string filename = visitIDLabelTB.Text + " - " + nameLabelTB.Text + " " + surnameLabelTB.Text + " " + DataGet.data.Substring(0, 10);
                 //MessageBox.Show(directory + "/" + filename);
                 layout.ExportToPdf(directory + "/" + filename + ".pdf");
             }

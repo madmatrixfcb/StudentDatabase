@@ -293,6 +293,12 @@ namespace StudentDatabase
             RefreshICD();
         }
 
+        private void findICDButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            gridViewICD.Focus();
+            SendKeys.Send("^(F)");
+        }
+
         private void DeleteButtonI_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogResult warning = MessageBox.Show("Czy na pewno chcesz usunąć wybrany kod ICD?", "Potwierdzenie usunięcia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -335,6 +341,12 @@ namespace StudentDatabase
         private void RefreshVisit_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
+        }
+
+        private void findVisitButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            gridViewWizyta.Focus();
+            SendKeys.Send("^(F)");
         }
 
         private void editVisit_ItemClick(object sender, ItemClickEventArgs e)
