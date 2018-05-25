@@ -130,7 +130,6 @@ F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\de\DevE
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\es\DevExpress.XtraVerticalGrid.v17.1.resources.dll
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\ja\DevExpress.XtraVerticalGrid.v17.1.resources.dll
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\ru\DevExpress.XtraVerticalGrid.v17.1.resources.dll
-F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.csprojResolveAssemblyReference.cache
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.AddICD.resources
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.AddPatient.resources
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.AddUbezp.resources
@@ -191,3 +190,4 @@ F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\de\DevE
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\es\DevExpress.XtraSpreadsheet.v17.1.resources.dll
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\ja\DevExpress.XtraSpreadsheet.v17.1.resources.dll
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\ru\DevExpress.XtraSpreadsheet.v17.1.resources.dll
+F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.csprojAssemblyReference.cache

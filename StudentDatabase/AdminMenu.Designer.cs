@@ -55,6 +55,8 @@
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.loggedAsText = new DevExpress.XtraBars.BarStaticItem();
             this.findPatientButton = new DevExpress.XtraBars.BarButtonItem();
+            this.findVisitButton = new DevExpress.XtraBars.BarButtonItem();
+            this.findICDButton = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonMenu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PacjenciGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.WizytaGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -131,8 +133,6 @@
             this.visit_viewTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.visit_viewTableAdapter();
             this.wIZYTABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wIZYTATableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
-            this.findVisitButton = new DevExpress.XtraBars.BarButtonItem();
-            this.findICDButton = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -394,6 +394,24 @@
             this.findPatientButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("findPatientButton.ImageOptions.LargeImage")));
             this.findPatientButton.Name = "findPatientButton";
             this.findPatientButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.findPatientButton_ItemClick);
+            // 
+            // findVisitButton
+            // 
+            this.findVisitButton.Caption = "Wyszukaj wizyte";
+            this.findVisitButton.Id = 22;
+            this.findVisitButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("findVisitButton.ImageOptions.Image")));
+            this.findVisitButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("findVisitButton.ImageOptions.LargeImage")));
+            this.findVisitButton.Name = "findVisitButton";
+            this.findVisitButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.findVisitButton_ItemClick);
+            // 
+            // findICDButton
+            // 
+            this.findICDButton.Caption = "Wyszukaj Kod ICD";
+            this.findICDButton.Id = 23;
+            this.findICDButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("findICDButton.ImageOptions.Image")));
+            this.findICDButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("findICDButton.ImageOptions.LargeImage")));
+            this.findICDButton.Name = "findICDButton";
+            this.findICDButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.findICDButton_ItemClick);
             // 
             // ribbonMenu
             // 
@@ -1032,24 +1050,6 @@
             // wIZYTATableAdapter
             // 
             this.wIZYTATableAdapter.ClearBeforeFill = true;
-            // 
-            // findVisitButton
-            // 
-            this.findVisitButton.Caption = "Wyszukaj wizyte";
-            this.findVisitButton.Id = 22;
-            this.findVisitButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.findVisitButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.findVisitButton.Name = "findVisitButton";
-            this.findVisitButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.findVisitButton_ItemClick);
-            // 
-            // findICDButton
-            // 
-            this.findICDButton.Caption = "Wyszukaj Kod ICD";
-            this.findICDButton.Id = 23;
-            this.findICDButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image1")));
-            this.findICDButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage1")));
-            this.findICDButton.Name = "findICDButton";
-            this.findICDButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.findICDButton_ItemClick);
             // 
             // AdminMenu
             // 

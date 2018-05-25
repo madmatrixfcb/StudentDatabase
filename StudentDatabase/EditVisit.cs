@@ -19,16 +19,10 @@ namespace StudentDatabase
 
         private void EditVisit_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'poradniaDataSet.WIZYTA' table. You can move, or remove it, as needed.
-            this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
-            // TODO: This line of code loads data into the 'poradniaDataSet.WIZYTA' table. You can move, or remove it, as needed.
-            this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
-            // TODO: This line of code loads data into the 'poradniaDataSet.WIZYTA' table. You can move, or remove it, as needed.
-            this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
+
+            this.wizytaTableAdapter.Fill(this.poradniaDataSet.WIZYTA);
             // TODO: This line of code loads data into the 'poradniaDataSet.PACJENT' table. You can move, or remove it, as needed.
             this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
-            // TODO: This line of code loads data into the 'poradniaDataSet.WIZYTA' table. You can move, or remove it, as needed.
-            this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
             // TODO: This line of code loads data into the 'poradniaDataSet.UZYTKOWNIK' table. You can move, or remove it, as needed.
             this.uZYTKOWNIKTableAdapter.Fill(this.poradniaDataSet.UZYTKOWNIK);
             // TODO: This line of code loads data into the 'poradniaDataSet.ICD' table. You can move, or remove it, as needed.
@@ -138,9 +132,49 @@ namespace StudentDatabase
             if (userCB.Properties.View.IsDataRow(theIndex))
             {
                 DataRow row = userCB.Properties.View.GetDataRow(theIndex);
-                e.DisplayText = Convert.ToString(this.uZYTKOWNIKTableAdapter.SelectUserInfo(Login.LoginInfo.userID));
-                //e.DisplayText = row["Tytul"].ToString() + " " + row["Imie"].ToString() + " " + row["Nazwisko"].ToString();
+                //e.DisplayText = Convert.ToString(this.uZYTKOWNIKTableAdapter.SelectUserInfo(Login.LoginInfo.userID));
+                e.DisplayText = row["Tytul"].ToString() + " " + row["Imie"].ToString() + " " + row["Nazwisko"].ToString();
             }
+        }
+
+        private void editVisitButton_Click(object sender, EventArgs e)
+        {
+            string patient = Convert.ToString(pacjentCB.EditValue);
+            DateTime date = Convert.ToDateTime(dateEdit.Text);
+            string time = Convert.ToString(timeEdit.Text);
+            string objawy = Convert.ToString(objawyTB.Text);
+            string bprzed = Convert.ToString(bprzedTB.Text);
+            string bpod = Convert.ToString(bpodTB.Text);
+            string icd1 = Convert.ToString(ICDCB1.EditValue);
+            string icd2 = Convert.ToString(ICDCB2.EditValue);
+            string icd3 = Convert.ToString(ICDCB3.EditValue);
+            string rozpoznanie = Convert.ToString(rozpoznanieTB.Text);
+            string leki = Convert.ToString(lekiTB.Text);
+            string zalecenia = Convert.ToString(zaleceniaTB.Text);
+            string user = Convert.ToString(userCB.EditValue);
+
+            bool isValid = dxValidationProvider.Validate();
+
+            if (isValid == true)
+            {
+                try
+                {
+                    wizytaTableAdapter.UpdateQuery(patient, date, time, objawy, bprzed, bpod, icd1, icd2, icd3, rozpoznanie, leki, zalecenia, user, Convert.ToInt16(wizytaTB.EditValue));
+                    MessageBox.Show("Wizyta zedytowana", "Zedytowano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    this.Close();
+                }
+                
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

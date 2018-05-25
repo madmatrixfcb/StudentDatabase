@@ -34,6 +34,7 @@ namespace StudentDatabase
             userCB.EditValue = Convert.ToInt16(uzytkownikTableAdapter.SelectUserID(Login.LoginInfo.login, Login.LoginInfo.pass));
         }
 
+        //-----------------------BUTTONS----------------------------------/
         private void addVisitButton_Click(object sender, EventArgs e)
         {
             string patient = Convert.ToString(pacjentCB.EditValue);
@@ -51,7 +52,9 @@ namespace StudentDatabase
             string user = Convert.ToString(userCB.EditValue);
 
 
-            if (String.IsNullOrEmpty(pacjentCB.Text) || String.IsNullOrEmpty(objawyTB.Text) || String.IsNullOrEmpty(bprzedTB.Text) || String.IsNullOrEmpty(bpodTB.Text) || String.IsNullOrEmpty(ICDCB1.Text) || String.IsNullOrEmpty(rozpoznanieTB.Text) || String.IsNullOrEmpty(lekiTB.Text))
+            bool isValid = dxValidationProvider.Validate();
+
+            if (isValid == true)
             {
                 MessageBox.Show("Wypełnij wszystkie pola by dodać wizytę", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -64,8 +67,6 @@ namespace StudentDatabase
                     MessageBox.Show("Wizyta dodana", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Close();
-
-                    this.wizytaTableAdapter.Fill(this.poradniaDataSet.WIZYTA);
                 }
 
                 catch (Exception ex)
@@ -75,6 +76,8 @@ namespace StudentDatabase
             }
 
         }
+
+        //-----------------------CONTROLS----------------------------------/
 
         private void timeEdit_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)
         {
@@ -110,6 +113,8 @@ namespace StudentDatabase
                 timeEdit.SelectionLength = selectionLength;
             }
         }
+
+        //-----------------------CUSTOM DISPLAY----------------------------------/
 
         private void pacjentCB_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
         {

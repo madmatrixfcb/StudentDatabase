@@ -30,15 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition7 = new DevExpress.XtraLayout.RowDefinition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewVisit));
             this.patientviewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
@@ -410,235 +401,237 @@
             this.layoutControl1.Controls.Add(this.przyrjmujacyLabelTB);
             this.layoutControl1.Location = new System.Drawing.Point(6, 12);
             this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(755, 268, 450, 399);
-            this.layoutControl1.OptionsPrint.TextToControlDistance = 0;
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(472, 304, 450, 399);
+            this.layoutControl1.OptionsItemText.TextAlignMode = DevExpress.XtraLayout.TextAlignMode.AlignInGroups;
+            this.layoutControl1.OptionsPrint.AllowFitToPage = false;
+            this.layoutControl1.OptionsPrint.TextToControlDistance = 5;
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(724, 881);
+            this.layoutControl1.Size = new System.Drawing.Size(1366, 881);
             this.layoutControl1.TabIndex = 27;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // patientIDLabelTB
             // 
-            this.patientIDLabelTB.Location = new System.Drawing.Point(166, 73);
+            this.patientIDLabelTB.Location = new System.Drawing.Point(130, 73);
             this.patientIDLabelTB.Name = "patientIDLabelTB";
             this.patientIDLabelTB.Properties.ReadOnly = true;
-            this.patientIDLabelTB.Size = new System.Drawing.Size(194, 20);
+            this.patientIDLabelTB.Size = new System.Drawing.Size(551, 20);
             this.patientIDLabelTB.StyleController = this.layoutControl1;
             this.patientIDLabelTB.TabIndex = 4;
             // 
             // nameLabelTB
             // 
-            this.nameLabelTB.Location = new System.Drawing.Point(166, 98);
+            this.nameLabelTB.Location = new System.Drawing.Point(130, 97);
             this.nameLabelTB.Name = "nameLabelTB";
             this.nameLabelTB.Properties.ReadOnly = true;
-            this.nameLabelTB.Size = new System.Drawing.Size(194, 20);
+            this.nameLabelTB.Size = new System.Drawing.Size(551, 20);
             this.nameLabelTB.StyleController = this.layoutControl1;
             this.nameLabelTB.TabIndex = 5;
             // 
             // phoneLabelTB
             // 
-            this.phoneLabelTB.Location = new System.Drawing.Point(498, 73);
+            this.phoneLabelTB.Location = new System.Drawing.Point(783, 73);
             this.phoneLabelTB.Name = "phoneLabelTB";
             this.phoneLabelTB.Properties.ReadOnly = true;
-            this.phoneLabelTB.Size = new System.Drawing.Size(194, 20);
+            this.phoneLabelTB.Size = new System.Drawing.Size(551, 20);
             this.phoneLabelTB.StyleController = this.layoutControl1;
             this.phoneLabelTB.TabIndex = 6;
             // 
             // peselLabelTB
             // 
-            this.peselLabelTB.Location = new System.Drawing.Point(498, 98);
+            this.peselLabelTB.Location = new System.Drawing.Point(783, 97);
             this.peselLabelTB.Name = "peselLabelTB";
             this.peselLabelTB.Properties.ReadOnly = true;
-            this.peselLabelTB.Size = new System.Drawing.Size(194, 20);
+            this.peselLabelTB.Size = new System.Drawing.Size(551, 20);
             this.peselLabelTB.StyleController = this.layoutControl1;
             this.peselLabelTB.TabIndex = 7;
             // 
             // surnameLabelTB
             // 
-            this.surnameLabelTB.Location = new System.Drawing.Point(166, 123);
+            this.surnameLabelTB.Location = new System.Drawing.Point(130, 121);
             this.surnameLabelTB.Name = "surnameLabelTB";
             this.surnameLabelTB.Properties.ReadOnly = true;
-            this.surnameLabelTB.Size = new System.Drawing.Size(194, 20);
+            this.surnameLabelTB.Size = new System.Drawing.Size(551, 20);
             this.surnameLabelTB.StyleController = this.layoutControl1;
             this.surnameLabelTB.TabIndex = 8;
             // 
             // birthLabelTB
             // 
-            this.birthLabelTB.Location = new System.Drawing.Point(166, 147);
+            this.birthLabelTB.Location = new System.Drawing.Point(130, 145);
             this.birthLabelTB.Name = "birthLabelTB";
             this.birthLabelTB.Properties.ReadOnly = true;
-            this.birthLabelTB.Size = new System.Drawing.Size(194, 20);
+            this.birthLabelTB.Size = new System.Drawing.Size(551, 20);
             this.birthLabelTB.StyleController = this.layoutControl1;
             this.birthLabelTB.TabIndex = 9;
             // 
             // countryLabelTB
             // 
-            this.countryLabelTB.Location = new System.Drawing.Point(166, 171);
+            this.countryLabelTB.Location = new System.Drawing.Point(130, 169);
             this.countryLabelTB.Name = "countryLabelTB";
             this.countryLabelTB.Properties.ReadOnly = true;
-            this.countryLabelTB.Size = new System.Drawing.Size(194, 20);
+            this.countryLabelTB.Size = new System.Drawing.Size(551, 20);
             this.countryLabelTB.StyleController = this.layoutControl1;
             this.countryLabelTB.TabIndex = 10;
             // 
             // sexLabelTB
             // 
-            this.sexLabelTB.Location = new System.Drawing.Point(166, 195);
+            this.sexLabelTB.Location = new System.Drawing.Point(130, 193);
             this.sexLabelTB.Name = "sexLabelTB";
             this.sexLabelTB.Properties.ReadOnly = true;
-            this.sexLabelTB.Size = new System.Drawing.Size(194, 20);
+            this.sexLabelTB.Size = new System.Drawing.Size(551, 20);
             this.sexLabelTB.StyleController = this.layoutControl1;
             this.sexLabelTB.TabIndex = 11;
             // 
             // addressLabelTB
             // 
-            this.addressLabelTB.Location = new System.Drawing.Point(166, 219);
+            this.addressLabelTB.Location = new System.Drawing.Point(130, 217);
             this.addressLabelTB.Name = "addressLabelTB";
             this.addressLabelTB.Properties.ReadOnly = true;
-            this.addressLabelTB.Size = new System.Drawing.Size(194, 20);
+            this.addressLabelTB.Size = new System.Drawing.Size(551, 20);
             this.addressLabelTB.StyleController = this.layoutControl1;
             this.addressLabelTB.TabIndex = 12;
             // 
             // poleCardLabelTB
             // 
-            this.poleCardLabelTB.Location = new System.Drawing.Point(498, 123);
+            this.poleCardLabelTB.Location = new System.Drawing.Point(783, 121);
             this.poleCardLabelTB.Name = "poleCardLabelTB";
             this.poleCardLabelTB.Properties.ReadOnly = true;
-            this.poleCardLabelTB.Size = new System.Drawing.Size(194, 20);
+            this.poleCardLabelTB.Size = new System.Drawing.Size(551, 20);
             this.poleCardLabelTB.StyleController = this.layoutControl1;
             this.poleCardLabelTB.TabIndex = 13;
             // 
             // dowodLabelTB
             // 
-            this.dowodLabelTB.Location = new System.Drawing.Point(498, 147);
+            this.dowodLabelTB.Location = new System.Drawing.Point(783, 145);
             this.dowodLabelTB.Name = "dowodLabelTB";
             this.dowodLabelTB.Properties.ReadOnly = true;
-            this.dowodLabelTB.Size = new System.Drawing.Size(194, 20);
+            this.dowodLabelTB.Size = new System.Drawing.Size(551, 20);
             this.dowodLabelTB.StyleController = this.layoutControl1;
             this.dowodLabelTB.TabIndex = 14;
             // 
             // passportLabelTB
             // 
-            this.passportLabelTB.Location = new System.Drawing.Point(498, 171);
+            this.passportLabelTB.Location = new System.Drawing.Point(783, 169);
             this.passportLabelTB.Name = "passportLabelTB";
             this.passportLabelTB.Properties.ReadOnly = true;
-            this.passportLabelTB.Size = new System.Drawing.Size(194, 20);
+            this.passportLabelTB.Size = new System.Drawing.Size(551, 20);
             this.passportLabelTB.StyleController = this.layoutControl1;
             this.passportLabelTB.TabIndex = 15;
             // 
             // insuranceLabelTB
             // 
-            this.insuranceLabelTB.Location = new System.Drawing.Point(498, 195);
+            this.insuranceLabelTB.Location = new System.Drawing.Point(783, 193);
             this.insuranceLabelTB.Name = "insuranceLabelTB";
             this.insuranceLabelTB.Properties.ReadOnly = true;
-            this.insuranceLabelTB.Size = new System.Drawing.Size(194, 20);
+            this.insuranceLabelTB.Size = new System.Drawing.Size(551, 20);
             this.insuranceLabelTB.StyleController = this.layoutControl1;
             this.insuranceLabelTB.TabIndex = 16;
             // 
             // visitIDLabelTB
             // 
-            this.visitIDLabelTB.Location = new System.Drawing.Point(166, 290);
+            this.visitIDLabelTB.Location = new System.Drawing.Point(168, 286);
             this.visitIDLabelTB.Name = "visitIDLabelTB";
             this.visitIDLabelTB.Properties.ReadOnly = true;
-            this.visitIDLabelTB.Size = new System.Drawing.Size(82, 20);
+            this.visitIDLabelTB.Size = new System.Drawing.Size(293, 20);
             this.visitIDLabelTB.StyleController = this.layoutControl1;
             this.visitIDLabelTB.TabIndex = 12;
             // 
             // dateLabelTB
             // 
-            this.dateLabelTB.Location = new System.Drawing.Point(387, 290);
+            this.dateLabelTB.Location = new System.Drawing.Point(602, 286);
             this.dateLabelTB.Name = "dateLabelTB";
             this.dateLabelTB.Properties.ReadOnly = true;
-            this.dateLabelTB.Size = new System.Drawing.Size(82, 20);
+            this.dateLabelTB.Size = new System.Drawing.Size(293, 20);
             this.dateLabelTB.StyleController = this.layoutControl1;
             this.dateLabelTB.TabIndex = 12;
             // 
             // objawyLabelTB
             // 
-            this.objawyLabelTB.Location = new System.Drawing.Point(166, 314);
+            this.objawyLabelTB.Location = new System.Drawing.Point(168, 310);
             this.objawyLabelTB.Name = "objawyLabelTB";
             this.objawyLabelTB.Properties.ReadOnly = true;
-            this.objawyLabelTB.Size = new System.Drawing.Size(526, 104);
+            this.objawyLabelTB.Size = new System.Drawing.Size(1166, 105);
             this.objawyLabelTB.StyleController = this.layoutControl1;
             this.objawyLabelTB.TabIndex = 16;
             // 
             // bprzedmiotoweLabelTB
             // 
-            this.bprzedmiotoweLabelTB.Location = new System.Drawing.Point(166, 422);
+            this.bprzedmiotoweLabelTB.Location = new System.Drawing.Point(168, 419);
             this.bprzedmiotoweLabelTB.Name = "bprzedmiotoweLabelTB";
             this.bprzedmiotoweLabelTB.Properties.ReadOnly = true;
-            this.bprzedmiotoweLabelTB.Size = new System.Drawing.Size(194, 103);
+            this.bprzedmiotoweLabelTB.Size = new System.Drawing.Size(513, 105);
             this.bprzedmiotoweLabelTB.StyleController = this.layoutControl1;
             this.bprzedmiotoweLabelTB.TabIndex = 16;
             // 
             // bpodmiotoweLabelTB
             // 
-            this.bpodmiotoweLabelTB.Location = new System.Drawing.Point(498, 422);
+            this.bpodmiotoweLabelTB.Location = new System.Drawing.Point(821, 419);
             this.bpodmiotoweLabelTB.Name = "bpodmiotoweLabelTB";
             this.bpodmiotoweLabelTB.Properties.ReadOnly = true;
-            this.bpodmiotoweLabelTB.Size = new System.Drawing.Size(194, 103);
+            this.bpodmiotoweLabelTB.Size = new System.Drawing.Size(513, 105);
             this.bpodmiotoweLabelTB.StyleController = this.layoutControl1;
             this.bpodmiotoweLabelTB.TabIndex = 16;
             // 
             // ICD1LabelTB
             // 
-            this.ICD1LabelTB.Location = new System.Drawing.Point(166, 529);
+            this.ICD1LabelTB.Location = new System.Drawing.Point(168, 528);
             this.ICD1LabelTB.Name = "ICD1LabelTB";
             this.ICD1LabelTB.Properties.ReadOnly = true;
-            this.ICD1LabelTB.Size = new System.Drawing.Size(83, 20);
+            this.ICD1LabelTB.Size = new System.Drawing.Size(295, 20);
             this.ICD1LabelTB.StyleController = this.layoutControl1;
             this.ICD1LabelTB.TabIndex = 12;
             // 
             // ICD2LabelTB
             // 
-            this.ICD2LabelTB.Location = new System.Drawing.Point(387, 529);
+            this.ICD2LabelTB.Location = new System.Drawing.Point(603, 528);
             this.ICD2LabelTB.Name = "ICD2LabelTB";
             this.ICD2LabelTB.Properties.ReadOnly = true;
-            this.ICD2LabelTB.Size = new System.Drawing.Size(84, 20);
+            this.ICD2LabelTB.Size = new System.Drawing.Size(296, 20);
             this.ICD2LabelTB.StyleController = this.layoutControl1;
             this.ICD2LabelTB.TabIndex = 12;
             // 
             // ICD3LabelTB
             // 
-            this.ICD3LabelTB.Location = new System.Drawing.Point(609, 529);
+            this.ICD3LabelTB.Location = new System.Drawing.Point(1039, 528);
             this.ICD3LabelTB.Name = "ICD3LabelTB";
             this.ICD3LabelTB.Properties.ReadOnly = true;
-            this.ICD3LabelTB.Size = new System.Drawing.Size(83, 20);
+            this.ICD3LabelTB.Size = new System.Drawing.Size(295, 20);
             this.ICD3LabelTB.StyleController = this.layoutControl1;
             this.ICD3LabelTB.TabIndex = 12;
             // 
             // rozpoznanieLabelTB
             // 
-            this.rozpoznanieLabelTB.Location = new System.Drawing.Point(166, 553);
+            this.rozpoznanieLabelTB.Location = new System.Drawing.Point(168, 552);
             this.rozpoznanieLabelTB.Name = "rozpoznanieLabelTB";
             this.rozpoznanieLabelTB.Properties.ReadOnly = true;
-            this.rozpoznanieLabelTB.Size = new System.Drawing.Size(526, 147);
+            this.rozpoznanieLabelTB.Size = new System.Drawing.Size(1166, 148);
             this.rozpoznanieLabelTB.StyleController = this.layoutControl1;
             this.rozpoznanieLabelTB.TabIndex = 16;
             // 
             // lekiLabelTB
             // 
-            this.lekiLabelTB.Location = new System.Drawing.Point(166, 704);
+            this.lekiLabelTB.Location = new System.Drawing.Point(168, 704);
             this.lekiLabelTB.Name = "lekiLabelTB";
             this.lekiLabelTB.Properties.ReadOnly = true;
-            this.lekiLabelTB.Size = new System.Drawing.Size(194, 145);
+            this.lekiLabelTB.Size = new System.Drawing.Size(513, 145);
             this.lekiLabelTB.StyleController = this.layoutControl1;
             this.lekiLabelTB.TabIndex = 16;
             // 
             // zaleceniaLabelTB
             // 
-            this.zaleceniaLabelTB.Location = new System.Drawing.Point(498, 704);
+            this.zaleceniaLabelTB.Location = new System.Drawing.Point(821, 704);
             this.zaleceniaLabelTB.Name = "zaleceniaLabelTB";
             this.zaleceniaLabelTB.Properties.ReadOnly = true;
-            this.zaleceniaLabelTB.Size = new System.Drawing.Size(194, 145);
+            this.zaleceniaLabelTB.Size = new System.Drawing.Size(513, 145);
             this.zaleceniaLabelTB.StyleController = this.layoutControl1;
             this.zaleceniaLabelTB.TabIndex = 16;
             // 
             // przyrjmujacyLabelTB
             // 
-            this.przyrjmujacyLabelTB.Location = new System.Drawing.Point(608, 290);
+            this.przyrjmujacyLabelTB.Location = new System.Drawing.Point(1036, 286);
             this.przyrjmujacyLabelTB.Name = "przyrjmujacyLabelTB";
             this.przyrjmujacyLabelTB.Properties.ReadOnly = true;
-            this.przyrjmujacyLabelTB.Size = new System.Drawing.Size(84, 20);
+            this.przyrjmujacyLabelTB.Size = new System.Drawing.Size(298, 20);
             this.przyrjmujacyLabelTB.StyleController = this.layoutControl1;
             this.przyrjmujacyLabelTB.TabIndex = 12;
             // 
@@ -650,7 +643,8 @@
             this.layoutControlGroup5});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(724, 881);
+            this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 5;
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1366, 881);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlGroup5
@@ -663,7 +657,7 @@
             this.layoutControlGroup5.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup5.Name = "layoutControlGroup5";
             this.layoutControlGroup5.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlGroup5.Size = new System.Drawing.Size(704, 861);
+            this.layoutControlGroup5.Size = new System.Drawing.Size(1346, 861);
             this.layoutControlGroup5.Text = "Karta wizyty";
             // 
             // layoutControlGroup3
@@ -684,39 +678,10 @@
             this.sexLabel,
             this.insuranceLabel,
             this.addressLabel});
-            this.layoutControlGroup3.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
+            this.layoutControlGroup3.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Flow;
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition1.Width = 50D;
-            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition2.Width = 50D;
-            this.layoutControlGroup3.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition1,
-            columnDefinition2});
-            rowDefinition1.Height = 50D;
-            rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition2.Height = 50D;
-            rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition3.Height = 24D;
-            rowDefinition3.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition4.Height = 24D;
-            rowDefinition4.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition5.Height = 24D;
-            rowDefinition5.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition6.Height = 24D;
-            rowDefinition6.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition7.Height = 28D;
-            rowDefinition7.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            this.layoutControlGroup3.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition1,
-            rowDefinition2,
-            rowDefinition3,
-            rowDefinition4,
-            rowDefinition5,
-            rowDefinition6,
-            rowDefinition7});
-            this.layoutControlGroup3.Size = new System.Drawing.Size(688, 217);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(1330, 213);
             this.layoutControlGroup3.Text = "Dane Pacjenta";
             // 
             // patientIDLabel
@@ -727,10 +692,10 @@
             this.patientIDLabel.CustomizationFormText = "Numer pacjenta:";
             this.patientIDLabel.Location = new System.Drawing.Point(0, 0);
             this.patientIDLabel.Name = "patientIDLabel";
-            this.patientIDLabel.Size = new System.Drawing.Size(332, 25);
+            this.patientIDLabel.Size = new System.Drawing.Size(653, 24);
             this.patientIDLabel.Text = "Numer pacjenta:";
             this.patientIDLabel.TextLocation = DevExpress.Utils.Locations.Left;
-            this.patientIDLabel.TextSize = new System.Drawing.Size(131, 13);
+            this.patientIDLabel.TextSize = new System.Drawing.Size(93, 13);
             // 
             // phoneLabel
             // 
@@ -738,13 +703,13 @@
             this.phoneLabel.AppearanceItemCaption.Options.UseFont = true;
             this.phoneLabel.Control = this.phoneLabelTB;
             this.phoneLabel.CustomizationFormText = "Telefon:";
-            this.phoneLabel.Location = new System.Drawing.Point(332, 0);
+            this.phoneLabel.Location = new System.Drawing.Point(653, 0);
             this.phoneLabel.Name = "phoneLabel";
             this.phoneLabel.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.phoneLabel.Size = new System.Drawing.Size(332, 25);
+            this.phoneLabel.Size = new System.Drawing.Size(653, 24);
             this.phoneLabel.Text = "Telefon:";
             this.phoneLabel.TextLocation = DevExpress.Utils.Locations.Left;
-            this.phoneLabel.TextSize = new System.Drawing.Size(131, 13);
+            this.phoneLabel.TextSize = new System.Drawing.Size(93, 13);
             // 
             // nameLabel
             // 
@@ -752,13 +717,13 @@
             this.nameLabel.AppearanceItemCaption.Options.UseFont = true;
             this.nameLabel.Control = this.nameLabelTB;
             this.nameLabel.CustomizationFormText = "Imię:";
-            this.nameLabel.Location = new System.Drawing.Point(0, 25);
+            this.nameLabel.Location = new System.Drawing.Point(0, 24);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.OptionsTableLayoutItem.RowIndex = 1;
-            this.nameLabel.Size = new System.Drawing.Size(332, 25);
+            this.nameLabel.Size = new System.Drawing.Size(653, 24);
             this.nameLabel.Text = "Imię:";
             this.nameLabel.TextLocation = DevExpress.Utils.Locations.Left;
-            this.nameLabel.TextSize = new System.Drawing.Size(131, 13);
+            this.nameLabel.TextSize = new System.Drawing.Size(93, 13);
             // 
             // peselLabel
             // 
@@ -766,129 +731,129 @@
             this.peselLabel.AppearanceItemCaption.Options.UseFont = true;
             this.peselLabel.Control = this.peselLabelTB;
             this.peselLabel.CustomizationFormText = "PESEL:";
-            this.peselLabel.Location = new System.Drawing.Point(332, 25);
+            this.peselLabel.Location = new System.Drawing.Point(653, 24);
             this.peselLabel.Name = "peselLabel";
             this.peselLabel.OptionsTableLayoutItem.ColumnIndex = 1;
             this.peselLabel.OptionsTableLayoutItem.RowIndex = 1;
-            this.peselLabel.Size = new System.Drawing.Size(332, 25);
+            this.peselLabel.Size = new System.Drawing.Size(653, 24);
             this.peselLabel.Text = "PESEL:";
             this.peselLabel.TextLocation = DevExpress.Utils.Locations.Left;
-            this.peselLabel.TextSize = new System.Drawing.Size(131, 13);
+            this.peselLabel.TextSize = new System.Drawing.Size(93, 13);
             // 
             // surnameLabel
             // 
             this.surnameLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.surnameLabel.AppearanceItemCaption.Options.UseFont = true;
             this.surnameLabel.Control = this.surnameLabelTB;
-            this.surnameLabel.Location = new System.Drawing.Point(0, 50);
+            this.surnameLabel.Location = new System.Drawing.Point(0, 48);
             this.surnameLabel.Name = "surnameLabel";
             this.surnameLabel.OptionsTableLayoutItem.RowIndex = 2;
-            this.surnameLabel.Size = new System.Drawing.Size(332, 24);
+            this.surnameLabel.Size = new System.Drawing.Size(653, 24);
             this.surnameLabel.Text = "Nazwisko:";
-            this.surnameLabel.TextSize = new System.Drawing.Size(131, 13);
+            this.surnameLabel.TextSize = new System.Drawing.Size(93, 13);
             // 
             // poleCardLabel
             // 
             this.poleCardLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.poleCardLabel.AppearanceItemCaption.Options.UseFont = true;
             this.poleCardLabel.Control = this.poleCardLabelTB;
-            this.poleCardLabel.Location = new System.Drawing.Point(332, 50);
+            this.poleCardLabel.Location = new System.Drawing.Point(653, 48);
             this.poleCardLabel.Name = "poleCardLabel";
             this.poleCardLabel.OptionsTableLayoutItem.ColumnIndex = 1;
             this.poleCardLabel.OptionsTableLayoutItem.RowIndex = 2;
-            this.poleCardLabel.Size = new System.Drawing.Size(332, 24);
+            this.poleCardLabel.Size = new System.Drawing.Size(653, 24);
             this.poleCardLabel.Text = "Karta Polaka:";
-            this.poleCardLabel.TextSize = new System.Drawing.Size(131, 13);
+            this.poleCardLabel.TextSize = new System.Drawing.Size(93, 13);
             // 
             // birthLabel
             // 
             this.birthLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.birthLabel.AppearanceItemCaption.Options.UseFont = true;
             this.birthLabel.Control = this.birthLabelTB;
-            this.birthLabel.Location = new System.Drawing.Point(0, 74);
+            this.birthLabel.Location = new System.Drawing.Point(0, 72);
             this.birthLabel.Name = "birthLabel";
             this.birthLabel.OptionsTableLayoutItem.RowIndex = 3;
-            this.birthLabel.Size = new System.Drawing.Size(332, 24);
+            this.birthLabel.Size = new System.Drawing.Size(653, 24);
             this.birthLabel.Text = "Data urodzenia:";
-            this.birthLabel.TextSize = new System.Drawing.Size(131, 13);
+            this.birthLabel.TextSize = new System.Drawing.Size(93, 13);
             // 
             // dowodLabel
             // 
             this.dowodLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.dowodLabel.AppearanceItemCaption.Options.UseFont = true;
             this.dowodLabel.Control = this.dowodLabelTB;
-            this.dowodLabel.Location = new System.Drawing.Point(332, 74);
+            this.dowodLabel.Location = new System.Drawing.Point(653, 72);
             this.dowodLabel.Name = "dowodLabel";
             this.dowodLabel.OptionsTableLayoutItem.ColumnIndex = 1;
             this.dowodLabel.OptionsTableLayoutItem.RowIndex = 3;
-            this.dowodLabel.Size = new System.Drawing.Size(332, 24);
+            this.dowodLabel.Size = new System.Drawing.Size(653, 24);
             this.dowodLabel.Text = "Dowód osobisty:";
-            this.dowodLabel.TextSize = new System.Drawing.Size(131, 13);
+            this.dowodLabel.TextSize = new System.Drawing.Size(93, 13);
             // 
             // countryLabel
             // 
             this.countryLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.countryLabel.AppearanceItemCaption.Options.UseFont = true;
             this.countryLabel.Control = this.countryLabelTB;
-            this.countryLabel.Location = new System.Drawing.Point(0, 98);
+            this.countryLabel.Location = new System.Drawing.Point(0, 96);
             this.countryLabel.Name = "countryLabel";
             this.countryLabel.OptionsTableLayoutItem.RowIndex = 4;
-            this.countryLabel.Size = new System.Drawing.Size(332, 24);
+            this.countryLabel.Size = new System.Drawing.Size(653, 24);
             this.countryLabel.Text = "Kraj:";
-            this.countryLabel.TextSize = new System.Drawing.Size(131, 13);
+            this.countryLabel.TextSize = new System.Drawing.Size(93, 13);
             // 
             // passportLabel
             // 
             this.passportLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.passportLabel.AppearanceItemCaption.Options.UseFont = true;
             this.passportLabel.Control = this.passportLabelTB;
-            this.passportLabel.Location = new System.Drawing.Point(332, 98);
+            this.passportLabel.Location = new System.Drawing.Point(653, 96);
             this.passportLabel.Name = "passportLabel";
             this.passportLabel.OptionsTableLayoutItem.ColumnIndex = 1;
             this.passportLabel.OptionsTableLayoutItem.RowIndex = 4;
-            this.passportLabel.Size = new System.Drawing.Size(332, 24);
+            this.passportLabel.Size = new System.Drawing.Size(653, 24);
             this.passportLabel.Text = "Paszport:";
-            this.passportLabel.TextSize = new System.Drawing.Size(131, 13);
+            this.passportLabel.TextSize = new System.Drawing.Size(93, 13);
             // 
             // sexLabel
             // 
             this.sexLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.sexLabel.AppearanceItemCaption.Options.UseFont = true;
             this.sexLabel.Control = this.sexLabelTB;
-            this.sexLabel.Location = new System.Drawing.Point(0, 122);
+            this.sexLabel.Location = new System.Drawing.Point(0, 120);
             this.sexLabel.Name = "sexLabel";
             this.sexLabel.OptionsTableLayoutItem.RowIndex = 5;
-            this.sexLabel.Size = new System.Drawing.Size(332, 24);
+            this.sexLabel.Size = new System.Drawing.Size(653, 24);
             this.sexLabel.Text = "Płeć:";
-            this.sexLabel.TextSize = new System.Drawing.Size(131, 13);
+            this.sexLabel.TextSize = new System.Drawing.Size(93, 13);
             // 
             // insuranceLabel
             // 
             this.insuranceLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.insuranceLabel.AppearanceItemCaption.Options.UseFont = true;
             this.insuranceLabel.Control = this.insuranceLabelTB;
-            this.insuranceLabel.Location = new System.Drawing.Point(332, 122);
+            this.insuranceLabel.Location = new System.Drawing.Point(653, 120);
             this.insuranceLabel.Name = "insuranceLabel";
             this.insuranceLabel.OptionsTableLayoutItem.ColumnIndex = 1;
             this.insuranceLabel.OptionsTableLayoutItem.RowIndex = 5;
-            this.insuranceLabel.Size = new System.Drawing.Size(332, 24);
+            this.insuranceLabel.Size = new System.Drawing.Size(653, 24);
             this.insuranceLabel.Text = "Ubezpieczenie:";
-            this.insuranceLabel.TextSize = new System.Drawing.Size(131, 13);
+            this.insuranceLabel.TextSize = new System.Drawing.Size(93, 13);
             // 
             // addressLabel
             // 
             this.addressLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.addressLabel.AppearanceItemCaption.Options.UseFont = true;
             this.addressLabel.Control = this.addressLabelTB;
-            this.addressLabel.Location = new System.Drawing.Point(0, 146);
+            this.addressLabel.Location = new System.Drawing.Point(0, 144);
             this.addressLabel.MinSize = new System.Drawing.Size(188, 24);
             this.addressLabel.Name = "addressLabel";
             this.addressLabel.OptionsTableLayoutItem.RowIndex = 6;
-            this.addressLabel.Size = new System.Drawing.Size(332, 28);
+            this.addressLabel.Size = new System.Drawing.Size(653, 26);
             this.addressLabel.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.addressLabel.Text = "Adres:";
             this.addressLabel.TextLocation = DevExpress.Utils.Locations.Left;
-            this.addressLabel.TextSize = new System.Drawing.Size(131, 13);
+            this.addressLabel.TextSize = new System.Drawing.Size(93, 13);
             // 
             // layoutControlGroup4
             // 
@@ -909,10 +874,10 @@
             this.przyrjmujacyLabel,
             this.simpleSeparator5,
             this.simpleSeparator6});
-            this.layoutControlGroup4.Location = new System.Drawing.Point(0, 217);
+            this.layoutControlGroup4.Location = new System.Drawing.Point(0, 213);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlGroup4.Size = new System.Drawing.Size(688, 606);
+            this.layoutControlGroup4.Size = new System.Drawing.Size(1330, 610);
             this.layoutControlGroup4.Text = "Dane wizyty";
             // 
             // visitIDLabel
@@ -923,7 +888,7 @@
             this.visitIDLabel.CustomizationFormText = "Numer wizyty:";
             this.visitIDLabel.Location = new System.Drawing.Point(0, 0);
             this.visitIDLabel.Name = "visitIDLabel";
-            this.visitIDLabel.Size = new System.Drawing.Size(220, 24);
+            this.visitIDLabel.Size = new System.Drawing.Size(433, 24);
             this.visitIDLabel.Text = "Numer wizyty:";
             this.visitIDLabel.TextLocation = DevExpress.Utils.Locations.Left;
             this.visitIDLabel.TextSize = new System.Drawing.Size(131, 13);
@@ -936,7 +901,7 @@
             this.objawyLabel.CustomizationFormText = "Objawy:";
             this.objawyLabel.Location = new System.Drawing.Point(0, 24);
             this.objawyLabel.Name = "objawyLabel";
-            this.objawyLabel.Size = new System.Drawing.Size(664, 108);
+            this.objawyLabel.Size = new System.Drawing.Size(1306, 109);
             this.objawyLabel.Text = "Objawy:";
             this.objawyLabel.TextSize = new System.Drawing.Size(131, 13);
             // 
@@ -946,9 +911,9 @@
             this.bprzedmiotoweLabel.AppearanceItemCaption.Options.UseFont = true;
             this.bprzedmiotoweLabel.Control = this.bprzedmiotoweLabelTB;
             this.bprzedmiotoweLabel.CustomizationFormText = "Badanie przedmiotowe:";
-            this.bprzedmiotoweLabel.Location = new System.Drawing.Point(0, 132);
+            this.bprzedmiotoweLabel.Location = new System.Drawing.Point(0, 133);
             this.bprzedmiotoweLabel.Name = "bprzedmiotoweLabel";
-            this.bprzedmiotoweLabel.Size = new System.Drawing.Size(332, 107);
+            this.bprzedmiotoweLabel.Size = new System.Drawing.Size(653, 109);
             this.bprzedmiotoweLabel.Text = "Badanie przedmiotowe:";
             this.bprzedmiotoweLabel.TextSize = new System.Drawing.Size(131, 13);
             // 
@@ -958,9 +923,9 @@
             this.ICD1Label1.AppearanceItemCaption.Options.UseFont = true;
             this.ICD1Label1.Control = this.ICD1LabelTB;
             this.ICD1Label1.CustomizationFormText = "Kod ICD 1:";
-            this.ICD1Label1.Location = new System.Drawing.Point(0, 239);
+            this.ICD1Label1.Location = new System.Drawing.Point(0, 242);
             this.ICD1Label1.Name = "ICD1Label1";
-            this.ICD1Label1.Size = new System.Drawing.Size(221, 24);
+            this.ICD1Label1.Size = new System.Drawing.Size(435, 24);
             this.ICD1Label1.Text = "Kod ICD 1:";
             this.ICD1Label1.TextLocation = DevExpress.Utils.Locations.Left;
             this.ICD1Label1.TextSize = new System.Drawing.Size(131, 13);
@@ -971,9 +936,9 @@
             this.rozpoznanieLabel.AppearanceItemCaption.Options.UseFont = true;
             this.rozpoznanieLabel.Control = this.rozpoznanieLabelTB;
             this.rozpoznanieLabel.CustomizationFormText = "Rozpoznanie:";
-            this.rozpoznanieLabel.Location = new System.Drawing.Point(0, 263);
+            this.rozpoznanieLabel.Location = new System.Drawing.Point(0, 266);
             this.rozpoznanieLabel.Name = "rozpoznanieLabel";
-            this.rozpoznanieLabel.Size = new System.Drawing.Size(664, 151);
+            this.rozpoznanieLabel.Size = new System.Drawing.Size(1306, 152);
             this.rozpoznanieLabel.Text = "Rozpoznanie:";
             this.rozpoznanieLabel.TextSize = new System.Drawing.Size(131, 13);
             // 
@@ -983,9 +948,9 @@
             this.lekiLabel.AppearanceItemCaption.Options.UseFont = true;
             this.lekiLabel.Control = this.lekiLabelTB;
             this.lekiLabel.CustomizationFormText = "Leki:";
-            this.lekiLabel.Location = new System.Drawing.Point(0, 414);
+            this.lekiLabel.Location = new System.Drawing.Point(0, 418);
             this.lekiLabel.Name = "lekiLabel";
-            this.lekiLabel.Size = new System.Drawing.Size(332, 149);
+            this.lekiLabel.Size = new System.Drawing.Size(653, 149);
             this.lekiLabel.Text = "Leki:";
             this.lekiLabel.TextSize = new System.Drawing.Size(131, 13);
             // 
@@ -995,9 +960,9 @@
             this.dateLabel.AppearanceItemCaption.Options.UseFont = true;
             this.dateLabel.Control = this.dateLabelTB;
             this.dateLabel.CustomizationFormText = "Data wizyty:";
-            this.dateLabel.Location = new System.Drawing.Point(221, 0);
+            this.dateLabel.Location = new System.Drawing.Point(434, 0);
             this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(220, 24);
+            this.dateLabel.Size = new System.Drawing.Size(433, 24);
             this.dateLabel.Text = "Data wizyty:";
             this.dateLabel.TextLocation = DevExpress.Utils.Locations.Left;
             this.dateLabel.TextSize = new System.Drawing.Size(131, 13);
@@ -1008,9 +973,9 @@
             this.bpodmiotoweLabel.AppearanceItemCaption.Options.UseFont = true;
             this.bpodmiotoweLabel.Control = this.bpodmiotoweLabelTB;
             this.bpodmiotoweLabel.CustomizationFormText = "Badanie podmiotowe:";
-            this.bpodmiotoweLabel.Location = new System.Drawing.Point(332, 132);
+            this.bpodmiotoweLabel.Location = new System.Drawing.Point(653, 133);
             this.bpodmiotoweLabel.Name = "bpodmiotoweLabel";
-            this.bpodmiotoweLabel.Size = new System.Drawing.Size(332, 107);
+            this.bpodmiotoweLabel.Size = new System.Drawing.Size(653, 109);
             this.bpodmiotoweLabel.Text = "Badanie podmiotowe:";
             this.bpodmiotoweLabel.TextSize = new System.Drawing.Size(131, 13);
             // 
@@ -1020,9 +985,9 @@
             this.zaleceniaLabel.AppearanceItemCaption.Options.UseFont = true;
             this.zaleceniaLabel.Control = this.zaleceniaLabelTB;
             this.zaleceniaLabel.CustomizationFormText = "Zalecenia:";
-            this.zaleceniaLabel.Location = new System.Drawing.Point(332, 414);
+            this.zaleceniaLabel.Location = new System.Drawing.Point(653, 418);
             this.zaleceniaLabel.Name = "zaleceniaLabel";
-            this.zaleceniaLabel.Size = new System.Drawing.Size(332, 149);
+            this.zaleceniaLabel.Size = new System.Drawing.Size(653, 149);
             this.zaleceniaLabel.Text = "Zalecenia:";
             this.zaleceniaLabel.TextSize = new System.Drawing.Size(131, 13);
             // 
@@ -1032,9 +997,9 @@
             this.ICD2Label.AppearanceItemCaption.Options.UseFont = true;
             this.ICD2Label.Control = this.ICD2LabelTB;
             this.ICD2Label.CustomizationFormText = "Kod ICD 2:";
-            this.ICD2Label.Location = new System.Drawing.Point(221, 239);
+            this.ICD2Label.Location = new System.Drawing.Point(435, 242);
             this.ICD2Label.Name = "ICD2Label";
-            this.ICD2Label.Size = new System.Drawing.Size(222, 24);
+            this.ICD2Label.Size = new System.Drawing.Size(436, 24);
             this.ICD2Label.Text = "Kod ICD 2:";
             this.ICD2Label.TextLocation = DevExpress.Utils.Locations.Left;
             this.ICD2Label.TextSize = new System.Drawing.Size(131, 13);
@@ -1045,9 +1010,9 @@
             this.ICD3Label.AppearanceItemCaption.Options.UseFont = true;
             this.ICD3Label.Control = this.ICD3LabelTB;
             this.ICD3Label.CustomizationFormText = "Kod ICD 3:";
-            this.ICD3Label.Location = new System.Drawing.Point(443, 239);
+            this.ICD3Label.Location = new System.Drawing.Point(871, 242);
             this.ICD3Label.Name = "ICD3Label";
-            this.ICD3Label.Size = new System.Drawing.Size(221, 24);
+            this.ICD3Label.Size = new System.Drawing.Size(435, 24);
             this.ICD3Label.Text = "Kod ICD 3:";
             this.ICD3Label.TextLocation = DevExpress.Utils.Locations.Left;
             this.ICD3Label.TextSize = new System.Drawing.Size(131, 13);
@@ -1058,9 +1023,9 @@
             this.przyrjmujacyLabel.AppearanceItemCaption.Options.UseFont = true;
             this.przyrjmujacyLabel.Control = this.przyrjmujacyLabelTB;
             this.przyrjmujacyLabel.CustomizationFormText = "Przyjmujący:";
-            this.przyrjmujacyLabel.Location = new System.Drawing.Point(442, 0);
+            this.przyrjmujacyLabel.Location = new System.Drawing.Point(868, 0);
             this.przyrjmujacyLabel.Name = "przyrjmujacyLabel";
-            this.przyrjmujacyLabel.Size = new System.Drawing.Size(222, 24);
+            this.przyrjmujacyLabel.Size = new System.Drawing.Size(438, 24);
             this.przyrjmujacyLabel.Text = "Przyjmujący:";
             this.przyrjmujacyLabel.TextLocation = DevExpress.Utils.Locations.Left;
             this.przyrjmujacyLabel.TextSize = new System.Drawing.Size(131, 13);
@@ -1068,14 +1033,14 @@
             // simpleSeparator5
             // 
             this.simpleSeparator5.AllowHotTrack = false;
-            this.simpleSeparator5.Location = new System.Drawing.Point(220, 0);
+            this.simpleSeparator5.Location = new System.Drawing.Point(433, 0);
             this.simpleSeparator5.Name = "simpleSeparator5";
             this.simpleSeparator5.Size = new System.Drawing.Size(1, 24);
             // 
             // simpleSeparator6
             // 
             this.simpleSeparator6.AllowHotTrack = false;
-            this.simpleSeparator6.Location = new System.Drawing.Point(441, 0);
+            this.simpleSeparator6.Location = new System.Drawing.Point(867, 0);
             this.simpleSeparator6.Name = "simpleSeparator6";
             this.simpleSeparator6.Size = new System.Drawing.Size(1, 24);
             // 

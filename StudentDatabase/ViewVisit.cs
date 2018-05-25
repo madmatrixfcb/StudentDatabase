@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraLayout;
+using DevExpress.XtraPrinting;
 
 namespace StudentDatabase
 {
@@ -125,7 +127,7 @@ namespace StudentDatabase
             }
 
             // Print.
-            layout.Print();
+                layout.Print();
         }
 
         private void ExportToPDFLayoutControl(LayoutControl layout)
