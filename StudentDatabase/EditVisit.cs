@@ -161,8 +161,6 @@ namespace StudentDatabase
                 {
                     wizytaTableAdapter.UpdateQuery(patient, date, time, objawy, bprzed, bpod, icd1, icd2, icd3, rozpoznanie, leki, zalecenia, user, Convert.ToInt16(wizytaTB.EditValue));
                     MessageBox.Show("Wizyta zedytowana", "Zedytowano", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    this.Close();
                 }
                 
                 catch (Exception ex)
