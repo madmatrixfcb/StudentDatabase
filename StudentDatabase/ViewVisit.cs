@@ -109,7 +109,7 @@ namespace StudentDatabase
             // Check whether the LayoutControl can be previewed.
             if (!layout.IsPrintingAvailable)
             {
-                MessageBox.Show("The 'DevExpress.XtraPrinting' library is not found", "Error");
+                MessageBox.Show("Wystąpił błąd podczas próby uruchomienia podglądu wydruku." + Environment.NewLine + "Spróbuj ponownie, jeśli błąd będzie się powtarzał skontaktuj się z administratorem.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -122,7 +122,7 @@ namespace StudentDatabase
             // Check whether the LayoutControl can be printed.
             if (!layout.IsPrintingAvailable)
             {
-                MessageBox.Show("The 'DevExpress.XtraPrinting' library is not found", "Error");
+                MessageBox.Show("Wystąpił błąd podczas próby wydruku." + Environment.NewLine + "Spróbuj ponownie, jeśli błąd będzie się powtarzał skontaktuj się z administratorem.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -135,7 +135,7 @@ namespace StudentDatabase
             // Check whether the LayoutControl can be printed.
             if (!layout.IsPrintingAvailable)
             {
-                MessageBox.Show("The 'DevExpress.XtraPrinting' library is not found", "Error");
+                MessageBox.Show("Wystąpił błąd podczas próby uruchomienia eksportu do pliku PDF." + Environment.NewLine + "Spróbuj ponownie, jeśli błąd będzie się powtarzał skontaktuj się z administratorem.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -145,7 +145,6 @@ namespace StudentDatabase
             {
                 string directory = folderBrowserDialog1.SelectedPath;
                 string filename = visitIDLabelTB.Text + " - " + nameLabelTB.Text + " " + surnameLabelTB.Text + " " + DataGet.data.Substring(0, 10);
-                //MessageBox.Show(directory + "/" + filename);
                 layout.ExportToPdf(directory + "/" + filename + ".pdf");
             }
 
