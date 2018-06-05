@@ -75,10 +75,15 @@ namespace StudentDatabase
             UbezpieczenieGroup.Enabled = false;
             ICDGroup.Enabled = false;
             WizytaGroup.Enabled = false;
+            P.Enabled = false;
 
             if (tabPane1.SelectedPage == PacjenciPage)
             {
                 PacjenciGroup.Enabled = true;
+                if (Login.LoginInfo.userType == "Admin")
+                {
+                    P.Enabled = true;
+                }
                 RefreshPacjenci();
             }
 
