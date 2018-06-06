@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule11 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule12 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
@@ -38,8 +40,6 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule9 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule10 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule11 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.addVisitButton = new System.Windows.Forms.Button();
@@ -106,6 +106,7 @@
             this.rozpoznanieTB = new DevExpress.XtraEditors.MemoEdit();
             this.lekiTB = new DevExpress.XtraEditors.MemoEdit();
             this.zaleceniaTB = new DevExpress.XtraEditors.MemoEdit();
+            this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.uZYTKOWNIKBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.iCDBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -114,7 +115,6 @@
             this.uzytkownikTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter();
             this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
             this.wizytaTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
-            this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pacjentCB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICDCB1.Properties)).BeginInit();
@@ -134,11 +134,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.rozpoznanieTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lekiTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaleceniaTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uZYTKOWNIKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl2
@@ -229,11 +229,11 @@
             this.pacjentCB.Properties.View = this.searchLookUpEdit1View;
             this.pacjentCB.Size = new System.Drawing.Size(360, 20);
             this.pacjentCB.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule1.ErrorText = "Wybierz pacjenta";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            conditionValidationRule1.Value1 = "";
-            this.dxValidationProvider.SetValidationRule(this.pacjentCB, conditionValidationRule1);
+            conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule11.ErrorText = "Wybierz pacjenta";
+            conditionValidationRule11.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule11.Value1 = "";
+            this.dxValidationProvider.SetValidationRule(this.pacjentCB, conditionValidationRule11);
             this.pacjentCB.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.pacjentCB_CustomDisplayText);
             // 
             // searchLookUpEdit1View
@@ -386,11 +386,11 @@
             this.ICDCB1.Properties.View = this.gridView1;
             this.ICDCB1.Size = new System.Drawing.Size(450, 20);
             this.ICDCB1.TabIndex = 7;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule2.ErrorText = "Wypełnij pole ICD 1";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            conditionValidationRule2.Value1 = "";
-            this.dxValidationProvider.SetValidationRule(this.ICDCB1, conditionValidationRule2);
+            conditionValidationRule12.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule12.ErrorText = "Wypełnij pole ICD 1";
+            conditionValidationRule12.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule12.Value1 = "";
+            this.dxValidationProvider.SetValidationRule(this.ICDCB1, conditionValidationRule12);
             this.ICDCB1.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.ICDCB1_CustomDisplayText);
             // 
             // gridView1
@@ -536,11 +536,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit.Size = new System.Drawing.Size(126, 20);
             this.dateEdit.TabIndex = 2;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule3.ErrorText = "Wypełnij pole Data";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            conditionValidationRule3.Value1 = "";
-            this.dxValidationProvider.SetValidationRule(this.dateEdit, conditionValidationRule3);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule1.ErrorText = "Wypełnij pole Data";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule1.Value1 = "";
+            this.dxValidationProvider.SetValidationRule(this.dateEdit, conditionValidationRule1);
             // 
             // defaultLookAndFeel1
             // 
@@ -556,11 +556,11 @@
             this.timeEdit.Properties.Mask.EditMask = "t";
             this.timeEdit.Size = new System.Drawing.Size(100, 20);
             this.timeEdit.TabIndex = 3;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule4.ErrorText = "Wypełnij pole Godzina";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            conditionValidationRule4.Value1 = "";
-            this.dxValidationProvider.SetValidationRule(this.timeEdit, conditionValidationRule4);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule2.ErrorText = "Wypełnij pole Godzina";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule2.Value1 = "";
+            this.dxValidationProvider.SetValidationRule(this.timeEdit, conditionValidationRule2);
             this.timeEdit.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.timeEdit_Spin);
             // 
             // labelControl4
@@ -592,11 +592,11 @@
             this.userCB.Properties.View = this.gridView4;
             this.userCB.Size = new System.Drawing.Size(360, 20);
             this.userCB.TabIndex = 93;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule5.ErrorText = "Wypełnij pole Dodający";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            conditionValidationRule5.Value1 = "";
-            this.dxValidationProvider.SetValidationRule(this.userCB, conditionValidationRule5);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule3.ErrorText = "Wypełnij pole Dodający";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule3.Value1 = "";
+            this.dxValidationProvider.SetValidationRule(this.userCB, conditionValidationRule3);
             this.userCB.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.userCB_CustomDisplayText);
             // 
             // gridView4
@@ -669,6 +669,7 @@
             this.closeButton.TabIndex = 94;
             this.closeButton.Text = "Zamknij";
             this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // labelControl7
             // 
@@ -684,11 +685,11 @@
             this.bprzedTB.Name = "bprzedTB";
             this.bprzedTB.Size = new System.Drawing.Size(215, 96);
             this.bprzedTB.TabIndex = 97;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule6.ErrorText = "Wypełnij pole Badanie przedmiotowe";
-            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            conditionValidationRule6.Value1 = "";
-            this.dxValidationProvider.SetValidationRule(this.bprzedTB, conditionValidationRule6);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule4.ErrorText = "Wypełnij pole Badanie przedmiotowe";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule4.Value1 = "";
+            this.dxValidationProvider.SetValidationRule(this.bprzedTB, conditionValidationRule4);
             // 
             // bpodTB
             // 
@@ -696,10 +697,10 @@
             this.bpodTB.Name = "bpodTB";
             this.bpodTB.Size = new System.Drawing.Size(233, 96);
             this.bpodTB.TabIndex = 98;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule7.ErrorText = "Wypełnij pole Badanie podmiotowe";
-            conditionValidationRule7.Value1 = "";
-            this.dxValidationProvider.SetValidationRule(this.bpodTB, conditionValidationRule7);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule5.ErrorText = "Wypełnij pole Badanie podmiotowe";
+            conditionValidationRule5.Value1 = "";
+            this.dxValidationProvider.SetValidationRule(this.bpodTB, conditionValidationRule5);
             // 
             // objawyTB
             // 
@@ -707,11 +708,11 @@
             this.objawyTB.Name = "objawyTB";
             this.objawyTB.Size = new System.Drawing.Size(360, 85);
             this.objawyTB.TabIndex = 99;
-            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule8.ErrorText = "Wypełnij pole Objawy";
-            conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            conditionValidationRule8.Value1 = "";
-            this.dxValidationProvider.SetValidationRule(this.objawyTB, conditionValidationRule8);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule6.ErrorText = "Wypełnij pole Objawy";
+            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule6.Value1 = "";
+            this.dxValidationProvider.SetValidationRule(this.objawyTB, conditionValidationRule6);
             // 
             // rozpoznanieTB
             // 
@@ -719,11 +720,11 @@
             this.rozpoznanieTB.Name = "rozpoznanieTB";
             this.rozpoznanieTB.Size = new System.Drawing.Size(454, 66);
             this.rozpoznanieTB.TabIndex = 100;
-            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule9.ErrorText = "Wypełnij pole Rozpoznanie";
-            conditionValidationRule9.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            conditionValidationRule9.Value1 = "";
-            this.dxValidationProvider.SetValidationRule(this.rozpoznanieTB, conditionValidationRule9);
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule7.ErrorText = "Wypełnij pole Rozpoznanie";
+            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule7.Value1 = "";
+            this.dxValidationProvider.SetValidationRule(this.rozpoznanieTB, conditionValidationRule7);
             // 
             // lekiTB
             // 
@@ -731,11 +732,11 @@
             this.lekiTB.Name = "lekiTB";
             this.lekiTB.Size = new System.Drawing.Size(454, 66);
             this.lekiTB.TabIndex = 101;
-            conditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule10.ErrorText = "Wypełnij pole Leki";
-            conditionValidationRule10.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            conditionValidationRule10.Value1 = "";
-            this.dxValidationProvider.SetValidationRule(this.lekiTB, conditionValidationRule10);
+            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule8.ErrorText = "Wypełnij pole Leki";
+            conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule8.Value1 = "";
+            this.dxValidationProvider.SetValidationRule(this.lekiTB, conditionValidationRule8);
             // 
             // zaleceniaTB
             // 
@@ -743,11 +744,11 @@
             this.zaleceniaTB.Name = "zaleceniaTB";
             this.zaleceniaTB.Size = new System.Drawing.Size(454, 66);
             this.zaleceniaTB.TabIndex = 102;
-            conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule11.ErrorText = "Wypełnij pole Zalecenia";
-            conditionValidationRule11.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            conditionValidationRule11.Value1 = "";
-            this.dxValidationProvider.SetValidationRule(this.zaleceniaTB, conditionValidationRule11);
+            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule9.ErrorText = "Wypełnij pole Zalecenia";
+            conditionValidationRule9.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule9.Value1 = "";
+            this.dxValidationProvider.SetValidationRule(this.zaleceniaTB, conditionValidationRule9);
             // 
             // uZYTKOWNIKBindingSource
             // 
@@ -839,11 +840,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.rozpoznanieTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lekiTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaleceniaTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uZYTKOWNIKBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

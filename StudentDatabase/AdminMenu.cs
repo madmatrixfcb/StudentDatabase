@@ -18,6 +18,8 @@ namespace StudentDatabase
 
         private void AdminMenu_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'poradniaDataSet.UMOW_WIZTE' table. You can move, or remove it, as needed.
+            this.uMOW_WIZTETableAdapter.Fill(this.poradniaDataSet.UMOW_WIZTE);
             this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
             this.patient_viewTableAdapter.Fill(this.poradniaDataSet.patient_view);
             /*

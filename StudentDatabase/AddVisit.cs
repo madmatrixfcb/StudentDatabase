@@ -77,6 +77,11 @@ namespace StudentDatabase
 
         }
 
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         //-----------------------CONTROLS----------------------------------/
 
         private void timeEdit_Spin(object sender, DevExpress.XtraEditors.Controls.SpinEventArgs e)

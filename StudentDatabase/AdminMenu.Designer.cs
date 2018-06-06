@@ -57,6 +57,18 @@
             this.findPatientButton = new DevExpress.XtraBars.BarButtonItem();
             this.findVisitButton = new DevExpress.XtraBars.BarButtonItem();
             this.findICDButton = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockingMenuItem1 = new DevExpress.XtraBars.BarDockingMenuItem();
+            this.ExportToPDF_Button = new DevExpress.XtraBars.BarButtonItem();
+            this.ExportToCSV_Button = new DevExpress.XtraBars.BarButtonItem();
+            this.ExportToXLS_Button = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.P = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.directorySettingsButton = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonMenu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PacjenciGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.WizytaGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -156,19 +168,14 @@
             this.wIZYTABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wIZYTATableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
             this.filteringUIContext1 = new DevExpress.Utils.Filtering.FilteringUIContext(this.components);
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            this.barDockingMenuItem1 = new DevExpress.XtraBars.BarDockingMenuItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.ExportToPDF_Button = new DevExpress.XtraBars.BarButtonItem();
-            this.ExportToCSV_Button = new DevExpress.XtraBars.BarButtonItem();
-            this.ExportToXLS_Button = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.P = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.directorySettingsButton = new DevExpress.XtraBars.BarButtonItem();
+            this.uMOWWIZTEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uMOW_WIZTETableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UMOW_WIZTETableAdapter();
+            this.colID_Umow_Wizyte = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colID_Pacjent2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colData1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGodzina1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
@@ -203,7 +210,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wIZYTABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.filteringUIContext1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uMOWWIZTEBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -470,6 +477,98 @@
             this.findICDButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("findICDButton.ImageOptions.LargeImage")));
             this.findICDButton.Name = "findICDButton";
             this.findICDButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.findICDButton_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "barButtonItem2";
+            this.barButtonItem2.Id = 24;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "Eksportuj";
+            this.barSubItem1.Id = 25;
+            this.barSubItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem1.ImageOptions.Image")));
+            this.barSubItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItem1.ImageOptions.LargeImage")));
+            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
+            this.barSubItem1.Name = "barSubItem1";
+            this.barSubItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "PDF";
+            this.barButtonItem3.Id = 27;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barDockingMenuItem1
+            // 
+            this.barDockingMenuItem1.Caption = "barDockingMenuItem1";
+            this.barDockingMenuItem1.Id = 26;
+            this.barDockingMenuItem1.Name = "barDockingMenuItem1";
+            // 
+            // ExportToPDF_Button
+            // 
+            this.ExportToPDF_Button.Caption = "PDF";
+            this.ExportToPDF_Button.Id = 29;
+            this.ExportToPDF_Button.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ExportToPDF_Button.ImageOptions.Image")));
+            this.ExportToPDF_Button.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ExportToPDF_Button.ImageOptions.LargeImage")));
+            this.ExportToPDF_Button.Name = "ExportToPDF_Button";
+            // 
+            // ExportToCSV_Button
+            // 
+            this.ExportToCSV_Button.Caption = "CSV";
+            this.ExportToCSV_Button.Id = 30;
+            this.ExportToCSV_Button.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ExportToCSV_Button.ImageOptions.Image")));
+            this.ExportToCSV_Button.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ExportToCSV_Button.ImageOptions.LargeImage")));
+            this.ExportToCSV_Button.Name = "ExportToCSV_Button";
+            // 
+            // ExportToXLS_Button
+            // 
+            this.ExportToXLS_Button.Caption = "XLS";
+            this.ExportToXLS_Button.Id = 31;
+            this.ExportToXLS_Button.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ExportToXLS_Button.ImageOptions.Image")));
+            this.ExportToXLS_Button.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ExportToXLS_Button.ImageOptions.LargeImage")));
+            this.ExportToXLS_Button.Name = "ExportToXLS_Button";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.ActAsDropDown = true;
+            this.barButtonItem7.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
+            this.barButtonItem7.Caption = "barButtonItem7";
+            this.barButtonItem7.DropDownControl = this.popupMenu1;
+            this.barButtonItem7.Id = 32;
+            this.barButtonItem7.Name = "barButtonItem7";
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.Name = "popupMenu1";
+            this.popupMenu1.Ribbon = this.ribbon;
+            // 
+            // P
+            // 
+            this.P.Caption = "Eksportuj do ...";
+            this.P.Id = 33;
+            this.P.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("P.ImageOptions.Image")));
+            this.P.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("P.ImageOptions.LargeImage")));
+            this.P.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.ExportToPDF_Button),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ExportToXLS_Button),
+            new DevExpress.XtraBars.LinkPersistInfo(this.ExportToCSV_Button)});
+            this.P.Name = "P";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "barButtonItem4";
+            this.barButtonItem4.Id = 34;
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // directorySettingsButton
+            // 
+            this.directorySettingsButton.Id = 35;
+            this.directorySettingsButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("directorySettingsButton.ImageOptions.Image")));
+            this.directorySettingsButton.Name = "directorySettingsButton";
             // 
             // ribbonMenu
             // 
@@ -1074,6 +1173,7 @@
             // 
             // gridUmowWiztye
             // 
+            this.gridUmowWiztye.DataSource = this.uMOWWIZTEBindingSource;
             this.gridUmowWiztye.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridUmowWiztye.Location = new System.Drawing.Point(0, 0);
             this.gridUmowWiztye.MainView = this.gridUmowWiztyeView;
@@ -1086,6 +1186,11 @@
             // 
             // gridUmowWiztyeView
             // 
+            this.gridUmowWiztyeView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID_Umow_Wizyte,
+            this.colID_Pacjent2,
+            this.colData1,
+            this.colGodzina1});
             this.gridUmowWiztyeView.GridControl = this.gridUmowWiztye;
             this.gridUmowWiztyeView.Name = "gridUmowWiztyeView";
             this.gridUmowWiztyeView.OptionsView.ShowGroupPanel = false;
@@ -1308,97 +1413,42 @@
             // 
             this.filteringUIContext1.ModelType = typeof(StudentDatabase.PoradniaDataSet);
             // 
-            // barButtonItem2
+            // uMOWWIZTEBindingSource
             // 
-            this.barButtonItem2.Caption = "barButtonItem2";
-            this.barButtonItem2.Id = 24;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.uMOWWIZTEBindingSource.DataMember = "UMOW_WIZTE";
+            this.uMOWWIZTEBindingSource.DataSource = this.poradniaDataSet;
             // 
-            // barSubItem1
+            // uMOW_WIZTETableAdapter
             // 
-            this.barSubItem1.Caption = "Eksportuj";
-            this.barSubItem1.Id = 25;
-            this.barSubItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem1.ImageOptions.Image")));
-            this.barSubItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItem1.ImageOptions.LargeImage")));
-            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
-            this.barSubItem1.Name = "barSubItem1";
-            this.barSubItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.uMOW_WIZTETableAdapter.ClearBeforeFill = true;
             // 
-            // barDockingMenuItem1
+            // colID_Umow_Wizyte
             // 
-            this.barDockingMenuItem1.Caption = "barDockingMenuItem1";
-            this.barDockingMenuItem1.Id = 26;
-            this.barDockingMenuItem1.Name = "barDockingMenuItem1";
+            this.colID_Umow_Wizyte.FieldName = "ID_Umow_Wizyte";
+            this.colID_Umow_Wizyte.Name = "colID_Umow_Wizyte";
+            this.colID_Umow_Wizyte.Visible = true;
+            this.colID_Umow_Wizyte.VisibleIndex = 0;
             // 
-            // barButtonItem3
+            // colID_Pacjent2
             // 
-            this.barButtonItem3.Caption = "PDF";
-            this.barButtonItem3.Id = 27;
-            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.colID_Pacjent2.FieldName = "ID_Pacjent";
+            this.colID_Pacjent2.Name = "colID_Pacjent2";
+            this.colID_Pacjent2.Visible = true;
+            this.colID_Pacjent2.VisibleIndex = 1;
             // 
-            // ExportToPDF_Button
+            // colData1
             // 
-            this.ExportToPDF_Button.Caption = "PDF";
-            this.ExportToPDF_Button.Id = 29;
-            this.ExportToPDF_Button.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.ExportToPDF_Button.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.ExportToPDF_Button.Name = "ExportToPDF_Button";
+            this.colData1.FieldName = "Data";
+            this.colData1.Name = "colData1";
+            this.colData1.Visible = true;
+            this.colData1.VisibleIndex = 2;
             // 
-            // ExportToCSV_Button
+            // colGodzina1
             // 
-            this.ExportToCSV_Button.Caption = "CSV";
-            this.ExportToCSV_Button.Id = 30;
-            this.ExportToCSV_Button.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.ExportToCSV_Button.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
-            this.ExportToCSV_Button.Name = "ExportToCSV_Button";
-            // 
-            // ExportToXLS_Button
-            // 
-            this.ExportToXLS_Button.Caption = "XLS";
-            this.ExportToXLS_Button.Id = 31;
-            this.ExportToXLS_Button.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.ExportToXLS_Button.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
-            this.ExportToXLS_Button.Name = "ExportToXLS_Button";
-            // 
-            // barButtonItem7
-            // 
-            this.barButtonItem7.ActAsDropDown = true;
-            this.barButtonItem7.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.barButtonItem7.Caption = "barButtonItem7";
-            this.barButtonItem7.DropDownControl = this.popupMenu1;
-            this.barButtonItem7.Id = 32;
-            this.barButtonItem7.Name = "barButtonItem7";
-            // 
-            // popupMenu1
-            // 
-            this.popupMenu1.Name = "popupMenu1";
-            this.popupMenu1.Ribbon = this.ribbon;
-            // 
-            // P
-            // 
-            this.P.Caption = "Eksportuj do ...";
-            this.P.Id = 33;
-            this.P.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ExportMenu.ImageOptions.Image")));
-            this.P.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ExportMenu.ImageOptions.LargeImage")));
-            this.P.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.ExportToPDF_Button),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ExportToXLS_Button),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ExportToCSV_Button)});
-            this.P.Name = "P";
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "barButtonItem4";
-            this.barButtonItem4.Id = 34;
-            this.barButtonItem4.Name = "barButtonItem4";
-            // 
-            // directorySettingsButton
-            // 
-            this.directorySettingsButton.Id = 35;
-            this.directorySettingsButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image1")));
-            this.directorySettingsButton.Name = "directorySettingsButton";
+            this.colGodzina1.FieldName = "Godzina";
+            this.colGodzina1.Name = "colGodzina1";
+            this.colGodzina1.Visible = true;
+            this.colGodzina1.VisibleIndex = 3;
             // 
             // AdminMenu
             // 
@@ -1418,6 +1468,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminMenu_FormClosing);
             this.Load += new System.EventHandler(this.AdminMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
@@ -1452,7 +1503,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wIZYTABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.filteringUIContext1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uMOWWIZTEBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1598,5 +1649,11 @@
         private DevExpress.XtraBars.BarSubItem P;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem directorySettingsButton;
+        private System.Windows.Forms.BindingSource uMOWWIZTEBindingSource;
+        private PoradniaDataSetTableAdapters.UMOW_WIZTETableAdapter uMOW_WIZTETableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colID_Umow_Wizyte;
+        private DevExpress.XtraGrid.Columns.GridColumn colID_Pacjent2;
+        private DevExpress.XtraGrid.Columns.GridColumn colData1;
+        private DevExpress.XtraGrid.Columns.GridColumn colGodzina1;
     }
 }

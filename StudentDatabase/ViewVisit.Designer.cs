@@ -69,6 +69,19 @@
             this.lekiLabelTB = new DevExpress.XtraEditors.MemoEdit();
             this.zaleceniaLabelTB = new DevExpress.XtraEditors.MemoEdit();
             this.przyrjmujacyLabelTB = new DevExpress.XtraEditors.TextEdit();
+            this.patientIDLabelTB = new DevExpress.XtraEditors.TextEdit();
+            this.nameLabelTB = new DevExpress.XtraEditors.TextEdit();
+            this.surnameLabelTB = new DevExpress.XtraEditors.TextEdit();
+            this.birthLabelTB = new DevExpress.XtraEditors.TextEdit();
+            this.countryLabelTB = new DevExpress.XtraEditors.TextEdit();
+            this.sexLabelTB = new DevExpress.XtraEditors.TextEdit();
+            this.addressLabelTB = new DevExpress.XtraEditors.TextEdit();
+            this.phoneLabelTB = new DevExpress.XtraEditors.TextEdit();
+            this.peselLabelTB = new DevExpress.XtraEditors.TextEdit();
+            this.poleCardLabelTB = new DevExpress.XtraEditors.TextEdit();
+            this.dowodLabelTB = new DevExpress.XtraEditors.TextEdit();
+            this.passportLabelTB = new DevExpress.XtraEditors.TextEdit();
+            this.insuranceLabelTB = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -81,42 +94,29 @@
             this.dateLabel = new DevExpress.XtraLayout.LayoutControlItem();
             this.bpodmiotoweLabel = new DevExpress.XtraLayout.LayoutControlItem();
             this.zaleceniaLabel = new DevExpress.XtraLayout.LayoutControlItem();
+            this.przyrjmujacyLabel = new DevExpress.XtraLayout.LayoutControlItem();
             this.ICD2Label = new DevExpress.XtraLayout.LayoutControlItem();
             this.ICD3Label = new DevExpress.XtraLayout.LayoutControlItem();
-            this.przyrjmujacyLabel = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ICD1Label = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.exportToPDFButton = new DevExpress.XtraEditors.SimpleButton();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.patientIDLabelTB = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.nameLabelTB = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.surnameLabelTB = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.birthLabelTB = new DevExpress.XtraEditors.TextEdit();
-            this.countryLabelTB = new DevExpress.XtraEditors.TextEdit();
-            this.sexLabelTB = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.addressLabelTB = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.phoneLabelTB = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.peselLabelTB = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.poleCardLabelTB = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dowodLabelTB = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.passportLabelTB = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.insuranceLabelTB = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.patientviewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
@@ -136,6 +136,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.lekiLabelTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaleceniaLabelTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.przyrjmujacyLabelTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientIDLabelTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nameLabelTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.surnameLabelTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.birthLabelTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.countryLabelTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sexLabelTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressLabelTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneLabelTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peselLabelTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poleCardLabelTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dowodLabelTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passportLabelTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.insuranceLabelTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
@@ -148,38 +161,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateLabel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bpodmiotoweLabel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaleceniaLabel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.przyrjmujacyLabel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICD2Label)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICD3Label)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.przyrjmujacyLabel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ICD1Label)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientIDLabelTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nameLabelTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.surnameLabelTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.birthLabelTB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.countryLabelTB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sexLabelTB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressLabelTB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneLabelTB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.peselLabelTB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poleCardLabelTB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dowodLabelTB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passportLabelTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.insuranceLabelTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICD1Label)).BeginInit();
             this.SuspendLayout();
             // 
             // patientviewBindingSource
@@ -514,6 +514,110 @@
             this.przyrjmujacyLabelTB.StyleController = this.layoutControl1;
             this.przyrjmujacyLabelTB.TabIndex = 12;
             // 
+            // patientIDLabelTB
+            // 
+            this.patientIDLabelTB.Location = new System.Drawing.Point(130, 73);
+            this.patientIDLabelTB.Name = "patientIDLabelTB";
+            this.patientIDLabelTB.Size = new System.Drawing.Size(257, 20);
+            this.patientIDLabelTB.StyleController = this.layoutControl1;
+            this.patientIDLabelTB.TabIndex = 17;
+            // 
+            // nameLabelTB
+            // 
+            this.nameLabelTB.Location = new System.Drawing.Point(489, 73);
+            this.nameLabelTB.Name = "nameLabelTB";
+            this.nameLabelTB.Size = new System.Drawing.Size(276, 20);
+            this.nameLabelTB.StyleController = this.layoutControl1;
+            this.nameLabelTB.TabIndex = 18;
+            // 
+            // surnameLabelTB
+            // 
+            this.surnameLabelTB.Location = new System.Drawing.Point(867, 73);
+            this.surnameLabelTB.Name = "surnameLabelTB";
+            this.surnameLabelTB.Size = new System.Drawing.Size(206, 20);
+            this.surnameLabelTB.StyleController = this.layoutControl1;
+            this.surnameLabelTB.TabIndex = 19;
+            // 
+            // birthLabelTB
+            // 
+            this.birthLabelTB.Location = new System.Drawing.Point(1175, 73);
+            this.birthLabelTB.Name = "birthLabelTB";
+            this.birthLabelTB.Size = new System.Drawing.Size(159, 20);
+            this.birthLabelTB.StyleController = this.layoutControl1;
+            this.birthLabelTB.TabIndex = 17;
+            // 
+            // countryLabelTB
+            // 
+            this.countryLabelTB.Location = new System.Drawing.Point(130, 97);
+            this.countryLabelTB.Name = "countryLabelTB";
+            this.countryLabelTB.Size = new System.Drawing.Size(257, 20);
+            this.countryLabelTB.StyleController = this.layoutControl1;
+            this.countryLabelTB.TabIndex = 18;
+            // 
+            // sexLabelTB
+            // 
+            this.sexLabelTB.Location = new System.Drawing.Point(1175, 97);
+            this.sexLabelTB.Name = "sexLabelTB";
+            this.sexLabelTB.Size = new System.Drawing.Size(159, 20);
+            this.sexLabelTB.StyleController = this.layoutControl1;
+            this.sexLabelTB.TabIndex = 19;
+            // 
+            // addressLabelTB
+            // 
+            this.addressLabelTB.Location = new System.Drawing.Point(130, 145);
+            this.addressLabelTB.Name = "addressLabelTB";
+            this.addressLabelTB.Size = new System.Drawing.Size(1204, 20);
+            this.addressLabelTB.StyleController = this.layoutControl1;
+            this.addressLabelTB.TabIndex = 20;
+            // 
+            // phoneLabelTB
+            // 
+            this.phoneLabelTB.Location = new System.Drawing.Point(130, 121);
+            this.phoneLabelTB.Name = "phoneLabelTB";
+            this.phoneLabelTB.Size = new System.Drawing.Size(257, 20);
+            this.phoneLabelTB.StyleController = this.layoutControl1;
+            this.phoneLabelTB.TabIndex = 21;
+            // 
+            // peselLabelTB
+            // 
+            this.peselLabelTB.Location = new System.Drawing.Point(867, 97);
+            this.peselLabelTB.Name = "peselLabelTB";
+            this.peselLabelTB.Size = new System.Drawing.Size(206, 20);
+            this.peselLabelTB.StyleController = this.layoutControl1;
+            this.peselLabelTB.TabIndex = 22;
+            // 
+            // poleCardLabelTB
+            // 
+            this.poleCardLabelTB.Location = new System.Drawing.Point(1175, 121);
+            this.poleCardLabelTB.Name = "poleCardLabelTB";
+            this.poleCardLabelTB.Size = new System.Drawing.Size(159, 20);
+            this.poleCardLabelTB.StyleController = this.layoutControl1;
+            this.poleCardLabelTB.TabIndex = 23;
+            // 
+            // dowodLabelTB
+            // 
+            this.dowodLabelTB.Location = new System.Drawing.Point(867, 121);
+            this.dowodLabelTB.Name = "dowodLabelTB";
+            this.dowodLabelTB.Size = new System.Drawing.Size(206, 20);
+            this.dowodLabelTB.StyleController = this.layoutControl1;
+            this.dowodLabelTB.TabIndex = 24;
+            // 
+            // passportLabelTB
+            // 
+            this.passportLabelTB.Location = new System.Drawing.Point(489, 121);
+            this.passportLabelTB.Name = "passportLabelTB";
+            this.passportLabelTB.Size = new System.Drawing.Size(276, 20);
+            this.passportLabelTB.StyleController = this.layoutControl1;
+            this.passportLabelTB.TabIndex = 25;
+            // 
+            // insuranceLabelTB
+            // 
+            this.insuranceLabelTB.Location = new System.Drawing.Point(489, 97);
+            this.insuranceLabelTB.Name = "insuranceLabelTB";
+            this.insuranceLabelTB.Size = new System.Drawing.Size(276, 20);
+            this.insuranceLabelTB.StyleController = this.layoutControl1;
+            this.insuranceLabelTB.TabIndex = 26;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -679,6 +783,19 @@
             this.zaleceniaLabel.TextLocation = DevExpress.Utils.Locations.Top;
             this.zaleceniaLabel.TextSize = new System.Drawing.Size(131, 13);
             // 
+            // przyrjmujacyLabel
+            // 
+            this.przyrjmujacyLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.przyrjmujacyLabel.AppearanceItemCaption.Options.UseFont = true;
+            this.przyrjmujacyLabel.Control = this.przyrjmujacyLabelTB;
+            this.przyrjmujacyLabel.CustomizationFormText = "Przyjmujący:";
+            this.przyrjmujacyLabel.Location = new System.Drawing.Point(871, 0);
+            this.przyrjmujacyLabel.Name = "przyrjmujacyLabel";
+            this.przyrjmujacyLabel.Size = new System.Drawing.Size(435, 24);
+            this.przyrjmujacyLabel.Text = "Przyjmujący:";
+            this.przyrjmujacyLabel.TextLocation = DevExpress.Utils.Locations.Left;
+            this.przyrjmujacyLabel.TextSize = new System.Drawing.Size(131, 13);
+            // 
             // ICD2Label
             // 
             this.ICD2Label.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -705,18 +822,174 @@
             this.ICD3Label.TextLocation = DevExpress.Utils.Locations.Left;
             this.ICD3Label.TextSize = new System.Drawing.Size(131, 13);
             // 
-            // przyrjmujacyLabel
+            // layoutControlGroup3
             // 
-            this.przyrjmujacyLabel.AppearanceItemCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.przyrjmujacyLabel.AppearanceItemCaption.Options.UseFont = true;
-            this.przyrjmujacyLabel.Control = this.przyrjmujacyLabelTB;
-            this.przyrjmujacyLabel.CustomizationFormText = "Przyjmujący:";
-            this.przyrjmujacyLabel.Location = new System.Drawing.Point(871, 0);
-            this.przyrjmujacyLabel.Name = "przyrjmujacyLabel";
-            this.przyrjmujacyLabel.Size = new System.Drawing.Size(435, 24);
-            this.przyrjmujacyLabel.Text = "Przyjmujący:";
-            this.przyrjmujacyLabel.TextLocation = DevExpress.Utils.Locations.Left;
-            this.przyrjmujacyLabel.TextSize = new System.Drawing.Size(131, 13);
+            this.layoutControlGroup3.AppearanceGroup.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlGroup3.AppearanceGroup.Options.UseFont = true;
+            this.layoutControlGroup3.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlGroup3.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem8,
+            this.layoutControlItem2,
+            this.layoutControlItem3,
+            this.layoutControlItem5,
+            this.layoutControlItem6,
+            this.layoutControlItem13,
+            this.layoutControlItem12,
+            this.layoutControlItem4,
+            this.layoutControlItem14,
+            this.layoutControlItem9,
+            this.layoutControlItem10,
+            this.layoutControlItem11});
+            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup3.Name = "layoutControlGroup3";
+            this.layoutControlGroup3.Size = new System.Drawing.Size(1330, 139);
+            this.layoutControlGroup3.Text = "Dane Pacjenta";
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem1.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem1.Control = this.patientIDLabelTB;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(359, 24);
+            this.layoutControlItem1.Text = "Numer Pacjenta:";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(93, 13);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem8.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem8.Control = this.addressLabelTB;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(1306, 24);
+            this.layoutControlItem8.Text = "Adres:";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(93, 13);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem2.Control = this.nameLabelTB;
+            this.layoutControlItem2.Location = new System.Drawing.Point(359, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(378, 24);
+            this.layoutControlItem2.Text = "Imię:";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(93, 13);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem3.Control = this.surnameLabelTB;
+            this.layoutControlItem3.Location = new System.Drawing.Point(737, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(308, 24);
+            this.layoutControlItem3.Text = "Nazwisko:";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(93, 13);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem5.Control = this.countryLabelTB;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(359, 24);
+            this.layoutControlItem5.Text = "Kraj:";
+            this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(93, 13);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem6.Control = this.sexLabelTB;
+            this.layoutControlItem6.Location = new System.Drawing.Point(1045, 24);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(261, 24);
+            this.layoutControlItem6.Text = "Płeć:";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(93, 13);
+            // 
+            // layoutControlItem13
+            // 
+            this.layoutControlItem13.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem13.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem13.Control = this.passportLabelTB;
+            this.layoutControlItem13.Location = new System.Drawing.Point(359, 48);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(378, 24);
+            this.layoutControlItem13.Text = "Paszport:";
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(93, 13);
+            // 
+            // layoutControlItem12
+            // 
+            this.layoutControlItem12.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem12.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem12.Control = this.dowodLabelTB;
+            this.layoutControlItem12.Location = new System.Drawing.Point(737, 48);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(308, 24);
+            this.layoutControlItem12.Text = "Dowód:";
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(93, 13);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem4.Control = this.birthLabelTB;
+            this.layoutControlItem4.Location = new System.Drawing.Point(1045, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(261, 24);
+            this.layoutControlItem4.Text = "Data Urodzenia:";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(93, 13);
+            // 
+            // layoutControlItem14
+            // 
+            this.layoutControlItem14.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem14.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem14.Control = this.insuranceLabelTB;
+            this.layoutControlItem14.Location = new System.Drawing.Point(359, 24);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Size = new System.Drawing.Size(378, 24);
+            this.layoutControlItem14.Text = "Ubezpieczenie:";
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(93, 13);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem9.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem9.Control = this.phoneLabelTB;
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(359, 24);
+            this.layoutControlItem9.Text = "Telefon:";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(93, 13);
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem10.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem10.Control = this.peselLabelTB;
+            this.layoutControlItem10.Location = new System.Drawing.Point(737, 24);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(308, 24);
+            this.layoutControlItem10.Text = "PESEL:";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(93, 13);
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem11.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem11.Control = this.poleCardLabelTB;
+            this.layoutControlItem11.Location = new System.Drawing.Point(1045, 48);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(261, 24);
+            this.layoutControlItem11.Text = "Karta Polaka:";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(93, 13);
             // 
             // simpleButton1
             // 
@@ -763,279 +1036,6 @@
             this.exportToPDFButton.Text = "Eksport do PDF";
             this.exportToPDFButton.Click += new System.EventHandler(this.exportToPDFButton_Click);
             // 
-            // patientIDLabelTB
-            // 
-            this.patientIDLabelTB.Location = new System.Drawing.Point(130, 73);
-            this.patientIDLabelTB.Name = "patientIDLabelTB";
-            this.patientIDLabelTB.Size = new System.Drawing.Size(257, 20);
-            this.patientIDLabelTB.StyleController = this.layoutControl1;
-            this.patientIDLabelTB.TabIndex = 17;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlItem1.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem1.Control = this.patientIDLabelTB;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(359, 24);
-            this.layoutControlItem1.Text = "Numer Pacjenta:";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(93, 13);
-            // 
-            // nameLabelTB
-            // 
-            this.nameLabelTB.Location = new System.Drawing.Point(489, 73);
-            this.nameLabelTB.Name = "nameLabelTB";
-            this.nameLabelTB.Size = new System.Drawing.Size(276, 20);
-            this.nameLabelTB.StyleController = this.layoutControl1;
-            this.nameLabelTB.TabIndex = 18;
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem2.Control = this.nameLabelTB;
-            this.layoutControlItem2.Location = new System.Drawing.Point(359, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(378, 24);
-            this.layoutControlItem2.Text = "Imię:";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(93, 13);
-            // 
-            // surnameLabelTB
-            // 
-            this.surnameLabelTB.Location = new System.Drawing.Point(867, 73);
-            this.surnameLabelTB.Name = "surnameLabelTB";
-            this.surnameLabelTB.Size = new System.Drawing.Size(206, 20);
-            this.surnameLabelTB.StyleController = this.layoutControl1;
-            this.surnameLabelTB.TabIndex = 19;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem3.Control = this.surnameLabelTB;
-            this.layoutControlItem3.Location = new System.Drawing.Point(737, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(308, 24);
-            this.layoutControlItem3.Text = "Nazwisko:";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(93, 13);
-            // 
-            // birthLabelTB
-            // 
-            this.birthLabelTB.Location = new System.Drawing.Point(1175, 73);
-            this.birthLabelTB.Name = "birthLabelTB";
-            this.birthLabelTB.Size = new System.Drawing.Size(159, 20);
-            this.birthLabelTB.StyleController = this.layoutControl1;
-            this.birthLabelTB.TabIndex = 17;
-            // 
-            // countryLabelTB
-            // 
-            this.countryLabelTB.Location = new System.Drawing.Point(130, 97);
-            this.countryLabelTB.Name = "countryLabelTB";
-            this.countryLabelTB.Size = new System.Drawing.Size(257, 20);
-            this.countryLabelTB.StyleController = this.layoutControl1;
-            this.countryLabelTB.TabIndex = 18;
-            // 
-            // sexLabelTB
-            // 
-            this.sexLabelTB.Location = new System.Drawing.Point(1175, 97);
-            this.sexLabelTB.Name = "sexLabelTB";
-            this.sexLabelTB.Size = new System.Drawing.Size(159, 20);
-            this.sexLabelTB.StyleController = this.layoutControl1;
-            this.sexLabelTB.TabIndex = 19;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem4.Control = this.birthLabelTB;
-            this.layoutControlItem4.Location = new System.Drawing.Point(1045, 0);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(261, 24);
-            this.layoutControlItem4.Text = "Data Urodzenia:";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(93, 13);
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem5.Control = this.countryLabelTB;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(359, 24);
-            this.layoutControlItem5.Text = "Kraj:";
-            this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(93, 13);
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem6.Control = this.sexLabelTB;
-            this.layoutControlItem6.Location = new System.Drawing.Point(1045, 24);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(261, 24);
-            this.layoutControlItem6.Text = "Płeć:";
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(93, 13);
-            // 
-            // layoutControlGroup3
-            // 
-            this.layoutControlGroup3.AppearanceGroup.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlGroup3.AppearanceGroup.Options.UseFont = true;
-            this.layoutControlGroup3.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlGroup3.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem8,
-            this.layoutControlItem2,
-            this.layoutControlItem3,
-            this.layoutControlItem5,
-            this.layoutControlItem6,
-            this.layoutControlItem13,
-            this.layoutControlItem12,
-            this.layoutControlItem4,
-            this.layoutControlItem14,
-            this.layoutControlItem9,
-            this.layoutControlItem10,
-            this.layoutControlItem11});
-            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(1330, 139);
-            this.layoutControlGroup3.Text = "Dane Pacjenta";
-            // 
-            // addressLabelTB
-            // 
-            this.addressLabelTB.Location = new System.Drawing.Point(130, 145);
-            this.addressLabelTB.Name = "addressLabelTB";
-            this.addressLabelTB.Size = new System.Drawing.Size(1204, 20);
-            this.addressLabelTB.StyleController = this.layoutControl1;
-            this.addressLabelTB.TabIndex = 20;
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlItem8.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem8.Control = this.addressLabelTB;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(1306, 24);
-            this.layoutControlItem8.Text = "Adres:";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(93, 13);
-            // 
-            // phoneLabelTB
-            // 
-            this.phoneLabelTB.Location = new System.Drawing.Point(130, 121);
-            this.phoneLabelTB.Name = "phoneLabelTB";
-            this.phoneLabelTB.Size = new System.Drawing.Size(257, 20);
-            this.phoneLabelTB.StyleController = this.layoutControl1;
-            this.phoneLabelTB.TabIndex = 21;
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlItem9.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem9.Control = this.phoneLabelTB;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(359, 24);
-            this.layoutControlItem9.Text = "Telefon:";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(93, 13);
-            // 
-            // peselLabelTB
-            // 
-            this.peselLabelTB.Location = new System.Drawing.Point(867, 97);
-            this.peselLabelTB.Name = "peselLabelTB";
-            this.peselLabelTB.Size = new System.Drawing.Size(206, 20);
-            this.peselLabelTB.StyleController = this.layoutControl1;
-            this.peselLabelTB.TabIndex = 22;
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlItem10.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem10.Control = this.peselLabelTB;
-            this.layoutControlItem10.Location = new System.Drawing.Point(737, 24);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(308, 24);
-            this.layoutControlItem10.Text = "PESEL:";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(93, 13);
-            // 
-            // poleCardLabelTB
-            // 
-            this.poleCardLabelTB.Location = new System.Drawing.Point(1175, 121);
-            this.poleCardLabelTB.Name = "poleCardLabelTB";
-            this.poleCardLabelTB.Size = new System.Drawing.Size(159, 20);
-            this.poleCardLabelTB.StyleController = this.layoutControl1;
-            this.poleCardLabelTB.TabIndex = 23;
-            // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlItem11.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem11.Control = this.poleCardLabelTB;
-            this.layoutControlItem11.Location = new System.Drawing.Point(1045, 48);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(261, 24);
-            this.layoutControlItem11.Text = "Karta Polaka:";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(93, 13);
-            // 
-            // dowodLabelTB
-            // 
-            this.dowodLabelTB.Location = new System.Drawing.Point(867, 121);
-            this.dowodLabelTB.Name = "dowodLabelTB";
-            this.dowodLabelTB.Size = new System.Drawing.Size(206, 20);
-            this.dowodLabelTB.StyleController = this.layoutControl1;
-            this.dowodLabelTB.TabIndex = 24;
-            // 
-            // layoutControlItem12
-            // 
-            this.layoutControlItem12.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlItem12.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem12.Control = this.dowodLabelTB;
-            this.layoutControlItem12.Location = new System.Drawing.Point(737, 48);
-            this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(308, 24);
-            this.layoutControlItem12.Text = "Dowód:";
-            this.layoutControlItem12.TextSize = new System.Drawing.Size(93, 13);
-            // 
-            // passportLabelTB
-            // 
-            this.passportLabelTB.Location = new System.Drawing.Point(489, 121);
-            this.passportLabelTB.Name = "passportLabelTB";
-            this.passportLabelTB.Size = new System.Drawing.Size(276, 20);
-            this.passportLabelTB.StyleController = this.layoutControl1;
-            this.passportLabelTB.TabIndex = 25;
-            // 
-            // layoutControlItem13
-            // 
-            this.layoutControlItem13.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlItem13.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem13.Control = this.passportLabelTB;
-            this.layoutControlItem13.Location = new System.Drawing.Point(359, 48);
-            this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(378, 24);
-            this.layoutControlItem13.Text = "Paszport:";
-            this.layoutControlItem13.TextSize = new System.Drawing.Size(93, 13);
-            // 
-            // insuranceLabelTB
-            // 
-            this.insuranceLabelTB.Location = new System.Drawing.Point(489, 97);
-            this.insuranceLabelTB.Name = "insuranceLabelTB";
-            this.insuranceLabelTB.Size = new System.Drawing.Size(276, 20);
-            this.insuranceLabelTB.StyleController = this.layoutControl1;
-            this.insuranceLabelTB.TabIndex = 26;
-            // 
-            // layoutControlItem14
-            // 
-            this.layoutControlItem14.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlItem14.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem14.Control = this.insuranceLabelTB;
-            this.layoutControlItem14.Location = new System.Drawing.Point(359, 24);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(378, 24);
-            this.layoutControlItem14.Text = "Ubezpieczenie:";
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(93, 13);
-            // 
             // ViewVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1068,6 +1068,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.lekiLabelTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaleceniaLabelTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.przyrjmujacyLabelTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientIDLabelTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nameLabelTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.surnameLabelTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.birthLabelTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.countryLabelTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sexLabelTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressLabelTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.phoneLabelTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.peselLabelTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poleCardLabelTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dowodLabelTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passportLabelTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.insuranceLabelTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
@@ -1080,38 +1093,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateLabel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bpodmiotoweLabel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zaleceniaLabel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.przyrjmujacyLabel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICD2Label)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICD3Label)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.przyrjmujacyLabel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ICD1Label)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientIDLabelTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nameLabelTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.surnameLabelTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.birthLabelTB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.countryLabelTB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sexLabelTB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressLabelTB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneLabelTB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.peselLabelTB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.poleCardLabelTB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dowodLabelTB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passportLabelTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.insuranceLabelTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ICD1Label)).EndInit();
             this.ResumeLayout(false);
 
         }
