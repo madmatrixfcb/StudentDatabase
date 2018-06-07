@@ -56,19 +56,20 @@
             this.nameSurnameLabel = new DevExpress.XtraEditors.LabelControl();
             this.closeButton = new System.Windows.Forms.Button();
             this.arrangeVisitButton = new System.Windows.Forms.Button();
+            this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.wizytaTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pacjentTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
-            this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.umoW_WIZTETableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UMOW_WIZTETableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.timeEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacjentCB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonPage2
@@ -314,6 +315,10 @@
             // 
             this.pacjentTableAdapter.ClearBeforeFill = true;
             // 
+            // umoW_WIZTETableAdapter
+            // 
+            this.umoW_WIZTETableAdapter.ClearBeforeFill = true;
+            // 
             // ArrangeVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,9 +340,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacjentCB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,5 +381,6 @@
         private System.Windows.Forms.BindingSource pACJENTBindingSource;
         private PoradniaDataSetTableAdapters.PACJENTTableAdapter pacjentTableAdapter;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider;
+        private PoradniaDataSetTableAdapters.UMOW_WIZTETableAdapter umoW_WIZTETableAdapter;
     }
 }

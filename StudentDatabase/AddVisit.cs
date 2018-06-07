@@ -54,24 +54,52 @@ namespace StudentDatabase
 
             bool isValid = dxValidationProvider.Validate();
 
-            if (isValid == true)
+            if (isValid == false)
             {
                 MessageBox.Show("Wypełnij wszystkie pola by dodać wizytę", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-
-                try
+                if (Convert.ToInt16(wizytaTableAdapter.WizytaDataCount(date, time)) >= 1)
                 {
-                    wizytaTableAdapter.InsertQuery(patient, date, time, objawy, bprzed, bpod, icd1, icd2, icd3, rozpoznanie, leki, zalecenia, user);
-                    MessageBox.Show("Wizyta dodana", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    this.Close();
+                    MessageBox.Show("Na wybraną datę i godzinę jest już odnotowana wizyta." + Environment.NewLine + "Wybierz inną datę lub godzinę.", "Data zajęta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (Convert.ToInt16(umoW_WIZTETableAdapter.UmowDataCount(date, time)) >= 1)
+                    {
+                        DialogResult overwriteVisit = MessageBox.Show("Na wybraną datę i godzinę jest już umówiona wizyta." + Environment.NewLine + "Wybierz inną datę lub godzinę.", "Data zajęta", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                        if (overwriteVisit == DialogResult.Yes)
+                        {
+                            try
+                            {
+                                wizytaTableAdapter.InsertQuery(patient, date, time, objawy, bprzed, bpod, icd1, icd2, icd3, rozpoznanie, leki, zalecenia, user);
+                                MessageBox.Show("Wizyta dodana", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                this.Close();
+                            }
+
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        try
+                        {
+                            wizytaTableAdapter.InsertQuery(patient, date, time, objawy, bprzed, bpod, icd1, icd2, icd3, rozpoznanie, leki, zalecenia, user);
+                            MessageBox.Show("Wizyta " + patient + " dodana", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            this.Close();
+                        }
+
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
             }
 

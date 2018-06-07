@@ -11911,7 +11911,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[3];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[4];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT `W`.`ID_Wizyta`, `W`.`ID_Pacjent`, CONCAT_WS(' ', `P`.`Imie`, `P`.`Nazwisko`) AS `Pacjent`, `W`.`Data`, `W`.`Godzina`, `W`.`Objawy`, `W`.`BPrzedmiotowe`, `W`.`BPodmiotowe`, `W`.`ID_ICD_1`, `W`.`ID_ICD_2`, `W`.`ID_ICD_3`, `W`.`Rozpoznanie`, `W`.`Leki`, `W`.`Zalecenia`, `W`.`ID_Lekarz` FROM `WIZYTA` `W`
@@ -12139,6 +12139,25 @@ LEFT JOIN `PACJENT` as `P` ON `W`.`ID_Pacjent` = `P`.`ID_Pacjent`";
             param.SourceColumn = "ID_Wizyta";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT Count(*)\r\nFROM   (\r\n        SELECT DISTINCT\r\n               W.Data\r\n      " +
+                "       , W.Godzina\r\n        FROM WIZYTA as W\r\nWHERE W.Data = @data AND W.Godzina" +
+                " = @godzina\r\n       ) As WizytaDataCount";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@data";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "Data";
+            this._commandCollection[3].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@godzina";
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 5;
+            param.IsNullable = true;
+            param.SourceColumn = "Godzina";
+            this._commandCollection[3].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12778,6 +12797,41 @@ LEFT JOIN `PACJENT` as `P` ON `W`.`ID_Pacjent` = `P`.`ID_Pacjent`";
             }
             return returnValue;
         }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<long> WizytaDataCount(System.DateTime data, string godzina) {
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[3];
+            command.Parameters[0].Value = ((System.DateTime)(data));
+            if ((godzina == null)) {
+                throw new global::System.ArgumentNullException("godzina");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(godzina));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<long>();
+            }
+            else {
+                return new global::System.Nullable<long>(((long)(returnValue)));
+            }
+        }
     }
     
     /// <summary>
@@ -13406,7 +13460,7 @@ LEFT JOIN `PACJENT` as `P` ON `W`.`ID_Pacjent` = `P`.`ID_Pacjent`";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[2];
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[3];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT `ID_Umow_Wizyte`, `ID_Pacjent`, `Data`, `Godzina` FROM `UMOW_WIZTE`";
@@ -13439,6 +13493,25 @@ LEFT JOIN `PACJENT` as `P` ON `W`.`ID_Pacjent` = `P`.`ID_Pacjent`";
             param.IsNullable = true;
             param.SourceColumn = "Godzina";
             this._commandCollection[1].Parameters.Add(param);
+            this._commandCollection[2] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT Count(*)\r\nFROM   (\r\n        SELECT DISTINCT\r\n               UW.Data\r\n     " +
+                "        , UW.Godzina\r\n        FROM UMOW_WIZTE as UW\r\nWHERE UW.Data = @data AND U" +
+                "W.Godzina = @godzina\r\n       ) As UmowDataCount\r\n";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@data";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.IsNullable = true;
+            param.SourceColumn = "Data";
+            this._commandCollection[2].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@godzina";
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 5;
+            param.IsNullable = true;
+            param.SourceColumn = "Godzina";
+            this._commandCollection[2].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13645,6 +13718,41 @@ LEFT JOIN `PACJENT` as `P` ON `W`.`ID_Pacjent` = `P`.`ID_Pacjent`";
                 }
             }
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object UmowDataCount(System.DateTime data, string godzina) {
+            global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((System.DateTime)(data));
+            if ((godzina == null)) {
+                throw new global::System.ArgumentNullException("godzina");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(godzina));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
     }
     

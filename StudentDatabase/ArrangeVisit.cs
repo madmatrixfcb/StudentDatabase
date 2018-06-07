@@ -31,8 +31,6 @@ namespace StudentDatabase
             DateTime date = Convert.ToDateTime(dateEdit.Text);
             string time = Convert.ToString(timeEdit.Text);
 
-
-
             bool isValid = dxValidationProvider.Validate();
 
             if (isValid == true)
@@ -41,21 +39,35 @@ namespace StudentDatabase
             }
             else
             {
-
-                try
+                if (date < DateTime.Now)
                 {
-                    wizyteTableAdapter.InsertQuery(patient, date, time);
-                    MessageBox.Show("Wizyta dodana", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    this.Close();
+                    MessageBox.Show("Data jest zła." + Environment.NewLine + "Wybierz dzisiejszą datę lub przyszłą. Nie możesz umówić wizyty wstecz.", "Błąd daty", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                    if (Convert.ToInt16(umoW_WIZTETableAdapter.UmowDataCount(date, time)) >= 1 && Convert.ToInt16(wizytaTableAdapter.WizytaDataCount(date, time)) >= 1)
+                    {
+                        MessageBox.Show("Na wybraną datę i godzinę jest już umówiona wizyta." + Environment.NewLine + "Wybierz inną datę lub godzinę.", "Data zajęta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    else
+                    {
+                        try
+                        {
+                            umoW_WIZTETableAdapter.InsertQuery(patient, date, time);
+                            MessageBox.Show("Wizyta dla " + patient + " została umówiona", "Umówiono", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            this.Close();
+                        }
+
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }          
             }
-
         }
 
         private void closeButton_Click(object sender, EventArgs e)
