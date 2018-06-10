@@ -59,6 +59,18 @@ namespace StudentDatabase
             gridWizyta.RefreshDataSource();
         }
 
+        public void RefreshUmowWizyte()
+        {
+            this.uMOW_WIZTETableAdapter.Fill(this.poradniaDataSet.UMOW_WIZTE);
+            gridUmowWiztye.RefreshDataSource();
+        }
+
+        public void RefreshStatystyki()
+        {/*
+            this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
+            gridICD.RefreshDataSource();*/
+        }
+
         public void RefreshUbezpieczenie()
         {
             this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
@@ -77,6 +89,8 @@ namespace StudentDatabase
             UbezpieczenieGroup.Enabled = false;
             ICDGroup.Enabled = false;
             WizytaGroup.Enabled = false;
+            UmowWizyteGroup.Enabled = false;
+            StatystykiGroup.Enabled = false;
             P.Enabled = false;
 
             if (tabPane1.SelectedPage == PacjenciPage)
@@ -113,6 +127,18 @@ namespace StudentDatabase
             {
                 WizytaGroup.Enabled = true;
                 RefreshWizyta();
+            }
+
+            if (tabPane1.SelectedPage == StatystykiPage)
+            {
+                StatystykiGroup.Enabled = true;
+                RefreshStatystyki();
+            }
+
+            if (tabPane1.SelectedPage == UmowWizytePage)
+            {
+                UmowWizyteGroup.Enabled = true;
+                RefreshUmowWizyte();
             }
         }
 
