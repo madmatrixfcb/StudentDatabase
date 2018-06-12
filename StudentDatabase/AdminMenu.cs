@@ -438,6 +438,49 @@ namespace StudentDatabase
             }
         }
 
+        //-----------------------------------ARRANGE VIST RIBBON-----------------------------------//
+
+
+        private void arrangeVisitButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ArrangeVisit arrange_Visit = new ArrangeVisit();
+            arrange_Visit.Show();
+            arrange_Visit.FormClosed += Arrange_Visit_FormClosed;
+        }
+
+        private void Arrange_Visit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RefreshUmowWizyte();
+        }
+
+        private void deleteArrangedVisitButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogResult warning = MessageBox.Show("Czy na pewno chcesz usunąć wybraną wizytę?", "Potwierdzenie usunięcia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (warning == DialogResult.Yes)
+            {
+                try
+                {
+                    gridUmowWiztyeView.DeleteRow(gridUmowWiztyeView.FocusedRowHandle);
+                    this.uMOW_WIZTETableAdapter.Update(poradniaDataSet.UMOW_WIZTE);
+                    MessageBox.Show("Wizyta usunięta", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RefreshWizyta();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void startArrangedVisitButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
         //-----------------------------------POTWIERDZENIE WYJŚCIA Z APLIKAJCI-----------------------------------//
         private void AdminMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -448,5 +491,7 @@ namespace StudentDatabase
                 return;
             }
         }
+
+
     }
 }
