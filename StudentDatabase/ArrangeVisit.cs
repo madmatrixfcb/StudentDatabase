@@ -30,16 +30,17 @@ namespace StudentDatabase
             string patient = Convert.ToString(pacjentCB.EditValue);
             DateTime date = Convert.ToDateTime(dateEdit.Text);
             string time = Convert.ToString(timeEdit.Text);
+            DateTime timee = Convert.ToDateTime(timeEdit.Text); //test
 
             bool isValid = dxValidationProvider.Validate();
 
-            if (isValid == true)
+            if (isValid == false)
             {
                 MessageBox.Show("Wypełnij wszystkie pola by dodać wizytę", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (date < DateTime.Now)
+                if (date < DateTime.Now && timee < DateTime.Now)
                 {
                     MessageBox.Show("Data jest zła." + Environment.NewLine + "Wybierz dzisiejszą datę lub przyszłą. Nie możesz umówić wizyty wstecz.", "Błąd daty", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -56,7 +57,7 @@ namespace StudentDatabase
                         try
                         {
                             umoW_WIZTETableAdapter.InsertQuery(patient, date, time);
-                            MessageBox.Show("Wizyta dla " + patient + " została umówiona", "Umówiono", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Wizyta dla " + pacjentCB.Text + " została umówiona", "Umówiono", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             this.Close();
                         }

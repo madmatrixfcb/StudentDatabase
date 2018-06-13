@@ -29,9 +29,27 @@ namespace StudentDatabase
             this.uzytkownikTableAdapter.Fill(this.poradniaDataSet.UZYTKOWNIK);
             this.pacjentTableAdapter.Fill(this.poradniaDataSet.PACJENT);
             this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
-            timeEdit.EditValue = DateTime.Now;
-            dateEdit.EditValue = DateTime.Now;
+            
             userCB.EditValue = Convert.ToInt16(uzytkownikTableAdapter.SelectUserID(Login.LoginInfo.login, Login.LoginInfo.pass));
+            LoadArrangedVisitInfo();
+        }
+
+        private void LoadArrangedVisitInfo()
+        {
+            if (AdminMenu.ArrangeVisitPreview.arrangedVisit == true)
+            {
+                DataRow ArrangeRow = AdminMenu.ArrangeVisitPreview.arrangeVisitRow;
+                pacjentCB.Text = ArrangeRow["ID_Pacjent"].ToString();
+                pacjentCB.Refresh();
+                string arrangeData = ArrangeRow["Data"].ToString();
+                dateEdit.Text = arrangeData.Substring(0, 10);
+                timeEdit.Text = ArrangeRow["Godzina"].ToString();
+            }
+            else
+            {
+                timeEdit.EditValue = DateTime.Now;
+                dateEdit.EditValue = DateTime.Now;
+            }
         }
 
         //-----------------------BUTTONS----------------------------------/
@@ -90,7 +108,7 @@ namespace StudentDatabase
                         try
                         {
                             wizytaTableAdapter.InsertQuery(patient, date, time, objawy, bprzed, bpod, icd1, icd2, icd3, rozpoznanie, leki, zalecenia, user);
-                            MessageBox.Show("Wizyta " + patient + " dodana", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Wizyta " + pacjentCB.Text + " dodana", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             this.Close();
                         }

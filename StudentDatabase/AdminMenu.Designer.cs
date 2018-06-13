@@ -147,6 +147,7 @@
             this.colGodzina1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.StatystykiPage = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label1 = new System.Windows.Forms.Label();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -178,7 +179,6 @@
             this.wIZYTABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wIZYTATableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
             this.uMOW_WIZTETableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UMOW_WIZTETableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -1304,6 +1304,15 @@
             this.splitContainer1.SplitterDistance = 38;
             this.splitContainer1.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
             // gridControl1
             // 
             this.gridControl1.DataSource = this.visitviewBindingSource;
@@ -1503,15 +1512,6 @@
             // uMOW_WIZTETableAdapter
             // 
             this.uMOW_WIZTETableAdapter.ClearBeforeFill = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
             // 
             // AdminMenu
             // 

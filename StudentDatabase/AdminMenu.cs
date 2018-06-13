@@ -19,10 +19,10 @@ namespace StudentDatabase
         private void AdminMenu_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'poradniaDataSet.UMOW_WIZTE' table. You can move, or remove it, as needed.
+            /*
             this.uMOW_WIZTETableAdapter.Fill(this.poradniaDataSet.UMOW_WIZTE);
             this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
             this.patient_viewTableAdapter.Fill(this.poradniaDataSet.patient_view);
-            /*
              this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
              this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
              this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
@@ -476,9 +476,20 @@ namespace StudentDatabase
             }
         }
 
+        public static class ArrangeVisitPreview
+        {
+            public static DataRow arrangeVisitRow;
+            public static bool arrangedVisit = false;
+        }
+
         private void startArrangedVisitButton_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            ArrangeVisitPreview.arrangedVisit = true;
+            ArrangeVisitPreview.arrangeVisitRow = gridUmowWiztyeView.GetFocusedDataRow();
+            AddVisit add_Visit = new AddVisit();
+            add_Visit.Show();
+            add_Visit.FormClosed += Add_Visit_FormClosed;
+            ArrangeVisitPreview.arrangedVisit = false;
         }
 
         //-----------------------------------POTWIERDZENIE WYJŚCIA Z APLIKAJCI-----------------------------------//
@@ -491,7 +502,5 @@ namespace StudentDatabase
                 return;
             }
         }
-
-
     }
 }

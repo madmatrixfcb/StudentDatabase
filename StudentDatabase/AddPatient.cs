@@ -68,7 +68,7 @@ namespace StudentDatabase
                 {
                     pACJENTTableAdapter.InsertQuery(imie, nazwisko, data_ur, kraj, telefon, plec, ulica, nr_budynku, nr_mieszkania, kod_pocztowy, miasto, nr_pesel, nr_kp, dowod_osobisty, nr_paszportu, ubezpieczenie);
 
-                    MessageBox.Show("Pacjent dodany", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Pacjent " + imieTB.Text + nazwiskoTB.Text + " został dodany do bazy pacjentów", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Close();
                 }

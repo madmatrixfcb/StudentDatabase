@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.timeEdit = new DevExpress.XtraEditors.TimeEdit();
@@ -93,8 +96,13 @@
             this.timeEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.timeEdit.Properties.Mask.EditMask = "t";
+            this.timeEdit.Properties.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.timeEdit_Spin);
             this.timeEdit.Size = new System.Drawing.Size(100, 20);
             this.timeEdit.TabIndex = 95;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Wybierz godzinę";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider.SetValidationRule(this.timeEdit, conditionValidationRule3);
             // 
             // dateEdit
             // 
@@ -108,6 +116,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit.Size = new System.Drawing.Size(126, 20);
             this.dateEdit.TabIndex = 94;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "Wybierz datę";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider.SetValidationRule(this.dateEdit, conditionValidationRule4);
             // 
             // pacjentCB
             // 
@@ -116,12 +128,18 @@
             this.pacjentCB.Name = "pacjentCB";
             this.pacjentCB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.pacjentCB.Properties.DataSource = this.pACJENTBindingSource;
             this.pacjentCB.Properties.DisplayMember = "Nazwisko";
             this.pacjentCB.Properties.NullText = "";
             this.pacjentCB.Properties.ValueMember = "ID_Pacjent";
             this.pacjentCB.Properties.View = this.searchLookUpEdit1View;
             this.pacjentCB.Size = new System.Drawing.Size(360, 20);
             this.pacjentCB.TabIndex = 93;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Wybierz pacjenta";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider.SetValidationRule(this.pacjentCB, conditionValidationRule1);
+            this.pacjentCB.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.pacjentCB_CustomDisplayText);
             // 
             // searchLookUpEdit1View
             // 
