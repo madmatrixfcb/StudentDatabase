@@ -502,5 +502,19 @@ namespace StudentDatabase
                 return;
             }
         }
+
+        private void filterAdvButton_CheckedChanged(object sender, ItemClickEventArgs e)
+        {
+            if (filterAdvButton.Checked == false)
+            {
+                gridViewStatystyki.OptionsFilter.AllowFilterEditor = false;
+                gridViewStatystyki.OptionsFilter.UseNewCustomFilterDialog = false;
+            }
+            else
+            {
+                gridViewStatystyki.OptionsFilter.AllowFilterEditor = true;
+                gridViewStatystyki.OptionsFilter.UseNewCustomFilterDialog = true;
+            }
+        }
     }
 }

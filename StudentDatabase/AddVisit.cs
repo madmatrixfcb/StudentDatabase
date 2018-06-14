@@ -1,35 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 
 namespace StudentDatabase
 {
     public partial class AddVisit : DevExpress.XtraEditors.XtraForm
     {
-
         public AddVisit()
         {
             InitializeComponent();
             iCDTableAdapter.Fill(poradniaDataSet.ICD);
             wizytaTableAdapter.Fill(poradniaDataSet.WIZYTA);
-            
-
         }
-
 
         private void AddVisit_Load(object sender, EventArgs e)
         {
             this.uzytkownikTableAdapter.Fill(this.poradniaDataSet.UZYTKOWNIK);
             this.pacjentTableAdapter.Fill(this.poradniaDataSet.PACJENT);
             this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
-            
+
             userCB.EditValue = Convert.ToInt16(uzytkownikTableAdapter.SelectUserID(Login.LoginInfo.login, Login.LoginInfo.pass));
             LoadArrangedVisitInfo();
         }
@@ -43,7 +33,8 @@ namespace StudentDatabase
                 pacjentCB.Refresh();
                 string arrangeData = ArrangeRow["Data"].ToString();
                 dateEdit.Text = arrangeData.Substring(0, 10);
-                timeEdit.Text = ArrangeRow["Godzina"].ToString();
+                timeEdit.EditValue = ArrangeRow["Godzina"].ToString();
+                MessageBox.Show("Godzina: " + ArrangeRow["Godzina"].ToString(), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -68,7 +59,6 @@ namespace StudentDatabase
             string leki = Convert.ToString(lekiTB.Text);
             string zalecenia = Convert.ToString(zaleceniaTB.Text);
             string user = Convert.ToString(userCB.EditValue);
-
 
             bool isValid = dxValidationProvider.Validate();
 
@@ -96,7 +86,6 @@ namespace StudentDatabase
 
                                 this.Close();
                             }
-
                             catch (Exception ex)
                             {
                                 MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -112,7 +101,6 @@ namespace StudentDatabase
 
                             this.Close();
                         }
-
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -120,7 +108,6 @@ namespace StudentDatabase
                     }
                 }
             }
-
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -144,7 +131,7 @@ namespace StudentDatabase
                 {
                     minute = 45;
                 }
-                else if(minute >= 30)
+                else if (minute >= 30)
                 {
                     minute = 30;
                 }
@@ -196,6 +183,7 @@ namespace StudentDatabase
                 e.DisplayText = row["Kod_ICD"].ToString() + " - " + row["Rozpoznanie"].ToString();
             }
         }
+
         private void ICDCB3_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
         {
             int theIndex = ICDCB3.Properties.GetIndexByKeyValue(ICDCB3.EditValue);

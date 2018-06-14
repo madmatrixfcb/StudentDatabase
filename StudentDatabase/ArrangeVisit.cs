@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StudentDatabase
@@ -44,14 +38,12 @@ namespace StudentDatabase
                 {
                     MessageBox.Show("Data jest zła." + Environment.NewLine + "Wybierz dzisiejszą datę lub przyszłą. Nie możesz umówić wizyty wstecz.", "Błąd daty", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
                 else
                 {
                     if (Convert.ToInt16(umoW_WIZTETableAdapter.UmowDataCount(date, time)) >= 1 && Convert.ToInt16(wizytaTableAdapter.WizytaDataCount(date, time)) >= 1)
                     {
                         MessageBox.Show("Na wybraną datę i godzinę jest już umówiona wizyta." + Environment.NewLine + "Wybierz inną datę lub godzinę.", "Data zajęta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
                     else
                     {
                         try
@@ -61,13 +53,12 @@ namespace StudentDatabase
 
                             this.Close();
                         }
-
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                }          
+                }
             }
         }
 
@@ -124,7 +115,5 @@ namespace StudentDatabase
                 e.DisplayText = row["Imie"].ToString() + " " + row["Nazwisko"].ToString();
             }
         }
-
-      
     }
 }

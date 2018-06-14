@@ -148,8 +148,8 @@
             this.StatystykiPage = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridStatystki = new DevExpress.XtraGrid.GridControl();
+            this.gridViewStatystyki = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -179,6 +179,8 @@
             this.wIZYTABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wIZYTATableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
             this.uMOW_WIZTETableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UMOW_WIZTETableAdapter();
+            this.filterStdButton = new DevExpress.XtraBars.BarCheckItem();
+            this.filterAdvButton = new DevExpress.XtraBars.BarCheckItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
@@ -210,8 +212,8 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridStatystki)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewStatystyki)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminviewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wIZYTABindingSource)).BeginInit();
@@ -262,9 +264,11 @@
             this.arrangeVisitButton,
             this.deleteArrangedVisitButton,
             this.startArrangedVisitButton,
-            this.barButtonItem5});
+            this.barButtonItem5,
+            this.filterStdButton,
+            this.filterAdvButton});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 40;
+            this.ribbon.MaxItemId = 42;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.loggedAsText);
             this.ribbon.PageHeaderItemLinks.Add(this.directorySettingsButton);
@@ -656,6 +660,7 @@
             // StatystykiGroup
             // 
             this.StatystykiGroup.Enabled = false;
+            this.StatystykiGroup.ItemLinks.Add(this.filterAdvButton);
             this.StatystykiGroup.Name = "StatystykiGroup";
             this.StatystykiGroup.Text = "Statystyki";
             // 
@@ -1299,7 +1304,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.gridControl1);
+            this.splitContainer1.Panel2.Controls.Add(this.gridStatystki);
             this.splitContainer1.Size = new System.Drawing.Size(1900, 501);
             this.splitContainer1.SplitterDistance = 38;
             this.splitContainer1.TabIndex = 0;
@@ -1313,22 +1318,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // gridControl1
+            // gridStatystki
             // 
-            this.gridControl1.DataSource = this.visitviewBindingSource;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.MenuManager = this.ribbon;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1900, 459);
-            this.gridControl1.TabIndex = 2;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridStatystki.DataSource = this.visitviewBindingSource;
+            this.gridStatystki.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridStatystki.Location = new System.Drawing.Point(0, 0);
+            this.gridStatystki.MainView = this.gridViewStatystyki;
+            this.gridStatystki.MenuManager = this.ribbon;
+            this.gridStatystki.Name = "gridStatystki";
+            this.gridStatystki.Size = new System.Drawing.Size(1900, 459);
+            this.gridStatystki.TabIndex = 2;
+            this.gridStatystki.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewStatystyki});
             // 
-            // gridView1
+            // gridViewStatystyki
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridViewStatystyki.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
@@ -1344,16 +1349,16 @@
             this.gridColumn13,
             this.gridColumn14,
             this.gridColumn15});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
-            this.gridView1.OptionsFind.FindNullPrompt = "Wpisz co chcesz wyszukać...";
-            this.gridView1.OptionsFind.ShowClearButton = false;
-            this.gridView1.OptionsFind.ShowFindButton = false;
-            this.gridView1.OptionsView.ShowAutoFilterRow = true;
-            this.gridView1.OptionsView.ShowFooter = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridViewStatystyki.GridControl = this.gridStatystki;
+            this.gridViewStatystyki.Name = "gridViewStatystyki";
+            this.gridViewStatystyki.OptionsBehavior.Editable = false;
+            this.gridViewStatystyki.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
+            this.gridViewStatystyki.OptionsFind.FindNullPrompt = "Wpisz co chcesz wyszukać...";
+            this.gridViewStatystyki.OptionsFind.ShowClearButton = false;
+            this.gridViewStatystyki.OptionsFind.ShowFindButton = false;
+            this.gridViewStatystyki.OptionsView.ShowAutoFilterRow = true;
+            this.gridViewStatystyki.OptionsView.ShowFooter = true;
+            this.gridViewStatystyki.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumn1
             // 
@@ -1513,6 +1518,21 @@
             // 
             this.uMOW_WIZTETableAdapter.ClearBeforeFill = true;
             // 
+            // filterStdButton
+            // 
+            this.filterStdButton.BindableChecked = true;
+            this.filterStdButton.Caption = "Filtrowanie standardowe";
+            this.filterStdButton.Checked = true;
+            this.filterStdButton.Id = 40;
+            this.filterStdButton.Name = "filterStdButton";
+            // 
+            // filterAdvButton
+            // 
+            this.filterAdvButton.Caption = "Filtrowanie zaawansowane";
+            this.filterAdvButton.Id = 41;
+            this.filterAdvButton.Name = "filterAdvButton";
+            this.filterAdvButton.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.filterAdvButton_CheckedChanged);
+            // 
             // AdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1562,8 +1582,8 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridStatystki)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewStatystyki)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminviewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wIZYTABindingSource)).EndInit();
@@ -1682,8 +1702,8 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridUmowWiztyeView;
         private DevExpress.XtraBars.Navigation.TabNavigationPage StatystykiPage;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gridStatystki;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewStatystyki;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
@@ -1723,5 +1743,7 @@
         private DevExpress.XtraBars.BarButtonItem startArrangedVisitButton;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraBars.BarCheckItem filterStdButton;
+        private DevExpress.XtraBars.BarCheckItem filterAdvButton;
     }
 }
