@@ -13,11 +13,14 @@ namespace StudentDatabase
             time.Start();
             tabPane1.SelectedPage = null;
             UserInfo();
-
         }
 
         private void AdminMenu_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'poradniaDataSet.statistics_view' table. You can move, or remove it, as needed.
+            this.statistics_viewTableAdapter.Fill(this.poradniaDataSet.statistics_view);
+            // TODO: This line of code loads data into the 'poradniaDataSet.arrange_visit_view' table. You can move, or remove it, as needed.
+            this.arrange_visit_viewTableAdapter.Fill(this.poradniaDataSet.arrange_visit_view);
             // TODO: This line of code loads data into the 'poradniaDataSet.UMOW_WIZTE' table. You can move, or remove it, as needed.
             /*
             this.uMOW_WIZTETableAdapter.Fill(this.poradniaDataSet.UMOW_WIZTE);
@@ -62,7 +65,7 @@ namespace StudentDatabase
         public void RefreshUmowWizyte()
         {
             this.uMOW_WIZTETableAdapter.Fill(this.poradniaDataSet.UMOW_WIZTE);
-            gridUmowWiztye.RefreshDataSource();
+            gridUmowWizyte.RefreshDataSource();
         }
 
         public void RefreshStatystyki()
@@ -81,6 +84,11 @@ namespace StudentDatabase
         {
             this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
             gridICD.RefreshDataSource();
+        }
+
+        public static class Path
+        {
+            public static string selectedPath;
         }
         //-----------------------RIBBON ENABLING----------------------------------/
         private void TabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
@@ -460,7 +468,7 @@ namespace StudentDatabase
             {
                 try
                 {
-                    gridUmowWiztyeView.DeleteRow(gridUmowWiztyeView.FocusedRowHandle);
+                    gridUmowWizyteView.DeleteRow(gridUmowWizyteView.FocusedRowHandle);
                     this.uMOW_WIZTETableAdapter.Update(poradniaDataSet.UMOW_WIZTE);
                     MessageBox.Show("Wizyta usunięta", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     RefreshWizyta();
@@ -485,12 +493,28 @@ namespace StudentDatabase
         private void startArrangedVisitButton_ItemClick(object sender, ItemClickEventArgs e)
         {
             ArrangeVisitPreview.arrangedVisit = true;
-            ArrangeVisitPreview.arrangeVisitRow = gridUmowWiztyeView.GetFocusedDataRow();
+            ArrangeVisitPreview.arrangeVisitRow = gridUmowWizyteView.GetFocusedDataRow();
             AddVisit add_Visit = new AddVisit();
             add_Visit.Show();
             add_Visit.FormClosed += Add_Visit_FormClosed;
             ArrangeVisitPreview.arrangedVisit = false;
         }
+
+        //-----------------------------------STATISTICS RIBBON-----------------------------------//
+        private void statisticsExportToXLSButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            folderBrowserDialog.ShowDialog();
+            Path.selectedPath = folderBrowserDialog.SelectedPath;
+            if (Path.selectedPath != null)
+            {
+                string data = DateTime.Now.ToShortDateString();
+                string filenameS = "Statystyka_" + data;
+                gridViewStatistics.ExportToXls(Path.selectedPath + "/" + filenameS + ".xls");
+            }
+           
+        }
+
+
 
         //-----------------------------------POTWIERDZENIE WYJŚCIA Z APLIKAJCI-----------------------------------//
         private void AdminMenu_FormClosing(object sender, FormClosingEventArgs e)
@@ -503,18 +527,6 @@ namespace StudentDatabase
             }
         }
 
-        private void filterAdvButton_CheckedChanged(object sender, ItemClickEventArgs e)
-        {
-            if (filterAdvButton.Checked == false)
-            {
-                gridViewStatystyki.OptionsFilter.AllowFilterEditor = false;
-                gridViewStatystyki.OptionsFilter.UseNewCustomFilterDialog = false;
-            }
-            else
-            {
-                gridViewStatystyki.OptionsFilter.AllowFilterEditor = true;
-                gridViewStatystyki.OptionsFilter.UseNewCustomFilterDialog = true;
-            }
-        }
+
     }
 }
