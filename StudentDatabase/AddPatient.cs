@@ -43,32 +43,33 @@ namespace StudentDatabase
         //-----------------------BUTTONS----------------------------------/
         private void AddPatient2_Click(object sender, EventArgs e)
         {
-            string imie = Convert.ToString(imieTB.Text);
-            string nazwisko = Convert.ToString(nazwiskoTB.Text);
-            DateTime data_ur = Convert.ToDateTime(dataur.Text);
-            string kraj = Convert.ToString(krajSelect.EditValue);
-            string telefon = Convert.ToString(telefonTB.Text);
-            string ulica = Convert.ToString(ulicaTB.Text);
-            string nr_budynku = Convert.ToString(budynekTB.Text);
-            string nr_mieszkania = Convert.ToString(mieszkanieTB.Text);
-            string kod_pocztowy = Convert.ToString(kodTB.Text);
-            string miasto = Convert.ToString(miastoTB.Text);
-            string nr_pesel = Convert.ToString(peselTB.Text);
-            string nr_kp = Convert.ToString(kartapolakaTB.Text);
-            string dowod_osobisty = Convert.ToString(dowodTB.Text);
-            string nr_paszportu = Convert.ToString(paszportTB.Text);
-            string plec = Convert.ToString(plecSelect.SelectedValue);
-            string ubezpieczenie = Convert.ToString(ubezpieczenieSelect.SelectedValue);
-
             bool isValid = dxValidationProvider.Validate();
 
             if (isValid == true)
             {
+                string imie = Convert.ToString(imieTB.Text);
+                string nazwisko = Convert.ToString(nazwiskoTB.Text);
+                DateTime data_ur = Convert.ToDateTime(dataur.Text);
+                string kraj = Convert.ToString(krajSelect.EditValue);
+                string telefon = Convert.ToString(telefonTB.Text);
+                string ulica = Convert.ToString(ulicaTB.Text);
+                string nr_budynku = Convert.ToString(budynekTB.Text);
+                string nr_mieszkania = Convert.ToString(mieszkanieTB.Text);
+                string kod_pocztowy = Convert.ToString(kodTB.Text);
+                string miasto = Convert.ToString(miastoTB.Text);
+                string nr_pesel = Convert.ToString(peselTB.Text);
+                string nr_kp = Convert.ToString(kartapolakaTB.Text);
+                string dowod_osobisty = Convert.ToString(dowodTB.Text);
+                string nr_paszportu = Convert.ToString(paszportTB.Text);
+                string plec = Convert.ToString(plecSelect.SelectedValue);
+                string ubezpieczenie = Convert.ToString(ubezpieczenieSelect.SelectedValue);
+
+
                 try
                 {
                     pACJENTTableAdapter.InsertQuery(imie, nazwisko, data_ur, kraj, telefon, plec, ulica, nr_budynku, nr_mieszkania, kod_pocztowy, miasto, nr_pesel, nr_kp, dowod_osobisty, nr_paszportu, ubezpieczenie);
 
-                    MessageBox.Show("Pacjent " + imieTB.Text + nazwiskoTB.Text + " został dodany do bazy pacjentów", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Pacjent " + imieTB.Text + " " + nazwiskoTB.Text + " został dodany do bazy pacjentów", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Close();
                 }
@@ -83,19 +84,17 @@ namespace StudentDatabase
             }
         }
 
-        private void AddPatient_FormClosing(object sender, FormClosingEventArgs e)
+        private void closeButton_Click(object sender, EventArgs e)
         {
             DialogResult warning = MessageBox.Show("Czy na pewno chcesz wyjść bez dodawania pacjenta", "Potwierdzenie wyjścia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (warning == DialogResult.No)
             {
-                e.Cancel = true;
                 return;
             }
-        }
-
-        private void closeButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            else
+            {
+                this.Close();
+            }
         }
     }
 }

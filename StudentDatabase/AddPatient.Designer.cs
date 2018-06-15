@@ -244,7 +244,7 @@
             this.telefonTB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
             this.telefonTB.Size = new System.Drawing.Size(199, 20);
             this.telefonTB.TabIndex = 5;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Like;
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotLike;
             conditionValidationRule5.ErrorText = "Wpisz numer telefonu";
             conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
             conditionValidationRule5.Value1 = "+48";
@@ -593,7 +593,6 @@
             this.Controls.Add(this.imieTB);
             this.Name = "AddPatient";
             this.Text = "Dodaj pacjenta";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddPatient_FormClosing);
             this.Load += new System.EventHandler(this.AddPatient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.miastoTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kodTB.Properties)).EndInit();

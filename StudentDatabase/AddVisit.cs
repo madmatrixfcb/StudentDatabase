@@ -112,7 +112,15 @@ namespace StudentDatabase
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult warning = MessageBox.Show("Czy na pewno chcesz wyjść bez dodawania wizyty", "Potwierdzenie wyjścia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (warning == DialogResult.No)
+            {
+                return;
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         //-----------------------CONTROLS----------------------------------/
