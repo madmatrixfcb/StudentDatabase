@@ -33,13 +33,14 @@
             this.ubezpAdd_button = new DevExpress.XtraEditors.SimpleButton();
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.ubezpieczenieTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UBEZPIECZENIETableAdapter();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.nameUbezpTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(15, 40);
+            this.labelControl2.Location = new System.Drawing.Point(14, 56);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(106, 13);
             this.labelControl2.TabIndex = 71;
@@ -47,7 +48,7 @@
             // 
             // nameUbezpTB
             // 
-            this.nameUbezpTB.Location = new System.Drawing.Point(126, 37);
+            this.nameUbezpTB.Location = new System.Drawing.Point(125, 53);
             this.nameUbezpTB.Name = "nameUbezpTB";
             this.nameUbezpTB.Size = new System.Drawing.Size(158, 20);
             this.nameUbezpTB.TabIndex = 1;
@@ -71,16 +72,27 @@
             // 
             this.ubezpieczenieTableAdapter.ClearBeforeFill = true;
             // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 12.25F);
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(99, 12);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(144, 19);
+            this.labelControl8.TabIndex = 73;
+            this.labelControl8.Text = "Dodaj ubezpieczenie";
+            // 
             // AddUbezp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(305, 134);
+            this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.ubezpAdd_button);
             this.Controls.Add(this.nameUbezpTB);
             this.Controls.Add(this.labelControl2);
             this.Name = "AddUbezp";
-            this.Text = "AddUbezp";
+            this.Text = "Dodaj ubezpieczenie";
             ((System.ComponentModel.ISupportInitialize)(this.nameUbezpTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             this.ResumeLayout(false);
@@ -94,5 +106,6 @@
         private DevExpress.XtraEditors.SimpleButton ubezpAdd_button;
         private PoradniaDataSet poradniaDataSet;
         private PoradniaDataSetTableAdapters.UBEZPIECZENIETableAdapter ubezpieczenieTableAdapter;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
     }
 }

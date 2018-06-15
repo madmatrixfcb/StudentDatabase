@@ -42,7 +42,6 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule11 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.addVisitButton = new System.Windows.Forms.Button();
             this.nameSurnameLabel = new DevExpress.XtraEditors.LabelControl();
             this.dateLabel = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -102,7 +101,6 @@
             this.colLogin = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHaslo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTyp_konta = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.closeButton = new System.Windows.Forms.Button();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.bprzedTB = new DevExpress.XtraEditors.MemoEdit();
             this.bpodTB = new DevExpress.XtraEditors.MemoEdit();
@@ -116,6 +114,9 @@
             this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
             this.wizytaTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
             this.umoW_WIZTETableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UMOW_WIZTETableAdapter();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.closeButton = new DevExpress.XtraEditors.SimpleButton();
+            this.addVisitButton = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pacjentCB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
@@ -158,19 +159,9 @@
             this.labelControl1.TabIndex = 70;
             this.labelControl1.Text = "Badanie przedmiotowe:";
             // 
-            // addVisitButton
-            // 
-            this.addVisitButton.Location = new System.Drawing.Point(172, 730);
-            this.addVisitButton.Name = "addVisitButton";
-            this.addVisitButton.Size = new System.Drawing.Size(126, 23);
-            this.addVisitButton.TabIndex = 13;
-            this.addVisitButton.Text = "Dodaj wizytę";
-            this.addVisitButton.UseVisualStyleBackColor = true;
-            this.addVisitButton.Click += new System.EventHandler(this.addVisitButton_Click);
-            // 
             // nameSurnameLabel
             // 
-            this.nameSurnameLabel.Location = new System.Drawing.Point(12, 25);
+            this.nameSurnameLabel.Location = new System.Drawing.Point(12, 34);
             this.nameSurnameLabel.Name = "nameSurnameLabel";
             this.nameSurnameLabel.Size = new System.Drawing.Size(75, 13);
             this.nameSurnameLabel.TabIndex = 78;
@@ -219,7 +210,7 @@
             // pacjentCB
             // 
             this.pacjentCB.EditValue = "";
-            this.pacjentCB.Location = new System.Drawing.Point(102, 22);
+            this.pacjentCB.Location = new System.Drawing.Point(104, 31);
             this.pacjentCB.Name = "pacjentCB";
             this.pacjentCB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -608,7 +599,7 @@
             this.userCB.Properties.ValueMember = "ID_Uzytkownik";
             this.userCB.Properties.View = this.gridView4;
             this.userCB.Size = new System.Drawing.Size(360, 20);
-            this.userCB.TabIndex = 93;
+            this.userCB.TabIndex = 13;
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule5.ErrorText = "Wypełnij pole Dodający";
             conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -683,16 +674,6 @@
             this.colTyp_konta.FieldName = "Typ_konta";
             this.colTyp_konta.Name = "colTyp_konta";
             // 
-            // closeButton
-            // 
-            this.closeButton.Location = new System.Drawing.Point(172, 759);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(126, 23);
-            this.closeButton.TabIndex = 94;
-            this.closeButton.Text = "Zamknij";
-            this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
-            // 
             // labelControl7
             // 
             this.labelControl7.Location = new System.Drawing.Point(9, 585);
@@ -706,7 +687,7 @@
             this.bprzedTB.Location = new System.Drawing.Point(8, 193);
             this.bprzedTB.Name = "bprzedTB";
             this.bprzedTB.Size = new System.Drawing.Size(215, 96);
-            this.bprzedTB.TabIndex = 97;
+            this.bprzedTB.TabIndex = 5;
             conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule6.ErrorText = "Wypełnij pole Badanie przedmiotowe";
             conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -718,7 +699,7 @@
             this.bpodTB.Location = new System.Drawing.Point(229, 193);
             this.bpodTB.Name = "bpodTB";
             this.bpodTB.Size = new System.Drawing.Size(233, 96);
-            this.bpodTB.TabIndex = 98;
+            this.bpodTB.TabIndex = 6;
             conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule7.ErrorText = "Wypełnij pole Badanie podmiotowe";
             conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -730,7 +711,7 @@
             this.objawyTB.Location = new System.Drawing.Point(102, 83);
             this.objawyTB.Name = "objawyTB";
             this.objawyTB.Size = new System.Drawing.Size(360, 85);
-            this.objawyTB.TabIndex = 99;
+            this.objawyTB.TabIndex = 4;
             conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule8.ErrorText = "Wypełnij pole Objawy";
             conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -742,7 +723,7 @@
             this.rozpoznanieTB.Location = new System.Drawing.Point(8, 421);
             this.rozpoznanieTB.Name = "rozpoznanieTB";
             this.rozpoznanieTB.Size = new System.Drawing.Size(454, 66);
-            this.rozpoznanieTB.TabIndex = 100;
+            this.rozpoznanieTB.TabIndex = 10;
             conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule9.ErrorText = "Wypełnij pole Rozpoznanie";
             conditionValidationRule9.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -754,7 +735,7 @@
             this.lekiTB.Location = new System.Drawing.Point(8, 513);
             this.lekiTB.Name = "lekiTB";
             this.lekiTB.Size = new System.Drawing.Size(454, 66);
-            this.lekiTB.TabIndex = 101;
+            this.lekiTB.TabIndex = 11;
             conditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule10.ErrorText = "Wypełnij pole Leki";
             conditionValidationRule10.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -766,7 +747,7 @@
             this.zaleceniaTB.Location = new System.Drawing.Point(8, 604);
             this.zaleceniaTB.Name = "zaleceniaTB";
             this.zaleceniaTB.Size = new System.Drawing.Size(454, 66);
-            this.zaleceniaTB.TabIndex = 102;
+            this.zaleceniaTB.TabIndex = 12;
             conditionValidationRule11.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule11.ErrorText = "Wypełnij pole Zalecenia";
             conditionValidationRule11.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -793,11 +774,42 @@
             // 
             this.umoW_WIZTETableAdapter.ClearBeforeFill = true;
             // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 12.25F);
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Location = new System.Drawing.Point(172, 6);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(91, 19);
+            this.labelControl10.TabIndex = 103;
+            this.labelControl10.Text = "Dodaj wizytę";
+            // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(172, 759);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(126, 23);
+            this.closeButton.TabIndex = 15;
+            this.closeButton.Text = "Zamknij";
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
+            // addVisitButton
+            // 
+            this.addVisitButton.Location = new System.Drawing.Point(172, 730);
+            this.addVisitButton.Name = "addVisitButton";
+            this.addVisitButton.Size = new System.Drawing.Size(126, 23);
+            this.addVisitButton.TabIndex = 14;
+            this.addVisitButton.Text = "Dodaj wizytę";
+            this.addVisitButton.Click += new System.EventHandler(this.addVisitButton_Click);
+            // 
             // AddVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 789);
+            this.Controls.Add(this.closeButton);
+            this.Controls.Add(this.addVisitButton);
+            this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.zaleceniaTB);
             this.Controls.Add(this.lekiTB);
             this.Controls.Add(this.rozpoznanieTB);
@@ -805,7 +817,6 @@
             this.Controls.Add(this.bpodTB);
             this.Controls.Add(this.bprzedTB);
             this.Controls.Add(this.labelControl7);
-            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.userCB);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl4);
@@ -821,11 +832,10 @@
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.nameSurnameLabel);
-            this.Controls.Add(this.addVisitButton);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Name = "AddVisit";
-            this.Text = "AddVisit";
+            this.Text = "Dodaj wizytę";
             this.Load += new System.EventHandler(this.AddVisit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pacjentCB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
@@ -863,7 +873,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.BindingSource pACJENTBindingSource;
-        private System.Windows.Forms.Button addVisitButton;
         private DevExpress.XtraEditors.LabelControl nameSurnameLabel;
         private DevExpress.XtraEditors.LabelControl dateLabel;
         private DevExpress.XtraEditors.LabelControl labelControl5;
@@ -923,7 +932,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colHaslo;
         private DevExpress.XtraGrid.Columns.GridColumn colTyp_konta;
         private PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter uzytkownikTableAdapter;
-        private System.Windows.Forms.Button closeButton;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.MemoEdit bprzedTB;
         private DevExpress.XtraEditors.MemoEdit bpodTB;
@@ -933,5 +941,8 @@
         private DevExpress.XtraEditors.MemoEdit zaleceniaTB;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider;
         private PoradniaDataSetTableAdapters.UMOW_WIZTETableAdapter umoW_WIZTETableAdapter;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.SimpleButton closeButton;
+        private DevExpress.XtraEditors.SimpleButton addVisitButton;
     }
 }

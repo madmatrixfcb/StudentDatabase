@@ -49,9 +49,9 @@
             this.labelControl8.Appearance.Options.UseFont = true;
             this.labelControl8.Location = new System.Drawing.Point(126, 12);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(104, 19);
+            this.labelControl8.Size = new System.Drawing.Size(105, 19);
             this.labelControl8.TabIndex = 61;
-            this.labelControl8.Text = "Dane osobowe";
+            this.labelControl8.Text = "Dodaj kod ICD";
             // 
             // labelControl2
             // 
@@ -99,7 +99,7 @@
             this.addICD_button.Location = new System.Drawing.Point(117, 143);
             this.addICD_button.Name = "addICD_button";
             this.addICD_button.Size = new System.Drawing.Size(75, 23);
-            this.addICD_button.TabIndex = 62;
+            this.addICD_button.TabIndex = 3;
             this.addICD_button.Text = "Dodaj kod ICD";
             this.addICD_button.Click += new System.EventHandler(this.addICD_button_Click);
             // 

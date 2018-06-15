@@ -59,12 +59,12 @@
             this.colUbezpieczenie = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dateLabel = new DevExpress.XtraEditors.LabelControl();
             this.nameSurnameLabel = new DevExpress.XtraEditors.LabelControl();
-            this.closeButton = new System.Windows.Forms.Button();
-            this.arrangeVisitButton = new System.Windows.Forms.Button();
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.wizytaTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.WIZYTATableAdapter();
             this.pacjentTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             this.umoW_WIZTETableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UMOW_WIZTETableAdapter();
+            this.arrangeVisitButton = new DevExpress.XtraEditors.SimpleButton();
+            this.closeButton = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.timeEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).BeginInit();
@@ -82,7 +82,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(306, 60);
+            this.labelControl6.Location = new System.Drawing.Point(309, 75);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(42, 13);
             this.labelControl6.TabIndex = 98;
@@ -91,14 +91,14 @@
             // timeEdit
             // 
             this.timeEdit.EditValue = new System.DateTime(2018, 3, 27, 0, 0, 0, 0);
-            this.timeEdit.Location = new System.Drawing.Point(364, 57);
+            this.timeEdit.Location = new System.Drawing.Point(367, 72);
             this.timeEdit.Name = "timeEdit";
             this.timeEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.timeEdit.Properties.Mask.EditMask = "t";
             this.timeEdit.Properties.Spin += new DevExpress.XtraEditors.Controls.SpinEventHandler(this.timeEdit_Spin);
             this.timeEdit.Size = new System.Drawing.Size(100, 20);
-            this.timeEdit.TabIndex = 95;
+            this.timeEdit.TabIndex = 3;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "Wybierz godzinę";
             conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -108,14 +108,14 @@
             // 
             this.dateEdit.EditValue = null;
             this.dateEdit.EnterMoveNextControl = true;
-            this.dateEdit.Location = new System.Drawing.Point(104, 57);
+            this.dateEdit.Location = new System.Drawing.Point(107, 72);
             this.dateEdit.Name = "dateEdit";
             this.dateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit.Size = new System.Drawing.Size(126, 20);
-            this.dateEdit.TabIndex = 94;
+            this.dateEdit.TabIndex = 2;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "Wybierz datę";
             conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -124,7 +124,7 @@
             // pacjentCB
             // 
             this.pacjentCB.EditValue = "";
-            this.pacjentCB.Location = new System.Drawing.Point(104, 22);
+            this.pacjentCB.Location = new System.Drawing.Point(107, 37);
             this.pacjentCB.Name = "pacjentCB";
             this.pacjentCB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -134,7 +134,7 @@
             this.pacjentCB.Properties.ValueMember = "ID_Pacjent";
             this.pacjentCB.Properties.View = this.searchLookUpEdit1View;
             this.pacjentCB.Size = new System.Drawing.Size(360, 20);
-            this.pacjentCB.TabIndex = 93;
+            this.pacjentCB.TabIndex = 1;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "Wybierz pacjenta";
             conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -291,7 +291,7 @@
             // 
             // dateLabel
             // 
-            this.dateLabel.Location = new System.Drawing.Point(14, 60);
+            this.dateLabel.Location = new System.Drawing.Point(17, 75);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(27, 13);
             this.dateLabel.TabIndex = 97;
@@ -299,31 +299,11 @@
             // 
             // nameSurnameLabel
             // 
-            this.nameSurnameLabel.Location = new System.Drawing.Point(14, 25);
+            this.nameSurnameLabel.Location = new System.Drawing.Point(17, 40);
             this.nameSurnameLabel.Name = "nameSurnameLabel";
             this.nameSurnameLabel.Size = new System.Drawing.Size(75, 13);
             this.nameSurnameLabel.TabIndex = 96;
             this.nameSurnameLabel.Text = "Imie i nazwisko:";
-            // 
-            // closeButton
-            // 
-            this.closeButton.Location = new System.Drawing.Point(167, 133);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(126, 23);
-            this.closeButton.TabIndex = 100;
-            this.closeButton.Text = "Zamknij";
-            this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
-            // 
-            // arrangeVisitButton
-            // 
-            this.arrangeVisitButton.Location = new System.Drawing.Point(167, 104);
-            this.arrangeVisitButton.Name = "arrangeVisitButton";
-            this.arrangeVisitButton.Size = new System.Drawing.Size(126, 23);
-            this.arrangeVisitButton.TabIndex = 99;
-            this.arrangeVisitButton.Text = "Umów wizytę";
-            this.arrangeVisitButton.UseVisualStyleBackColor = true;
-            this.arrangeVisitButton.Click += new System.EventHandler(this.arrangeVisitButton_Click);
             // 
             // wizytaTableAdapter
             // 
@@ -336,6 +316,24 @@
             // umoW_WIZTETableAdapter
             // 
             this.umoW_WIZTETableAdapter.ClearBeforeFill = true;
+            // 
+            // arrangeVisitButton
+            // 
+            this.arrangeVisitButton.Location = new System.Drawing.Point(168, 114);
+            this.arrangeVisitButton.Name = "arrangeVisitButton";
+            this.arrangeVisitButton.Size = new System.Drawing.Size(126, 23);
+            this.arrangeVisitButton.TabIndex = 4;
+            this.arrangeVisitButton.Text = "Umów wizytę";
+            this.arrangeVisitButton.Click += new System.EventHandler(this.arrangeVisitButton_Click);
+            // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(168, 143);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(126, 23);
+            this.closeButton.TabIndex = 5;
+            this.closeButton.Text = "Zamknij";
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // ArrangeVisit
             // 
@@ -392,13 +390,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn colUbezpieczenie;
         private DevExpress.XtraEditors.LabelControl dateLabel;
         private DevExpress.XtraEditors.LabelControl nameSurnameLabel;
-        private System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.Button arrangeVisitButton;
         private PoradniaDataSetTableAdapters.WIZYTATableAdapter wizytaTableAdapter;
         private PoradniaDataSet poradniaDataSet;
         private System.Windows.Forms.BindingSource pACJENTBindingSource;
         private PoradniaDataSetTableAdapters.PACJENTTableAdapter pacjentTableAdapter;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider;
         private PoradniaDataSetTableAdapters.UMOW_WIZTETableAdapter umoW_WIZTETableAdapter;
+        private DevExpress.XtraEditors.SimpleButton arrangeVisitButton;
+        private DevExpress.XtraEditors.SimpleButton closeButton;
     }
 }

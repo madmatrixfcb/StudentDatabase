@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.uzytkownikTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.passBox = new DevExpress.XtraEditors.TextEdit();
+            this.loginBox = new DevExpress.XtraEditors.TextEdit();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,15 +45,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tyP_KONTATableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.TYP_KONTATableAdapter();
             this.dxValidationProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.loginBox = new DevExpress.XtraEditors.TextEdit();
-            this.passBox = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.passBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loginBox.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passBox.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // poradniaDataSet
@@ -80,6 +80,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(285, 275);
             this.panel2.TabIndex = 1;
+            // 
+            // passBox
+            // 
+            this.passBox.Location = new System.Drawing.Point(42, 235);
+            this.passBox.Name = "passBox";
+            this.passBox.Properties.PasswordChar = '*';
+            this.passBox.Properties.UseSystemPasswordChar = true;
+            this.passBox.Size = new System.Drawing.Size(200, 20);
+            this.passBox.TabIndex = 2;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule1.ErrorText = "Nieprawidłowe hasło!";
+            this.dxValidationProvider1.SetValidationRule(this.passBox, conditionValidationRule1);
+            // 
+            // loginBox
+            // 
+            this.loginBox.Location = new System.Drawing.Point(42, 187);
+            this.loginBox.Name = "loginBox";
+            this.loginBox.Size = new System.Drawing.Size(200, 20);
+            this.loginBox.TabIndex = 1;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
+            conditionValidationRule2.ErrorText = "Nieprawidłowy login!";
+            this.dxValidationProvider1.SetValidationRule(this.loginBox, conditionValidationRule2);
             // 
             // pictureBox1
             // 
@@ -114,7 +136,7 @@
             this.loginButton.Location = new System.Drawing.Point(42, 15);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(200, 25);
-            this.loginButton.TabIndex = 0;
+            this.loginButton.TabIndex = 3;
             this.loginButton.Text = "Zaloguj się";
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
@@ -132,28 +154,6 @@
             // 
             this.tyP_KONTATableAdapter.ClearBeforeFill = true;
             // 
-            // loginBox
-            // 
-            this.loginBox.Location = new System.Drawing.Point(42, 187);
-            this.loginBox.Name = "loginBox";
-            this.loginBox.Size = new System.Drawing.Size(200, 20);
-            this.loginBox.TabIndex = 6;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule2.ErrorText = "Nieprawidłowy login!";
-            this.dxValidationProvider1.SetValidationRule(this.loginBox, conditionValidationRule2);
-            // 
-            // passBox
-            // 
-            this.passBox.Location = new System.Drawing.Point(42, 235);
-            this.passBox.Name = "passBox";
-            this.passBox.Properties.PasswordChar = '*';
-            this.passBox.Properties.UseSystemPasswordChar = true;
-            this.passBox.Size = new System.Drawing.Size(200, 20);
-            this.passBox.TabIndex = 7;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotEquals;
-            conditionValidationRule1.ErrorText = "Nieprawidłowe hasło!";
-            this.dxValidationProvider1.SetValidationRule(this.passBox, conditionValidationRule1);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,11 +169,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.passBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loginBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loginBox.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.passBox.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

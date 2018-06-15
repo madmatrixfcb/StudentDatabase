@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
 namespace StudentDatabase
 {
@@ -17,21 +18,7 @@ namespace StudentDatabase
 
         private void AdminMenu_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'poradniaDataSet.statistics_view' table. You can move, or remove it, as needed.
-            this.statistics_viewTableAdapter.Fill(this.poradniaDataSet.statistics_view);
-            // TODO: This line of code loads data into the 'poradniaDataSet.arrange_visit_view' table. You can move, or remove it, as needed.
-            this.arrange_visit_viewTableAdapter.Fill(this.poradniaDataSet.arrange_visit_view);
-            // TODO: This line of code loads data into the 'poradniaDataSet.UMOW_WIZTE' table. You can move, or remove it, as needed.
-            /*
-            this.uMOW_WIZTETableAdapter.Fill(this.poradniaDataSet.UMOW_WIZTE);
-            this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
-            this.patient_viewTableAdapter.Fill(this.poradniaDataSet.patient_view);
-             this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
-             this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
-             this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
-             this.patient_viewTableAdapter.Fill(this.poradniaDataSet.patient_view);
-             this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
-             this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);*/
+            DefaultRowCout();
         }
 
         //-----------------------TIME----------------------------------/
@@ -64,14 +51,14 @@ namespace StudentDatabase
 
         public void RefreshUmowWizyte()
         {
-            this.uMOW_WIZTETableAdapter.Fill(this.poradniaDataSet.UMOW_WIZTE);
+            this.arrange_visit_viewTableAdapter.Fill(this.poradniaDataSet.arrange_visit_view);
             gridUmowWizyte.RefreshDataSource();
         }
 
         public void RefreshStatystyki()
-        {/*
-            this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
-            gridICD.RefreshDataSource();*/
+        {
+            this.statistics_viewTableAdapter.Fill(this.poradniaDataSet.statistics_view);
+            gridStatistics.RefreshDataSource();
         }
 
         public void RefreshUbezpieczenie()
@@ -86,10 +73,16 @@ namespace StudentDatabase
             gridICD.RefreshDataSource();
         }
 
-        public static class Path
+        private void gridViewStatistics_RowCountChanged(object sender, EventArgs e)
         {
-            public static string selectedPath;
+            recordNumberTB.Text = "Liczba rekordów: " + Convert.ToString(gridViewStatistics.DataRowCount);
         }
+
+        private void DefaultRowCout()
+        {
+            recordNumberTB.Text = "Liczba rekordów: " + Convert.ToString(gridViewStatistics.DataRowCount);
+        }
+
         //-----------------------RIBBON ENABLING----------------------------------/
         private void TabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
         {
@@ -468,7 +461,7 @@ namespace StudentDatabase
             {
                 try
                 {
-                    gridUmowWizyteView.DeleteRow(gridUmowWizyteView.FocusedRowHandle);
+                    gridViewUmowWizyte.DeleteRow(gridViewUmowWizyte.FocusedRowHandle);
                     this.uMOW_WIZTETableAdapter.Update(poradniaDataSet.UMOW_WIZTE);
                     MessageBox.Show("Wizyta usunięta", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     RefreshWizyta();
@@ -493,7 +486,7 @@ namespace StudentDatabase
         private void startArrangedVisitButton_ItemClick(object sender, ItemClickEventArgs e)
         {
             ArrangeVisitPreview.arrangedVisit = true;
-            ArrangeVisitPreview.arrangeVisitRow = gridUmowWizyteView.GetFocusedDataRow();
+            ArrangeVisitPreview.arrangeVisitRow = gridViewUmowWizyte.GetFocusedDataRow();
             AddVisit add_Visit = new AddVisit();
             add_Visit.Show();
             add_Visit.FormClosed += Add_Visit_FormClosed;
@@ -503,18 +496,24 @@ namespace StudentDatabase
         //-----------------------------------STATISTICS RIBBON-----------------------------------//
         private void statisticsExportToXLSButton_ItemClick(object sender, ItemClickEventArgs e)
         {
-            folderBrowserDialog.ShowDialog();
-            Path.selectedPath = folderBrowserDialog.SelectedPath;
-            if (Path.selectedPath != null)
+            saveFileDialog.ShowDialog();
+            string filename = saveFileDialog.FileName;
+            if (filename == null)
             {
-                string data = DateTime.Now.ToShortDateString();
-                string filenameS = "Statystyka_" + data;
-                gridViewStatistics.ExportToXls(Path.selectedPath + "/" + filenameS + ".xls");
+                MessageBox.Show("Wysąpił błąd. Podaj nazwę pliku!.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+
+            else
+            {
+                gridViewStatistics.ExportToXls(filename + ".xls");
+            }
+
         }
 
-
+        private void clearFiltersStatictisButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            gridViewStatistics.ClearColumnsFilter();
+        }
 
         //-----------------------------------POTWIERDZENIE WYJŚCIA Z APLIKAJCI-----------------------------------//
         private void AdminMenu_FormClosing(object sender, FormClosingEventArgs e)

@@ -94,66 +94,31 @@ namespace StudentDatabase
             }
         }
 
-        private void wizytaGroup_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            ShowLayoutControlPreview(layoutControl1);
-        }
-
-        private void ShowLayoutControlPreview(LayoutControl layout)
-        {
-            // Check whether the LayoutControl can be previewed.
-            if (!layout.IsPrintingAvailable)
-            {
-                MessageBox.Show("Wystąpił błąd podczas próby uruchomienia podglądu wydruku." + Environment.NewLine + "Spróbuj ponownie, jeśli błąd będzie się powtarzał skontaktuj się z administratorem.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Open the Preview window.
-            layout.ShowPrintPreview();
-        }
-
-        private void PrintLayoutControl(LayoutControl layout)
-        {
-            // Check whether the LayoutControl can be printed.
-            if (!layout.IsPrintingAvailable)
-            {
-                MessageBox.Show("Wystąpił błąd podczas próby wydruku." + Environment.NewLine + "Spróbuj ponownie, jeśli błąd będzie się powtarzał skontaktuj się z administratorem.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Print.
-                layout.Print();
-        }
-
-        private void ExportToPDFLayoutControl(LayoutControl layout)
-        {
-            // Check whether the LayoutControl can be printed.
-            if (!layout.IsPrintingAvailable)
-            {
-                MessageBox.Show("Wystąpił błąd podczas próby uruchomienia eksportu do pliku PDF." + Environment.NewLine + "Spróbuj ponownie, jeśli błąd będzie się powtarzał skontaktuj się z administratorem.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Print.
-            folderBrowserDialog1.ShowDialog();
-            if (folderBrowserDialog1.SelectedPath != null)
-            {
-                string directory = folderBrowserDialog1.SelectedPath;
-                string filename = visitIDLabelTB.Text + " - " + nameLabelTB.Text + " " + surnameLabelTB.Text + " " + DataGet.data.Substring(0, 10);
-                layout.ExportToPdf(directory + "/" + filename + ".pdf");
-            }
-
-
-        }
-
         private void exportToPDFButton_Click(object sender, EventArgs e)
         {
-            ExportToPDFLayoutControl(layoutControl1);
+            saveFileDialog.ShowDialog();
+            string filename = saveFileDialog.FileName;
+            if (filename == null)
+            {
+                MessageBox.Show("Wysąpił błąd. Podaj nazwę pliku!.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            else
+            {
+                layoutControl1.ExportToPdf(filename + ".pdf");
+                //layoutControl1.ExportToRtf(filename + ".rtf");
+            }
+        }
+
+        private void printPreviewButton_Click(object sender, EventArgs e)
+        {
+            layoutControl1.ShowPrintPreview();
+
+        }
+
+        private void printButton_Click(object sender, EventArgs e)
+        {
+            layoutControl1.Print();
         }
     }
 }

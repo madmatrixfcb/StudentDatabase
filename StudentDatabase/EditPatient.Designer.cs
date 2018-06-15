@@ -176,7 +176,7 @@
             this.miastoTB.Location = new System.Drawing.Point(243, 314);
             this.miastoTB.Name = "miastoTB";
             this.miastoTB.Size = new System.Drawing.Size(77, 20);
-            this.miastoTB.TabIndex = 197;
+            this.miastoTB.TabIndex = 12;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "Pole nie może być puste";
             conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -190,7 +190,7 @@
             this.kodTB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
             this.kodTB.Properties.ValidateOnEnterKey = true;
             this.kodTB.Size = new System.Drawing.Size(61, 20);
-            this.kodTB.TabIndex = 196;
+            this.kodTB.TabIndex = 11;
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule2.ErrorText = "Pole nie może być puste";
             conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -201,7 +201,7 @@
             this.budynekTB.Location = new System.Drawing.Point(121, 286);
             this.budynekTB.Name = "budynekTB";
             this.budynekTB.Size = new System.Drawing.Size(45, 20);
-            this.budynekTB.TabIndex = 194;
+            this.budynekTB.TabIndex = 9;
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule3.ErrorText = "Pole nie może być puste";
             conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -212,7 +212,7 @@
             this.ulicaTB.Location = new System.Drawing.Point(121, 260);
             this.ulicaTB.Name = "ulicaTB";
             this.ulicaTB.Size = new System.Drawing.Size(199, 20);
-            this.ulicaTB.TabIndex = 193;
+            this.ulicaTB.TabIndex = 8;
             conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule4.ErrorText = "Pole nie może być puste";
             conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -226,7 +226,7 @@
             this.telefonTB.Properties.Mask.EditMask = "+48-000-000-000";
             this.telefonTB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple;
             this.telefonTB.Size = new System.Drawing.Size(199, 20);
-            this.telefonTB.TabIndex = 191;
+            this.telefonTB.TabIndex = 6;
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.AnyOf;
             conditionValidationRule5.ErrorText = "Wpisz numer telefonu";
             conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -238,7 +238,7 @@
             this.nazwiskoTB.Location = new System.Drawing.Point(121, 94);
             this.nazwiskoTB.Name = "nazwiskoTB";
             this.nazwiskoTB.Size = new System.Drawing.Size(199, 20);
-            this.nazwiskoTB.TabIndex = 188;
+            this.nazwiskoTB.TabIndex = 3;
             conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule6.ErrorText = "Pole nie może być puste";
             conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -256,7 +256,7 @@
             this.dataur.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
             this.dataur.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dataur.Size = new System.Drawing.Size(199, 20);
-            this.dataur.TabIndex = 189;
+            this.dataur.TabIndex = 4;
             conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule7.ErrorText = "Pole nie może być puste";
             conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -267,7 +267,7 @@
             this.imieTB.Location = new System.Drawing.Point(121, 68);
             this.imieTB.Name = "imieTB";
             this.imieTB.Size = new System.Drawing.Size(199, 20);
-            this.imieTB.TabIndex = 187;
+            this.imieTB.TabIndex = 2;
             conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule8.ErrorText = "Pole nie może być puste";
             conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -279,7 +279,7 @@
             this.IDTB.Location = new System.Drawing.Point(121, 42);
             this.IDTB.Name = "IDTB";
             this.IDTB.Size = new System.Drawing.Size(199, 20);
-            this.IDTB.TabIndex = 222;
+            this.IDTB.TabIndex = 1;
             conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule9.ErrorText = "Pole nie może być puste";
             conditionValidationRule9.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -353,8 +353,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gridEditPatient);
-            this.splitContainer1.Size = new System.Drawing.Size(1311, 593);
-            this.splitContainer1.SplitterDistance = 330;
+            this.splitContainer1.Size = new System.Drawing.Size(1904, 961);
+            this.splitContainer1.SplitterDistance = 357;
             this.splitContainer1.TabIndex = 0;
             // 
             // ubezpieczenieSelect
@@ -369,7 +369,7 @@
             this.ubezpieczenieSelect.Properties.ValueMember = "ID_Ubezpieczenie";
             this.ubezpieczenieSelect.Properties.View = this.gridView4;
             this.ubezpieczenieSelect.Size = new System.Drawing.Size(180, 20);
-            this.ubezpieczenieSelect.TabIndex = 225;
+            this.ubezpieczenieSelect.TabIndex = 21;
             // 
             // gridView4
             // 
@@ -408,7 +408,7 @@
             this.plecSelect.Properties.ValueMember = "ID_Plec";
             this.plecSelect.Properties.View = this.gridView3;
             this.plecSelect.Size = new System.Drawing.Size(199, 20);
-            this.plecSelect.TabIndex = 224;
+            this.plecSelect.TabIndex = 7;
             // 
             // gridView3
             // 
@@ -448,7 +448,7 @@
             this.closeButton.Location = new System.Drawing.Point(130, 558);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(99, 23);
-            this.closeButton.TabIndex = 221;
+            this.closeButton.TabIndex = 23;
             this.closeButton.Text = "Zamknij";
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
@@ -457,7 +457,7 @@
             this.paszportCB.Location = new System.Drawing.Point(32, 458);
             this.paszportCB.Name = "paszportCB";
             this.paszportCB.Size = new System.Drawing.Size(102, 23);
-            this.paszportCB.TabIndex = 220;
+            this.paszportCB.TabIndex = 19;
             this.paszportCB.Text = "Paszport:";
             this.paszportCB.CheckedChanged += new System.EventHandler(this.paszportCB_CheckedChanged);
             // 
@@ -466,7 +466,7 @@
             this.dowodosobistyCB.Location = new System.Drawing.Point(32, 432);
             this.dowodosobistyCB.Name = "dowodosobistyCB";
             this.dowodosobistyCB.Size = new System.Drawing.Size(102, 23);
-            this.dowodosobistyCB.TabIndex = 219;
+            this.dowodosobistyCB.TabIndex = 17;
             this.dowodosobistyCB.Text = "Dowód osobisty:";
             this.dowodosobistyCB.CheckedChanged += new System.EventHandler(this.dowodosobistyCB_CheckedChanged);
             // 
@@ -475,7 +475,7 @@
             this.kartapolakaCB.Location = new System.Drawing.Point(32, 406);
             this.kartapolakaCB.Name = "kartapolakaCB";
             this.kartapolakaCB.Size = new System.Drawing.Size(102, 23);
-            this.kartapolakaCB.TabIndex = 218;
+            this.kartapolakaCB.TabIndex = 15;
             this.kartapolakaCB.Text = "Karta Polaka:";
             this.kartapolakaCB.CheckedChanged += new System.EventHandler(this.kartapolakaCB_CheckedChanged);
             // 
@@ -484,7 +484,7 @@
             this.peselCB.Location = new System.Drawing.Point(32, 380);
             this.peselCB.Name = "peselCB";
             this.peselCB.Size = new System.Drawing.Size(102, 23);
-            this.peselCB.TabIndex = 217;
+            this.peselCB.TabIndex = 13;
             this.peselCB.Text = "PESEL:";
             // 
             // labelControl15
@@ -509,7 +509,7 @@
             this.krajSelect.Properties.ValueMember = "ID_Kraj";
             this.krajSelect.Properties.View = this.gridView2;
             this.krajSelect.Size = new System.Drawing.Size(199, 20);
-            this.krajSelect.TabIndex = 190;
+            this.krajSelect.TabIndex = 5;
             // 
             // gridView2
             // 
@@ -581,7 +581,7 @@
             this.mieszkanieTB.Location = new System.Drawing.Point(275, 286);
             this.mieszkanieTB.Name = "mieszkanieTB";
             this.mieszkanieTB.Size = new System.Drawing.Size(45, 20);
-            this.mieszkanieTB.TabIndex = 195;
+            this.mieszkanieTB.TabIndex = 10;
             // 
             // labelControl9
             // 
@@ -639,7 +639,7 @@
             this.paszportTB.Location = new System.Drawing.Point(140, 460);
             this.paszportTB.Name = "paszportTB";
             this.paszportTB.Size = new System.Drawing.Size(180, 20);
-            this.paszportTB.TabIndex = 201;
+            this.paszportTB.TabIndex = 20;
             this.paszportTB.EditValueChanged += new System.EventHandler(this.paszportTB_EditValueChanged);
             // 
             // dowodTB
@@ -648,7 +648,7 @@
             this.dowodTB.Location = new System.Drawing.Point(140, 434);
             this.dowodTB.Name = "dowodTB";
             this.dowodTB.Size = new System.Drawing.Size(180, 20);
-            this.dowodTB.TabIndex = 200;
+            this.dowodTB.TabIndex = 18;
             this.dowodTB.EditValueChanged += new System.EventHandler(this.dowodTB_EditValueChanged);
             // 
             // kartapolakaTB
@@ -657,7 +657,7 @@
             this.kartapolakaTB.Location = new System.Drawing.Point(140, 408);
             this.kartapolakaTB.Name = "kartapolakaTB";
             this.kartapolakaTB.Size = new System.Drawing.Size(180, 20);
-            this.kartapolakaTB.TabIndex = 199;
+            this.kartapolakaTB.TabIndex = 16;
             this.kartapolakaTB.EditValueChanged += new System.EventHandler(this.kartapolakaTB_EditValueChanged);
             // 
             // peselTB
@@ -668,7 +668,7 @@
             this.peselTB.Properties.Mask.EditMask = "\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?";
             this.peselTB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.peselTB.Size = new System.Drawing.Size(180, 20);
-            this.peselTB.TabIndex = 198;
+            this.peselTB.TabIndex = 14;
             this.peselTB.EditValueChanged += new System.EventHandler(this.peselTB_EditValueChanged);
             // 
             // labelControl2
@@ -689,10 +689,10 @@
             // 
             // editPatient2
             // 
-            this.editPatient2.Location = new System.Drawing.Point(130, 517);
+            this.editPatient2.Location = new System.Drawing.Point(130, 529);
             this.editPatient2.Name = "editPatient2";
             this.editPatient2.Size = new System.Drawing.Size(99, 23);
-            this.editPatient2.TabIndex = 186;
+            this.editPatient2.TabIndex = 22;
             this.editPatient2.Text = "Edytuj pacjenta";
             this.editPatient2.Click += new System.EventHandler(this.EditPatient2_Click);
             // 
@@ -713,7 +713,7 @@
             this.gridEditPatient.Location = new System.Drawing.Point(0, 0);
             this.gridEditPatient.MainView = this.gridView1;
             this.gridEditPatient.Name = "gridEditPatient";
-            this.gridEditPatient.Size = new System.Drawing.Size(977, 593);
+            this.gridEditPatient.Size = new System.Drawing.Size(1543, 961);
             this.gridEditPatient.TabIndex = 0;
             this.gridEditPatient.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -758,6 +758,7 @@
             this.colID_Pacjent.Name = "colID_Pacjent";
             this.colID_Pacjent.Visible = true;
             this.colID_Pacjent.VisibleIndex = 0;
+            this.colID_Pacjent.Width = 76;
             // 
             // colImie
             // 
@@ -765,6 +766,7 @@
             this.colImie.Name = "colImie";
             this.colImie.Visible = true;
             this.colImie.VisibleIndex = 1;
+            this.colImie.Width = 76;
             // 
             // colNazwisko
             // 
@@ -772,6 +774,7 @@
             this.colNazwisko.Name = "colNazwisko";
             this.colNazwisko.Visible = true;
             this.colNazwisko.VisibleIndex = 2;
+            this.colNazwisko.Width = 76;
             // 
             // colData_urodzenia
             // 
@@ -779,6 +782,7 @@
             this.colData_urodzenia.Name = "colData_urodzenia";
             this.colData_urodzenia.Visible = true;
             this.colData_urodzenia.VisibleIndex = 3;
+            this.colData_urodzenia.Width = 96;
             // 
             // colKraj1
             // 
@@ -786,6 +790,7 @@
             this.colKraj1.Name = "colKraj1";
             this.colKraj1.Visible = true;
             this.colKraj1.VisibleIndex = 4;
+            this.colKraj1.Width = 76;
             // 
             // colTelefon
             // 
@@ -793,6 +798,7 @@
             this.colTelefon.Name = "colTelefon";
             this.colTelefon.Visible = true;
             this.colTelefon.VisibleIndex = 5;
+            this.colTelefon.Width = 76;
             // 
             // colPlec
             // 
@@ -800,6 +806,7 @@
             this.colPlec.Name = "colPlec";
             this.colPlec.Visible = true;
             this.colPlec.VisibleIndex = 6;
+            this.colPlec.Width = 76;
             // 
             // colUlica
             // 
@@ -807,6 +814,7 @@
             this.colUlica.Name = "colUlica";
             this.colUlica.Visible = true;
             this.colUlica.VisibleIndex = 7;
+            this.colUlica.Width = 76;
             // 
             // colNr_budynku
             // 
@@ -814,6 +822,7 @@
             this.colNr_budynku.Name = "colNr_budynku";
             this.colNr_budynku.Visible = true;
             this.colNr_budynku.VisibleIndex = 8;
+            this.colNr_budynku.Width = 78;
             // 
             // colNr_mieszkania
             // 
@@ -821,6 +830,7 @@
             this.colNr_mieszkania.Name = "colNr_mieszkania";
             this.colNr_mieszkania.Visible = true;
             this.colNr_mieszkania.VisibleIndex = 9;
+            this.colNr_mieszkania.Width = 88;
             // 
             // colKod_pocztowy
             // 
@@ -828,6 +838,7 @@
             this.colKod_pocztowy.Name = "colKod_pocztowy";
             this.colKod_pocztowy.Visible = true;
             this.colKod_pocztowy.VisibleIndex = 10;
+            this.colKod_pocztowy.Width = 90;
             // 
             // colMiasto
             // 
@@ -835,6 +846,7 @@
             this.colMiasto.Name = "colMiasto";
             this.colMiasto.Visible = true;
             this.colMiasto.VisibleIndex = 11;
+            this.colMiasto.Width = 76;
             // 
             // colPESEL
             // 
@@ -842,6 +854,7 @@
             this.colPESEL.Name = "colPESEL";
             this.colPESEL.Visible = true;
             this.colPESEL.VisibleIndex = 12;
+            this.colPESEL.Width = 76;
             // 
             // colKarta_polaka
             // 
@@ -849,6 +862,7 @@
             this.colKarta_polaka.Name = "colKarta_polaka";
             this.colKarta_polaka.Visible = true;
             this.colKarta_polaka.VisibleIndex = 13;
+            this.colKarta_polaka.Width = 83;
             // 
             // colDowod_osobisty
             // 
@@ -856,6 +870,7 @@
             this.colDowod_osobisty.Name = "colDowod_osobisty";
             this.colDowod_osobisty.Visible = true;
             this.colDowod_osobisty.VisibleIndex = 14;
+            this.colDowod_osobisty.Width = 99;
             // 
             // colPaszport
             // 
@@ -863,6 +878,7 @@
             this.colPaszport.Name = "colPaszport";
             this.colPaszport.Visible = true;
             this.colPaszport.VisibleIndex = 15;
+            this.colPaszport.Width = 76;
             // 
             // colUbezpieczenie
             // 
@@ -870,6 +886,7 @@
             this.colUbezpieczenie.Name = "colUbezpieczenie";
             this.colUbezpieczenie.Visible = true;
             this.colUbezpieczenie.VisibleIndex = 16;
+            this.colUbezpieczenie.Width = 88;
             // 
             // pACJENTTableAdapter
             // 
@@ -879,7 +896,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1311, 593);
+            this.ClientSize = new System.Drawing.Size(1904, 961);
             this.Controls.Add(this.splitContainer1);
             this.Name = "EditPatient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

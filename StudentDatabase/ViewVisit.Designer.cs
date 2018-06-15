@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewVisit));
             this.patientviewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
@@ -83,7 +83,7 @@
             this.passportLabelTB = new DevExpress.XtraEditors.TextEdit();
             this.insuranceLabelTB = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlGroup5 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutKartaWizyty = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.visitIDLabel = new DevExpress.XtraLayout.LayoutControlItem();
             this.objawyLabel = new DevExpress.XtraLayout.LayoutControlItem();
@@ -111,12 +111,12 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.printPreviewButton = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ICD1Label = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.printButton = new DevExpress.XtraEditors.SimpleButton();
             this.exportToPDFButton = new DevExpress.XtraEditors.SimpleButton();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.patientviewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
@@ -150,7 +150,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.passportLabelTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.insuranceLabelTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutKartaWizyty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitIDLabel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.objawyLabel)).BeginInit();
@@ -213,9 +213,9 @@
             // gridControl1
             // 
             this.gridControl1.DataSource = this.patientviewBindingSource;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControl1.Location = new System.Drawing.Point(1224, 143);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -623,25 +623,25 @@
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlGroup5});
+            this.layoutKartaWizyty});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 5;
             this.layoutControlGroup1.Size = new System.Drawing.Size(1366, 842);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // layoutControlGroup5
+            // layoutKartaWizyty
             // 
-            this.layoutControlGroup5.AppearanceGroup.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlGroup5.AppearanceGroup.Options.UseFont = true;
-            this.layoutControlGroup5.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutKartaWizyty.AppearanceGroup.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutKartaWizyty.AppearanceGroup.Options.UseFont = true;
+            this.layoutKartaWizyty.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlGroup4,
             this.layoutControlGroup3});
-            this.layoutControlGroup5.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup5.Name = "layoutControlGroup5";
-            this.layoutControlGroup5.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlGroup5.Size = new System.Drawing.Size(1346, 822);
-            this.layoutControlGroup5.Text = "Karta wizyty";
+            this.layoutKartaWizyty.Location = new System.Drawing.Point(0, 0);
+            this.layoutKartaWizyty.Name = "layoutKartaWizyty";
+            this.layoutKartaWizyty.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
+            this.layoutKartaWizyty.Size = new System.Drawing.Size(1346, 822);
+            this.layoutKartaWizyty.Text = "Karta wizyty";
             // 
             // layoutControlGroup4
             // 
@@ -991,15 +991,15 @@
             this.layoutControlItem11.Text = "Karta Polaka:";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(93, 13);
             // 
-            // simpleButton1
+            // printPreviewButton
             // 
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(503, 860);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(137, 56);
-            this.simpleButton1.TabIndex = 28;
-            this.simpleButton1.Text = "Podgląd wydruku";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.printPreviewButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewButton.ImageOptions.Image")));
+            this.printPreviewButton.Location = new System.Drawing.Point(503, 860);
+            this.printPreviewButton.Name = "printPreviewButton";
+            this.printPreviewButton.Size = new System.Drawing.Size(137, 56);
+            this.printPreviewButton.TabIndex = 1;
+            this.printPreviewButton.Text = "Podgląd wydruku";
+            this.printPreviewButton.Click += new System.EventHandler(this.printPreviewButton_Click);
             // 
             // layoutControlGroup2
             // 
@@ -1017,14 +1017,15 @@
             this.ICD1Label.Text = "Kod ICD 1:";
             this.ICD1Label.TextSize = new System.Drawing.Size(112, 13);
             // 
-            // simpleButton2
+            // printButton
             // 
-            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(656, 860);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(137, 56);
-            this.simpleButton2.TabIndex = 29;
-            this.simpleButton2.Text = "Drukuj";
+            this.printButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("printButton.ImageOptions.Image")));
+            this.printButton.Location = new System.Drawing.Point(656, 860);
+            this.printButton.Name = "printButton";
+            this.printButton.Size = new System.Drawing.Size(137, 56);
+            this.printButton.TabIndex = 2;
+            this.printButton.Text = "Drukuj";
+            this.printButton.Click += new System.EventHandler(this.printButton_Click);
             // 
             // exportToPDFButton
             // 
@@ -1032,7 +1033,7 @@
             this.exportToPDFButton.Location = new System.Drawing.Point(810, 860);
             this.exportToPDFButton.Name = "exportToPDFButton";
             this.exportToPDFButton.Size = new System.Drawing.Size(137, 56);
-            this.exportToPDFButton.TabIndex = 30;
+            this.exportToPDFButton.TabIndex = 3;
             this.exportToPDFButton.Text = "Eksport do PDF";
             this.exportToPDFButton.Click += new System.EventHandler(this.exportToPDFButton_Click);
             // 
@@ -1042,12 +1043,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1404, 971);
             this.Controls.Add(this.exportToPDFButton);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.printButton);
+            this.Controls.Add(this.printPreviewButton);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.gridControl1);
             this.Name = "ViewVisit";
-            this.Text = "ViewVisit";
+            this.Text = "Podgląd wizyty";
             this.Load += new System.EventHandler(this.VisitView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.patientviewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
@@ -1082,7 +1083,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.passportLabelTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.insuranceLabelTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutKartaWizyty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visitIDLabel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.objawyLabel)).EndInit();
@@ -1144,7 +1145,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colUbezpieczenie;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton printPreviewButton;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraEditors.TextEdit visitIDLabelTB;
         private DevExpress.XtraLayout.LayoutControlItem visitIDLabel;
@@ -1172,10 +1173,9 @@
         private DevExpress.XtraEditors.TextEdit przyrjmujacyLabelTB;
         private DevExpress.XtraLayout.LayoutControlItem przyrjmujacyLabel;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton printButton;
         private DevExpress.XtraEditors.SimpleButton exportToPDFButton;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup5;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutKartaWizyty;
         private DevExpress.XtraEditors.TextEdit patientIDLabelTB;
         private DevExpress.XtraEditors.TextEdit nameLabelTB;
         private DevExpress.XtraEditors.TextEdit surnameLabelTB;
@@ -1203,5 +1203,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }

@@ -60,7 +60,7 @@ namespace StudentDatabase
             string plec = Convert.ToString(plecSelect.SelectedValue);
             string ubezpieczenie = Convert.ToString(ubezpieczenieSelect.SelectedValue);
 
-            bool isValid = dxValidationProvider1.Validate();
+            bool isValid = dxValidationProvider.Validate();
 
             if (isValid == true)
             {
