@@ -192,3 +192,5 @@ F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\ja\DevE
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\ru\DevExpress.XtraSpreadsheet.v17.1.resources.dll
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.csprojAssemblyReference.cache
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.ArrangeVisit.resources
+F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.MenuLoad.resources
+F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\obj\Debug\StudentDatabase.SelectPane.resources

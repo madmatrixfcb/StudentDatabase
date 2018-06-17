@@ -1485,7 +1485,7 @@ namespace StudentDatabase {
                 this.columnLogin.AllowDBNull = false;
                 this.columnLogin.MaxLength = 20;
                 this.columnHaslo.AllowDBNull = false;
-                this.columnHaslo.MaxLength = 20;
+                this.columnHaslo.MaxLength = 50;
                 this.columnTyp_konta.AllowDBNull = false;
             }
             

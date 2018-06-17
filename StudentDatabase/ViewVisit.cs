@@ -96,17 +96,22 @@ namespace StudentDatabase
 
         private void exportToPDFButton_Click(object sender, EventArgs e)
         {
-            saveFileDialog.ShowDialog();
+            saveFileDialog.Filter = "PDF (*.pdf)|*.pdf|Wszystkie pliki (*.*)|*.*";
+            saveFileDialog.FilterIndex = 1;
+            saveFileDialog.RestoreDirectory = true;
+            saveFileDialog.Title = "Zapisz jako dokument PDF";
             string filename = saveFileDialog.FileName;
-            if (filename == null)
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Wysąpił błąd. Podaj nazwę pliku!.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                filename = saveFileDialog.FileName;
+                layoutControl1.ExportToPdf(filename);
+                filename = "";
             }
 
             else
             {
-                layoutControl1.ExportToPdf(filename + ".pdf");
-                //layoutControl1.ExportToRtf(filename + ".rtf");
+
+                MessageBox.Show("Wysąpił błąd.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

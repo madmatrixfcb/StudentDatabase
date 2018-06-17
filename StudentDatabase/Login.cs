@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using System.Security.Cryptography;
 
 namespace StudentDatabase
 {
@@ -22,7 +23,7 @@ namespace StudentDatabase
         private void Login_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'poradniaDataSet.UZYTKOWNIK' table. You can move, or remove it, as needed.
-            this.uzytkownikTableAdapter.Fill(this.poradniaDataSet.UZYTKOWNIK);
+            //this.uzytkownikTableAdapter.Fill(this.poradniaDataSet.UZYTKOWNIK);
             this.AcceptButton = loginButton;
 
         }
@@ -43,17 +44,35 @@ namespace StudentDatabase
             public static sbyte userID;
         }
 
+        //-------------------SHA-----------------------/
+        private string GetSHA1HashData(string data)
+        {
+            var shaSHA1 = System.Security.Cryptography.SHA1.Create();
+            var inputEncodingBytes = Encoding.ASCII.GetBytes(data);
+            var hashString = shaSHA1.ComputeHash(inputEncodingBytes);
+
+            var stringBuilder = new StringBuilder();
+            for (var x = 0; x < hashString.Length; x++)
+            {
+                stringBuilder.Append(hashString[x].ToString("X2"));
+            }
+            return stringBuilder.ToString();
+        }
+
         public void loginButton_Click(object sender, EventArgs e)
         {
-            LoginInfo.login = Convert.ToString(loginBox.Text);
-            LoginInfo.pass = Convert.ToString(passBox.Text);
-            LoginInfo.userType = Convert.ToString(uzytkownikTableAdapter.SelectLogin(LoginInfo.login, LoginInfo.pass));
-            LoginInfo.userID = Convert.ToSByte(uzytkownikTableAdapter.SelectUserID(LoginInfo.login, LoginInfo.pass));
+
 
             bool isValid = dxValidationProvider1.Validate();
 
             if (isValid == true)
             {
+
+                LoginInfo.login = Convert.ToString(loginBox.Text);
+                LoginInfo.pass = GetSHA1HashData(Convert.ToString(passBox.Text));
+                LoginInfo.userType = Convert.ToString(uzytkownikTableAdapter.SelectLogin(LoginInfo.login, LoginInfo.pass));
+                LoginInfo.userID = Convert.ToSByte(uzytkownikTableAdapter.SelectUserID(LoginInfo.login, LoginInfo.pass));
+
                 if (LoginInfo.userType == "Admin")
                 {
                     try

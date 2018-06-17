@@ -13,12 +13,25 @@ namespace StudentDatabase
             InitializeComponent();
             time.Start();
             tabPane1.SelectedPage = null;
+            PaneStartup(SelectedPane.selectedId);
             UserInfo();
         }
 
         private void AdminMenu_Load(object sender, EventArgs e)
         {
             DefaultRowCout();
+            this.patient_viewTableAdapter.Fill(this.poradniaDataSet.patient_view);
+            this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
+            this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
+            this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
+            this.arrange_visit_viewTableAdapter.Fill(this.poradniaDataSet.arrange_visit_view);
+            this.statistics_viewTableAdapter.Fill(this.poradniaDataSet.statistics_view);
+            this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
+            this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
+            StartSelectPane();
+            
+            
+
         }
 
         //-----------------------TIME----------------------------------/
@@ -37,39 +50,37 @@ namespace StudentDatabase
         //-----------------------FUNCTIONS----------------------------------/
         public void RefreshPacjenci()
         {
-            this.patient_viewTableAdapter.Fill(this.poradniaDataSet.patient_view);
-            this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
+
             gridPacjenci.RefreshDataSource();
         }
 
         public void RefreshWizyta()
         {
-            this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
-            this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
+
             gridWizyta.RefreshDataSource();
         }
 
         public void RefreshUmowWizyte()
         {
-            this.arrange_visit_viewTableAdapter.Fill(this.poradniaDataSet.arrange_visit_view);
+
             gridUmowWizyte.RefreshDataSource();
         }
 
         public void RefreshStatystyki()
         {
-            this.statistics_viewTableAdapter.Fill(this.poradniaDataSet.statistics_view);
+
             gridStatistics.RefreshDataSource();
         }
 
         public void RefreshUbezpieczenie()
         {
-            this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
+
             gridUbezpieczenie.RefreshDataSource();
         }
 
         public void RefreshICD()
         {
-            this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
+
             gridICD.RefreshDataSource();
         }
 
@@ -83,8 +94,57 @@ namespace StudentDatabase
             recordNumberTB.Text = "Liczba rekordów: " + Convert.ToString(gridViewStatistics.DataRowCount);
         }
 
+        public static class SelectedPane
+        {
+            public static int selectedId;
+        }
+
+        private void PaneStartup(int pane)
+        {
+            switch (pane)
+            {
+                case 1:
+                    {
+                        tabPane1.SelectedPage = PacjenciPage;
+                        break;
+                    }
+                case 2:
+                    {
+                        tabPane1.SelectedPage = WizytaPage;
+                        break;
+                    }
+                case 3:
+                    {
+                        tabPane1.SelectedPage = UmowWizytePage;
+                        break;
+                    }
+                case 4:
+                    {
+                        tabPane1.SelectedPage = StatystykiPage;
+                        break;
+                    }
+                case 5:
+                    {
+                        tabPane1.SelectedPage = UbezpieczeniePage;
+                        break;
+                    }
+                case 6:
+                    {
+                        tabPane1.SelectedPage = ICDPage;
+                        break;
+                    }
+            }
+        }
+
+        private void StartSelectPane()
+        {
+            SelectPane selectPane = new SelectPane();
+            selectPane.Show();
+        }
+
+
         //-----------------------RIBBON ENABLING----------------------------------/
-        private void TabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
+        public void TabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
         {
             PacjenciGroup.Enabled = false;
             UbezpieczenieGroup.Enabled = false;
@@ -496,18 +556,33 @@ namespace StudentDatabase
         //-----------------------------------STATISTICS RIBBON-----------------------------------//
         private void statisticsExportToXLSButton_ItemClick(object sender, ItemClickEventArgs e)
         {
-            saveFileDialog.ShowDialog();
+            saveFileDialog.Filter = "XLS (*.xls)|*.xls|XLSX (*.xlsx)|*.xlsx";
+            saveFileDialog.FilterIndex = 1;
+            saveFileDialog.RestoreDirectory = true;
+            saveFileDialog.Title = "Zapisz jako arkusz programu Microsoft Office Excel";
             string filename = saveFileDialog.FileName;
-            if (filename == null)
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Wysąpił błąd. Podaj nazwę pliku!.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                filename = saveFileDialog.FileName;
+                switch (saveFileDialog.FilterIndex)
+                {
+                    case 1:
+                        gridViewStatistics.ExportToXls(filename);
+                        filename = "";
+                        break;
+                    case 2:
+                        gridViewStatistics.ExportToXlsx(filename);
+                        filename = "";
+                        break;
+                }
 
+
+            }
             else
             {
-                gridViewStatistics.ExportToXls(filename + ".xls");
-            }
 
+                MessageBox.Show("Wysąpił błąd.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void clearFiltersStatictisButton_ItemClick(object sender, ItemClickEventArgs e)
