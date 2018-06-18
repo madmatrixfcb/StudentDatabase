@@ -167,6 +167,7 @@
     <Compile Include="EditVisit.Designer.cs">
       <DependentUpon>EditVisit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Functions.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

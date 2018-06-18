@@ -20,18 +20,13 @@ namespace StudentDatabase
         private void AdminMenu_Load(object sender, EventArgs e)
         {
             DefaultRowCout();
-            this.patient_viewTableAdapter.Fill(this.poradniaDataSet.patient_view);
-            this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
-            this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
-            this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
-            this.arrange_visit_viewTableAdapter.Fill(this.poradniaDataSet.arrange_visit_view);
-            this.statistics_viewTableAdapter.Fill(this.poradniaDataSet.statistics_view);
-            this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
-            this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
+            RefreshPacjenci();
+            RefreshWizyta();
+            RefreshUmowWizyte();
+            RefreshStatystyki();
+            RefreshUbezpieczenie();
+            RefreshICD();
             StartSelectPane();
-            
-            
-
         }
 
         //-----------------------TIME----------------------------------/
@@ -50,37 +45,39 @@ namespace StudentDatabase
         //-----------------------FUNCTIONS----------------------------------/
         public void RefreshPacjenci()
         {
-
+            this.patient_viewTableAdapter.Fill(this.poradniaDataSet.patient_view);
+            this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
             gridPacjenci.RefreshDataSource();
         }
 
         public void RefreshWizyta()
         {
-
+            this.visit_viewTableAdapter.Fill(this.poradniaDataSet.visit_view);
+            this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
             gridWizyta.RefreshDataSource();
         }
 
         public void RefreshUmowWizyte()
         {
-
+            this.arrange_visit_viewTableAdapter.Fill(this.poradniaDataSet.arrange_visit_view);
             gridUmowWizyte.RefreshDataSource();
         }
 
         public void RefreshStatystyki()
         {
-
+            this.statistics_viewTableAdapter.Fill(this.poradniaDataSet.statistics_view);
             gridStatistics.RefreshDataSource();
         }
 
         public void RefreshUbezpieczenie()
         {
-
+            this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
             gridUbezpieczenie.RefreshDataSource();
         }
 
         public void RefreshICD()
         {
-
+            this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
             gridICD.RefreshDataSource();
         }
 

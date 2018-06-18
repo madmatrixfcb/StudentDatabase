@@ -211,5 +211,21 @@ namespace StudentDatabase
                 e.DisplayText = row["Tytul"].ToString() + " " + row["Imie"].ToString() + " " + row["Nazwisko"].ToString();
             }
         }
+
+        private void addPatientButton_Click(object sender, EventArgs e)
+        {
+            {
+                AddPatient addPat = new AddPatient();
+                addPat.Show();
+                addPat.FormClosed += AddPat_FormClosed;
+
+            }
+
+        }
+
+        private void AddPat_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.pacjentTableAdapter.Fill(this.poradniaDataSet.PACJENT);
+        }
     }
 }
