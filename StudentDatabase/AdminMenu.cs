@@ -19,6 +19,10 @@ namespace StudentDatabase
 
         private void AdminMenu_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'poradniaDataSet.PACJENT' table. You can move, or remove it, as needed.
+            this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
+            // TODO: This line of code loads data into the 'poradniaDataSet.patient_view' table. You can move, or remove it, as needed.
+            this.patient_viewTableAdapter.Fill(this.poradniaDataSet.patient_view);
             DefaultRowCout();
             RefreshPacjenci();
             RefreshWizyta();
@@ -47,7 +51,7 @@ namespace StudentDatabase
         {
             this.patient_viewTableAdapter.Fill(this.poradniaDataSet.patient_view);
             this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
-            gridPacjenci.RefreshDataSource();
+            gridPacjent.RefreshDataSource();
         }
 
         public void RefreshWizyta()
@@ -205,14 +209,14 @@ namespace StudentDatabase
         {
             if (deleteModeBar.Checked == true)
             {
-                gridPacjenci.DataSource = this.poradniaDataSet.PACJENT;
-                gridPacjenci.Refresh();
+                gridPacjent.DataSource = this.poradniaDataSet.PACJENT;
+                gridPacjent.Refresh();
                 deleteButtonP.Enabled = true;
             }
             else
             {
-                gridPacjenci.DataSource = this.poradniaDataSet.patient_view;
-                gridPacjenci.Refresh();
+                gridPacjent.DataSource = this.poradniaDataSet.patient_view;
+                gridPacjent.Refresh();
                 deleteButtonP.Enabled = false;
             }
         }

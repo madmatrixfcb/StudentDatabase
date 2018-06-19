@@ -52,6 +52,7 @@ namespace StudentDatabase
             dowodLabelTB.Text = PatientData.pacjentRow["Dowod_osobisty"].ToString();
             passportLabelTB.Text = PatientData.pacjentRow["Paszport"].ToString();
             insuranceLabelTB.Text = PatientData.pacjentRow["Ubezpieczenie"].ToString();
+            ekuzNumberTB.Text = PatientData.pacjentRow["Numer_EKUZ"].ToString();
             gridControl1.Visible = false;
         }
 

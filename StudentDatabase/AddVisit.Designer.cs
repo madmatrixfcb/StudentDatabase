@@ -811,7 +811,7 @@
             // 
             // addPatientButton
             // 
-            this.addPatientButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.addPatientButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("addPatientButton.ImageOptions.Image")));
             this.addPatientButton.Location = new System.Drawing.Point(336, 6);
             this.addPatientButton.Name = "addPatientButton";
             this.addPatientButton.Size = new System.Drawing.Size(126, 23);

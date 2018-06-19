@@ -64,17 +64,18 @@ namespace StudentDatabase
                 string kod_pocztowy = Convert.ToString(kodTB.Text);
                 string miasto = Convert.ToString(miastoTB.Text);
                 string nr_pesel = Convert.ToString(peselTB.Text);
-                string nr_ekuz = Convert.ToString(ekuzTB.Text);
+                string kp = Convert.ToString(kpSelect.Text);
                 string dowod_osobisty = Convert.ToString(dowodTB.Text);
                 string nr_paszportu = Convert.ToString(paszportTB.Text);
                 string plec = Convert.ToString(plecSelect.SelectedValue);
                 string ubezpieczenie = Convert.ToString(ubezpieczenieSelect.SelectedValue);
+                string nr_ekuz = Convert.ToString(ekuzTB.Text);
 
                 if (Functions.CheckBirthDate(data_ur) == true)
                 {
                     try
                     {
-                        pACJENTTableAdapter.InsertQuery(imie, nazwisko, data_ur, kraj, telefon, plec, ulica, nr_budynku, nr_mieszkania, kod_pocztowy, miasto, nr_pesel, nr_ekuz, dowod_osobisty, nr_paszportu, ubezpieczenie);
+                        pACJENTTableAdapter.InsertQuery(imie, nazwisko, data_ur, kraj, telefon, plec, ulica, nr_budynku, nr_mieszkania, kod_pocztowy, miasto, nr_pesel, kp, dowod_osobisty, nr_paszportu, ubezpieczenie, nr_ekuz);
 
                         MessageBox.Show("Pacjent " + imieTB.Text + " " + nazwiskoTB.Text + " został dodany do bazy pacjentów", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

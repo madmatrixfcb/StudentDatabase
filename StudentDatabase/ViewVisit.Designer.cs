@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewVisit));
             this.patientviewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
@@ -117,6 +117,8 @@
             this.printButton = new DevExpress.XtraEditors.SimpleButton();
             this.exportToPDFButton = new DevExpress.XtraEditors.SimpleButton();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.ekuzNumberTB = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.patientviewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
@@ -180,6 +182,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICD1Label)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ekuzNumberTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // patientviewBindingSource
@@ -213,9 +217,9 @@
             // gridControl1
             // 
             this.gridControl1.DataSource = this.patientviewBindingSource;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(1224, 143);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -395,6 +399,7 @@
             this.layoutControl1.Controls.Add(this.dowodLabelTB);
             this.layoutControl1.Controls.Add(this.passportLabelTB);
             this.layoutControl1.Controls.Add(this.insuranceLabelTB);
+            this.layoutControl1.Controls.Add(this.ekuzNumberTB);
             this.layoutControl1.Location = new System.Drawing.Point(6, 12);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(472, 304, 450, 399);
@@ -429,31 +434,31 @@
             this.objawyLabelTB.Location = new System.Drawing.Point(168, 236);
             this.objawyLabelTB.Name = "objawyLabelTB";
             this.objawyLabelTB.Properties.ReadOnly = true;
-            this.objawyLabelTB.Size = new System.Drawing.Size(1166, 54);
+            this.objawyLabelTB.Size = new System.Drawing.Size(1166, 52);
             this.objawyLabelTB.StyleController = this.layoutControl1;
             this.objawyLabelTB.TabIndex = 16;
             // 
             // bprzedmiotoweLabelTB
             // 
-            this.bprzedmiotoweLabelTB.Location = new System.Drawing.Point(32, 312);
+            this.bprzedmiotoweLabelTB.Location = new System.Drawing.Point(32, 310);
             this.bprzedmiotoweLabelTB.Name = "bprzedmiotoweLabelTB";
             this.bprzedmiotoweLabelTB.Properties.ReadOnly = true;
-            this.bprzedmiotoweLabelTB.Size = new System.Drawing.Size(649, 169);
+            this.bprzedmiotoweLabelTB.Size = new System.Drawing.Size(649, 161);
             this.bprzedmiotoweLabelTB.StyleController = this.layoutControl1;
             this.bprzedmiotoweLabelTB.TabIndex = 16;
             // 
             // bpodmiotoweLabelTB
             // 
-            this.bpodmiotoweLabelTB.Location = new System.Drawing.Point(685, 312);
+            this.bpodmiotoweLabelTB.Location = new System.Drawing.Point(685, 310);
             this.bpodmiotoweLabelTB.Name = "bpodmiotoweLabelTB";
             this.bpodmiotoweLabelTB.Properties.ReadOnly = true;
-            this.bpodmiotoweLabelTB.Size = new System.Drawing.Size(649, 169);
+            this.bpodmiotoweLabelTB.Size = new System.Drawing.Size(649, 161);
             this.bpodmiotoweLabelTB.StyleController = this.layoutControl1;
             this.bpodmiotoweLabelTB.TabIndex = 16;
             // 
             // ICD1LabelTB
             // 
-            this.ICD1LabelTB.Location = new System.Drawing.Point(168, 485);
+            this.ICD1LabelTB.Location = new System.Drawing.Point(168, 475);
             this.ICD1LabelTB.Name = "ICD1LabelTB";
             this.ICD1LabelTB.Properties.ReadOnly = true;
             this.ICD1LabelTB.Size = new System.Drawing.Size(1166, 20);
@@ -462,7 +467,7 @@
             // 
             // ICD2LabelTB
             // 
-            this.ICD2LabelTB.Location = new System.Drawing.Point(168, 509);
+            this.ICD2LabelTB.Location = new System.Drawing.Point(168, 499);
             this.ICD2LabelTB.Name = "ICD2LabelTB";
             this.ICD2LabelTB.Properties.ReadOnly = true;
             this.ICD2LabelTB.Size = new System.Drawing.Size(1166, 20);
@@ -471,7 +476,7 @@
             // 
             // ICD3LabelTB
             // 
-            this.ICD3LabelTB.Location = new System.Drawing.Point(168, 533);
+            this.ICD3LabelTB.Location = new System.Drawing.Point(168, 523);
             this.ICD3LabelTB.Name = "ICD3LabelTB";
             this.ICD3LabelTB.Properties.ReadOnly = true;
             this.ICD3LabelTB.Size = new System.Drawing.Size(1166, 20);
@@ -480,28 +485,28 @@
             // 
             // rozpoznanieLabelTB
             // 
-            this.rozpoznanieLabelTB.Location = new System.Drawing.Point(32, 575);
+            this.rozpoznanieLabelTB.Location = new System.Drawing.Point(32, 565);
             this.rozpoznanieLabelTB.Name = "rozpoznanieLabelTB";
             this.rozpoznanieLabelTB.Properties.ReadOnly = true;
-            this.rozpoznanieLabelTB.Size = new System.Drawing.Size(1302, 85);
+            this.rozpoznanieLabelTB.Size = new System.Drawing.Size(1302, 79);
             this.rozpoznanieLabelTB.StyleController = this.layoutControl1;
             this.rozpoznanieLabelTB.TabIndex = 16;
             // 
             // lekiLabelTB
             // 
-            this.lekiLabelTB.Location = new System.Drawing.Point(32, 682);
+            this.lekiLabelTB.Location = new System.Drawing.Point(32, 666);
             this.lekiLabelTB.Name = "lekiLabelTB";
             this.lekiLabelTB.Properties.ReadOnly = true;
-            this.lekiLabelTB.Size = new System.Drawing.Size(649, 128);
+            this.lekiLabelTB.Size = new System.Drawing.Size(649, 144);
             this.lekiLabelTB.StyleController = this.layoutControl1;
             this.lekiLabelTB.TabIndex = 16;
             // 
             // zaleceniaLabelTB
             // 
-            this.zaleceniaLabelTB.Location = new System.Drawing.Point(685, 682);
+            this.zaleceniaLabelTB.Location = new System.Drawing.Point(685, 666);
             this.zaleceniaLabelTB.Name = "zaleceniaLabelTB";
             this.zaleceniaLabelTB.Properties.ReadOnly = true;
-            this.zaleceniaLabelTB.Size = new System.Drawing.Size(649, 128);
+            this.zaleceniaLabelTB.Size = new System.Drawing.Size(649, 144);
             this.zaleceniaLabelTB.StyleController = this.layoutControl1;
             this.zaleceniaLabelTB.TabIndex = 16;
             // 
@@ -564,15 +569,15 @@
             // 
             // addressLabelTB
             // 
-            this.addressLabelTB.Location = new System.Drawing.Point(130, 145);
+            this.addressLabelTB.Location = new System.Drawing.Point(489, 145);
             this.addressLabelTB.Name = "addressLabelTB";
-            this.addressLabelTB.Size = new System.Drawing.Size(1204, 20);
+            this.addressLabelTB.Size = new System.Drawing.Size(845, 20);
             this.addressLabelTB.StyleController = this.layoutControl1;
             this.addressLabelTB.TabIndex = 20;
             // 
             // phoneLabelTB
             // 
-            this.phoneLabelTB.Location = new System.Drawing.Point(130, 121);
+            this.phoneLabelTB.Location = new System.Drawing.Point(130, 145);
             this.phoneLabelTB.Name = "phoneLabelTB";
             this.phoneLabelTB.Size = new System.Drawing.Size(257, 20);
             this.phoneLabelTB.StyleController = this.layoutControl1;
@@ -604,9 +609,9 @@
             // 
             // passportLabelTB
             // 
-            this.passportLabelTB.Location = new System.Drawing.Point(489, 121);
+            this.passportLabelTB.Location = new System.Drawing.Point(130, 121);
             this.passportLabelTB.Name = "passportLabelTB";
-            this.passportLabelTB.Size = new System.Drawing.Size(276, 20);
+            this.passportLabelTB.Size = new System.Drawing.Size(257, 20);
             this.passportLabelTB.StyleController = this.layoutControl1;
             this.passportLabelTB.TabIndex = 25;
             // 
@@ -687,7 +692,7 @@
             this.objawyLabel.CustomizationFormText = "Objawy:";
             this.objawyLabel.Location = new System.Drawing.Point(0, 24);
             this.objawyLabel.Name = "objawyLabel";
-            this.objawyLabel.Size = new System.Drawing.Size(1306, 58);
+            this.objawyLabel.Size = new System.Drawing.Size(1306, 56);
             this.objawyLabel.Text = "Objawy:";
             this.objawyLabel.TextLocation = DevExpress.Utils.Locations.Left;
             this.objawyLabel.TextSize = new System.Drawing.Size(131, 13);
@@ -698,9 +703,9 @@
             this.bprzedmiotoweLabel.AppearanceItemCaption.Options.UseFont = true;
             this.bprzedmiotoweLabel.Control = this.bprzedmiotoweLabelTB;
             this.bprzedmiotoweLabel.CustomizationFormText = "Badanie przedmiotowe:";
-            this.bprzedmiotoweLabel.Location = new System.Drawing.Point(0, 82);
+            this.bprzedmiotoweLabel.Location = new System.Drawing.Point(0, 80);
             this.bprzedmiotoweLabel.Name = "bprzedmiotoweLabel";
-            this.bprzedmiotoweLabel.Size = new System.Drawing.Size(653, 191);
+            this.bprzedmiotoweLabel.Size = new System.Drawing.Size(653, 183);
             this.bprzedmiotoweLabel.Text = "Badanie przedmiotowe:";
             this.bprzedmiotoweLabel.TextLocation = DevExpress.Utils.Locations.Top;
             this.bprzedmiotoweLabel.TextSize = new System.Drawing.Size(131, 13);
@@ -711,7 +716,7 @@
             this.ICD1Label1.AppearanceItemCaption.Options.UseFont = true;
             this.ICD1Label1.Control = this.ICD1LabelTB;
             this.ICD1Label1.CustomizationFormText = "Kod ICD 1:";
-            this.ICD1Label1.Location = new System.Drawing.Point(0, 273);
+            this.ICD1Label1.Location = new System.Drawing.Point(0, 263);
             this.ICD1Label1.Name = "ICD1Label1";
             this.ICD1Label1.Size = new System.Drawing.Size(1306, 24);
             this.ICD1Label1.Text = "Kod ICD 1:";
@@ -724,9 +729,9 @@
             this.rozpoznanieLabel.AppearanceItemCaption.Options.UseFont = true;
             this.rozpoznanieLabel.Control = this.rozpoznanieLabelTB;
             this.rozpoznanieLabel.CustomizationFormText = "Rozpoznanie:";
-            this.rozpoznanieLabel.Location = new System.Drawing.Point(0, 345);
+            this.rozpoznanieLabel.Location = new System.Drawing.Point(0, 335);
             this.rozpoznanieLabel.Name = "rozpoznanieLabel";
-            this.rozpoznanieLabel.Size = new System.Drawing.Size(1306, 107);
+            this.rozpoznanieLabel.Size = new System.Drawing.Size(1306, 101);
             this.rozpoznanieLabel.Text = "Rozpoznanie:";
             this.rozpoznanieLabel.TextLocation = DevExpress.Utils.Locations.Top;
             this.rozpoznanieLabel.TextSize = new System.Drawing.Size(131, 13);
@@ -737,9 +742,9 @@
             this.lekiLabel.AppearanceItemCaption.Options.UseFont = true;
             this.lekiLabel.Control = this.lekiLabelTB;
             this.lekiLabel.CustomizationFormText = "Leki:";
-            this.lekiLabel.Location = new System.Drawing.Point(0, 452);
+            this.lekiLabel.Location = new System.Drawing.Point(0, 436);
             this.lekiLabel.Name = "lekiLabel";
-            this.lekiLabel.Size = new System.Drawing.Size(653, 150);
+            this.lekiLabel.Size = new System.Drawing.Size(653, 166);
             this.lekiLabel.Text = "Leki:";
             this.lekiLabel.TextLocation = DevExpress.Utils.Locations.Top;
             this.lekiLabel.TextSize = new System.Drawing.Size(131, 13);
@@ -763,9 +768,9 @@
             this.bpodmiotoweLabel.AppearanceItemCaption.Options.UseFont = true;
             this.bpodmiotoweLabel.Control = this.bpodmiotoweLabelTB;
             this.bpodmiotoweLabel.CustomizationFormText = "Badanie podmiotowe:";
-            this.bpodmiotoweLabel.Location = new System.Drawing.Point(653, 82);
+            this.bpodmiotoweLabel.Location = new System.Drawing.Point(653, 80);
             this.bpodmiotoweLabel.Name = "bpodmiotoweLabel";
-            this.bpodmiotoweLabel.Size = new System.Drawing.Size(653, 191);
+            this.bpodmiotoweLabel.Size = new System.Drawing.Size(653, 183);
             this.bpodmiotoweLabel.Text = "Badanie podmiotowe:";
             this.bpodmiotoweLabel.TextLocation = DevExpress.Utils.Locations.Top;
             this.bpodmiotoweLabel.TextSize = new System.Drawing.Size(131, 13);
@@ -776,9 +781,9 @@
             this.zaleceniaLabel.AppearanceItemCaption.Options.UseFont = true;
             this.zaleceniaLabel.Control = this.zaleceniaLabelTB;
             this.zaleceniaLabel.CustomizationFormText = "Zalecenia:";
-            this.zaleceniaLabel.Location = new System.Drawing.Point(653, 452);
+            this.zaleceniaLabel.Location = new System.Drawing.Point(653, 436);
             this.zaleceniaLabel.Name = "zaleceniaLabel";
-            this.zaleceniaLabel.Size = new System.Drawing.Size(653, 150);
+            this.zaleceniaLabel.Size = new System.Drawing.Size(653, 166);
             this.zaleceniaLabel.Text = "Zalecenia:";
             this.zaleceniaLabel.TextLocation = DevExpress.Utils.Locations.Top;
             this.zaleceniaLabel.TextSize = new System.Drawing.Size(131, 13);
@@ -802,7 +807,7 @@
             this.ICD2Label.AppearanceItemCaption.Options.UseFont = true;
             this.ICD2Label.Control = this.ICD2LabelTB;
             this.ICD2Label.CustomizationFormText = "Kod ICD 2:";
-            this.ICD2Label.Location = new System.Drawing.Point(0, 297);
+            this.ICD2Label.Location = new System.Drawing.Point(0, 287);
             this.ICD2Label.Name = "ICD2Label";
             this.ICD2Label.Size = new System.Drawing.Size(1306, 24);
             this.ICD2Label.Text = "Kod ICD 2:";
@@ -815,7 +820,7 @@
             this.ICD3Label.AppearanceItemCaption.Options.UseFont = true;
             this.ICD3Label.Control = this.ICD3LabelTB;
             this.ICD3Label.CustomizationFormText = "Kod ICD 3:";
-            this.ICD3Label.Location = new System.Drawing.Point(0, 321);
+            this.ICD3Label.Location = new System.Drawing.Point(0, 311);
             this.ICD3Label.Name = "ICD3Label";
             this.ICD3Label.Size = new System.Drawing.Size(1306, 24);
             this.ICD3Label.Text = "Kod ICD 3:";
@@ -839,9 +844,10 @@
             this.layoutControlItem12,
             this.layoutControlItem4,
             this.layoutControlItem14,
-            this.layoutControlItem9,
             this.layoutControlItem10,
-            this.layoutControlItem11});
+            this.layoutControlItem11,
+            this.layoutControlItem9,
+            this.layoutControlItem7});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(1330, 139);
@@ -863,9 +869,9 @@
             this.layoutControlItem8.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.layoutControlItem8.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem8.Control = this.addressLabelTB;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem8.Location = new System.Drawing.Point(359, 72);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(1306, 24);
+            this.layoutControlItem8.Size = new System.Drawing.Size(947, 24);
             this.layoutControlItem8.Text = "Adres:";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(93, 13);
             // 
@@ -919,9 +925,9 @@
             this.layoutControlItem13.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.layoutControlItem13.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem13.Control = this.passportLabelTB;
-            this.layoutControlItem13.Location = new System.Drawing.Point(359, 48);
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(378, 24);
+            this.layoutControlItem13.Size = new System.Drawing.Size(359, 24);
             this.layoutControlItem13.Text = "Paszport:";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(93, 13);
             // 
@@ -963,7 +969,7 @@
             this.layoutControlItem9.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.layoutControlItem9.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem9.Control = this.phoneLabelTB;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 72);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(359, 24);
             this.layoutControlItem9.Text = "Telefon:";
@@ -1036,6 +1042,27 @@
             this.exportToPDFButton.TabIndex = 3;
             this.exportToPDFButton.Text = "Eksport do PDF";
             this.exportToPDFButton.Click += new System.EventHandler(this.exportToPDFButton_Click);
+            // 
+            // ekuzNumberTB
+            // 
+            this.ekuzNumberTB.Location = new System.Drawing.Point(489, 121);
+            this.ekuzNumberTB.Name = "ekuzNumberTB";
+            this.ekuzNumberTB.Size = new System.Drawing.Size(276, 20);
+            this.ekuzNumberTB.StyleController = this.layoutControl1;
+            this.ekuzNumberTB.TabIndex = 27;
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem7.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem7.Control = this.ekuzNumberTB;
+            this.layoutControlItem7.Location = new System.Drawing.Point(359, 48);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem7.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem7.Size = new System.Drawing.Size(378, 24);
+            this.layoutControlItem7.Text = "Numer EKUZ:";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(93, 13);
             // 
             // ViewVisit
             // 
@@ -1113,6 +1140,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICD1Label)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ekuzNumberTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1204,5 +1233,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private DevExpress.XtraEditors.TextEdit ekuzNumberTB;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }
 }
