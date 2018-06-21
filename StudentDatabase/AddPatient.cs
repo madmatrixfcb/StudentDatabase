@@ -8,7 +8,6 @@ namespace StudentDatabase
         public AddPatient()
         {
             InitializeComponent();
-            
         }
 
         private void AddPatient_Load(object sender, EventArgs e)
@@ -46,10 +45,12 @@ namespace StudentDatabase
                 ekuzTB.Enabled = false;
             }
         }
+
         //-----------------------BUTTONS----------------------------------/
         private void AddPatient2_Click(object sender, EventArgs e)
         {
             bool isValid = dxValidationProvider.Validate();
+            //bool injectionOK = dxValidationProviderInjection.Validate();
 
             if (isValid == true)
             {
@@ -71,19 +72,27 @@ namespace StudentDatabase
                 string ubezpieczenie = Convert.ToString(ubezpieczenieSelect.SelectedValue);
                 string nr_ekuz = Convert.ToString(ekuzTB.Text);
 
-                if (Functions.CheckBirthDate(data_ur) == true)
+                if (FunctionsPatient.CheckBirthDate(data_ur) == true)
                 {
-                    try
+                    int pacjentDuplicateCount = Convert.ToInt16(pACJENTTableAdapter.PatientCount(nr_pesel, dowod_osobisty, nr_paszportu, nr_ekuz));
+                    if (pacjentDuplicateCount == 0)
                     {
-                        pACJENTTableAdapter.InsertQuery(imie, nazwisko, data_ur, kraj, telefon, plec, ulica, nr_budynku, nr_mieszkania, kod_pocztowy, miasto, nr_pesel, kp, dowod_osobisty, nr_paszportu, ubezpieczenie, nr_ekuz);
+                        try
+                        {
+                            pACJENTTableAdapter.InsertQuery(imie, nazwisko, data_ur, kraj, telefon, plec, ulica, nr_budynku, nr_mieszkania, kod_pocztowy, miasto, nr_pesel, kp, dowod_osobisty, nr_paszportu, ubezpieczenie, nr_ekuz);
 
-                        MessageBox.Show("Pacjent " + imieTB.Text + " " + nazwiskoTB.Text + " został dodany do bazy pacjentów", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Pacjent " + imie + " " + nazwisko + " został dodany do bazy pacjentów", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        this.Close();
+                            this.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("W jednym z pól: PESEL, Dowód osobisty, Paszport lub Numer EKUZ, jest wpisana wartość, która występuje już w bazie pacjentów", "Duplikat", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -112,19 +121,32 @@ namespace StudentDatabase
 
         private void checkPESEL_Click(object sender, EventArgs e)
         {
-            if (Functions.ValidatePesel(peselTB.Text) == true)
+            if (FunctionsPatient.ValidatePesel(peselTB.Text) == true)
             {
                 checkPESEL.ImageOptions.Image = DevExpress.Images.ImageResourceCache.Default.GetImage("images/actions/apply_32x32.png");
-                //MessageBox.Show("OK", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dataur.Text = Functions.InfoPESEL.szDate;
-                plecSelect.SelectedIndex = Functions.InfoPESEL.plec;
+                dataur.Text = FunctionsPatient.InfoPESEL.szDate;
+                plecSelect.SelectedIndex = FunctionsPatient.InfoPESEL.plec;
             }
             else
             {
-                //MessageBox.Show("Źle", "Źle", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 checkPESEL.ImageOptions.Image = DevExpress.Images.ImageResourceCache.Default.GetImage("images/actions/cancel_32x32.png");
             }
-            
+        }
+
+        private void peselTB_EditValueChanged(object sender, EventArgs e)
+        {
+            if (FunctionsPatient.ValidatePesel(peselTB.Text) == true)
+            {
+                checkPESEL.ImageOptions.Image = DevExpress.Images.ImageResourceCache.Default.GetImage("images/actions/apply_32x32.png");
+                checkPESEL.Text = "Pesel OK";
+                dataur.Text = FunctionsPatient.InfoPESEL.szDate;
+                plecSelect.SelectedIndex = FunctionsPatient.InfoPESEL.plec;
+            }
+            else
+            {
+                checkPESEL.ImageOptions.Image = DevExpress.Images.ImageResourceCache.Default.GetImage("images/actions/cancel_32x32.png");
+                checkPESEL.Text = "Pesel ZŁY";
+            }
         }
     }
 }

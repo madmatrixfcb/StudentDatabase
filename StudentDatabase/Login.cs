@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using System.Security.Cryptography;
 
 namespace StudentDatabase
 {
@@ -17,7 +9,6 @@ namespace StudentDatabase
         public Login()
         {
             InitializeComponent();
-
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -25,7 +16,6 @@ namespace StudentDatabase
             // TODO: This line of code loads data into the 'poradniaDataSet.UZYTKOWNIK' table. You can move, or remove it, as needed.
             //this.uzytkownikTableAdapter.Fill(this.poradniaDataSet.UZYTKOWNIK);
             this.AcceptButton = loginButton;
-
         }
 
         private void txtMessage_KeyPress(object sender, KeyEventArgs e)
@@ -42,6 +32,7 @@ namespace StudentDatabase
             public static string pass;
             public static string userType;
             public static sbyte userID;
+            public static bool changePassword = false;
         }
 
         //-------------------SHA-----------------------/
@@ -61,13 +52,11 @@ namespace StudentDatabase
 
         public void loginButton_Click(object sender, EventArgs e)
         {
+            bool isValid = dxValidationProvider.Validate();
+            bool changePassValid = dxValidationUpdatePassword.Validate();
 
-
-            bool isValid = dxValidationProvider1.Validate();
-
-            if (isValid == true)
+            if (isValid == true && LoginInfo.changePassword == false)
             {
-
                 LoginInfo.login = Convert.ToString(loginBox.Text);
                 LoginInfo.pass = GetSHA1HashData(Convert.ToString(passBox.Text));
                 LoginInfo.userType = Convert.ToString(uzytkownikTableAdapter.SelectLogin(LoginInfo.login, LoginInfo.pass));
@@ -82,7 +71,6 @@ namespace StudentDatabase
                         adminMenu.ShowDialog();
                         this.Close();
                     }
-
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -97,13 +85,11 @@ namespace StudentDatabase
                         adminMenu.ShowDialog();
                         this.Close();
                     }
-
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-
                 else
                 {
                     MessageBox.Show("Wprowadzono nieprawidłowe dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -111,12 +97,63 @@ namespace StudentDatabase
                     passBox.ResetText();
                 }
             }
+            else if (changePassValid == true && LoginInfo.changePassword == true)
+            {
+                string newPass = GetSHA1HashData(Convert.ToString(newPassBox.Text));
+                LoginInfo.login = Convert.ToString(loginBox.Text);
+                LoginInfo.pass = GetSHA1HashData(Convert.ToString(passBox.Text));
+                LoginInfo.userID = Convert.ToSByte(uzytkownikTableAdapter.SelectUserID(LoginInfo.login, LoginInfo.pass));
+                if (LoginInfo.userID > 0)
+                {
+                    try
+                    {
+
+                        uzytkownikTableAdapter.UpdatePassword(newPass, LoginInfo.userID);
+                        MessageBox.Show("Hasło dla użytkownika " + LoginInfo.login + " zostało zmienione", "Hasło zmienione", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        changePasswordControl_Click(sender, e);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Wystąpił błąd podczas zmiany hasła dla użytkownika " + LoginInfo.login, "Hasło nie zostało zmienione", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Użytkownik " + LoginInfo.login + " nie istnieje lub stare hasło jest niepoprawne", "Hasło nie zostało zmienione", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
             else
             {
                 MessageBox.Show("Wprowadzono nieprawidłowe dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
+        private void changePasswordControl_Click(object sender, EventArgs e)
+        {
+            if (LoginInfo.changePassword == false)
+            {
+                loginButton.Text = "Zmień hasło";
+                changePasswordControl.Text = "Wróć";
+                currentPassLabel.Text = "Stare hasło:";
+                newPassBox.Visible = true;
+                newPassLabel.Visible = true;
+                LoginInfo.changePassword = true;
+                loginBox.EditValue = "";
+                passBox.EditValue = "";
+                newPassBox.EditValue = "";
+            }
+
+            else
+            {
+                loginButton.Text = "Zaloguj się";
+                changePasswordControl.Text = "Zmień hasło";
+                currentPassLabel.Text = "Hasło:";
+                newPassBox.Visible = false;
+                newPassLabel.Visible = false;
+                LoginInfo.changePassword = false;
+                loginBox.EditValue = "";
+                passBox.EditValue = "";
+            }
+        }
     }
 }

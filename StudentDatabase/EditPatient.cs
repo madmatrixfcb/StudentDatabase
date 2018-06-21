@@ -88,7 +88,7 @@ namespace StudentDatabase
                 string ubezpieczenie = Convert.ToString(ubezpieczenieSelect.SelectedValue);
                 string nr_ekuz = Convert.ToString(ekuzTB.Text);
 
-                if (Functions.CheckBirthDate(data_ur) == true)
+                if (FunctionsPatient.CheckBirthDate(data_ur) == true)
                 {
                     try
                     {
@@ -123,12 +123,12 @@ namespace StudentDatabase
 
         private void checkPESEL_Click(object sender, EventArgs e)
         {
-            if (Functions.ValidatePesel(peselTB.Text) == true)
+            if (FunctionsPatient.ValidatePesel(peselTB.Text) == true)
             {
                 checkPESEL.ImageOptions.Image = DevExpress.Images.ImageResourceCache.Default.GetImage("images/actions/apply_32x32.png");
                 //MessageBox.Show("OK", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dataur.Text = Functions.InfoPESEL.szDate;
-                plecSelect.SelectedIndex = Functions.InfoPESEL.plec;
+                dataur.Text = FunctionsPatient.InfoPESEL.szDate;
+                plecSelect.SelectedIndex = FunctionsPatient.InfoPESEL.plec;
             }
             else
             {

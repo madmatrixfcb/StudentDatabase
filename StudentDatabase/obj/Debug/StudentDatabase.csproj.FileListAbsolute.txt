@@ -4,7 +4,6 @@ F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\Student
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\DevExpress.BonusSkins.v17.1.dll
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\DevExpress.Data.v17.1.dll
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\DevExpress.Diagram.v17.1.Core.dll
-F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\DevExpress.Images.v17.1.dll
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\DevExpress.Office.v17.1.Core.dll
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\DevExpress.Pdf.v17.1.Core.dll
 F:\Visual Studio 2015\Projects\StudentDatabase\StudentDatabase\bin\Debug\DevExpress.Pdf.v17.1.Drawing.dll

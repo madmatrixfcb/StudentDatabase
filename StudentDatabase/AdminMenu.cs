@@ -13,7 +13,8 @@ namespace StudentDatabase
             InitializeComponent();
             time.Start();
             tabPane1.SelectedPage = null;
-            PaneStartup(SelectedPane.selectedId);
+            //PaneStartup(SelectedPane.selectedId);
+            PaneStart2();
             UserInfo();
         }
 
@@ -100,13 +101,22 @@ namespace StudentDatabase
             public static int selectedId;
         }
 
+        private void PaneStart2()
+        {
+            if (SelectedPane.selectedId == 1)
+            {
+                tabPane1.SelectedPage = PacjenciPage;
+            }
+        }
+
         private void PaneStartup(int pane)
         {
-            switch (pane)
+            switch (SelectedPane.selectedId)
             {
                 case 1:
                     {
-                        tabPane1.SelectedPage = PacjenciPage;
+                        PacjenciPage.Select();
+                        //tabPane1.SelectedPageIndex = 1;
                         break;
                     }
                 case 2:
@@ -147,61 +157,7 @@ namespace StudentDatabase
         //-----------------------RIBBON ENABLING----------------------------------/
         public void TabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
         {
-            PacjenciGroup.Enabled = false;
-            UbezpieczenieGroup.Enabled = false;
-            ICDGroup.Enabled = false;
-            WizytaGroup.Enabled = false;
-            UmowWizyteGroup.Enabled = false;
-            StatystykiGroup.Enabled = false;
-            P.Enabled = false;
 
-            if (tabPane1.SelectedPage == PacjenciPage)
-            {
-                PacjenciGroup.Enabled = true;
-                if (Login.LoginInfo.userType == "Admin")
-                {
-                    P.Enabled = true;
-                }
-                RefreshPacjenci();
-            }
-
-            if (tabPane1.SelectedPage == UbezpieczeniePage)
-            {
-                
-                RefreshUbezpieczenie();
-                if (Login.LoginInfo.userType == "Admin")
-                {
-                    UbezpieczenieGroup.Enabled = true;
-                }
-            }
-
-            if (tabPane1.SelectedPage == ICDPage)
-            {
-                RefreshICD();
-                if (Login.LoginInfo.userType == "Admin")
-                {
-                    ICDGroup.Enabled = true;
-                }
-            }
-            
-
-            if (tabPane1.SelectedPage == WizytaPage)
-            {
-                WizytaGroup.Enabled = true;
-                RefreshWizyta();
-            }
-
-            if (tabPane1.SelectedPage == StatystykiPage)
-            {
-                StatystykiGroup.Enabled = true;
-                RefreshStatystyki();
-            }
-
-            if (tabPane1.SelectedPage == UmowWizytePage)
-            {
-                UmowWizyteGroup.Enabled = true;
-                RefreshUmowWizyte();
-            }
         }
 
         //-----------------------------------DELETE BAR-----------------------------------//
