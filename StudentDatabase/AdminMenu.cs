@@ -13,17 +13,13 @@ namespace StudentDatabase
             InitializeComponent();
             time.Start();
             tabPane1.SelectedPage = null;
-            //PaneStartup(SelectedPane.selectedId);
-            PaneStart2();
+            PaneStartup(SelectedPane.selectedId);
+           // PaneStart2();
             UserInfo();
         }
 
         private void AdminMenu_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'poradniaDataSet.PACJENT' table. You can move, or remove it, as needed.
-            this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
-            // TODO: This line of code loads data into the 'poradniaDataSet.patient_view' table. You can move, or remove it, as needed.
-            this.patient_viewTableAdapter.Fill(this.poradniaDataSet.patient_view);
             DefaultRowCout();
             RefreshPacjenci();
             RefreshWizyta();
@@ -157,7 +153,61 @@ namespace StudentDatabase
         //-----------------------RIBBON ENABLING----------------------------------/
         public void TabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
         {
+            PacjenciGroup.Enabled = false;
+            UbezpieczenieGroup.Enabled = false;
+            ICDGroup.Enabled = false;
+            WizytaGroup.Enabled = false;
+            UmowWizyteGroup.Enabled = false;
+            StatystykiGroup.Enabled = false;
+            P.Enabled = false;
 
+            if (tabPane1.SelectedPage == PacjenciPage)
+            {
+                PacjenciGroup.Enabled = true;
+                if (Login.LoginInfo.userType == "Admin")
+                {
+                    P.Enabled = true;
+                }
+                RefreshPacjenci();
+            }
+
+            if (tabPane1.SelectedPage == UbezpieczeniePage)
+            {
+
+                RefreshUbezpieczenie();
+                if (Login.LoginInfo.userType == "Admin")
+                {
+                    UbezpieczenieGroup.Enabled = true;
+                }
+            }
+
+            if (tabPane1.SelectedPage == ICDPage)
+            {
+                RefreshICD();
+                if (Login.LoginInfo.userType == "Admin")
+                {
+                    ICDGroup.Enabled = true;
+                }
+            }
+
+
+            if (tabPane1.SelectedPage == WizytaPage)
+            {
+                WizytaGroup.Enabled = true;
+                RefreshWizyta();
+            }
+
+            if (tabPane1.SelectedPage == StatystykiPage)
+            {
+                StatystykiGroup.Enabled = true;
+                RefreshStatystyki();
+            }
+
+            if (tabPane1.SelectedPage == UmowWizytePage)
+            {
+                UmowWizyteGroup.Enabled = true;
+                RefreshUmowWizyte();
+            }
         }
 
         //-----------------------------------DELETE BAR-----------------------------------//
@@ -470,6 +520,18 @@ namespace StudentDatabase
         {
             RefreshUmowWizyte();
         }
+        public static class ArrangedVisitParams
+        {
+            public static int arrangedVisitID;
+            public static bool arrangeStatus;
+            public static DataRow arrangeVisitRow;
+            public static bool arrangedVisit = false;
+        }
+
+        private void gridViewUmowWizyte_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            ArrangedVisitParams.arrangedVisitID = Convert.ToInt16(gridViewUmowWizyte.GetRowCellValue(e.FocusedRowHandle, "ID_Umow_Wizyte"));
+        }
 
         private void deleteArrangedVisitButton_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -478,7 +540,8 @@ namespace StudentDatabase
             {
                 try
                 {
-                    gridViewUmowWizyte.DeleteRow(gridViewUmowWizyte.FocusedRowHandle);
+                    uMOW_WIZTETableAdapter.DeleteArrangedVisit(ArrangedVisitParams.arrangedVisitID);
+                    //gridViewUmowWizyte.DeleteRow(gridViewUmowWizyte.FocusedRowHandle);
                     this.uMOW_WIZTETableAdapter.Update(poradniaDataSet.UMOW_WIZTE);
                     MessageBox.Show("Wizyta usunięta", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     RefreshWizyta();
@@ -494,20 +557,20 @@ namespace StudentDatabase
             }
         }
 
-        public static class ArrangeVisitPreview
-        {
-            public static DataRow arrangeVisitRow;
-            public static bool arrangedVisit = false;
-        }
-
         private void startArrangedVisitButton_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ArrangeVisitPreview.arrangedVisit = true;
-            ArrangeVisitPreview.arrangeVisitRow = gridViewUmowWizyte.GetFocusedDataRow();
+            ArrangedVisitParams.arrangedVisit = true;
+            ArrangedVisitParams.arrangeVisitRow = gridViewUmowWizyte.GetFocusedDataRow();
             AddVisit add_Visit = new AddVisit();
             add_Visit.Show();
             add_Visit.FormClosed += Add_Visit_FormClosed;
-            ArrangeVisitPreview.arrangedVisit = false;
+            ArrangedVisitParams.arrangedVisit = false;
+            if (ArrangedVisitParams.arrangeStatus == true)
+            {
+                uMOW_WIZTETableAdapter.DeleteArrangedVisit(ArrangedVisitParams.arrangedVisitID);
+                ArrangedVisitParams.arrangeStatus = false;
+            }
+
         }
 
         //-----------------------------------STATISTICS RIBBON-----------------------------------//

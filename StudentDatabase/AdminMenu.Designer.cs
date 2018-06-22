@@ -796,6 +796,7 @@
             this.tabPane1.Size = new System.Drawing.Size(1918, 549);
             this.tabPane1.TabIndex = 6;
             this.tabPane1.Text = "tabPane1";
+            this.tabPane1.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.TabPane1_SelectedPageChanged);
             // 
             // PacjenciPage
             // 
@@ -856,6 +857,7 @@
             // 
             // colID_Pacjent
             // 
+            this.colID_Pacjent.Caption = "Numer pacjenta";
             this.colID_Pacjent.FieldName = "ID_Pacjent";
             this.colID_Pacjent.Name = "colID_Pacjent";
             this.colID_Pacjent.Visible = true;
@@ -863,6 +865,7 @@
             // 
             // colImie
             // 
+            this.colImie.CustomizationCaption = "Imię";
             this.colImie.FieldName = "Imie";
             this.colImie.Name = "colImie";
             this.colImie.Visible = true;
@@ -877,6 +880,7 @@
             // 
             // colData_urodzenia
             // 
+            this.colData_urodzenia.Caption = "Data urodzenia";
             this.colData_urodzenia.FieldName = "Data_urodzenia";
             this.colData_urodzenia.Name = "colData_urodzenia";
             this.colData_urodzenia.Visible = true;
@@ -898,6 +902,7 @@
             // 
             // colPlec
             // 
+            this.colPlec.Caption = "Płeć";
             this.colPlec.FieldName = "Plec";
             this.colPlec.Name = "colPlec";
             this.colPlec.Visible = true;
@@ -912,6 +917,7 @@
             // 
             // colNr_budynku
             // 
+            this.colNr_budynku.Caption = "Numer budynku";
             this.colNr_budynku.FieldName = "Nr_budynku";
             this.colNr_budynku.Name = "colNr_budynku";
             this.colNr_budynku.Visible = true;
@@ -919,6 +925,7 @@
             // 
             // colNr_mieszkania
             // 
+            this.colNr_mieszkania.Caption = "Numer mieszkania";
             this.colNr_mieszkania.FieldName = "Nr_mieszkania";
             this.colNr_mieszkania.Name = "colNr_mieszkania";
             this.colNr_mieszkania.Visible = true;
@@ -926,6 +933,7 @@
             // 
             // colKod_pocztowy
             // 
+            this.colKod_pocztowy.Caption = "Kod pocztowy";
             this.colKod_pocztowy.FieldName = "Kod_pocztowy";
             this.colKod_pocztowy.Name = "colKod_pocztowy";
             this.colKod_pocztowy.Visible = true;
@@ -940,6 +948,7 @@
             // 
             // colPESEL
             // 
+            this.colPESEL.Caption = "Numer PESEL";
             this.colPESEL.FieldName = "PESEL";
             this.colPESEL.Name = "colPESEL";
             this.colPESEL.Visible = true;
@@ -947,6 +956,7 @@
             // 
             // colKarta_polaka
             // 
+            this.colKarta_polaka.Caption = "Karta Polaka";
             this.colKarta_polaka.FieldName = "Karta_polaka";
             this.colKarta_polaka.Name = "colKarta_polaka";
             this.colKarta_polaka.Visible = true;
@@ -954,6 +964,7 @@
             // 
             // colDowod_osobisty
             // 
+            this.colDowod_osobisty.Caption = "Dowód osobisty";
             this.colDowod_osobisty.FieldName = "Dowod_osobisty";
             this.colDowod_osobisty.Name = "colDowod_osobisty";
             this.colDowod_osobisty.Visible = true;
@@ -975,6 +986,7 @@
             // 
             // colNumer_EKUZ
             // 
+            this.colNumer_EKUZ.Caption = "Numer EKUZ";
             this.colNumer_EKUZ.FieldName = "Numer_EKUZ";
             this.colNumer_EKUZ.Name = "colNumer_EKUZ";
             this.colNumer_EKUZ.Visible = true;
@@ -1156,6 +1168,7 @@
             // 
             // colID_Wizyta
             // 
+            this.colID_Wizyta.Caption = "Numer wizyty";
             this.colID_Wizyta.FieldName = "ID_Wizyta";
             this.colID_Wizyta.Name = "colID_Wizyta";
             this.colID_Wizyta.Visible = true;
@@ -1163,6 +1176,7 @@
             // 
             // colID_Pacjent1
             // 
+            this.colID_Pacjent1.Caption = "Numer pacjenta";
             this.colID_Pacjent1.FieldName = "ID_Pacjent";
             this.colID_Pacjent1.Name = "colID_Pacjent1";
             this.colID_Pacjent1.Visible = true;
@@ -1170,6 +1184,7 @@
             // 
             // colPacjent
             // 
+            this.colPacjent.Caption = "Imię i nazwisko pacjenta";
             this.colPacjent.FieldName = "Pacjent";
             this.colPacjent.Name = "colPacjent";
             this.colPacjent.Visible = true;
@@ -1198,6 +1213,7 @@
             // 
             // colBPrzedmiotowe
             // 
+            this.colBPrzedmiotowe.Caption = "Badanie przedmiotowe";
             this.colBPrzedmiotowe.FieldName = "BPrzedmiotowe";
             this.colBPrzedmiotowe.Name = "colBPrzedmiotowe";
             this.colBPrzedmiotowe.Visible = true;
@@ -1205,6 +1221,7 @@
             // 
             // colBPodmiotowe
             // 
+            this.colBPodmiotowe.Caption = "Badanie podmiotowe";
             this.colBPodmiotowe.FieldName = "BPodmiotowe";
             this.colBPodmiotowe.Name = "colBPodmiotowe";
             this.colBPodmiotowe.Visible = true;
@@ -1212,6 +1229,7 @@
             // 
             // colID_ICD_1
             // 
+            this.colID_ICD_1.Caption = "Kod ICD 1";
             this.colID_ICD_1.FieldName = "ID_ICD_1";
             this.colID_ICD_1.Name = "colID_ICD_1";
             this.colID_ICD_1.Visible = true;
@@ -1219,6 +1237,7 @@
             // 
             // colID_ICD_2
             // 
+            this.colID_ICD_2.Caption = "Kod ICD 2";
             this.colID_ICD_2.FieldName = "ID_ICD_2";
             this.colID_ICD_2.Name = "colID_ICD_2";
             this.colID_ICD_2.Visible = true;
@@ -1226,6 +1245,7 @@
             // 
             // colID_ICD_3
             // 
+            this.colID_ICD_3.Caption = "Kod ICD 3";
             this.colID_ICD_3.FieldName = "ID_ICD_3";
             this.colID_ICD_3.Name = "colID_ICD_3";
             this.colID_ICD_3.Visible = true;
@@ -1254,6 +1274,7 @@
             // 
             // colID_Lekarz
             // 
+            this.colID_Lekarz.Caption = "Lekarz przyjmujący";
             this.colID_Lekarz.FieldName = "ID_Lekarz";
             this.colID_Lekarz.Name = "colID_Lekarz";
             this.colID_Lekarz.Visible = true;
@@ -1303,9 +1324,11 @@
             this.gridViewUmowWizyte.OptionsFind.ShowFindButton = false;
             this.gridViewUmowWizyte.OptionsView.ShowFooter = true;
             this.gridViewUmowWizyte.OptionsView.ShowGroupPanel = false;
+            this.gridViewUmowWizyte.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewUmowWizyte_FocusedRowChanged);
             // 
             // colID_Umow_Wizyte
             // 
+            this.colID_Umow_Wizyte.Caption = "Numer umówionej wizyty";
             this.colID_Umow_Wizyte.FieldName = "ID_Umow_Wizyte";
             this.colID_Umow_Wizyte.Name = "colID_Umow_Wizyte";
             this.colID_Umow_Wizyte.Visible = true;
@@ -1313,6 +1336,7 @@
             // 
             // colID_Pacjent3
             // 
+            this.colID_Pacjent3.Caption = "Numer pacjenta";
             this.colID_Pacjent3.FieldName = "ID_Pacjent";
             this.colID_Pacjent3.Name = "colID_Pacjent3";
             this.colID_Pacjent3.Visible = true;
@@ -1320,6 +1344,7 @@
             // 
             // colPacjent2
             // 
+            this.colPacjent2.Caption = "Imię i nazwisko pacjenta";
             this.colPacjent2.FieldName = "Pacjent";
             this.colPacjent2.Name = "colPacjent2";
             this.colPacjent2.Visible = true;
@@ -1417,6 +1442,7 @@
             // 
             // colID_Wizyta1
             // 
+            this.colID_Wizyta1.Caption = "Numer wizyty";
             this.colID_Wizyta1.FieldName = "ID_Wizyta";
             this.colID_Wizyta1.Name = "colID_Wizyta1";
             this.colID_Wizyta1.Visible = true;
@@ -1424,6 +1450,7 @@
             // 
             // colID_Pacjent2
             // 
+            this.colID_Pacjent2.Caption = "Numer pacjenta";
             this.colID_Pacjent2.FieldName = "ID_Pacjent";
             this.colID_Pacjent2.Name = "colID_Pacjent2";
             this.colID_Pacjent2.Visible = true;
@@ -1431,6 +1458,7 @@
             // 
             // colPacjent1
             // 
+            this.colPacjent1.Caption = "Imię i nazwisko pacjenta";
             this.colPacjent1.FieldName = "Pacjent";
             this.colPacjent1.Name = "colPacjent1";
             this.colPacjent1.Visible = true;
@@ -1438,6 +1466,7 @@
             // 
             // colPlec1
             // 
+            this.colPlec1.Caption = "Płeć";
             this.colPlec1.FieldName = "Plec";
             this.colPlec1.Name = "colPlec1";
             this.colPlec1.Visible = true;
@@ -1445,6 +1474,7 @@
             // 
             // colRodzaj1
             // 
+            this.colRodzaj1.Caption = "Ubezpieczenie";
             this.colRodzaj1.FieldName = "Rodzaj";
             this.colRodzaj1.Name = "colRodzaj1";
             this.colRodzaj1.Visible = true;
@@ -1473,6 +1503,7 @@
             // 
             // colID_ICD_11
             // 
+            this.colID_ICD_11.Caption = "Kod ICD 1";
             this.colID_ICD_11.FieldName = "ID_ICD_1";
             this.colID_ICD_11.Name = "colID_ICD_11";
             this.colID_ICD_11.Visible = true;
@@ -1480,6 +1511,7 @@
             // 
             // colID_ICD_21
             // 
+            this.colID_ICD_21.Caption = "Kod ICD 2";
             this.colID_ICD_21.FieldName = "ID_ICD_2";
             this.colID_ICD_21.Name = "colID_ICD_21";
             this.colID_ICD_21.Visible = true;
@@ -1487,6 +1519,7 @@
             // 
             // colID_ICD_31
             // 
+            this.colID_ICD_31.Caption = "Kod ICD 3";
             this.colID_ICD_31.FieldName = "ID_ICD_3";
             this.colID_ICD_31.Name = "colID_ICD_31";
             this.colID_ICD_31.Visible = true;
@@ -1494,6 +1527,7 @@
             // 
             // colID_Lekarz1
             // 
+            this.colID_Lekarz1.Caption = "Lekarz przyjmujący";
             this.colID_Lekarz1.FieldName = "ID_Lekarz";
             this.colID_Lekarz1.Name = "colID_Lekarz1";
             this.colID_Lekarz1.Visible = true;
