@@ -792,7 +792,7 @@
             this.UbezpieczeniePage,
             this.ICDPage});
             this.tabPane1.RegularSize = new System.Drawing.Size(1918, 549);
-            this.tabPane1.SelectedPage = this.UmowWizytePage;
+            this.tabPane1.SelectedPage = null;
             this.tabPane1.Size = new System.Drawing.Size(1918, 549);
             this.tabPane1.TabIndex = 6;
             this.tabPane1.Text = "tabPane1";
@@ -854,6 +854,7 @@
             this.gridViewPacjent.OptionsFind.ShowClearButton = false;
             this.gridViewPacjent.OptionsFind.ShowFindButton = false;
             this.gridViewPacjent.OptionsView.ShowGroupPanel = false;
+            this.gridViewPacjent.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewPacjent_FocusedRowChanged);
             // 
             // colID_Pacjent
             // 

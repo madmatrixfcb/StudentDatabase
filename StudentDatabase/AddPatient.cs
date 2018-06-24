@@ -71,6 +71,31 @@ namespace StudentDatabase
                 string plec = Convert.ToString(plecSelect.SelectedValue);
                 string ubezpieczenie = Convert.ToString(ubezpieczenieSelect.SelectedValue);
                 string nr_ekuz = Convert.ToString(ekuzTB.Text);
+                /*FunctionsPatient.ConvertToNull(nr_pesel);
+                FunctionsPatient.ConvertToNull(dowod_osobisty);
+                FunctionsPatient.ConvertToNull(nr_paszportu);
+                FunctionsPatient.ConvertToNull(nr_ekuz);*/
+
+                if (nr_pesel == "")
+                {
+                    nr_pesel = "Brak";
+                }
+
+                if (dowod_osobisty == "")
+                {
+                    dowod_osobisty = "Brak";
+                }
+
+                if (nr_paszportu == "")
+                {
+                    nr_paszportu = "Brak";
+                }
+
+                if (nr_ekuz == "")
+                {
+                    nr_ekuz = "Brak";
+                }
+
 
                 if (FunctionsPatient.CheckBirthDate(data_ur) == true)
                 {

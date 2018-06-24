@@ -2,7 +2,6 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 
 namespace StudentDatabase
 {
@@ -14,7 +13,7 @@ namespace StudentDatabase
             time.Start();
             tabPane1.SelectedPage = null;
             PaneStartup(SelectedPane.selectedId);
-           // PaneStart2();
+            // PaneStart2();
             UserInfo();
         }
 
@@ -33,7 +32,7 @@ namespace StudentDatabase
         //-----------------------TIME----------------------------------/
         private void Time_Tick(object sender, EventArgs e)
         {
-            timeItem.Caption = "Aktualna godzina: "+DateTime.Now.ToLongTimeString();
+            timeItem.Caption = "Aktualna godzina: " + DateTime.Now.ToLongTimeString();
         }
 
         //-----------------------USER----------------------------------/
@@ -149,7 +148,6 @@ namespace StudentDatabase
             selectPane.Show();
         }
 
-
         //-----------------------RIBBON ENABLING----------------------------------/
         public void TabPane1_SelectedPageChanged(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangedEventArgs e)
         {
@@ -173,7 +171,6 @@ namespace StudentDatabase
 
             if (tabPane1.SelectedPage == UbezpieczeniePage)
             {
-
                 RefreshUbezpieczenie();
                 if (Login.LoginInfo.userType == "Admin")
                 {
@@ -189,7 +186,6 @@ namespace StudentDatabase
                     ICDGroup.Enabled = true;
                 }
             }
-
 
             if (tabPane1.SelectedPage == WizytaPage)
             {
@@ -215,13 +211,11 @@ namespace StudentDatabase
         {
             if (deleteModeBar.Checked == true)
             {
-                gridPacjent.DataSource = this.poradniaDataSet.PACJENT;
                 gridPacjent.Refresh();
                 deleteButtonP.Enabled = true;
             }
             else
             {
-                gridPacjent.DataSource = this.poradniaDataSet.patient_view;
                 gridPacjent.Refresh();
                 deleteButtonP.Enabled = false;
             }
@@ -231,17 +225,16 @@ namespace StudentDatabase
         {
             if (deleteBarWizyta.Checked == true)
             {
-                gridWizyta.DataSource = this.poradniaDataSet.WIZYTA;
                 gridWizyta.Refresh();
                 deleteButtonW.Enabled = true;
             }
             else
             {
-                gridWizyta.DataSource = this.poradniaDataSet.visit_view;
                 gridWizyta.Refresh();
                 deleteButtonW.Enabled = false;
             }
         }
+
         //-----------------------------------PATIENT RIBBON-----------------------------------//
         private void RefreshButton_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -261,17 +254,30 @@ namespace StudentDatabase
             }
         }
 
+        public static class PatientPreview
+        {
+            public static object patientID;
+        }
+
+        private void gridViewPacjent_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            PatientPreview.patientID = gridViewPacjent.GetRowCellValue(e.FocusedRowHandle, "ID_Pacjent");
+        }
+
         private void DeleteButtonP_ItemClick(object sender, ItemClickEventArgs e)
-        { 
-            DialogResult warning = MessageBox.Show("Czy na pewno chcesz usunąć wybranego pacjenta?", "Potwierdzenie usunięcia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+        {
+            DialogResult warning = MessageBox.Show("Czy na pewno chcesz usunąć wybranego pacjenta?" + Environment.NewLine + "Usuwając pacjenta usuniesz również wszystkie jego dotychczasowe oraz umówione wizyty!", "Potwierdzenie usunięcia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (warning == DialogResult.Yes)
             {
                 try
                 {
-                    gridViewPacjent.DeleteRow(gridViewPacjent.FocusedRowHandle);
-                    this.pACJENTTableAdapter.Update(poradniaDataSet.PACJENT);
-                    MessageBox.Show("Pacjent(ci) usunięty(ci)", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    pACJENTTableAdapter.DeletePatient(Convert.ToInt16(PatientPreview.patientID));
+                    wIZYTATableAdapter.DeleteVisitByPatientID(Convert.ToString(PatientPreview.patientID));
+                    uMOW_WIZTETableAdapter.DeleteArrangedByPatient(Convert.ToString(PatientPreview.patientID));
                     RefreshPacjenci();
+                    RefreshWizyta();
+                    RefreshUmowWizyte();
+                    MessageBox.Show("Pacjent oraz powiązane z nim wizyty zostały usunięte", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
@@ -289,7 +295,6 @@ namespace StudentDatabase
             AddPatient addPat = new AddPatient();
             addPat.Show();
             addPat.FormClosed += AddPat_FormClosed;
-
         }
 
         private void AddPat_FormClosed(object sender, FormClosedEventArgs e)
@@ -302,7 +307,6 @@ namespace StudentDatabase
             EditPatient editPat = new EditPatient();
             editPat.Show();
             editPat.FormClosed += EditPat_FormClosed;
-
         }
 
         private void EditPat_FormClosed(object sender, FormClosedEventArgs e)
@@ -365,7 +369,6 @@ namespace StudentDatabase
         {
             RefreshUbezpieczenie();
         }
-
 
         //-----------------------------------ICD RIBBON-----------------------------------//
 
@@ -430,14 +433,12 @@ namespace StudentDatabase
             AddVisit add_Visit = new AddVisit();
             add_Visit.Show();
             add_Visit.FormClosed += Add_Visit_FormClosed;
-
         }
 
         private void Add_Visit_FormClosed(object sender, FormClosedEventArgs e)
         {
             RefreshWizyta();
         }
-    
 
         private void RefreshVisit_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -483,17 +484,16 @@ namespace StudentDatabase
             public static DataRow patientRow;
         }
 
-            private void DeleteButtonW_ItemClick(object sender, ItemClickEventArgs e)
+        private void DeleteButtonW_ItemClick(object sender, ItemClickEventArgs e)
         {
             DialogResult warning = MessageBox.Show("Czy na pewno chcesz usunąć wybraną wizytę?", "Potwierdzenie usunięcia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (warning == DialogResult.Yes)
             {
                 try
                 {
-                    gridViewWizyta.DeleteRow(gridViewWizyta.FocusedRowHandle);
-                    this.wIZYTATableAdapter.Update(poradniaDataSet.WIZYTA);
-                    MessageBox.Show("Wizyta usunięta", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    wIZYTATableAdapter.DeleteVisit(Convert.ToInt16(VisitPreview.visitID));
                     RefreshWizyta();
+                    MessageBox.Show("Wizyta usunięta", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
@@ -508,7 +508,6 @@ namespace StudentDatabase
 
         //-----------------------------------ARRANGE VIST RIBBON-----------------------------------//
 
-
         private void arrangeVisitButton_ItemClick(object sender, ItemClickEventArgs e)
         {
             ArrangeVisit arrange_Visit = new ArrangeVisit();
@@ -520,6 +519,7 @@ namespace StudentDatabase
         {
             RefreshUmowWizyte();
         }
+
         public static class ArrangedVisitParams
         {
             public static int arrangedVisitID;
@@ -541,10 +541,8 @@ namespace StudentDatabase
                 try
                 {
                     uMOW_WIZTETableAdapter.DeleteArrangedVisit(ArrangedVisitParams.arrangedVisitID);
-                    //gridViewUmowWizyte.DeleteRow(gridViewUmowWizyte.FocusedRowHandle);
-                    this.uMOW_WIZTETableAdapter.Update(poradniaDataSet.UMOW_WIZTE);
-                    MessageBox.Show("Wizyta usunięta", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    RefreshWizyta();
+                    RefreshUmowWizyte();
+                    MessageBox.Show("Umówiona wizyta została usunięta", "Usunięto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
@@ -570,7 +568,6 @@ namespace StudentDatabase
                 uMOW_WIZTETableAdapter.DeleteArrangedVisit(ArrangedVisitParams.arrangedVisitID);
                 ArrangedVisitParams.arrangeStatus = false;
             }
-
         }
 
         //-----------------------------------STATISTICS RIBBON-----------------------------------//
@@ -590,17 +587,15 @@ namespace StudentDatabase
                         gridViewStatistics.ExportToXls(filename);
                         filename = "";
                         break;
+
                     case 2:
                         gridViewStatistics.ExportToXlsx(filename);
                         filename = "";
                         break;
                 }
-
-
             }
             else
             {
-
                 MessageBox.Show("Wysąpił błąd.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -620,7 +615,5 @@ namespace StudentDatabase
                 return;
             }
         }
-
-
     }
 }

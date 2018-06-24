@@ -170,6 +170,7 @@
       <DependentUpon>EditVisit.cs</DependentUpon>
     </Compile>
     <Compile Include="FunctionsPatient.cs" />
+    <Compile Include="FunctionsVisit.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
