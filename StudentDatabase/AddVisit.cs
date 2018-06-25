@@ -19,7 +19,8 @@ namespace StudentDatabase
             this.uzytkownikTableAdapter.Fill(this.poradniaDataSet.UZYTKOWNIK);
             this.pacjentTableAdapter.Fill(this.poradniaDataSet.PACJENT);
             this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
-            
+            this.AcceptButton = addVisitButton;
+
 
             userCB.EditValue = Convert.ToInt16(uzytkownikTableAdapter.SelectUserID(Login.LoginInfo.login, Login.LoginInfo.pass));
             LoadArrangedVisitInfo();
@@ -251,6 +252,14 @@ namespace StudentDatabase
         private void AddPat_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.pacjentTableAdapter.Fill(this.poradniaDataSet.PACJENT);
+        }
+
+        private void txtMessage_KeyPress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                addVisitButton_Click(sender, e);
+            }
         }
     }
 }

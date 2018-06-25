@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentDatabase.FormLoad), true, true);
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -42,6 +43,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // splashScreenManager
+            // 
+            splashScreenManager.ClosingDelay = 25;
             // 
             // labelControl8
             // 
@@ -120,7 +125,9 @@
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.kodTB);
             this.Name = "AddICD";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddICD";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.kodTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iCDBindingSource)).EndInit();

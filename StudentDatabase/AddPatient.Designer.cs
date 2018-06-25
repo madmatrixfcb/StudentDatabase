@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentDatabase.FormLoad), true, true);
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule9 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule10 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.miastoTB = new DevExpress.XtraEditors.TextEdit();
@@ -141,10 +141,10 @@
             this.miastoTB.Properties.Mask.ShowPlaceHolders = false;
             this.miastoTB.Size = new System.Drawing.Size(77, 20);
             this.miastoTB.TabIndex = 11;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "Pole nie może być puste";
-            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProvider.SetValidationRule(this.miastoTB, conditionValidationRule6);
+            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule9.ErrorText = "Pole nie może być puste";
+            conditionValidationRule9.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider.SetValidationRule(this.miastoTB, conditionValidationRule9);
             // 
             // labelControl12
             // 
@@ -164,10 +164,10 @@
             this.kodTB.Properties.ValidateOnEnterKey = true;
             this.kodTB.Size = new System.Drawing.Size(61, 20);
             this.kodTB.TabIndex = 10;
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "Pole nie może być puste";
-            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProvider.SetValidationRule(this.kodTB, conditionValidationRule7);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Pole nie może być puste";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider.SetValidationRule(this.kodTB, conditionValidationRule1);
             // 
             // labelControl10
             // 
@@ -224,10 +224,10 @@
             this.budynekTB.Properties.Mask.ShowPlaceHolders = false;
             this.budynekTB.Size = new System.Drawing.Size(45, 20);
             this.budynekTB.TabIndex = 8;
-            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule8.ErrorText = "Pole nie może być puste";
-            conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProvider.SetValidationRule(this.budynekTB, conditionValidationRule8);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Pole nie może być puste";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider.SetValidationRule(this.budynekTB, conditionValidationRule2);
             // 
             // labelControl7
             // 
@@ -246,10 +246,10 @@
             this.ulicaTB.Properties.Mask.ShowPlaceHolders = false;
             this.ulicaTB.Size = new System.Drawing.Size(199, 20);
             this.ulicaTB.TabIndex = 7;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Pole nie może być puste";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProvider.SetValidationRule(this.ulicaTB, conditionValidationRule1);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Pole nie może być puste";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider.SetValidationRule(this.ulicaTB, conditionValidationRule3);
             // 
             // labelControl4
             // 
@@ -316,6 +316,7 @@
             this.ekuzTB.Name = "ekuzTB";
             this.ekuzTB.Properties.Mask.EditMask = "[0-9]{0,20}";
             this.ekuzTB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.ekuzTB.Properties.Mask.ShowPlaceHolders = false;
             this.ekuzTB.Size = new System.Drawing.Size(180, 20);
             this.ekuzTB.TabIndex = 22;
             // 
@@ -326,6 +327,7 @@
             this.peselTB.Name = "peselTB";
             this.peselTB.Properties.Mask.EditMask = "[0-9]{0,11}";
             this.peselTB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.peselTB.Properties.Mask.ShowPlaceHolders = false;
             this.peselTB.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.peselTB.Size = new System.Drawing.Size(180, 20);
             this.peselTB.TabIndex = 13;
@@ -343,16 +345,16 @@
             // 
             this.nazwiskoTB.Location = new System.Drawing.Point(105, 59);
             this.nazwiskoTB.Name = "nazwiskoTB";
-            this.nazwiskoTB.Properties.Mask.EditMask = "[a-zA-Z ,./-]{0,20}";
+            this.nazwiskoTB.Properties.Mask.EditMask = "[a-zA-Z ,./-]{0,50}";
             this.nazwiskoTB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.nazwiskoTB.Properties.Mask.ShowPlaceHolders = false;
             this.nazwiskoTB.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.nazwiskoTB.Size = new System.Drawing.Size(199, 20);
             this.nazwiskoTB.TabIndex = 2;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Pole nie może być puste";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProvider.SetValidationRule(this.nazwiskoTB, conditionValidationRule2);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "Pole nie może być puste";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider.SetValidationRule(this.nazwiskoTB, conditionValidationRule4);
             // 
             // labelControl1
             // 
@@ -373,29 +375,31 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dataur.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Vista;
             this.dataur.Properties.Mask.EditMask = "\\d?\\d?-\\d?\\d?-\\d\\d\\d\\d";
-            this.dataur.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
+            this.dataur.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.dataur.Properties.Mask.ShowPlaceHolders = false;
             this.dataur.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.dataur.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
             this.dataur.Size = new System.Drawing.Size(199, 20);
             this.dataur.TabIndex = 3;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Pole nie może być puste";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProvider.SetValidationRule(this.dataur, conditionValidationRule3);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Pole nie może być puste";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider.SetValidationRule(this.dataur, conditionValidationRule5);
             // 
             // imieTB
             // 
             this.imieTB.Location = new System.Drawing.Point(105, 33);
             this.imieTB.Name = "imieTB";
-            this.imieTB.Properties.Mask.EditMask = "[a-zA-Z ]{0,20}";
+            this.imieTB.Properties.Mask.EditMask = "[a-zA-Z ,.]{0,50}";
             this.imieTB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.imieTB.Properties.Mask.ShowPlaceHolders = false;
             this.imieTB.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.imieTB.Size = new System.Drawing.Size(199, 20);
             this.imieTB.TabIndex = 1;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Pole nie może być puste";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProvider.SetValidationRule(this.imieTB, conditionValidationRule4);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "Pole nie może być puste";
+            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider.SetValidationRule(this.imieTB, conditionValidationRule6);
             conditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotContains;
             conditionValidationRule10.ErrorText = "This value is not valid";
             conditionValidationRule10.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
@@ -687,6 +691,7 @@
             this.Name = "AddPatient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj pacjenta";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.AddPatient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.miastoTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kodTB.Properties)).EndInit();

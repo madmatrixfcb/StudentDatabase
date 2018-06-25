@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentDatabase.FormLoad), true, true);
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.nameUbezpTB = new DevExpress.XtraEditors.TextEdit();
             this.ubezpAdd_button = new DevExpress.XtraEditors.SimpleButton();
@@ -37,6 +38,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nameUbezpTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // splashScreenManager
+            // 
+            splashScreenManager.ClosingDelay = 25;
             // 
             // labelControl2
             // 
@@ -92,7 +97,9 @@
             this.Controls.Add(this.nameUbezpTB);
             this.Controls.Add(this.labelControl2);
             this.Name = "AddUbezp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj ubezpieczenie";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.nameUbezpTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             this.ResumeLayout(false);

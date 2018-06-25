@@ -9,6 +9,7 @@ namespace StudentDatabase
         public AddPatient()
         {
             InitializeComponent();
+            
         }
 
         private void AddPatient_Load(object sender, EventArgs e)
@@ -16,6 +17,7 @@ namespace StudentDatabase
             this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
             this.pLECTableAdapter.Fill(this.poradniaDataSet.PLEC);
             this.krajTableAdapter.Fill(this.poradniaDataSet.KRAJ);
+            this.AcceptButton = addPatientButton;
         }
 
         //-----------------------CHECK BOXES----------------------------------/

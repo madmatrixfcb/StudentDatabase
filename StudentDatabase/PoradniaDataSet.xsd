@@ -1649,7 +1649,7 @@ WHERE UW.Data = @data AND UW.Godzina = @godzina
               <xs:element name="ID_Lekarz" msprop:Generator_ColumnVarNameInTable="columnID_Lekarz" msprop:Generator_ColumnPropNameInRow="ID_Lekarz" msprop:Generator_ColumnPropNameInTable="ID_LekarzColumn" msprop:Generator_UserColumnName="ID_Lekarz" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="62" />
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

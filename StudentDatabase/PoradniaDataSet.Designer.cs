@@ -4367,7 +4367,7 @@ namespace StudentDatabase {
                 this.columnRozpoznanie.MaxLength = 145;
                 this.columnLeki.MaxLength = 145;
                 this.columnZalecenia.MaxLength = 145;
-                this.columnID_Lekarz.MaxLength = 62;
+                this.columnID_Lekarz.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -75,6 +75,7 @@
             this.Controls.Add(this.marqueeProgressBarControl1);
             this.Name = "MenuLoad";
             this.Text = "Form1";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.marqueeProgressBarControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);

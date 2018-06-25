@@ -16,6 +16,7 @@ namespace StudentDatabase
             this.pacjentTableAdapter.Fill(this.poradniaDataSet.PACJENT);
             TimeLoad();
             dateEdit.EditValue = DateTime.Now;
+            this.AcceptButton = arrangeVisitButton;
         }
 
         //-----------------------BUTTONS----------------------------------/
@@ -104,12 +105,10 @@ namespace StudentDatabase
             }
         }
 
-         private void TimeLoad()
+        private void TimeLoad()
         {
             timeEdit.Time = DateTime.Now;
             var time = timeEdit.Time;
-            
-            //timeEdit.Time = new DateTime(time.Year, time.Month, time.Day, time.Hour, time.Minute, time.Second);
             int minute = time.Minute;
             if (minute >= 45)
             {
@@ -139,6 +138,14 @@ namespace StudentDatabase
             {
                 DataRow row = pacjentCB.Properties.View.GetDataRow(theIndex);
                 e.DisplayText = row["Imie"].ToString() + " " + row["Nazwisko"].ToString();
+            }
+        }
+
+        private void txtMessage_KeyPress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                arrangeVisitButton_Click(sender, e);
             }
         }
     }

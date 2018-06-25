@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using DevExpress.XtraGrid;
 
 namespace StudentDatabase
 {
@@ -33,7 +24,6 @@ namespace StudentDatabase
             this.uBEZPIECZENIETableAdapter.Fill(this.poradniaDataSet.UBEZPIECZENIE);
             // TODO: This line of code loads data into the 'poradniaDataSet.PLEC' table. You can move, or remove it, as needed.
             this.pLECTableAdapter.Fill(this.poradniaDataSet.PLEC);
-
         }
 
         //-----------------------OTHER----------------------------------/
@@ -63,10 +53,7 @@ namespace StudentDatabase
 
         private void EditPatient2_Click(object sender, EventArgs e)
         {
-
-
-
-            bool isValid = dxValidationProvider1.Validate();
+            bool isValid = dxValidationProvider.Validate();
 
             if (isValid == true)
             {
@@ -88,19 +75,47 @@ namespace StudentDatabase
                 string ubezpieczenie = Convert.ToString(ubezpieczenieSelect.SelectedValue);
                 string nr_ekuz = Convert.ToString(ekuzTB.Text);
 
+                if (nr_pesel == "")
+                {
+                    nr_pesel = "Brak";
+                }
+
+                if (dowod_osobisty == "")
+                {
+                    dowod_osobisty = "Brak";
+                }
+
+                if (nr_paszportu == "")
+                {
+                    nr_paszportu = "Brak";
+                }
+
+                if (nr_ekuz == "")
+                {
+                    nr_ekuz = "Brak";
+                }
+
                 if (FunctionsPatient.CheckBirthDate(data_ur) == true)
                 {
-                    try
+                    int pacjentDuplicateCount = Convert.ToInt16(pACJENTTableAdapter.PatientCount(nr_pesel, dowod_osobisty, nr_paszportu, nr_ekuz));
+                    if (pacjentDuplicateCount == 0)
                     {
-                        pACJENTTableAdapter.UpdateQuery(imie, nazwisko, data_ur, kraj, telefon, plec, ulica, nr_budynku, nr_mieszkania, kod_pocztowy, miasto, nr_pesel, kp, dowod_osobisty, nr_paszportu, ubezpieczenie, nr_ekuz, Convert.ToInt16(IDTB.EditValue));
+                        try
+                        {
+                            pACJENTTableAdapter.UpdateQuery(imie, nazwisko, data_ur, kraj, telefon, plec, ulica, nr_budynku, nr_mieszkania, kod_pocztowy, miasto, nr_pesel, kp, dowod_osobisty, nr_paszportu, ubezpieczenie, nr_ekuz, Convert.ToInt16(IDTB.EditValue));
 
-                        MessageBox.Show("Pacjent zaktualizowany", "Zaktualizowano", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Pacjent zaktualizowany", "Zaktualizowano", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
+                            this.pACJENTTableAdapter.Fill(this.poradniaDataSet.PACJENT);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("W jednym z pól: PESEL, Dowód osobisty, Paszport lub Numer EKUZ, jest wpisana wartość, która występuje już w bazie pacjentów", "Duplikat", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -112,8 +127,6 @@ namespace StudentDatabase
             {
                 MessageBox.Show("Wypełnij wszystkie pola by dodać pacjenta", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -126,14 +139,14 @@ namespace StudentDatabase
             if (FunctionsPatient.ValidatePesel(peselTB.Text) == true)
             {
                 checkPESEL.ImageOptions.Image = DevExpress.Images.ImageResourceCache.Default.GetImage("images/actions/apply_32x32.png");
-                //MessageBox.Show("OK", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                checkPESEL.Text = "Pesel OK";
                 dataur.Text = FunctionsPatient.InfoPESEL.szDate;
                 plecSelect.SelectedIndex = FunctionsPatient.InfoPESEL.plec;
             }
             else
             {
-                //MessageBox.Show("Źle", "Źle", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 checkPESEL.ImageOptions.Image = DevExpress.Images.ImageResourceCache.Default.GetImage("images/actions/cancel_32x32.png");
+                checkPESEL.Text = "Pesel ZŁY";
             }
         }
 
@@ -173,6 +186,19 @@ namespace StudentDatabase
             {
                 peselTB.Enabled = true;
                 peselCB.Checked = true;
+
+                if (FunctionsPatient.ValidatePesel(peselTB.Text) == true)
+                {
+                    checkPESEL.ImageOptions.Image = DevExpress.Images.ImageResourceCache.Default.GetImage("images/actions/apply_32x32.png");
+                    checkPESEL.Text = "Pesel OK";
+                    dataur.Text = FunctionsPatient.InfoPESEL.szDate;
+                    plecSelect.SelectedIndex = FunctionsPatient.InfoPESEL.plec;
+                }
+                else
+                {
+                    checkPESEL.ImageOptions.Image = DevExpress.Images.ImageResourceCache.Default.GetImage("images/actions/cancel_32x32.png");
+                    checkPESEL.Text = "Pesel ZŁY";
+                }
             }
             else
             {
@@ -198,10 +224,39 @@ namespace StudentDatabase
             paszportTB.Enabled = (paszportCB.Checked == true);
         }
 
+        private void ubezpieczenieSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ubezpieczenieSelect.Text == "EKUZ")
+            {
+                ekuzTB.Enabled = true;
+            }
+            else
+            {
+                ekuzTB.Enabled = false;
+            }
+        }
+
+        //-----------------------OTHER----------------------------------/
+
         private void searchButton_Click(object sender, EventArgs e)
         {
             gridViewEditPacjent.Focus();
             SendKeys.Send("^(F)");
+        }
+
+        private void phoneCheckEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (phoneCheckEdit.Checked == false)
+            {
+                telefonTB.Properties.Mask.EditMask = "(\\+48-)[0-9]{0,3}(-)[0-9]{0,3}(-)[0-9]{0,3}";
+                telefonTB.Text = "";
+            }
+
+            if (phoneCheckEdit.Checked == true)
+            {
+                telefonTB.Properties.Mask.EditMask = "[0-9]{0,3}(-)[0-9]{0,3}(-)[0-9]{0,3}(-)[0-9]{0,3}";
+                telefonTB.Text = "";
+            }
         }
     }
 }

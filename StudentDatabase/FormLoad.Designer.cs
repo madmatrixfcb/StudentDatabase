@@ -77,6 +77,7 @@
             this.Controls.Add(this.pictureEdit1);
             this.Name = "FormLoad";
             this.Text = "Form1";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
