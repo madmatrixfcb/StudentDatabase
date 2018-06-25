@@ -2873,7 +2873,7 @@ namespace StudentDatabase {
                 this.columnDowod_osobisty.MaxLength = 15;
                 this.columnPaszport.MaxLength = 20;
                 this.columnUbezpieczenie.MaxLength = 2;
-                this.columnNumer_EKUZ.MaxLength = 15;
+                this.columnNumer_EKUZ.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3891,7 +3891,7 @@ namespace StudentDatabase {
                 this.columnPaszport.MaxLength = 20;
                 this.columnUbezpieczenie.AllowDBNull = false;
                 this.columnUbezpieczenie.MaxLength = 65535;
-                this.columnNumer_EKUZ.MaxLength = 15;
+                this.columnNumer_EKUZ.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

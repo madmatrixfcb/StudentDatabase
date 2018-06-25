@@ -11,22 +11,20 @@ namespace StudentDatabase
         {
             InitializeComponent();
             time.Start();
-            tabPane1.SelectedPage = null;
-            PaneStartup(SelectedPane.selectedId);
-            // PaneStart2();
+            //tabPane1.SelectedPage = null;
             UserInfo();
         }
 
         private void AdminMenu_Load(object sender, EventArgs e)
         {
             DefaultRowCout();
+            CheckAdmin();
             RefreshPacjenci();
             RefreshWizyta();
             RefreshUmowWizyte();
             RefreshStatystyki();
             RefreshUbezpieczenie();
             RefreshICD();
-            StartSelectPane();
         }
 
         //-----------------------TIME----------------------------------/
@@ -91,61 +89,44 @@ namespace StudentDatabase
             recordNumberTB.Text = "Liczba rekordów: " + Convert.ToString(gridViewStatistics.DataRowCount);
         }
 
-        public static class SelectedPane
+        private void CheckAdmin()
         {
-            public static int selectedId;
-        }
-
-        private void PaneStart2()
-        {
-            if (SelectedPane.selectedId == 1)
+            if (Login.LoginInfo.userType == "Admin")
             {
-                tabPane1.SelectedPage = PacjenciPage;
+                userGroup.Visible = true;
             }
         }
 
-        private void PaneStartup(int pane)
+        //-----------------------PANE BUTTONS----------------------------------/
+
+        private void patientButton_Click(object sender, EventArgs e)
         {
-            switch (SelectedPane.selectedId)
-            {
-                case 1:
-                    {
-                        PacjenciPage.Select();
-                        //tabPane1.SelectedPageIndex = 1;
-                        break;
-                    }
-                case 2:
-                    {
-                        tabPane1.SelectedPage = WizytaPage;
-                        break;
-                    }
-                case 3:
-                    {
-                        tabPane1.SelectedPage = UmowWizytePage;
-                        break;
-                    }
-                case 4:
-                    {
-                        tabPane1.SelectedPage = StatystykiPage;
-                        break;
-                    }
-                case 5:
-                    {
-                        tabPane1.SelectedPage = UbezpieczeniePage;
-                        break;
-                    }
-                case 6:
-                    {
-                        tabPane1.SelectedPage = ICDPage;
-                        break;
-                    }
-            }
+            tabPane1.SelectedPage = PacjenciPage;
         }
 
-        private void StartSelectPane()
+        private void visitButton_Click(object sender, EventArgs e)
         {
-            SelectPane selectPane = new SelectPane();
-            selectPane.Show();
+            tabPane1.SelectedPage = WizytaPage;
+        }
+
+        private void arrangeVisitButtonOnTab_Click(object sender, EventArgs e)
+        {
+            tabPane1.SelectedPage = UmowWizytePage;
+        }
+
+        private void statisticsButton_Click(object sender, EventArgs e)
+        {
+            tabPane1.SelectedPage = StatystykiPage;
+        }
+
+        private void insuranceButton_Click(object sender, EventArgs e)
+        {
+            tabPane1.SelectedPage = UbezpieczeniePage;
+        }
+
+        private void ICDButton_Click(object sender, EventArgs e)
+        {
+            tabPane1.SelectedPage = ICDPage;
         }
 
         //-----------------------RIBBON ENABLING----------------------------------/
@@ -157,15 +138,11 @@ namespace StudentDatabase
             WizytaGroup.Enabled = false;
             UmowWizyteGroup.Enabled = false;
             StatystykiGroup.Enabled = false;
-            P.Enabled = false;
+            userGroup.Visible = false;
 
             if (tabPane1.SelectedPage == PacjenciPage)
             {
                 PacjenciGroup.Enabled = true;
-                if (Login.LoginInfo.userType == "Admin")
-                {
-                    P.Enabled = true;
-                }
                 RefreshPacjenci();
             }
 
@@ -211,12 +188,12 @@ namespace StudentDatabase
         {
             if (deleteModeBar.Checked == true)
             {
-                gridPacjent.Refresh();
+                RefreshPacjenci();
                 deleteButtonP.Enabled = true;
             }
             else
             {
-                gridPacjent.Refresh();
+                RefreshPacjenci();
                 deleteButtonP.Enabled = false;
             }
         }
@@ -225,35 +202,17 @@ namespace StudentDatabase
         {
             if (deleteBarWizyta.Checked == true)
             {
-                gridWizyta.Refresh();
+                RefreshWizyta();
                 deleteButtonW.Enabled = true;
             }
             else
             {
-                gridWizyta.Refresh();
+                RefreshWizyta();
                 deleteButtonW.Enabled = false;
             }
         }
 
         //-----------------------------------PATIENT RIBBON-----------------------------------//
-        private void RefreshButton_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            RefreshPacjenci();
-        }
-
-        private void SaveChanges_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            try
-            {
-                pACJENTTableAdapter.Update(poradniaDataSet.PACJENT);
-                MessageBox.Show("Dane pacjentów zaktualizowanie", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         public static class PatientPreview
         {
             public static object patientID;
@@ -318,6 +277,35 @@ namespace StudentDatabase
         {
             gridViewPacjent.Focus();
             SendKeys.Send("^(F)");
+        }
+
+        private void savePatientXLSButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            saveFileDialog.Filter = "XLS (*.xls)|*.xls|XLSX (*.xlsx)|*.xlsx";
+            saveFileDialog.FilterIndex = 1;
+            saveFileDialog.RestoreDirectory = true;
+            saveFileDialog.Title = "Zapisz jako arkusz programu Microsoft Office Excel";
+            string filename = saveFileDialog.FileName;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filename = saveFileDialog.FileName;
+                switch (saveFileDialog.FilterIndex)
+                {
+                    case 1:
+                        gridViewStatistics.ExportToXls(filename);
+                        filename = "";
+                        break;
+
+                    case 2:
+                        gridViewStatistics.ExportToXlsx(filename);
+                        filename = "";
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Wysąpił błąd.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //-----------------------------------UBEZPIECZENIE RIBBON-----------------------------------//
@@ -392,11 +380,6 @@ namespace StudentDatabase
             RefreshICD();
         }
 
-        private void RefreshICD_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            RefreshICD();
-        }
-
         private void findICDButton_ItemClick(object sender, ItemClickEventArgs e)
         {
             gridViewICD.Focus();
@@ -440,11 +423,6 @@ namespace StudentDatabase
             RefreshWizyta();
         }
 
-        private void RefreshVisit_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            this.wIZYTATableAdapter.Fill(this.poradniaDataSet.WIZYTA);
-        }
-
         private void findVisitButton_ItemClick(object sender, ItemClickEventArgs e)
         {
             gridViewWizyta.Focus();
@@ -465,9 +443,16 @@ namespace StudentDatabase
 
         private void viewVisit_ItemClick(object sender, ItemClickEventArgs e)
         {
-            VisitPreview.visitRow = gridViewWizyta.GetFocusedDataRow();
-            ViewVisit view_Visit = new ViewVisit();
-            view_Visit.Show();
+            if (VisitPreview.visitID != null)
+            {
+                VisitPreview.visitRow = gridViewWizyta.GetFocusedDataRow();
+                ViewVisit view_Visit = new ViewVisit();
+                view_Visit.Show();
+            }
+            else
+            {
+                MessageBox.Show("Żadna wizyta nie została wybrana do podglądu!", "Brak wybranej wizyty", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void gridViewWizyta_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -503,6 +488,35 @@ namespace StudentDatabase
             else
             {
                 return;
+            }
+        }
+
+        private void saveVisitXLSButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            saveFileDialog.Filter = "XLS (*.xls)|*.xls|XLSX (*.xlsx)|*.xlsx";
+            saveFileDialog.FilterIndex = 1;
+            saveFileDialog.RestoreDirectory = true;
+            saveFileDialog.Title = "Zapisz jako arkusz programu Microsoft Office Excel";
+            string filename = saveFileDialog.FileName;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filename = saveFileDialog.FileName;
+                switch (saveFileDialog.FilterIndex)
+                {
+                    case 1:
+                        gridViewStatistics.ExportToXls(filename);
+                        filename = "";
+                        break;
+
+                    case 2:
+                        gridViewStatistics.ExportToXlsx(filename);
+                        filename = "";
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Wysąpił błąd.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -555,6 +569,35 @@ namespace StudentDatabase
             }
         }
 
+        private void saveArrangedVisitXLSButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            saveFileDialog.Filter = "XLS (*.xls)|*.xls|XLSX (*.xlsx)|*.xlsx";
+            saveFileDialog.FilterIndex = 1;
+            saveFileDialog.RestoreDirectory = true;
+            saveFileDialog.Title = "Zapisz jako arkusz programu Microsoft Office Excel";
+            string filename = saveFileDialog.FileName;
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filename = saveFileDialog.FileName;
+                switch (saveFileDialog.FilterIndex)
+                {
+                    case 1:
+                        gridViewStatistics.ExportToXls(filename);
+                        filename = "";
+                        break;
+
+                    case 2:
+                        gridViewStatistics.ExportToXlsx(filename);
+                        filename = "";
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Wysąpił błąd.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void startArrangedVisitButton_ItemClick(object sender, ItemClickEventArgs e)
         {
             ArrangedVisitParams.arrangedVisit = true;
@@ -603,6 +646,63 @@ namespace StudentDatabase
         private void clearFiltersStatictisButton_ItemClick(object sender, ItemClickEventArgs e)
         {
             gridViewStatistics.ClearColumnsFilter();
+        }
+
+        //-----------------------------------OTHER RIBBON-----------------------------------//
+
+        private void refreshButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            RefreshPacjenci();
+            RefreshWizyta();
+            RefreshUmowWizyte();
+            RefreshStatystyki();
+            RefreshUbezpieczenie();
+            RefreshICD();
+        }
+
+        private void clearFilter_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (tabPane1.SelectedPage == PacjenciPage)
+            {
+                gridViewPacjent.ClearColumnsFilter();
+            }
+            else if (tabPane1.SelectedPage == WizytaPage)
+            {
+                gridViewWizyta.ClearColumnsFilter();
+            }
+            else if (tabPane1.SelectedPage == UmowWizytePage)
+            {
+                gridViewUmowWizyte.ClearColumnsFilter();
+            }
+            else if (tabPane1.SelectedPage == StatystykiPage)
+            {
+                gridViewStatistics.ClearColumnsFilter();
+            }
+            else if (tabPane1.SelectedPage == UbezpieczeniePage)
+            {
+                gridViewUbezpieczenie.ClearColumnsFilter();
+            }
+            else if (tabPane1.SelectedPage == ICDPage)
+            {
+                gridViewICD.ClearColumnsFilter();
+            }
+            else
+            {
+                MessageBox.Show("Żadna z zakładek nie jest aktywna!", "Brak aktywnej zakładki", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void closeButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
+        //-----------------------------------USER RIBBON-----------------------------------//
+
+        private void addUserButton_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddUser addUser = new AddUser();
+            addUser.Show();
         }
 
         //-----------------------------------POTWIERDZENIE WYJŚCIA Z APLIKAJCI-----------------------------------//

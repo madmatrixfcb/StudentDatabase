@@ -33,14 +33,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMenu));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.addPatient = new DevExpress.XtraBars.BarButtonItem();
-            this.refreshButton = new DevExpress.XtraBars.BarButtonItem();
+            this.savePatientXLSButton = new DevExpress.XtraBars.BarButtonItem();
             this.deleteButtonP = new DevExpress.XtraBars.BarButtonItem();
-            this.refreshUbezp = new DevExpress.XtraBars.BarButtonItem();
             this.addICD = new DevExpress.XtraBars.BarButtonItem();
-            this.refreshICD = new DevExpress.XtraBars.BarButtonItem();
             this.saveChangesICD = new DevExpress.XtraBars.BarButtonItem();
             this.addVisit = new DevExpress.XtraBars.BarButtonItem();
-            this.refreshVisit = new DevExpress.XtraBars.BarButtonItem();
+            this.saveVisitXLSButton = new DevExpress.XtraBars.BarButtonItem();
             this.deleteButtonU = new DevExpress.XtraBars.BarButtonItem();
             this.deleteButtonI = new DevExpress.XtraBars.BarButtonItem();
             this.deleteButtonW = new DevExpress.XtraBars.BarButtonItem();
@@ -48,34 +46,27 @@
             this.editPatient = new DevExpress.XtraBars.BarButtonItem();
             this.timeItem = new DevExpress.XtraBars.BarStaticItem();
             this.deleteModeBar = new DevExpress.XtraBars.BarToggleSwitchItem();
-            this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.deleteModeLabelPatient = new DevExpress.XtraBars.BarStaticItem();
             this.deleteBarWizyta = new DevExpress.XtraBars.BarToggleSwitchItem();
-            this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
+            this.deleteModeLabelVisit = new DevExpress.XtraBars.BarStaticItem();
             this.viewVisit = new DevExpress.XtraBars.BarButtonItem();
             this.editVisit = new DevExpress.XtraBars.BarButtonItem();
-            this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.loggedAsText = new DevExpress.XtraBars.BarStaticItem();
             this.findPatientButton = new DevExpress.XtraBars.BarButtonItem();
             this.findVisitButton = new DevExpress.XtraBars.BarButtonItem();
             this.findICDButton = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barDockingMenuItem1 = new DevExpress.XtraBars.BarDockingMenuItem();
-            this.ExportToPDF_Button = new DevExpress.XtraBars.BarButtonItem();
-            this.ExportToCSV_Button = new DevExpress.XtraBars.BarButtonItem();
-            this.ExportToXLS_Button = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.P = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.arrangeVisitButton = new DevExpress.XtraBars.BarButtonItem();
             this.deleteArrangedVisitButton = new DevExpress.XtraBars.BarButtonItem();
             this.startArrangedVisitButton = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.filterStdButton = new DevExpress.XtraBars.BarCheckItem();
             this.filterAdvButton = new DevExpress.XtraBars.BarCheckItem();
             this.statisticsExportToXLSButton = new DevExpress.XtraBars.BarButtonItem();
             this.clearFiltersStatictisButton = new DevExpress.XtraBars.BarButtonItem();
+            this.refreshButton = new DevExpress.XtraBars.BarButtonItem();
+            this.closeButton = new DevExpress.XtraBars.BarButtonItem();
+            this.saveArrangedVisitXLSButton = new DevExpress.XtraBars.BarButtonItem();
+            this.addUserButton = new DevExpress.XtraBars.BarButtonItem();
+            this.clearFilter = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonMenu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PacjenciGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.WizytaGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -83,8 +74,8 @@
             this.StatystykiGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.UbezpieczenieGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ICDGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.repositoryItemToggleSwitch1 = new DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.userGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.otherGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
@@ -169,10 +160,21 @@
             this.colID_ICD_21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colID_ICD_31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colID_Lekarz1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.WelcomePage = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.ICDButton = new DevExpress.XtraEditors.SimpleButton();
+            this.insuranceButton = new DevExpress.XtraEditors.SimpleButton();
+            this.statisticsButton = new DevExpress.XtraEditors.SimpleButton();
+            this.arrangeVisitButtonOnTab = new DevExpress.XtraEditors.SimpleButton();
+            this.visitButton = new DevExpress.XtraEditors.SimpleButton();
+            this.info2Label = new DevExpress.XtraEditors.LabelControl();
+            this.patientButton = new DevExpress.XtraEditors.SimpleButton();
+            this.greetingsLabel = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.uMOWWIZTEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.adminviewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.uBEZPIECZENIETableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UBEZPIECZENIETableAdapter();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.time = new System.Windows.Forms.Timer(this.components);
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.iCDTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.ICDTableAdapter();
@@ -183,14 +185,13 @@
             this.uMOW_WIZTETableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UMOW_WIZTETableAdapter();
             this.arrange_visit_viewTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.arrange_visit_viewTableAdapter();
             this.statistics_viewTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.statistics_viewTableAdapter();
-            this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.patient_viewTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.patient_viewTableAdapter();
             this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pACJENTTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
+            this.infoLabel = new DevExpress.XtraEditors.LabelControl();
+            this.welcomeLabel = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
@@ -220,6 +221,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridStatistics)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statisticsviewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewStatistics)).BeginInit();
+            this.WelcomePage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uMOWWIZTEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminviewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wIZYTABindingSource)).BeginInit();
@@ -236,14 +240,12 @@
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
             this.addPatient,
-            this.refreshButton,
+            this.savePatientXLSButton,
             this.deleteButtonP,
-            this.refreshUbezp,
             this.addICD,
-            this.refreshICD,
             this.saveChangesICD,
             this.addVisit,
-            this.refreshVisit,
+            this.saveVisitXLSButton,
             this.deleteButtonU,
             this.deleteButtonI,
             this.deleteButtonW,
@@ -251,43 +253,33 @@
             this.editPatient,
             this.timeItem,
             this.deleteModeBar,
-            this.barStaticItem1,
+            this.deleteModeLabelPatient,
             this.deleteBarWizyta,
-            this.barStaticItem2,
+            this.deleteModeLabelVisit,
             this.viewVisit,
             this.editVisit,
-            this.barHeaderItem1,
             this.loggedAsText,
             this.findPatientButton,
             this.findVisitButton,
             this.findICDButton,
-            this.barButtonItem2,
-            this.barSubItem1,
-            this.barDockingMenuItem1,
-            this.barButtonItem3,
-            this.ExportToPDF_Button,
-            this.ExportToCSV_Button,
-            this.ExportToXLS_Button,
-            this.barButtonItem7,
-            this.P,
-            this.barButtonItem4,
             this.arrangeVisitButton,
             this.deleteArrangedVisitButton,
             this.startArrangedVisitButton,
-            this.barButtonItem5,
             this.filterStdButton,
             this.filterAdvButton,
             this.statisticsExportToXLSButton,
-            this.clearFiltersStatictisButton});
+            this.clearFiltersStatictisButton,
+            this.refreshButton,
+            this.closeButton,
+            this.saveArrangedVisitXLSButton,
+            this.addUserButton,
+            this.clearFilter});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 47;
+            this.ribbon.MaxItemId = 56;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.loggedAsText);
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonMenu});
-            this.ribbon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemToggleSwitch1,
-            this.repositoryItemCheckEdit1});
             this.ribbon.Size = new System.Drawing.Size(1918, 147);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
@@ -300,14 +292,14 @@
             this.addPatient.Name = "addPatient";
             this.addPatient.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AddPatient_ItemClick);
             // 
-            // refreshButton
+            // savePatientXLSButton
             // 
-            this.refreshButton.Caption = "Odśwież";
-            this.refreshButton.Id = 2;
-            this.refreshButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("refreshButton.ImageOptions.Image")));
-            this.refreshButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("refreshButton.ImageOptions.LargeImage")));
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshButton_ItemClick);
+            this.savePatientXLSButton.Caption = "Eksportuj do XLS";
+            this.savePatientXLSButton.Id = 2;
+            this.savePatientXLSButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("savePatientXLSButton.ImageOptions.Image")));
+            this.savePatientXLSButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("savePatientXLSButton.ImageOptions.LargeImage")));
+            this.savePatientXLSButton.Name = "savePatientXLSButton";
+            this.savePatientXLSButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.savePatientXLSButton_ItemClick);
             // 
             // deleteButtonP
             // 
@@ -319,15 +311,6 @@
             this.deleteButtonP.Name = "deleteButtonP";
             this.deleteButtonP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.DeleteButtonP_ItemClick);
             // 
-            // refreshUbezp
-            // 
-            this.refreshUbezp.Caption = "Odśwież";
-            this.refreshUbezp.Id = 7;
-            this.refreshUbezp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("refreshUbezp.ImageOptions.Image")));
-            this.refreshUbezp.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("refreshUbezp.ImageOptions.LargeImage")));
-            this.refreshUbezp.Name = "refreshUbezp";
-            this.refreshUbezp.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshUbezp_ItemClick);
-            // 
             // addICD
             // 
             this.addICD.Caption = "Dodaj kod ICD";
@@ -336,15 +319,6 @@
             this.addICD.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("addICD.ImageOptions.LargeImage")));
             this.addICD.Name = "addICD";
             this.addICD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AddICD_ItemClick);
-            // 
-            // refreshICD
-            // 
-            this.refreshICD.Caption = "Odśwież";
-            this.refreshICD.Id = 9;
-            this.refreshICD.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("refreshICD.ImageOptions.Image")));
-            this.refreshICD.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("refreshICD.ImageOptions.LargeImage")));
-            this.refreshICD.Name = "refreshICD";
-            this.refreshICD.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshICD_ItemClick);
             // 
             // saveChangesICD
             // 
@@ -360,14 +334,14 @@
             this.addVisit.Name = "addVisit";
             this.addVisit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.AddVisit_ItemClick);
             // 
-            // refreshVisit
+            // saveVisitXLSButton
             // 
-            this.refreshVisit.Caption = "Odśwież";
-            this.refreshVisit.Id = 13;
-            this.refreshVisit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("refreshVisit.ImageOptions.Image")));
-            this.refreshVisit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("refreshVisit.ImageOptions.LargeImage")));
-            this.refreshVisit.Name = "refreshVisit";
-            this.refreshVisit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RefreshVisit_ItemClick);
+            this.saveVisitXLSButton.Caption = "Eksportuj do XLS";
+            this.saveVisitXLSButton.Id = 13;
+            this.saveVisitXLSButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("saveVisitXLSButton.ImageOptions.Image")));
+            this.saveVisitXLSButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("saveVisitXLSButton.ImageOptions.LargeImage")));
+            this.saveVisitXLSButton.Name = "saveVisitXLSButton";
+            this.saveVisitXLSButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveVisitXLSButton_ItemClick);
             // 
             // deleteButtonU
             // 
@@ -426,11 +400,11 @@
             this.deleteModeBar.Name = "deleteModeBar";
             this.deleteModeBar.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteModeBar_CheckedChanged);
             // 
-            // barStaticItem1
+            // deleteModeLabelPatient
             // 
-            this.barStaticItem1.Caption = "Tryb usuwania";
-            this.barStaticItem1.Id = 10;
-            this.barStaticItem1.Name = "barStaticItem1";
+            this.deleteModeLabelPatient.Caption = "Tryb usuwania";
+            this.deleteModeLabelPatient.Id = 10;
+            this.deleteModeLabelPatient.Name = "deleteModeLabelPatient";
             // 
             // deleteBarWizyta
             // 
@@ -438,11 +412,11 @@
             this.deleteBarWizyta.Name = "deleteBarWizyta";
             this.deleteBarWizyta.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteBarWizyta_CheckedChanged);
             // 
-            // barStaticItem2
+            // deleteModeLabelVisit
             // 
-            this.barStaticItem2.Caption = "Tryb usuwania";
-            this.barStaticItem2.Id = 14;
-            this.barStaticItem2.Name = "barStaticItem2";
+            this.deleteModeLabelVisit.Caption = "Tryb usuwania";
+            this.deleteModeLabelVisit.Id = 14;
+            this.deleteModeLabelVisit.Name = "deleteModeLabelVisit";
             // 
             // viewVisit
             // 
@@ -461,12 +435,6 @@
             this.editVisit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("editVisit.ImageOptions.LargeImage")));
             this.editVisit.Name = "editVisit";
             this.editVisit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editVisit_ItemClick);
-            // 
-            // barHeaderItem1
-            // 
-            this.barHeaderItem1.Caption = "barHeaderItem1";
-            this.barHeaderItem1.Id = 19;
-            this.barHeaderItem1.Name = "barHeaderItem1";
             // 
             // loggedAsText
             // 
@@ -501,86 +469,6 @@
             this.findICDButton.Name = "findICDButton";
             this.findICDButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.findICDButton_ItemClick);
             // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "barButtonItem2";
-            this.barButtonItem2.Id = 24;
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // barSubItem1
-            // 
-            this.barSubItem1.Caption = "Eksportuj";
-            this.barSubItem1.Id = 25;
-            this.barSubItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem1.ImageOptions.Image")));
-            this.barSubItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barSubItem1.ImageOptions.LargeImage")));
-            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem3)});
-            this.barSubItem1.Name = "barSubItem1";
-            this.barSubItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "PDF";
-            this.barButtonItem3.Id = 27;
-            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItem3.Name = "barButtonItem3";
-            // 
-            // barDockingMenuItem1
-            // 
-            this.barDockingMenuItem1.Caption = "barDockingMenuItem1";
-            this.barDockingMenuItem1.Id = 26;
-            this.barDockingMenuItem1.Name = "barDockingMenuItem1";
-            // 
-            // ExportToPDF_Button
-            // 
-            this.ExportToPDF_Button.Caption = "PDF";
-            this.ExportToPDF_Button.Id = 29;
-            this.ExportToPDF_Button.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ExportToPDF_Button.ImageOptions.Image")));
-            this.ExportToPDF_Button.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ExportToPDF_Button.ImageOptions.LargeImage")));
-            this.ExportToPDF_Button.Name = "ExportToPDF_Button";
-            // 
-            // ExportToCSV_Button
-            // 
-            this.ExportToCSV_Button.Caption = "CSV";
-            this.ExportToCSV_Button.Id = 30;
-            this.ExportToCSV_Button.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ExportToCSV_Button.ImageOptions.Image")));
-            this.ExportToCSV_Button.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ExportToCSV_Button.ImageOptions.LargeImage")));
-            this.ExportToCSV_Button.Name = "ExportToCSV_Button";
-            // 
-            // ExportToXLS_Button
-            // 
-            this.ExportToXLS_Button.Caption = "XLS";
-            this.ExportToXLS_Button.Id = 31;
-            this.ExportToXLS_Button.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ExportToXLS_Button.ImageOptions.Image")));
-            this.ExportToXLS_Button.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("ExportToXLS_Button.ImageOptions.LargeImage")));
-            this.ExportToXLS_Button.Name = "ExportToXLS_Button";
-            // 
-            // barButtonItem7
-            // 
-            this.barButtonItem7.ActAsDropDown = true;
-            this.barButtonItem7.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
-            this.barButtonItem7.Caption = "barButtonItem7";
-            this.barButtonItem7.Id = 32;
-            this.barButtonItem7.Name = "barButtonItem7";
-            // 
-            // P
-            // 
-            this.P.Caption = "Eksportuj do ...";
-            this.P.Id = 33;
-            this.P.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("P.ImageOptions.Image")));
-            this.P.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("P.ImageOptions.LargeImage")));
-            this.P.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.ExportToPDF_Button),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ExportToXLS_Button),
-            new DevExpress.XtraBars.LinkPersistInfo(this.ExportToCSV_Button)});
-            this.P.Name = "P";
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "barButtonItem4";
-            this.barButtonItem4.Id = 34;
-            this.barButtonItem4.Name = "barButtonItem4";
-            // 
             // arrangeVisitButton
             // 
             this.arrangeVisitButton.Caption = "Umów wizytę";
@@ -607,12 +495,6 @@
             this.startArrangedVisitButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("startArrangedVisitButton.ImageOptions.LargeImage")));
             this.startArrangedVisitButton.Name = "startArrangedVisitButton";
             this.startArrangedVisitButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.startArrangedVisitButton_ItemClick);
-            // 
-            // barButtonItem5
-            // 
-            this.barButtonItem5.Caption = "barButtonItem5";
-            this.barButtonItem5.Id = 39;
-            this.barButtonItem5.Name = "barButtonItem5";
             // 
             // filterStdButton
             // 
@@ -642,6 +524,52 @@
             this.clearFiltersStatictisButton.Name = "clearFiltersStatictisButton";
             this.clearFiltersStatictisButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.clearFiltersStatictisButton_ItemClick);
             // 
+            // refreshButton
+            // 
+            this.refreshButton.Caption = "Odśwież";
+            this.refreshButton.Id = 50;
+            this.refreshButton.ImageOptions.DisabledLargeImage = ((System.Drawing.Image)(resources.GetObject("refreshButton.ImageOptions.DisabledLargeImage")));
+            this.refreshButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("refreshButton.ImageOptions.Image")));
+            this.refreshButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("refreshButton.ImageOptions.LargeImage")));
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.refreshButton_ItemClick);
+            // 
+            // closeButton
+            // 
+            this.closeButton.Caption = "Zamknij";
+            this.closeButton.Id = 51;
+            this.closeButton.ImageOptions.DisabledLargeImage = ((System.Drawing.Image)(resources.GetObject("closeButton.ImageOptions.DisabledLargeImage")));
+            this.closeButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("closeButton.ImageOptions.Image")));
+            this.closeButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("closeButton.ImageOptions.LargeImage")));
+            this.closeButton.Name = "closeButton";
+            this.closeButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.closeButton_ItemClick);
+            // 
+            // saveArrangedVisitXLSButton
+            // 
+            this.saveArrangedVisitXLSButton.Caption = "Eksportuj do XLS";
+            this.saveArrangedVisitXLSButton.Id = 52;
+            this.saveArrangedVisitXLSButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("saveArrangedVisitXLSButton.ImageOptions.Image")));
+            this.saveArrangedVisitXLSButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("saveArrangedVisitXLSButton.ImageOptions.LargeImage")));
+            this.saveArrangedVisitXLSButton.Name = "saveArrangedVisitXLSButton";
+            this.saveArrangedVisitXLSButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saveArrangedVisitXLSButton_ItemClick);
+            // 
+            // addUserButton
+            // 
+            this.addUserButton.Caption = "Dodaj użytkownika";
+            this.addUserButton.Id = 54;
+            this.addUserButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("addUserButton.ImageOptions.Image")));
+            this.addUserButton.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("addUserButton.ImageOptions.LargeImage")));
+            this.addUserButton.Name = "addUserButton";
+            // 
+            // clearFilter
+            // 
+            this.clearFilter.Caption = "Wyczyść filtry";
+            this.clearFilter.Id = 55;
+            this.clearFilter.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("clearFilter.ImageOptions.Image")));
+            this.clearFilter.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("clearFilter.ImageOptions.LargeImage")));
+            this.clearFilter.Name = "clearFilter";
+            this.clearFilter.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.clearFilter_ItemClick);
+            // 
             // ribbonMenu
             // 
             this.ribbonMenu.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -650,7 +578,9 @@
             this.UmowWizyteGroup,
             this.StatystykiGroup,
             this.UbezpieczenieGroup,
-            this.ICDGroup});
+            this.ICDGroup,
+            this.userGroup,
+            this.otherGroup});
             this.ribbonMenu.Name = "ribbonMenu";
             this.ribbonMenu.Text = "Menu";
             // 
@@ -660,10 +590,10 @@
             this.PacjenciGroup.ItemLinks.Add(this.addPatient);
             this.PacjenciGroup.ItemLinks.Add(this.editPatient);
             this.PacjenciGroup.ItemLinks.Add(this.findPatientButton);
-            this.PacjenciGroup.ItemLinks.Add(this.refreshButton);
+            this.PacjenciGroup.ItemLinks.Add(this.savePatientXLSButton);
             this.PacjenciGroup.ItemLinks.Add(this.deleteButtonP);
             this.PacjenciGroup.ItemLinks.Add(this.deleteModeBar);
-            this.PacjenciGroup.ItemLinks.Add(this.barStaticItem1);
+            this.PacjenciGroup.ItemLinks.Add(this.deleteModeLabelPatient);
             this.PacjenciGroup.Name = "PacjenciGroup";
             this.PacjenciGroup.Text = "Pacjenci";
             // 
@@ -674,10 +604,10 @@
             this.WizytaGroup.ItemLinks.Add(this.editVisit);
             this.WizytaGroup.ItemLinks.Add(this.viewVisit);
             this.WizytaGroup.ItemLinks.Add(this.findVisitButton);
-            this.WizytaGroup.ItemLinks.Add(this.refreshVisit);
+            this.WizytaGroup.ItemLinks.Add(this.saveVisitXLSButton);
             this.WizytaGroup.ItemLinks.Add(this.deleteButtonW);
             this.WizytaGroup.ItemLinks.Add(this.deleteBarWizyta);
-            this.WizytaGroup.ItemLinks.Add(this.barStaticItem2);
+            this.WizytaGroup.ItemLinks.Add(this.deleteModeLabelVisit);
             this.WizytaGroup.Name = "WizytaGroup";
             this.WizytaGroup.Text = "Wizyta";
             // 
@@ -687,6 +617,7 @@
             this.UmowWizyteGroup.ItemLinks.Add(this.arrangeVisitButton);
             this.UmowWizyteGroup.ItemLinks.Add(this.deleteArrangedVisitButton);
             this.UmowWizyteGroup.ItemLinks.Add(this.startArrangedVisitButton);
+            this.UmowWizyteGroup.ItemLinks.Add(this.saveArrangedVisitXLSButton);
             this.UmowWizyteGroup.Name = "UmowWizyteGroup";
             this.UmowWizyteGroup.Text = "Umów wizytę";
             // 
@@ -702,7 +633,6 @@
             // 
             this.UbezpieczenieGroup.Enabled = false;
             this.UbezpieczenieGroup.ItemLinks.Add(this.dodajUbezp);
-            this.UbezpieczenieGroup.ItemLinks.Add(this.refreshUbezp);
             this.UbezpieczenieGroup.ItemLinks.Add(this.deleteButtonU);
             this.UbezpieczenieGroup.Name = "UbezpieczenieGroup";
             this.UbezpieczenieGroup.Text = "Ubezpieczenie";
@@ -711,29 +641,25 @@
             // 
             this.ICDGroup.Enabled = false;
             this.ICDGroup.ItemLinks.Add(this.addICD);
-            this.ICDGroup.ItemLinks.Add(this.refreshICD);
             this.ICDGroup.ItemLinks.Add(this.findICDButton);
             this.ICDGroup.ItemLinks.Add(this.deleteButtonI);
             this.ICDGroup.Name = "ICDGroup";
             this.ICDGroup.Text = "ICD";
             // 
-            // repositoryItemToggleSwitch1
+            // userGroup
             // 
-            this.repositoryItemToggleSwitch1.AutoHeight = false;
-            this.repositoryItemToggleSwitch1.Name = "repositoryItemToggleSwitch1";
-            this.repositoryItemToggleSwitch1.OffText = "Wyłączony";
-            this.repositoryItemToggleSwitch1.OnText = "Włączony";
+            this.userGroup.ItemLinks.Add(this.addUserButton);
+            this.userGroup.Name = "userGroup";
+            this.userGroup.Text = "Użytkownik";
+            this.userGroup.Visible = false;
             // 
-            // repositoryItemCheckEdit1
+            // otherGroup
             // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.Caption = "";
-            this.repositoryItemCheckEdit1.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.UserDefined;
-            this.repositoryItemCheckEdit1.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
-            this.repositoryItemCheckEdit1.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
-            this.repositoryItemCheckEdit1.PictureChecked = ((System.Drawing.Image)(resources.GetObject("repositoryItemCheckEdit1.PictureChecked")));
-            this.repositoryItemCheckEdit1.PictureUnchecked = ((System.Drawing.Image)(resources.GetObject("repositoryItemCheckEdit1.PictureUnchecked")));
+            this.otherGroup.ItemLinks.Add(this.refreshButton);
+            this.otherGroup.ItemLinks.Add(this.clearFilter);
+            this.otherGroup.ItemLinks.Add(this.closeButton);
+            this.otherGroup.Name = "otherGroup";
+            this.otherGroup.Text = "Ogólne";
             // 
             // ribbonStatusBar
             // 
@@ -779,12 +705,14 @@
             this.tabPane1.Controls.Add(this.WizytaPage);
             this.tabPane1.Controls.Add(this.UmowWizytePage);
             this.tabPane1.Controls.Add(this.StatystykiPage);
+            this.tabPane1.Controls.Add(this.WelcomePage);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPane1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tabPane1.Location = new System.Drawing.Point(0, 147);
             this.tabPane1.Name = "tabPane1";
-            this.tabPane1.PageProperties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.Text;
+            this.tabPane1.PageProperties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
+            this.WelcomePage,
             this.PacjenciPage,
             this.WizytaPage,
             this.UmowWizytePage,
@@ -792,8 +720,9 @@
             this.UbezpieczeniePage,
             this.ICDPage});
             this.tabPane1.RegularSize = new System.Drawing.Size(1918, 549);
-            this.tabPane1.SelectedPage = null;
+            this.tabPane1.SelectedPage = this.WelcomePage;
             this.tabPane1.Size = new System.Drawing.Size(1918, 549);
+            this.tabPane1.TabAlignment = DevExpress.XtraEditors.Alignment.Center;
             this.tabPane1.TabIndex = 6;
             this.tabPane1.Text = "tabPane1";
             this.tabPane1.SelectedPageChanged += new DevExpress.XtraBars.Navigation.SelectedPageChangedEventHandler(this.TabPane1_SelectedPageChanged);
@@ -806,7 +735,7 @@
             this.PacjenciPage.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.PacjenciPage.Name = "PacjenciPage";
             this.PacjenciPage.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.PacjenciPage.Size = new System.Drawing.Size(1900, 485);
+            this.PacjenciPage.Size = new System.Drawing.Size(1918, 549);
             // 
             // gridPacjent
             // 
@@ -816,7 +745,7 @@
             this.gridPacjent.MainView = this.gridViewPacjent;
             this.gridPacjent.MenuManager = this.ribbon;
             this.gridPacjent.Name = "gridPacjent";
-            this.gridPacjent.Size = new System.Drawing.Size(1900, 485);
+            this.gridPacjent.Size = new System.Drawing.Size(1918, 549);
             this.gridPacjent.TabIndex = 0;
             this.gridPacjent.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewPacjent});
@@ -1001,7 +930,7 @@
             this.UbezpieczeniePage.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.UbezpieczeniePage.Name = "UbezpieczeniePage";
             this.UbezpieczeniePage.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.UbezpieczeniePage.Size = new System.Drawing.Size(1900, 485);
+            this.UbezpieczeniePage.Size = new System.Drawing.Size(1918, 549);
             // 
             // gridUbezpieczenie
             // 
@@ -1011,7 +940,7 @@
             this.gridUbezpieczenie.MainView = this.gridViewUbezpieczenie;
             this.gridUbezpieczenie.MenuManager = this.ribbon;
             this.gridUbezpieczenie.Name = "gridUbezpieczenie";
-            this.gridUbezpieczenie.Size = new System.Drawing.Size(1900, 485);
+            this.gridUbezpieczenie.Size = new System.Drawing.Size(1918, 549);
             this.gridUbezpieczenie.TabIndex = 0;
             this.gridUbezpieczenie.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewUbezpieczenie});
@@ -1055,7 +984,7 @@
             this.ICDPage.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.ICDPage.Name = "ICDPage";
             this.ICDPage.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.ICDPage.Size = new System.Drawing.Size(1900, 485);
+            this.ICDPage.Size = new System.Drawing.Size(1918, 549);
             // 
             // gridICD
             // 
@@ -1065,7 +994,7 @@
             this.gridICD.MainView = this.gridViewICD;
             this.gridICD.MenuManager = this.ribbon;
             this.gridICD.Name = "gridICD";
-            this.gridICD.Size = new System.Drawing.Size(1900, 485);
+            this.gridICD.Size = new System.Drawing.Size(1918, 549);
             this.gridICD.TabIndex = 0;
             this.gridICD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewICD});
@@ -1120,7 +1049,7 @@
             this.WizytaPage.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.WizytaPage.Name = "WizytaPage";
             this.WizytaPage.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.WizytaPage.Size = new System.Drawing.Size(1900, 485);
+            this.WizytaPage.Size = new System.Drawing.Size(1918, 549);
             // 
             // gridWizyta
             // 
@@ -1130,7 +1059,7 @@
             this.gridWizyta.MainView = this.gridViewWizyta;
             this.gridWizyta.MenuManager = this.ribbon;
             this.gridWizyta.Name = "gridWizyta";
-            this.gridWizyta.Size = new System.Drawing.Size(1900, 485);
+            this.gridWizyta.Size = new System.Drawing.Size(1918, 549);
             this.gridWizyta.TabIndex = 0;
             this.gridWizyta.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewWizyta});
@@ -1289,7 +1218,7 @@
             this.UmowWizytePage.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.UmowWizytePage.Name = "UmowWizytePage";
             this.UmowWizytePage.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.UmowWizytePage.Size = new System.Drawing.Size(1900, 485);
+            this.UmowWizytePage.Size = new System.Drawing.Size(1918, 549);
             // 
             // gridUmowWizyte
             // 
@@ -1299,7 +1228,7 @@
             this.gridUmowWizyte.MainView = this.gridViewUmowWizyte;
             this.gridUmowWizyte.MenuManager = this.ribbon;
             this.gridUmowWizyte.Name = "gridUmowWizyte";
-            this.gridUmowWizyte.Size = new System.Drawing.Size(1900, 485);
+            this.gridUmowWizyte.Size = new System.Drawing.Size(1918, 549);
             this.gridUmowWizyte.TabIndex = 0;
             this.gridUmowWizyte.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewUmowWizyte});
@@ -1373,7 +1302,7 @@
             this.StatystykiPage.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.StatystykiPage.Name = "StatystykiPage";
             this.StatystykiPage.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.StatystykiPage.Size = new System.Drawing.Size(1900, 485);
+            this.StatystykiPage.Size = new System.Drawing.Size(1918, 549);
             // 
             // splitContainerControl1
             // 
@@ -1385,7 +1314,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridStatistics);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1900, 485);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1918, 549);
             this.splitContainerControl1.SplitterPosition = 38;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -1408,7 +1337,7 @@
             this.gridStatistics.MainView = this.gridViewStatistics;
             this.gridStatistics.MenuManager = this.ribbon;
             this.gridStatistics.Name = "gridStatistics";
-            this.gridStatistics.Size = new System.Drawing.Size(1900, 435);
+            this.gridStatistics.Size = new System.Drawing.Size(1918, 499);
             this.gridStatistics.TabIndex = 1;
             this.gridStatistics.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewStatistics});
@@ -1435,6 +1364,7 @@
             this.colID_Lekarz1});
             this.gridViewStatistics.GridControl = this.gridStatistics;
             this.gridViewStatistics.Name = "gridViewStatistics";
+            this.gridViewStatistics.OptionsBehavior.Editable = false;
             this.gridViewStatistics.OptionsFind.FindNullPrompt = "Wpisz co chcesz wyszukać...";
             this.gridViewStatistics.OptionsFind.ShowClearButton = false;
             this.gridViewStatistics.OptionsFind.ShowFindButton = false;
@@ -1534,6 +1464,148 @@
             this.colID_Lekarz1.Visible = true;
             this.colID_Lekarz1.VisibleIndex = 11;
             // 
+            // WelcomePage
+            // 
+            this.WelcomePage.Caption = "Start";
+            this.WelcomePage.Controls.Add(this.panelControl1);
+            this.WelcomePage.Image = ((System.Drawing.Image)(resources.GetObject("WelcomePage.Image")));
+            this.WelcomePage.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
+            this.WelcomePage.Name = "WelcomePage";
+            this.WelcomePage.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
+            this.WelcomePage.Size = new System.Drawing.Size(1900, 485);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.ICDButton);
+            this.panelControl1.Controls.Add(this.insuranceButton);
+            this.panelControl1.Controls.Add(this.statisticsButton);
+            this.panelControl1.Controls.Add(this.arrangeVisitButtonOnTab);
+            this.panelControl1.Controls.Add(this.visitButton);
+            this.panelControl1.Controls.Add(this.info2Label);
+            this.panelControl1.Controls.Add(this.patientButton);
+            this.panelControl1.Controls.Add(this.greetingsLabel);
+            this.panelControl1.Controls.Add(this.labelControl1);
+            this.panelControl1.Controls.Add(this.labelControl2);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(1900, 485);
+            this.panelControl1.TabIndex = 0;
+            // 
+            // ICDButton
+            // 
+            this.ICDButton.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ICDButton.Appearance.Options.UseFont = true;
+            this.ICDButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ICDButton.ImageOptions.Image")));
+            this.ICDButton.Location = new System.Drawing.Point(1261, 115);
+            this.ICDButton.Name = "ICDButton";
+            this.ICDButton.Size = new System.Drawing.Size(115, 51);
+            this.ICDButton.TabIndex = 23;
+            this.ICDButton.Text = "Kody ICD";
+            this.ICDButton.Click += new System.EventHandler(this.ICDButton_Click);
+            // 
+            // insuranceButton
+            // 
+            this.insuranceButton.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.insuranceButton.Appearance.Options.UseFont = true;
+            this.insuranceButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("insuranceButton.ImageOptions.Image")));
+            this.insuranceButton.Location = new System.Drawing.Point(1099, 115);
+            this.insuranceButton.Name = "insuranceButton";
+            this.insuranceButton.Size = new System.Drawing.Size(146, 51);
+            this.insuranceButton.TabIndex = 22;
+            this.insuranceButton.Text = "Ubezpieczenie";
+            this.insuranceButton.Click += new System.EventHandler(this.insuranceButton_Click);
+            // 
+            // statisticsButton
+            // 
+            this.statisticsButton.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.statisticsButton.Appearance.Options.UseFont = true;
+            this.statisticsButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("statisticsButton.ImageOptions.Image")));
+            this.statisticsButton.Location = new System.Drawing.Point(968, 115);
+            this.statisticsButton.Name = "statisticsButton";
+            this.statisticsButton.Size = new System.Drawing.Size(116, 51);
+            this.statisticsButton.TabIndex = 21;
+            this.statisticsButton.Text = "Statystyki";
+            this.statisticsButton.Click += new System.EventHandler(this.statisticsButton_Click);
+            // 
+            // arrangeVisitButtonOnTab
+            // 
+            this.arrangeVisitButtonOnTab.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.arrangeVisitButtonOnTab.Appearance.Options.UseFont = true;
+            this.arrangeVisitButtonOnTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("arrangeVisitButtonOnTab.ImageOptions.Image")));
+            this.arrangeVisitButtonOnTab.Location = new System.Drawing.Point(807, 115);
+            this.arrangeVisitButtonOnTab.Name = "arrangeVisitButtonOnTab";
+            this.arrangeVisitButtonOnTab.Size = new System.Drawing.Size(146, 51);
+            this.arrangeVisitButtonOnTab.TabIndex = 20;
+            this.arrangeVisitButtonOnTab.Text = "Umów wizytę";
+            this.arrangeVisitButtonOnTab.Click += new System.EventHandler(this.arrangeVisitButtonOnTab_Click);
+            // 
+            // visitButton
+            // 
+            this.visitButton.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.visitButton.Appearance.Options.UseFont = true;
+            this.visitButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("visitButton.ImageOptions.Image")));
+            this.visitButton.Location = new System.Drawing.Point(698, 115);
+            this.visitButton.Name = "visitButton";
+            this.visitButton.Size = new System.Drawing.Size(94, 51);
+            this.visitButton.TabIndex = 19;
+            this.visitButton.Text = "Wizyta";
+            this.visitButton.Click += new System.EventHandler(this.visitButton_Click);
+            // 
+            // info2Label
+            // 
+            this.info2Label.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.info2Label.Appearance.Options.UseFont = true;
+            this.info2Label.Location = new System.Drawing.Point(677, 75);
+            this.info2Label.Name = "info2Label";
+            this.info2Label.Size = new System.Drawing.Size(591, 19);
+            this.info2Label.TabIndex = 18;
+            this.info2Label.Text = "Lub naciśnij jeden z poniższych przycisków, aby przenieść się do wybranej zakładk" +
+    "i.";
+            // 
+            // patientButton
+            // 
+            this.patientButton.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.patientButton.Appearance.Options.UseFont = true;
+            this.patientButton.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("patientButton.ImageOptions.Image")));
+            this.patientButton.Location = new System.Drawing.Point(570, 115);
+            this.patientButton.Name = "patientButton";
+            this.patientButton.Size = new System.Drawing.Size(113, 51);
+            this.patientButton.TabIndex = 17;
+            this.patientButton.Text = "Pacjenci";
+            this.patientButton.Click += new System.EventHandler(this.patientButton_Click);
+            // 
+            // greetingsLabel
+            // 
+            this.greetingsLabel.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.greetingsLabel.Appearance.Options.UseFont = true;
+            this.greetingsLabel.Location = new System.Drawing.Point(890, 208);
+            this.greetingsLabel.Name = "greetingsLabel";
+            this.greetingsLabel.Size = new System.Drawing.Size(126, 19);
+            this.greetingsLabel.TabIndex = 16;
+            this.greetingsLabel.Text = "Życzę miłej pracy!";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(633, 50);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(651, 19);
+            this.labelControl1.TabIndex = 15;
+            this.labelControl1.Text = "Jeżeli chcesz rozpocząć pracę z aplikacją wybierz jedną z zakładek znajdujących s" +
+    "ię powyżej.";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(858, 5);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(185, 25);
+            this.labelControl2.TabIndex = 14;
+            this.labelControl2.Text = "Witaj w aplikacji!";
+            // 
             // uMOWWIZTEBindingSource
             // 
             this.uMOWWIZTEBindingSource.DataMember = "UMOW_WIZTE";
@@ -1542,14 +1614,6 @@
             // uBEZPIECZENIETableAdapter
             // 
             this.uBEZPIECZENIETableAdapter.ClearBeforeFill = true;
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Odswiez";
-            this.barButtonItem1.Id = 2;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // time
             // 
@@ -1605,6 +1669,27 @@
             // 
             this.pACJENTTableAdapter.ClearBeforeFill = true;
             // 
+            // infoLabel
+            // 
+            this.infoLabel.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.infoLabel.Appearance.Options.UseFont = true;
+            this.infoLabel.Location = new System.Drawing.Point(12, 454);
+            this.infoLabel.Name = "infoLabel";
+            this.infoLabel.Size = new System.Drawing.Size(651, 19);
+            this.infoLabel.TabIndex = 15;
+            this.infoLabel.Text = "Jeżeli chcesz rozpocząć pracę z aplikacją wybierz jedną z zakładek znajdujących s" +
+    "ię powyżej.";
+            // 
+            // welcomeLabel
+            // 
+            this.welcomeLabel.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.welcomeLabel.Appearance.Options.UseFont = true;
+            this.welcomeLabel.Location = new System.Drawing.Point(12, 448);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(185, 25);
+            this.welcomeLabel.TabIndex = 14;
+            this.welcomeLabel.Text = "Witaj w aplikacji!";
+            // 
             // AdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1623,8 +1708,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminMenu_FormClosing);
             this.Load += new System.EventHandler(this.AdminMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
@@ -1654,6 +1737,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridStatistics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statisticsviewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewStatistics)).EndInit();
+            this.WelcomePage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uMOWWIZTEBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminviewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wIZYTABindingSource)).EndInit();
@@ -1679,20 +1766,17 @@
         private DevExpress.XtraGrid.Columns.GridColumn colID_Ubezpieczenie1;
         private DevExpress.XtraGrid.Columns.GridColumn colRodzaj;
         private DevExpress.XtraBars.BarButtonItem addPatient;
-        private DevExpress.XtraBars.BarButtonItem refreshButton;
+        private DevExpress.XtraBars.BarButtonItem savePatientXLSButton;
         private DevExpress.XtraBars.BarButtonItem deleteButtonP;
         private DevExpress.XtraBars.Navigation.TabNavigationPage ICDPage;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup UbezpieczenieGroup;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ICDGroup;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem refreshUbezp;
         private DevExpress.XtraBars.BarButtonItem addICD;
-        private DevExpress.XtraBars.BarButtonItem refreshICD;
         private DevExpress.XtraBars.BarButtonItem saveChangesICD;
         private DevExpress.XtraBars.BarButtonItem addVisit;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup WizytaGroup;
         private DevExpress.XtraBars.Navigation.TabNavigationPage WizytaPage;
-        private DevExpress.XtraBars.BarButtonItem refreshVisit;
+        private DevExpress.XtraBars.BarButtonItem saveVisitXLSButton;
         private DevExpress.XtraBars.BarButtonItem deleteButtonU;
         private DevExpress.XtraBars.BarButtonItem deleteButtonI;
         private DevExpress.XtraBars.BarButtonItem deleteButtonW;
@@ -1703,10 +1787,10 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch repositoryItemToggleSwitch1;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraBars.BarToggleSwitchItem deleteModeBar;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem1;
+        private DevExpress.XtraBars.BarStaticItem deleteModeLabelPatient;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
         private DevExpress.XtraBars.BarToggleSwitchItem deleteBarWizyta;
-        private DevExpress.XtraBars.BarStaticItem barStaticItem2;
+        private DevExpress.XtraBars.BarStaticItem deleteModeLabelVisit;
         private DevExpress.XtraGrid.GridControl gridICD;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewICD;
         private DevExpress.XtraGrid.Columns.GridColumn colidICD;
@@ -1717,7 +1801,6 @@
         private DevExpress.XtraBars.BarButtonItem viewVisit;
         private DevExpress.XtraBars.BarButtonItem editVisit;
         private System.Windows.Forms.BindingSource adminviewBindingSource;
-        private DevExpress.XtraBars.BarHeaderItem barHeaderItem1;
         private DevExpress.XtraBars.BarStaticItem loggedAsText;
         private PoradniaDataSetTableAdapters.UZYTKOWNIKTableAdapter uzytkownikTableAdapter;
         private DevExpress.XtraBars.BarButtonItem findPatientButton;
@@ -1730,16 +1813,6 @@
         private DevExpress.XtraBars.BarButtonItem findICDButton;
         private DevExpress.XtraBars.Navigation.TabNavigationPage UmowWizytePage;
         private DevExpress.XtraBars.Navigation.TabNavigationPage StatystykiPage;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarSubItem barSubItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarDockingMenuItem barDockingMenuItem1;
-        private DevExpress.XtraBars.BarButtonItem ExportToPDF_Button;
-        private DevExpress.XtraBars.BarButtonItem ExportToCSV_Button;
-        private DevExpress.XtraBars.BarButtonItem ExportToXLS_Button;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
-        private DevExpress.XtraBars.BarSubItem P;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private System.Windows.Forms.BindingSource uMOWWIZTEBindingSource;
         private PoradniaDataSetTableAdapters.UMOW_WIZTETableAdapter uMOW_WIZTETableAdapter;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup UmowWizyteGroup;
@@ -1747,7 +1820,6 @@
         private DevExpress.XtraBars.BarButtonItem arrangeVisitButton;
         private DevExpress.XtraBars.BarButtonItem deleteArrangedVisitButton;
         private DevExpress.XtraBars.BarButtonItem startArrangedVisitButton;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarCheckItem filterStdButton;
         private DevExpress.XtraBars.BarCheckItem filterAdvButton;
         private System.Windows.Forms.BindingSource arrangevisitviewBindingSource;
@@ -1762,7 +1834,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colData2;
         private DevExpress.XtraGrid.Columns.GridColumn colGodzina2;
         private DevExpress.XtraBars.BarButtonItem statisticsExportToXLSButton;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private DevExpress.XtraGrid.GridControl gridWizyta;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewWizyta;
@@ -1822,5 +1893,26 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPaszport;
         private DevExpress.XtraGrid.Columns.GridColumn colUbezpieczenie;
         private DevExpress.XtraGrid.Columns.GridColumn colNumer_EKUZ;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage WelcomePage;
+        private DevExpress.XtraBars.BarButtonItem refreshButton;
+        private DevExpress.XtraBars.BarButtonItem closeButton;
+        private DevExpress.XtraBars.BarButtonItem saveArrangedVisitXLSButton;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup otherGroup;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.SimpleButton ICDButton;
+        private DevExpress.XtraEditors.SimpleButton insuranceButton;
+        private DevExpress.XtraEditors.SimpleButton statisticsButton;
+        private DevExpress.XtraEditors.SimpleButton arrangeVisitButtonOnTab;
+        private DevExpress.XtraEditors.SimpleButton visitButton;
+        private DevExpress.XtraEditors.LabelControl info2Label;
+        private DevExpress.XtraEditors.SimpleButton patientButton;
+        private DevExpress.XtraEditors.LabelControl greetingsLabel;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl infoLabel;
+        private DevExpress.XtraEditors.LabelControl welcomeLabel;
+        private DevExpress.XtraBars.BarButtonItem addUserButton;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup userGroup;
+        private DevExpress.XtraBars.BarButtonItem clearFilter;
     }
 }

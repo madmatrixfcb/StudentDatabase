@@ -139,6 +139,12 @@
     <Compile Include="AddUbezp.Designer.cs">
       <DependentUpon>AddUbezp.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddVisit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,17 +199,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SelectPane.cs">
+    <Compile Include="FormLoad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SelectPane.Designer.cs">
-      <DependentUpon>SelectPane.cs</DependentUpon>
+    <Compile Include="FormLoad.Designer.cs">
+      <DependentUpon>FormLoad.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewVisit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewVisit.Designer.cs">
       <DependentUpon>ViewVisit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm.Designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddICD.resx">
       <DependentUpon>AddICD.cs</DependentUpon>
@@ -247,11 +259,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SelectPane.resx">
-      <DependentUpon>SelectPane.cs</DependentUpon>
+    <EmbeddedResource Include="FormLoad.resx">
+      <DependentUpon>FormLoad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewVisit.resx">
       <DependentUpon>ViewVisit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>

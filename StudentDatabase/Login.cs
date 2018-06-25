@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Text;
 using System.Windows.Forms;
 
@@ -13,8 +14,6 @@ namespace StudentDatabase
 
         private void Login_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'poradniaDataSet.UZYTKOWNIK' table. You can move, or remove it, as needed.
-            //this.uzytkownikTableAdapter.Fill(this.poradniaDataSet.UZYTKOWNIK);
             this.AcceptButton = loginButton;
         }
 
@@ -73,7 +72,7 @@ namespace StudentDatabase
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else if (LoginInfo.userType == "Lekarz")
@@ -87,12 +86,12 @@ namespace StudentDatabase
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Wprowadzono nieprawidłowe dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Wprowadzono nieprawidłowe dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     loginBox.ResetText();
                     passBox.ResetText();
                 }
@@ -109,22 +108,22 @@ namespace StudentDatabase
                     {
 
                         uzytkownikTableAdapter.UpdatePassword(newPass, LoginInfo.userID);
-                        MessageBox.Show("Hasło dla użytkownika " + LoginInfo.login + " zostało zmienione", "Hasło zmienione", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        XtraMessageBox.Show("Hasło dla użytkownika " + LoginInfo.login + " zostało zmienione", "Hasło zmienione", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         changePasswordControl_Click(sender, e);
                     }
                     catch
                     {
-                        MessageBox.Show("Wystąpił błąd podczas zmiany hasła dla użytkownika " + LoginInfo.login, "Hasło nie zostało zmienione", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        XtraMessageBox.Show("Wystąpił błąd podczas zmiany hasła dla użytkownika " + LoginInfo.login, "Hasło nie zostało zmienione", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Użytkownik " + LoginInfo.login + " nie istnieje lub stare hasło jest niepoprawne", "Hasło nie zostało zmienione", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Użytkownik " + LoginInfo.login + " nie istnieje lub stare hasło jest niepoprawne", "Hasło nie zostało zmienione", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Wprowadzono nieprawidłowe dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("Wprowadzono nieprawidłowe dane", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

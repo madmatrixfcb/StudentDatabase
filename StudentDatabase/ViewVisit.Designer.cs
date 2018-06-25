@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewVisit));
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager2 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentDatabase.FormLoad), true, true);
+            this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentDatabase.WaitForm), true, true);
             this.patientviewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -82,6 +84,7 @@
             this.dowodLabelTB = new DevExpress.XtraEditors.TextEdit();
             this.passportLabelTB = new DevExpress.XtraEditors.TextEdit();
             this.insuranceLabelTB = new DevExpress.XtraEditors.TextEdit();
+            this.ekuzNumberTB = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutKartaWizyty = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -108,17 +111,16 @@
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.printPreviewButton = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.ICD1Label = new DevExpress.XtraLayout.LayoutControlItem();
             this.printButton = new DevExpress.XtraEditors.SimpleButton();
             this.exportToPDFButton = new DevExpress.XtraEditors.SimpleButton();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.ekuzNumberTB = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.patientviewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
@@ -151,6 +153,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dowodLabelTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passportLabelTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.insuranceLabelTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ekuzNumberTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutKartaWizyty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
@@ -177,14 +180,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICD1Label)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ekuzNumberTB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
+            // 
+            // splashScreenManager
+            // 
+            this.splashScreenManager.ClosingDelay = 500;
             // 
             // patientviewBindingSource
             // 
@@ -217,9 +223,9 @@
             // gridControl1
             // 
             this.gridControl1.DataSource = this.patientviewBindingSource;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControl1.Location = new System.Drawing.Point(1224, 143);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -623,6 +629,14 @@
             this.insuranceLabelTB.StyleController = this.layoutControl1;
             this.insuranceLabelTB.TabIndex = 26;
             // 
+            // ekuzNumberTB
+            // 
+            this.ekuzNumberTB.Location = new System.Drawing.Point(489, 121);
+            this.ekuzNumberTB.Name = "ekuzNumberTB";
+            this.ekuzNumberTB.Size = new System.Drawing.Size(276, 20);
+            this.ekuzNumberTB.StyleController = this.layoutControl1;
+            this.ekuzNumberTB.TabIndex = 27;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -964,17 +978,6 @@
             this.layoutControlItem14.Text = "Ubezpieczenie:";
             this.layoutControlItem14.TextSize = new System.Drawing.Size(93, 13);
             // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlItem9.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem9.Control = this.phoneLabelTB;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 72);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(359, 24);
-            this.layoutControlItem9.Text = "Telefon:";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(93, 13);
-            // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -996,6 +999,30 @@
             this.layoutControlItem11.Size = new System.Drawing.Size(261, 24);
             this.layoutControlItem11.Text = "Karta Polaka:";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(93, 13);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem9.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem9.Control = this.phoneLabelTB;
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(359, 24);
+            this.layoutControlItem9.Text = "Telefon:";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(93, 13);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem7.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem7.Control = this.ekuzNumberTB;
+            this.layoutControlItem7.Location = new System.Drawing.Point(359, 48);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.layoutControlItem7.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem7.Size = new System.Drawing.Size(378, 24);
+            this.layoutControlItem7.Text = "Numer EKUZ:";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(93, 13);
             // 
             // printPreviewButton
             // 
@@ -1043,26 +1070,9 @@
             this.exportToPDFButton.Text = "Eksport do PDF";
             this.exportToPDFButton.Click += new System.EventHandler(this.exportToPDFButton_Click);
             // 
-            // ekuzNumberTB
+            // splashScreenManager2
             // 
-            this.ekuzNumberTB.Location = new System.Drawing.Point(489, 121);
-            this.ekuzNumberTB.Name = "ekuzNumberTB";
-            this.ekuzNumberTB.Size = new System.Drawing.Size(276, 20);
-            this.ekuzNumberTB.StyleController = this.layoutControl1;
-            this.ekuzNumberTB.TabIndex = 27;
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlItem7.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem7.Control = this.ekuzNumberTB;
-            this.layoutControlItem7.Location = new System.Drawing.Point(359, 48);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.layoutControlItem7.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem7.Size = new System.Drawing.Size(378, 24);
-            this.layoutControlItem7.Text = "Numer EKUZ:";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(93, 13);
+            splashScreenManager2.ClosingDelay = 25;
             // 
             // ViewVisit
             // 
@@ -1109,6 +1119,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dowodLabelTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passportLabelTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.insuranceLabelTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ekuzNumberTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutKartaWizyty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
@@ -1135,13 +1146,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ICD1Label)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ekuzNumberTB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1235,5 +1245,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private DevExpress.XtraEditors.TextEdit ekuzNumberTB;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }

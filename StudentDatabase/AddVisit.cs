@@ -19,6 +19,7 @@ namespace StudentDatabase
             this.uzytkownikTableAdapter.Fill(this.poradniaDataSet.UZYTKOWNIK);
             this.pacjentTableAdapter.Fill(this.poradniaDataSet.PACJENT);
             this.iCDTableAdapter.Fill(this.poradniaDataSet.ICD);
+            
 
             userCB.EditValue = Convert.ToInt16(uzytkownikTableAdapter.SelectUserID(Login.LoginInfo.login, Login.LoginInfo.pass));
             LoadArrangedVisitInfo();
@@ -38,7 +39,7 @@ namespace StudentDatabase
             }
             else
             {
-                timeEdit.EditValue = DateTime.Now;
+                TimeLoad();
                 dateEdit.EditValue = DateTime.Now;
             }
         }
@@ -152,13 +153,38 @@ namespace StudentDatabase
                 {
                     minute = 0;
                 }
-
                 var selectionStart = timeEdit.SelectionStart;
                 var selectionLength = timeEdit.SelectionLength;
                 timeEdit.Time = new DateTime(time.Year, time.Month, time.Day, time.Hour, minute, time.Second);
                 timeEdit.SelectionStart = selectionStart;
                 timeEdit.SelectionLength = selectionLength;
             }
+        }
+
+        private void TimeLoad()
+        {
+            timeEdit.Time = DateTime.Now;
+            var time = timeEdit.Time;
+            
+            //timeEdit.Time = new DateTime(time.Year, time.Month, time.Day, time.Hour, time.Minute, time.Second);
+            int minute = time.Minute;
+            if (minute >= 45)
+            {
+                minute = 45;
+            }
+            else if (minute >= 30)
+            {
+                minute = 30;
+            }
+            else if (minute >= 15)
+            {
+                minute = 15;
+            }
+            else
+            {
+                minute = 0;
+            }
+            timeEdit.EditValue = new DateTime(time.Year, time.Month, time.Day, time.Hour, minute, time.Second);
         }
 
         //-----------------------CUSTOM DISPLAY----------------------------------/

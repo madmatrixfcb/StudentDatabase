@@ -14,7 +14,7 @@ namespace StudentDatabase
         private void ArrangeVisit_Load(object sender, EventArgs e)
         {
             this.pacjentTableAdapter.Fill(this.poradniaDataSet.PACJENT);
-            timeEdit.EditValue = DateTime.Now;
+            TimeLoad();
             dateEdit.EditValue = DateTime.Now;
         }
 
@@ -102,6 +102,32 @@ namespace StudentDatabase
                 timeEdit.SelectionStart = selectionStart;
                 timeEdit.SelectionLength = selectionLength;
             }
+        }
+
+         private void TimeLoad()
+        {
+            timeEdit.Time = DateTime.Now;
+            var time = timeEdit.Time;
+            
+            //timeEdit.Time = new DateTime(time.Year, time.Month, time.Day, time.Hour, time.Minute, time.Second);
+            int minute = time.Minute;
+            if (minute >= 45)
+            {
+                minute = 45;
+            }
+            else if (minute >= 30)
+            {
+                minute = 30;
+            }
+            else if (minute >= 15)
+            {
+                minute = 15;
+            }
+            else
+            {
+                minute = 0;
+            }
+            timeEdit.EditValue = new DateTime(time.Year, time.Month, time.Day, time.Hour, minute, time.Second);
         }
 
         //-----------------------CUSTOM DISPLAY----------------------------------/

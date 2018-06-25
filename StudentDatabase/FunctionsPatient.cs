@@ -107,13 +107,5 @@ namespace StudentDatabase
             else
                 return true;
         }
-
-        public static void ConvertToNull(string box)
-        {
-            if (box == "")
-            {
-                box = "Brak";
-            }
-        }
     }
 }

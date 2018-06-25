@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using DevExpress.XtraGrid.Views.Base;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraGrid.Views.Base;
-using DevExpress.XtraLayout;
-using DevExpress.XtraPrinting;
 
 namespace StudentDatabase
 {
@@ -23,7 +14,6 @@ namespace StudentDatabase
 
         private void VisitView_Load(object sender, EventArgs e)
         {
-
             this.patient_viewTableAdapter.Fill(this.poradniaDataSet.patient_view);
             LoadVisitInfo();
             int userID = Convert.ToInt16(AdminMenu.VisitPreview.patientID);
@@ -37,7 +27,6 @@ namespace StudentDatabase
 
         private void LoadPatientInfo()
         {
-
             patientIDLabelTB.Text = PatientData.pacjentRow["ID_Pacjent"].ToString();
             nameLabelTB.Text = PatientData.pacjentRow["Imie"].ToString();
             surnameLabelTB.Text = PatientData.pacjentRow["Nazwisko"].ToString();
@@ -57,17 +46,16 @@ namespace StudentDatabase
         }
 
         public static class DataGet
-            {
+        {
             public static string data;
-            }
-
+        }
 
         public void LoadVisitInfo()
         {
             DataRow visit = AdminMenu.VisitPreview.visitRow;
             visitIDLabelTB.Text = visit["ID_Wizyta"].ToString();
             DataGet.data = visit["Data"].ToString();
-            dateLabelTB.Text = DataGet.data.Substring(0,10) + " " + visit["Godzina"].ToString();
+            dateLabelTB.Text = DataGet.data.Substring(0, 10) + " " + visit["Godzina"].ToString();
             objawyLabelTB.Text = visit["Objawy"].ToString();
             bprzedmiotoweLabelTB.Text = visit["BPrzedmiotowe"].ToString();
             bpodmiotoweLabelTB.Text = visit["Bpodmiotowe"].ToString();
@@ -82,12 +70,10 @@ namespace StudentDatabase
 
         private void gridView1_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
-
-
             if (gridView1.DataRowCount > 0)
             {
-            PatientData.pacjentRow = gridView1.GetFocusedDataRow();
-            LoadPatientInfo();
+                PatientData.pacjentRow = gridView1.GetFocusedDataRow();
+                LoadPatientInfo();
             }
             else
             {
@@ -104,27 +90,43 @@ namespace StudentDatabase
             string filename = saveFileDialog.FileName;
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                filename = saveFileDialog.FileName;
-                layoutControl1.ExportToPdf(filename);
-                filename = "";
+                try
+                {
+                    splashScreenManager.ShowWaitForm();
+                    filename = saveFileDialog.FileName;
+                    layoutControl1.ExportToPdf(filename);
+                    splashScreenManager.CloseWaitForm();
+                }
+                catch
+                {
+                    MessageBox.Show("Wystąpił błąd.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-
-            else
-            {
-
-                MessageBox.Show("Wysąpił błąd.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            filename = "";
         }
 
         private void printPreviewButton_Click(object sender, EventArgs e)
         {
-            layoutControl1.ShowPrintPreview();
-
+            try
+            {
+                layoutControl1.ShowPrintPreview();
+            }
+            catch
+            {
+                MessageBox.Show("Wystąpił błąd.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void printButton_Click(object sender, EventArgs e)
         {
-            layoutControl1.Print();
+            try
+            {
+                layoutControl1.Print();
+            }
+            catch
+            {
+                MessageBox.Show("Wystąpił błąd.", "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

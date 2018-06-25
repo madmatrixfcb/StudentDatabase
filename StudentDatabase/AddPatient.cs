@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Windows.Forms;
 
 namespace StudentDatabase
@@ -50,7 +51,6 @@ namespace StudentDatabase
         private void AddPatient2_Click(object sender, EventArgs e)
         {
             bool isValid = dxValidationProvider.Validate();
-            //bool injectionOK = dxValidationProviderInjection.Validate();
 
             if (isValid == true)
             {
@@ -71,10 +71,6 @@ namespace StudentDatabase
                 string plec = Convert.ToString(plecSelect.SelectedValue);
                 string ubezpieczenie = Convert.ToString(ubezpieczenieSelect.SelectedValue);
                 string nr_ekuz = Convert.ToString(ekuzTB.Text);
-                /*FunctionsPatient.ConvertToNull(nr_pesel);
-                FunctionsPatient.ConvertToNull(dowod_osobisty);
-                FunctionsPatient.ConvertToNull(nr_paszportu);
-                FunctionsPatient.ConvertToNull(nr_ekuz);*/
 
                 if (nr_pesel == "")
                 {
@@ -171,6 +167,29 @@ namespace StudentDatabase
             {
                 checkPESEL.ImageOptions.Image = DevExpress.Images.ImageResourceCache.Default.GetImage("images/actions/cancel_32x32.png");
                 checkPESEL.Text = "Pesel ZŁY";
+            }
+        }
+
+        private void phoneCheckEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (phoneCheckEdit.Checked == false)
+            {
+                telefonTB.Properties.Mask.EditMask = "(\\+48-)[0-9]{0,3}(-)[0-9]{0,3}(-)[0-9]{0,3}";
+                telefonTB.Text = "";
+            }
+
+            if (phoneCheckEdit.Checked == true)
+            {
+                telefonTB.Properties.Mask.EditMask = "[0-9]{0,3}(-)[0-9]{0,3}(-)[0-9]{0,3}(-)[0-9]{0,3}";
+                telefonTB.Text = "";
+            }
+        }
+
+        private void txtMessage_KeyPress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                AddPatient2_Click(sender, e);
             }
         }
     }
