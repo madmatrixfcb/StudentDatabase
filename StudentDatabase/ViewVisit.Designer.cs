@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewVisit));
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager2 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentDatabase.FormLoad), true, true);
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewVisit));
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentDatabase.WaitForm), true, true);
             this.patientviewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
@@ -188,6 +188,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ICD1Label)).BeginInit();
             this.SuspendLayout();
             // 
+            // splashScreenManager2
+            // 
+            splashScreenManager2.ClosingDelay = 25;
+            // 
             // splashScreenManager
             // 
             this.splashScreenManager.ClosingDelay = 500;
@@ -223,9 +227,9 @@
             // gridControl1
             // 
             this.gridControl1.DataSource = this.patientviewBindingSource;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(1224, 143);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -1070,10 +1074,6 @@
             this.exportToPDFButton.Text = "Eksport do PDF";
             this.exportToPDFButton.Click += new System.EventHandler(this.exportToPDFButton_Click);
             // 
-            // splashScreenManager2
-            // 
-            splashScreenManager2.ClosingDelay = 25;
-            // 
             // ViewVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1084,6 +1084,7 @@
             this.Controls.Add(this.printPreviewButton);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.gridControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewVisit";
             this.Text = "Podgląd wizyty";
             this.Load += new System.EventHandler(this.VisitView_Load);

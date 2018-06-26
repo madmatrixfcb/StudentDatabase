@@ -30,14 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentDatabase.FormLoad), true, true);
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule9 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule10 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule8 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule9 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPatient));
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.miastoTB = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
@@ -67,10 +69,8 @@
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.addPatientButton = new DevExpress.XtraEditors.SimpleButton();
-            this.ubezpieczenieSelect = new System.Windows.Forms.ComboBox();
             this.uBEZPIECZENIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
-            this.plecSelect = new System.Windows.Forms.ComboBox();
             this.pLECBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.krajSelect = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.kRAJBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -86,13 +86,20 @@
             this.checkPESEL = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
             this.kpSelect = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.dxValidationProviderInjection = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.pACJENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pACJENTTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PACJENTTableAdapter();
             this.uBEZPIECZENIETableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UBEZPIECZENIETableAdapter();
             this.pLECTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PLECTableAdapter();
             this.krajTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.KRAJTableAdapter();
             this.phoneCheckEdit = new DevExpress.XtraEditors.CheckEdit();
+            this.ubezpieczenieSelect = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID_Ubezpieczenie = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRodzaj = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.plecSelect = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID_Plec = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.miastoTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kodTB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mieszkanieTB.Properties)).BeginInit();
@@ -115,9 +122,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.kRAJBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kpSelect.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderInjection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneCheckEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ubezpieczenieSelect.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plecSelect.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // splashScreenManager
@@ -136,15 +146,15 @@
             // 
             this.miastoTB.Location = new System.Drawing.Point(227, 269);
             this.miastoTB.Name = "miastoTB";
-            this.miastoTB.Properties.Mask.EditMask = "[a-zA-Z0-9 /]{0,30}";
+            this.miastoTB.Properties.Mask.EditMask = "[a-zA-Z0-9ĄĘŚĆÓŁŃŻŹąęśćółńżź /]{0,30}";
             this.miastoTB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.miastoTB.Properties.Mask.ShowPlaceHolders = false;
             this.miastoTB.Size = new System.Drawing.Size(77, 20);
             this.miastoTB.TabIndex = 11;
-            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule9.ErrorText = "Pole nie może być puste";
-            conditionValidationRule9.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProvider.SetValidationRule(this.miastoTB, conditionValidationRule9);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Pole nie może być puste";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider.SetValidationRule(this.miastoTB, conditionValidationRule1);
             // 
             // labelControl12
             // 
@@ -164,10 +174,10 @@
             this.kodTB.Properties.ValidateOnEnterKey = true;
             this.kodTB.Size = new System.Drawing.Size(61, 20);
             this.kodTB.TabIndex = 10;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Pole nie może być puste";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProvider.SetValidationRule(this.kodTB, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Pole nie może być puste";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider.SetValidationRule(this.kodTB, conditionValidationRule2);
             // 
             // labelControl10
             // 
@@ -224,10 +234,10 @@
             this.budynekTB.Properties.Mask.ShowPlaceHolders = false;
             this.budynekTB.Size = new System.Drawing.Size(45, 20);
             this.budynekTB.TabIndex = 8;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Pole nie może być puste";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProvider.SetValidationRule(this.budynekTB, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Pole nie może być puste";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider.SetValidationRule(this.budynekTB, conditionValidationRule3);
             // 
             // labelControl7
             // 
@@ -241,15 +251,15 @@
             // 
             this.ulicaTB.Location = new System.Drawing.Point(105, 215);
             this.ulicaTB.Name = "ulicaTB";
-            this.ulicaTB.Properties.Mask.EditMask = "[a-zA-Z0-9 .,/]{0,50}";
+            this.ulicaTB.Properties.Mask.EditMask = "[a-zA-Z0-9ĄĘŚĆÓŁŃŻŹąęśćółńżź .,/]{0,50}";
             this.ulicaTB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.ulicaTB.Properties.Mask.ShowPlaceHolders = false;
             this.ulicaTB.Size = new System.Drawing.Size(199, 20);
             this.ulicaTB.TabIndex = 7;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Pole nie może być puste";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProvider.SetValidationRule(this.ulicaTB, conditionValidationRule3);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "Pole nie może być puste";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider.SetValidationRule(this.ulicaTB, conditionValidationRule4);
             // 
             // labelControl4
             // 
@@ -345,16 +355,16 @@
             // 
             this.nazwiskoTB.Location = new System.Drawing.Point(105, 59);
             this.nazwiskoTB.Name = "nazwiskoTB";
-            this.nazwiskoTB.Properties.Mask.EditMask = "[a-zA-Z ,./-]{0,50}";
+            this.nazwiskoTB.Properties.Mask.EditMask = "[a-zA-ZĄĘŚĆÓŁŃŻŹąęśćółńżź ,./-]{0,50}";
             this.nazwiskoTB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.nazwiskoTB.Properties.Mask.ShowPlaceHolders = false;
             this.nazwiskoTB.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.nazwiskoTB.Size = new System.Drawing.Size(199, 20);
             this.nazwiskoTB.TabIndex = 2;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Pole nie może być puste";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProvider.SetValidationRule(this.nazwiskoTB, conditionValidationRule4);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Pole nie może być puste";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider.SetValidationRule(this.nazwiskoTB, conditionValidationRule5);
             // 
             // labelControl1
             // 
@@ -381,34 +391,25 @@
             this.dataur.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.True;
             this.dataur.Size = new System.Drawing.Size(199, 20);
             this.dataur.TabIndex = 3;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Pole nie może być puste";
-            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProvider.SetValidationRule(this.dataur, conditionValidationRule5);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "Pole nie może być puste";
+            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider.SetValidationRule(this.dataur, conditionValidationRule6);
             // 
             // imieTB
             // 
             this.imieTB.Location = new System.Drawing.Point(105, 33);
             this.imieTB.Name = "imieTB";
-            this.imieTB.Properties.Mask.EditMask = "[a-zA-Z ,.]{0,50}";
+            this.imieTB.Properties.Mask.EditMask = "[a-zA-ZĄĘŚĆÓŁŃŻŹąęśćółńżź ,.]{0,50}";
             this.imieTB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.imieTB.Properties.Mask.ShowPlaceHolders = false;
             this.imieTB.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.imieTB.Size = new System.Drawing.Size(199, 20);
             this.imieTB.TabIndex = 1;
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "Pole nie może być puste";
-            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            this.dxValidationProvider.SetValidationRule(this.imieTB, conditionValidationRule6);
-            conditionValidationRule10.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.NotContains;
-            conditionValidationRule10.ErrorText = "This value is not valid";
-            conditionValidationRule10.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
-            conditionValidationRule10.Values.Add("SELECT");
-            conditionValidationRule10.Values.Add("INSERT");
-            conditionValidationRule10.Values.Add("SHOW");
-            conditionValidationRule10.Values.Add("DELETE");
-            conditionValidationRule10.Values.Add("UPDATE");
-            this.dxValidationProviderInjection.SetValidationRule(this.imieTB, conditionValidationRule10);
+            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule7.ErrorText = "Pole nie może być puste";
+            conditionValidationRule7.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            this.dxValidationProvider.SetValidationRule(this.imieTB, conditionValidationRule7);
             // 
             // labelControl13
             // 
@@ -439,18 +440,6 @@
             this.addPatientButton.Text = "Dodaj pacjenta";
             this.addPatientButton.Click += new System.EventHandler(this.AddPatient2_Click);
             // 
-            // ubezpieczenieSelect
-            // 
-            this.ubezpieczenieSelect.DataSource = this.uBEZPIECZENIEBindingSource;
-            this.ubezpieczenieSelect.DisplayMember = "Rodzaj";
-            this.ubezpieczenieSelect.FormattingEnabled = true;
-            this.ubezpieczenieSelect.Location = new System.Drawing.Point(124, 427);
-            this.ubezpieczenieSelect.Name = "ubezpieczenieSelect";
-            this.ubezpieczenieSelect.Size = new System.Drawing.Size(180, 21);
-            this.ubezpieczenieSelect.TabIndex = 21;
-            this.ubezpieczenieSelect.ValueMember = "ID_Ubezpieczenie";
-            this.ubezpieczenieSelect.SelectedIndexChanged += new System.EventHandler(this.ubezpieczenieSelect_SelectedIndexChanged);
-            // 
             // uBEZPIECZENIEBindingSource
             // 
             this.uBEZPIECZENIEBindingSource.DataMember = "UBEZPIECZENIE";
@@ -461,17 +450,6 @@
             this.poradniaDataSet.DataSetName = "PoradniaDataSet";
             this.poradniaDataSet.Locale = new System.Globalization.CultureInfo("pl");
             this.poradniaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // plecSelect
-            // 
-            this.plecSelect.DataSource = this.pLECBindingSource;
-            this.plecSelect.DisplayMember = "Plec";
-            this.plecSelect.FormattingEnabled = true;
-            this.plecSelect.Location = new System.Drawing.Point(105, 163);
-            this.plecSelect.Name = "plecSelect";
-            this.plecSelect.Size = new System.Drawing.Size(199, 21);
-            this.plecSelect.TabIndex = 6;
-            this.plecSelect.ValueMember = "ID_Plec";
             // 
             // pLECBindingSource
             // 
@@ -608,10 +586,6 @@
             this.kpSelect.Size = new System.Drawing.Size(180, 20);
             this.kpSelect.TabIndex = 20;
             // 
-            // dxValidationProviderInjection
-            // 
-            this.dxValidationProviderInjection.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual;
-            // 
             // pACJENTBindingSource
             // 
             this.pACJENTBindingSource.DataMember = "PACJENT";
@@ -642,11 +616,119 @@
             this.phoneCheckEdit.TabIndex = 74;
             this.phoneCheckEdit.CheckedChanged += new System.EventHandler(this.phoneCheckEdit_CheckedChanged);
             // 
+            // ubezpieczenieSelect
+            // 
+            this.ubezpieczenieSelect.EditValue = "";
+            this.ubezpieczenieSelect.Location = new System.Drawing.Point(124, 427);
+            this.ubezpieczenieSelect.Name = "ubezpieczenieSelect";
+            this.ubezpieczenieSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ubezpieczenieSelect.Properties.DataSource = this.uBEZPIECZENIEBindingSource;
+            this.ubezpieczenieSelect.Properties.DisplayMember = "Rodzaj";
+            this.ubezpieczenieSelect.Properties.ValueMember = "ID_Ubezpieczenie";
+            this.ubezpieczenieSelect.Properties.View = this.gridView1;
+            this.ubezpieczenieSelect.Size = new System.Drawing.Size(180, 20);
+            this.ubezpieczenieSelect.TabIndex = 21;
+            conditionValidationRule8.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule8.ErrorText = "Popraw ubezpieczenie!";
+            conditionValidationRule8.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule8.Value1 = "[EditValue is null]";
+            conditionValidationRule8.Value2 = "";
+            this.dxValidationProvider.SetValidationRule(this.ubezpieczenieSelect, conditionValidationRule8);
+            this.ubezpieczenieSelect.EditValueChanged += new System.EventHandler(this.ubezpieczenieSelect_EditValueChanged);
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID_Ubezpieczenie,
+            this.colRodzaj});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsCustomization.AllowFilter = false;
+            this.gridView1.OptionsFilter.AllowFilterIncrementalSearch = false;
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colID_Ubezpieczenie
+            // 
+            this.colID_Ubezpieczenie.FieldName = "ID_Ubezpieczenie";
+            this.colID_Ubezpieczenie.Name = "colID_Ubezpieczenie";
+            // 
+            // colRodzaj
+            // 
+            this.colRodzaj.Caption = "Rodzaj ubezpieczenia";
+            this.colRodzaj.FieldName = "Rodzaj";
+            this.colRodzaj.Name = "colRodzaj";
+            this.colRodzaj.OptionsColumn.AllowEdit = false;
+            this.colRodzaj.OptionsColumn.AllowFocus = false;
+            this.colRodzaj.OptionsColumn.AllowIncrementalSearch = false;
+            this.colRodzaj.OptionsFilter.AllowAutoFilter = false;
+            this.colRodzaj.OptionsFilter.AllowFilter = false;
+            this.colRodzaj.Visible = true;
+            this.colRodzaj.VisibleIndex = 0;
+            // 
+            // plecSelect
+            // 
+            this.plecSelect.EditValue = "";
+            this.plecSelect.Location = new System.Drawing.Point(105, 163);
+            this.plecSelect.Name = "plecSelect";
+            this.plecSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.plecSelect.Properties.DataSource = this.pLECBindingSource;
+            this.plecSelect.Properties.DisplayMember = "Plec";
+            this.plecSelect.Properties.ValueMember = "ID_Plec";
+            this.plecSelect.Properties.View = this.searchLookUpEdit1View;
+            this.plecSelect.Size = new System.Drawing.Size(199, 20);
+            this.plecSelect.TabIndex = 6;
+            conditionValidationRule9.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule9.ErrorText = "Popraw płeć!";
+            conditionValidationRule9.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule9.Value1 = "[EditValue is null]";
+            conditionValidationRule9.Value2 = "";
+            this.dxValidationProvider.SetValidationRule(this.plecSelect, conditionValidationRule9);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID_Plec,
+            this.gridColumn1});
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colID_Plec
+            // 
+            this.colID_Plec.FieldName = "ID_Plec";
+            this.colID_Plec.Name = "colID_Plec";
+            this.colID_Plec.OptionsColumn.AllowEdit = false;
+            this.colID_Plec.OptionsColumn.AllowIncrementalSearch = false;
+            this.colID_Plec.OptionsFilter.AllowAutoFilter = false;
+            this.colID_Plec.OptionsFilter.AllowFilter = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Płeć";
+            this.gridColumn1.FieldName = "Plec";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsColumn.AllowFocus = false;
+            this.gridColumn1.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumn1.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumn1.OptionsFilter.AllowFilter = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
             // AddPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(340, 547);
+            this.Controls.Add(this.plecSelect);
+            this.Controls.Add(this.ubezpieczenieSelect);
             this.Controls.Add(this.phoneCheckEdit);
             this.Controls.Add(this.kpSelect);
             this.Controls.Add(this.labelControl17);
@@ -658,8 +740,6 @@
             this.Controls.Add(this.peselCB);
             this.Controls.Add(this.labelControl15);
             this.Controls.Add(this.krajSelect);
-            this.Controls.Add(this.plecSelect);
-            this.Controls.Add(this.ubezpieczenieSelect);
             this.Controls.Add(this.addPatientButton);
             this.Controls.Add(this.labelControl14);
             this.Controls.Add(this.labelControl13);
@@ -688,10 +768,10 @@
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.dataur);
             this.Controls.Add(this.imieTB);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddPatient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj pacjenta";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.AddPatient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.miastoTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kodTB.Properties)).EndInit();
@@ -715,9 +795,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.kRAJBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kpSelect.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dxValidationProviderInjection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pACJENTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneCheckEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ubezpieczenieSelect.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plecSelect.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -762,8 +845,6 @@
         private PoradniaDataSetTableAdapters.PACJENTTableAdapter pACJENTTableAdapter;
         private System.Windows.Forms.BindingSource kRAJBindingSource;
         private PoradniaDataSetTableAdapters.KRAJTableAdapter krajTableAdapter;
-        private System.Windows.Forms.ComboBox ubezpieczenieSelect;
-        private System.Windows.Forms.ComboBox plecSelect;
         private DevExpress.XtraEditors.SearchLookUpEdit krajSelect;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colID_Kraj;
@@ -777,7 +858,14 @@
         private DevExpress.XtraEditors.SimpleButton checkPESEL;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.ComboBoxEdit kpSelect;
-        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProviderInjection;
         private DevExpress.XtraEditors.CheckEdit phoneCheckEdit;
+        private DevExpress.XtraEditors.SearchLookUpEdit ubezpieczenieSelect;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colID_Ubezpieczenie;
+        private DevExpress.XtraGrid.Columns.GridColumn colRodzaj;
+        private DevExpress.XtraEditors.SearchLookUpEdit plecSelect;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn colID_Plec;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentDatabase.FormLoad), true, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUbezp));
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.nameUbezpTB = new DevExpress.XtraEditors.TextEdit();
             this.ubezpAdd_button = new DevExpress.XtraEditors.SimpleButton();
@@ -96,10 +97,10 @@
             this.Controls.Add(this.ubezpAdd_button);
             this.Controls.Add(this.nameUbezpTB);
             this.Controls.Add(this.labelControl2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddUbezp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dodaj ubezpieczenie";
-            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.nameUbezpTB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             this.ResumeLayout(false);

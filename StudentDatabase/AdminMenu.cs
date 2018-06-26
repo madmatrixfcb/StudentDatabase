@@ -292,12 +292,12 @@ namespace StudentDatabase
                 switch (saveFileDialog.FilterIndex)
                 {
                     case 1:
-                        gridViewStatistics.ExportToXls(filename);
+                        gridViewPacjent.ExportToXls(filename);
                         filename = "";
                         break;
 
                     case 2:
-                        gridViewStatistics.ExportToXlsx(filename);
+                        gridViewPacjent.ExportToXlsx(filename);
                         filename = "";
                         break;
                 }
@@ -504,12 +504,12 @@ namespace StudentDatabase
                 switch (saveFileDialog.FilterIndex)
                 {
                     case 1:
-                        gridViewStatistics.ExportToXls(filename);
+                        gridViewWizyta.ExportToXls(filename);
                         filename = "";
                         break;
 
                     case 2:
-                        gridViewStatistics.ExportToXlsx(filename);
+                        gridViewWizyta.ExportToXlsx(filename);
                         filename = "";
                         break;
                 }

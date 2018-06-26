@@ -1049,7 +1049,7 @@
             this.WizytaPage.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.WizytaPage.Name = "WizytaPage";
             this.WizytaPage.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.WizytaPage.Size = new System.Drawing.Size(1918, 549);
+            this.WizytaPage.Size = new System.Drawing.Size(1900, 485);
             // 
             // gridWizyta
             // 
@@ -1059,7 +1059,7 @@
             this.gridWizyta.MainView = this.gridViewWizyta;
             this.gridWizyta.MenuManager = this.ribbon;
             this.gridWizyta.Name = "gridWizyta";
-            this.gridWizyta.Size = new System.Drawing.Size(1918, 549);
+            this.gridWizyta.Size = new System.Drawing.Size(1900, 485);
             this.gridWizyta.TabIndex = 0;
             this.gridWizyta.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewWizyta});
@@ -1698,13 +1698,13 @@
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "AdminMenu";
             this.Ribbon = this.ribbon;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Menu";
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminMenu_FormClosing);
             this.Load += new System.EventHandler(this.AdminMenu_Load);

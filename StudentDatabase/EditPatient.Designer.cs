@@ -31,12 +31,22 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentDatabase.FormLoad), true, true);
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditPatient));
             this.uBEZPIECZENIEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.poradniaDataSet = new StudentDatabase.PoradniaDataSet();
             this.pLECBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.IDTB = new DevExpress.XtraEditors.TextEdit();
+            this.plecSelect = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID_Plec = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ubezpieczenieSelect = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colID_Ubezpieczenie = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRodzaj = new DevExpress.XtraGrid.Columns.GridColumn();
             this.pLECTableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.PLECTableAdapter();
             this.uBEZPIECZENIETableAdapter = new StudentDatabase.PoradniaDataSetTableAdapters.UBEZPIECZENIETableAdapter();
             this.kRAJBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -56,8 +66,6 @@
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID_Kraj = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKraj = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.plecSelect = new System.Windows.Forms.ComboBox();
-            this.ubezpieczenieSelect = new System.Windows.Forms.ComboBox();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
@@ -115,6 +123,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pLECBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDTB.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plecSelect.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ubezpieczenieSelect.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kRAJBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -179,6 +191,112 @@
             conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
             this.dxValidationProvider.SetValidationRule(this.IDTB, conditionValidationRule1);
             // 
+            // plecSelect
+            // 
+            this.plecSelect.EditValue = "";
+            this.plecSelect.Location = new System.Drawing.Point(121, 201);
+            this.plecSelect.Name = "plecSelect";
+            this.plecSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.plecSelect.Properties.DataSource = this.pLECBindingSource;
+            this.plecSelect.Properties.DisplayMember = "Plec";
+            this.plecSelect.Properties.ValueMember = "ID_Plec";
+            this.plecSelect.Properties.View = this.searchLookUpEdit1View;
+            this.plecSelect.Size = new System.Drawing.Size(199, 20);
+            this.plecSelect.TabIndex = 7;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule2.Value1 = "[EditValue is null]";
+            conditionValidationRule2.Value2 = "";
+            this.dxValidationProvider.SetValidationRule(this.plecSelect, conditionValidationRule2);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID_Plec,
+            this.gridColumn1});
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colID_Plec
+            // 
+            this.colID_Plec.FieldName = "ID_Plec";
+            this.colID_Plec.Name = "colID_Plec";
+            this.colID_Plec.OptionsColumn.AllowEdit = false;
+            this.colID_Plec.OptionsColumn.AllowIncrementalSearch = false;
+            this.colID_Plec.OptionsFilter.AllowAutoFilter = false;
+            this.colID_Plec.OptionsFilter.AllowFilter = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Płeć";
+            this.gridColumn1.FieldName = "Plec";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsColumn.AllowFocus = false;
+            this.gridColumn1.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumn1.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumn1.OptionsFilter.AllowFilter = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // ubezpieczenieSelect
+            // 
+            this.ubezpieczenieSelect.EditValue = "";
+            this.ubezpieczenieSelect.Location = new System.Drawing.Point(140, 465);
+            this.ubezpieczenieSelect.Name = "ubezpieczenieSelect";
+            this.ubezpieczenieSelect.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ubezpieczenieSelect.Properties.DataSource = this.uBEZPIECZENIEBindingSource;
+            this.ubezpieczenieSelect.Properties.DisplayMember = "Rodzaj";
+            this.ubezpieczenieSelect.Properties.ValueMember = "ID_Ubezpieczenie";
+            this.ubezpieczenieSelect.Properties.View = this.gridView1;
+            this.ubezpieczenieSelect.Size = new System.Drawing.Size(180, 20);
+            this.ubezpieczenieSelect.TabIndex = 20;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Popraw ubezpieczenie!";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Warning;
+            conditionValidationRule3.Value1 = "[EditValue is null]";
+            conditionValidationRule3.Value2 = "";
+            this.dxValidationProvider.SetValidationRule(this.ubezpieczenieSelect, conditionValidationRule3);
+            this.ubezpieczenieSelect.EditValueChanged += new System.EventHandler(this.ubezpieczenieSelect_EditValueChanged);
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID_Ubezpieczenie,
+            this.colRodzaj});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsCustomization.AllowFilter = false;
+            this.gridView1.OptionsFilter.AllowFilterIncrementalSearch = false;
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colID_Ubezpieczenie
+            // 
+            this.colID_Ubezpieczenie.FieldName = "ID_Ubezpieczenie";
+            this.colID_Ubezpieczenie.Name = "colID_Ubezpieczenie";
+            // 
+            // colRodzaj
+            // 
+            this.colRodzaj.Caption = "Rodzaj ubezpieczenia";
+            this.colRodzaj.FieldName = "Rodzaj";
+            this.colRodzaj.Name = "colRodzaj";
+            this.colRodzaj.OptionsColumn.AllowEdit = false;
+            this.colRodzaj.OptionsColumn.AllowFocus = false;
+            this.colRodzaj.OptionsColumn.AllowIncrementalSearch = false;
+            this.colRodzaj.OptionsFilter.AllowAutoFilter = false;
+            this.colRodzaj.OptionsFilter.AllowFilter = false;
+            this.colRodzaj.Visible = true;
+            this.colRodzaj.VisibleIndex = 0;
+            // 
             // pLECTableAdapter
             // 
             this.pLECTableAdapter.ClearBeforeFill = true;
@@ -215,8 +333,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.peselCB);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl15);
             this.splitContainer1.Panel1.Controls.Add(this.krajSelect);
-            this.splitContainer1.Panel1.Controls.Add(this.plecSelect);
-            this.splitContainer1.Panel1.Controls.Add(this.ubezpieczenieSelect);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl14);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl13);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl11);
@@ -248,6 +364,8 @@
             this.splitContainer1.Panel1.Controls.Add(this.closeButton);
             this.splitContainer1.Panel1.Controls.Add(this.editPatient2);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl8);
+            this.splitContainer1.Panel1.Controls.Add(this.plecSelect);
+            this.splitContainer1.Panel1.Controls.Add(this.ubezpieczenieSelect);
             // 
             // splitContainer1.Panel2
             // 
@@ -322,6 +440,7 @@
             this.paszportCB.Size = new System.Drawing.Size(102, 23);
             this.paszportCB.TabIndex = 17;
             this.paszportCB.Text = "Paszport:";
+            this.paszportCB.CheckedChanged += new System.EventHandler(this.paszportCB_CheckedChanged);
             // 
             // dowodosobistyCB
             // 
@@ -330,6 +449,7 @@
             this.dowodosobistyCB.Size = new System.Drawing.Size(102, 23);
             this.dowodosobistyCB.TabIndex = 15;
             this.dowodosobistyCB.Text = "Dowód osobisty:";
+            this.dowodosobistyCB.CheckedChanged += new System.EventHandler(this.dowodosobistyCB_CheckedChanged);
             // 
             // peselCB
             // 
@@ -338,6 +458,7 @@
             this.peselCB.Size = new System.Drawing.Size(102, 23);
             this.peselCB.TabIndex = 13;
             this.peselCB.Text = "PESEL:";
+            this.peselCB.CheckedChanged += new System.EventHandler(this.peselCB_CheckedChanged);
             // 
             // labelControl15
             // 
@@ -388,29 +509,6 @@
             this.colKraj.VisibleIndex = 0;
             this.colKraj.Width = 76;
             // 
-            // plecSelect
-            // 
-            this.plecSelect.DataSource = this.pLECBindingSource;
-            this.plecSelect.DisplayMember = "Plec";
-            this.plecSelect.FormattingEnabled = true;
-            this.plecSelect.Location = new System.Drawing.Point(121, 200);
-            this.plecSelect.Name = "plecSelect";
-            this.plecSelect.Size = new System.Drawing.Size(199, 21);
-            this.plecSelect.TabIndex = 7;
-            this.plecSelect.ValueMember = "ID_Plec";
-            // 
-            // ubezpieczenieSelect
-            // 
-            this.ubezpieczenieSelect.DataSource = this.uBEZPIECZENIEBindingSource;
-            this.ubezpieczenieSelect.DisplayMember = "Rodzaj";
-            this.ubezpieczenieSelect.FormattingEnabled = true;
-            this.ubezpieczenieSelect.Location = new System.Drawing.Point(140, 464);
-            this.ubezpieczenieSelect.Name = "ubezpieczenieSelect";
-            this.ubezpieczenieSelect.Size = new System.Drawing.Size(180, 21);
-            this.ubezpieczenieSelect.TabIndex = 20;
-            this.ubezpieczenieSelect.ValueMember = "ID_Ubezpieczenie";
-            this.ubezpieczenieSelect.SelectedIndexChanged += new System.EventHandler(this.ubezpieczenieSelect_SelectedIndexChanged);
-            // 
             // labelControl14
             // 
             this.labelControl14.Location = new System.Drawing.Point(28, 467);
@@ -439,7 +537,7 @@
             // 
             this.miastoTB.Location = new System.Drawing.Point(243, 306);
             this.miastoTB.Name = "miastoTB";
-            this.miastoTB.Properties.Mask.EditMask = "[a-zA-Z0-9 /]{0,30}";
+            this.miastoTB.Properties.Mask.EditMask = "[a-zA-Z0-9ąęśćółńżź /]{0,30}";
             this.miastoTB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.miastoTB.Properties.Mask.ShowPlaceHolders = false;
             this.miastoTB.Size = new System.Drawing.Size(77, 20);
@@ -522,7 +620,7 @@
             // 
             this.ulicaTB.Location = new System.Drawing.Point(121, 252);
             this.ulicaTB.Name = "ulicaTB";
-            this.ulicaTB.Properties.Mask.EditMask = "[a-zA-Z0-9 .,/]{0,50}";
+            this.ulicaTB.Properties.Mask.EditMask = "[a-zA-Z0-9ąęśćółńżź .,/]{0,50}";
             this.ulicaTB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.ulicaTB.Properties.Mask.ShowPlaceHolders = false;
             this.ulicaTB.Size = new System.Drawing.Size(199, 20);
@@ -573,6 +671,7 @@
             this.paszportTB.Properties.Mask.ShowPlaceHolders = false;
             this.paszportTB.Size = new System.Drawing.Size(180, 20);
             this.paszportTB.TabIndex = 18;
+            this.paszportTB.EditValueChanged += new System.EventHandler(this.paszportTB_EditValueChanged);
             // 
             // dowodTB
             // 
@@ -584,6 +683,7 @@
             this.dowodTB.Properties.Mask.ShowPlaceHolders = false;
             this.dowodTB.Size = new System.Drawing.Size(180, 20);
             this.dowodTB.TabIndex = 16;
+            this.dowodTB.EditValueChanged += new System.EventHandler(this.dowodTB_EditValueChanged);
             // 
             // ekuzTB
             // 
@@ -606,6 +706,7 @@
             this.peselTB.Properties.Mask.ShowPlaceHolders = false;
             this.peselTB.Size = new System.Drawing.Size(180, 20);
             this.peselTB.TabIndex = 14;
+            this.peselTB.EditValueChanged += new System.EventHandler(this.paszportTB_EditValueChanged);
             // 
             // labelControl2
             // 
@@ -619,7 +720,7 @@
             // 
             this.nazwiskoTB.Location = new System.Drawing.Point(121, 96);
             this.nazwiskoTB.Name = "nazwiskoTB";
-            this.nazwiskoTB.Properties.Mask.EditMask = "[a-zA-Z ,./-]{0,50}";
+            this.nazwiskoTB.Properties.Mask.EditMask = "[a-zA-Ząęśćółńżź ,./-]{0,50}";
             this.nazwiskoTB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.nazwiskoTB.Properties.Mask.ShowPlaceHolders = false;
             this.nazwiskoTB.Size = new System.Drawing.Size(199, 20);
@@ -654,7 +755,7 @@
             // 
             this.imieTB.Location = new System.Drawing.Point(121, 70);
             this.imieTB.Name = "imieTB";
-            this.imieTB.Properties.Mask.EditMask = "[a-zA-Z ,.]{0,50}";
+            this.imieTB.Properties.Mask.EditMask = "[a-zA-Ząęśćółńżź ,.]{0,50}";
             this.imieTB.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.imieTB.Properties.Mask.ShowPlaceHolders = false;
             this.imieTB.Size = new System.Drawing.Size(199, 20);
@@ -741,6 +842,7 @@
             this.gridViewEditPacjent.OptionsFind.ShowClearButton = false;
             this.gridViewEditPacjent.OptionsFind.ShowFindButton = false;
             this.gridViewEditPacjent.OptionsView.ShowGroupPanel = false;
+            this.gridViewEditPacjent.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // colID_Pacjent
             // 
@@ -878,10 +980,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 961);
             this.Controls.Add(this.splitContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditPatient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edycja pacjenta";
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.EditPatient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uBEZPIECZENIEBindingSource)).EndInit();
@@ -889,6 +991,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pLECBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDTB.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plecSelect.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ubezpieczenieSelect.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kRAJBindingSource)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -946,8 +1052,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colID_Kraj;
         private DevExpress.XtraGrid.Columns.GridColumn colKraj;
-        private System.Windows.Forms.ComboBox plecSelect;
-        private System.Windows.Forms.ComboBox ubezpieczenieSelect;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl11;
@@ -999,5 +1103,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn colNumer_EKUZ;
         private DevExpress.XtraEditors.ComboBoxEdit kpSelect;
         private DevExpress.XtraEditors.CheckEdit phoneCheckEdit;
+        private DevExpress.XtraEditors.SearchLookUpEdit plecSelect;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn colID_Plec;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.SearchLookUpEdit ubezpieczenieSelect;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colID_Ubezpieczenie;
+        private DevExpress.XtraGrid.Columns.GridColumn colRodzaj;
     }
 }

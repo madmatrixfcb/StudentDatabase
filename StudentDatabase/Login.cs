@@ -133,7 +133,11 @@ namespace StudentDatabase
             {
                 loginButton.Text = "Zmień hasło";
                 changePasswordControl.Text = "Wróć";
+                int X1 = 130;
+                changePasswordControl.Location.X.Equals(X1);
                 currentPassLabel.Text = "Stare hasło:";
+                int X2 = 111;
+                currentPassLabel.Location.X.Equals(X2);
                 newPassBox.Visible = true;
                 newPassLabel.Visible = true;
                 LoginInfo.changePassword = true;
@@ -146,7 +150,11 @@ namespace StudentDatabase
             {
                 loginButton.Text = "Zaloguj się";
                 changePasswordControl.Text = "Zmień hasło";
+                int X1 = 116;
+                changePasswordControl.Location.X.Equals(X1);
                 currentPassLabel.Text = "Hasło:";
+                int X2 = 125;
+                currentPassLabel.Location.X.Equals(X2);
                 newPassBox.Visible = false;
                 newPassLabel.Visible = false;
                 LoginInfo.changePassword = false;

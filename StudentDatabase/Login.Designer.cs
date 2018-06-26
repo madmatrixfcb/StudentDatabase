@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule7 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.newPassLabel = new DevExpress.XtraEditors.LabelControl();
@@ -79,12 +79,12 @@
             this.panel2.Controls.Add(this.loginBox);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(285, 298);
+            this.panel2.Size = new System.Drawing.Size(285, 303);
             this.panel2.TabIndex = 1;
             // 
             // newPassLabel
             // 
-            this.newPassLabel.Location = new System.Drawing.Point(116, 252);
+            this.newPassLabel.Location = new System.Drawing.Point(113, 259);
             this.newPassLabel.Name = "newPassLabel";
             this.newPassLabel.Size = new System.Drawing.Size(60, 13);
             this.newPassLabel.TabIndex = 12;
@@ -93,7 +93,7 @@
             // 
             // currentPassLabel
             // 
-            this.currentPassLabel.Location = new System.Drawing.Point(128, 213);
+            this.currentPassLabel.Location = new System.Drawing.Point(125, 213);
             this.currentPassLabel.Name = "currentPassLabel";
             this.currentPassLabel.Size = new System.Drawing.Size(31, 13);
             this.currentPassLabel.TabIndex = 11;
@@ -101,7 +101,7 @@
             // 
             // loginLabel
             // 
-            this.loginLabel.Location = new System.Drawing.Point(128, 168);
+            this.loginLabel.Location = new System.Drawing.Point(125, 168);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(29, 13);
             this.loginLabel.TabIndex = 10;
@@ -124,31 +124,31 @@
             // 
             // newPassBox
             // 
-            this.newPassBox.Location = new System.Drawing.Point(42, 265);
+            this.newPassBox.Location = new System.Drawing.Point(42, 278);
             this.newPassBox.Name = "newPassBox";
             this.newPassBox.Properties.PasswordChar = '*';
             this.newPassBox.Properties.UseSystemPasswordChar = true;
             this.newPassBox.Size = new System.Drawing.Size(200, 20);
             this.newPassBox.TabIndex = 6;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Pole nowe hasło nie może być puste";
-            this.dxValidationUpdatePassword.SetValidationRule(this.newPassBox, conditionValidationRule4);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Pole nowe hasło nie może być puste";
+            this.dxValidationUpdatePassword.SetValidationRule(this.newPassBox, conditionValidationRule3);
             this.newPassBox.Visible = false;
             // 
             // passBox
             // 
-            this.passBox.Location = new System.Drawing.Point(42, 226);
+            this.passBox.Location = new System.Drawing.Point(42, 232);
             this.passBox.Name = "passBox";
             this.passBox.Properties.PasswordChar = '*';
             this.passBox.Properties.UseSystemPasswordChar = true;
             this.passBox.Size = new System.Drawing.Size(200, 20);
             this.passBox.TabIndex = 2;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "Pole stare hasło nie może być puste";
+            this.dxValidationUpdatePassword.SetValidationRule(this.passBox, conditionValidationRule4);
             conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule5.ErrorText = "Pole hasło nie może być puste";
             this.dxValidationProvider.SetValidationRule(this.passBox, conditionValidationRule5);
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "Pole stare hasło nie może być puste";
-            this.dxValidationUpdatePassword.SetValidationRule(this.passBox, conditionValidationRule6);
             // 
             // loginBox
             // 
@@ -157,11 +157,11 @@
             this.loginBox.Size = new System.Drawing.Size(200, 20);
             this.loginBox.TabIndex = 1;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Pole login nie może być puste!";
-            this.dxValidationProvider.SetValidationRule(this.loginBox, conditionValidationRule1);
-            conditionValidationRule7.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule7.ErrorText = "Pole login nie może być puste";
-            this.dxValidationUpdatePassword.SetValidationRule(this.loginBox, conditionValidationRule7);
+            conditionValidationRule1.ErrorText = "Pole login nie może być puste";
+            this.dxValidationUpdatePassword.SetValidationRule(this.loginBox, conditionValidationRule1);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "Pole login nie może być puste!";
+            this.dxValidationProvider.SetValidationRule(this.loginBox, conditionValidationRule6);
             // 
             // panel1
             // 
@@ -214,6 +214,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logowanie";

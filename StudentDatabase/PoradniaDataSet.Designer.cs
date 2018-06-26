@@ -2859,7 +2859,7 @@ namespace StudentDatabase {
                 this.columnKraj.MaxLength = 50;
                 this.columnTelefon.MaxLength = 15;
                 this.columnPlec.AllowDBNull = false;
-                this.columnPlec.MaxLength = 2;
+                this.columnPlec.MaxLength = 10;
                 this.columnUlica.AllowDBNull = false;
                 this.columnUlica.MaxLength = 50;
                 this.columnNr_budynku.MaxLength = 5;
@@ -3876,7 +3876,7 @@ namespace StudentDatabase {
                 this.columnKraj.AllowDBNull = false;
                 this.columnKraj.MaxLength = 45;
                 this.columnTelefon.MaxLength = 15;
-                this.columnPlec.MaxLength = 45;
+                this.columnPlec.MaxLength = 10;
                 this.columnUlica.AllowDBNull = false;
                 this.columnUlica.MaxLength = 50;
                 this.columnNr_budynku.MaxLength = 5;
@@ -3890,7 +3890,7 @@ namespace StudentDatabase {
                 this.columnDowod_osobisty.MaxLength = 15;
                 this.columnPaszport.MaxLength = 20;
                 this.columnUbezpieczenie.AllowDBNull = false;
-                this.columnUbezpieczenie.MaxLength = 65535;
+                this.columnUbezpieczenie.MaxLength = 15;
                 this.columnNumer_EKUZ.MaxLength = 20;
             }
             

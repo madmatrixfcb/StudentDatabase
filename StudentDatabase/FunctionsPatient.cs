@@ -81,16 +81,16 @@ namespace StudentDatabase
                     InfoPESEL.szDate = (dzien < 10 ? "0" + dzien.ToString() : dzien.ToString() + "-" + (mies < 10 ? "0" + mies.ToString() : mies.ToString()) + "-" + rok.ToString());
                     if (szPesel[9] % 2 == 1)
                     {
-                        InfoPESEL.plec = 1;
+                        InfoPESEL.plec = 2;
                     }
                     else
                     {
-                        InfoPESEL.plec = 0;
+                        InfoPESEL.plec = 1;
                     }
                 }
                 else
                 {
-                    InfoPESEL.plec = 2;
+                    InfoPESEL.plec = 3;
                 }
             }
             else return false;
