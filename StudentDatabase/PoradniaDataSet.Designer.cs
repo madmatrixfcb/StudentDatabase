@@ -1417,7 +1417,7 @@ namespace StudentDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public UZYTKOWNIKRow FindByID_Uzytkownik(short ID_Uzytkownik) {
+            public UZYTKOWNIKRow FindByID_Uzytkownik(int ID_Uzytkownik) {
                 return ((UZYTKOWNIKRow)(this.Rows.Find(new object[] {
                             ID_Uzytkownik})));
             }
@@ -1452,7 +1452,7 @@ namespace StudentDatabase {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnID_Uzytkownik = new global::System.Data.DataColumn("ID_Uzytkownik", typeof(short), null, global::System.Data.MappingType.Element);
+                this.columnID_Uzytkownik = new global::System.Data.DataColumn("ID_Uzytkownik", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Uzytkownik);
                 this.columnImie = new global::System.Data.DataColumn("Imie", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnImie);
@@ -1481,11 +1481,11 @@ namespace StudentDatabase {
                 this.columnNazwisko.MaxLength = 20;
                 this.columnTytul.AllowDBNull = false;
                 this.columnTytul.MaxLength = 20;
-                this.columnNr_Pozwolenia.MaxLength = 65535;
+                this.columnNr_Pozwolenia.MaxLength = 20;
                 this.columnLogin.AllowDBNull = false;
-                this.columnLogin.MaxLength = 20;
+                this.columnLogin.MaxLength = 50;
                 this.columnHaslo.AllowDBNull = false;
-                this.columnHaslo.MaxLength = 50;
+                this.columnHaslo.MaxLength = 65;
                 this.columnTyp_konta.AllowDBNull = false;
             }
             
@@ -3337,19 +3337,19 @@ namespace StudentDatabase {
                 this.columnGodzina.AllowDBNull = false;
                 this.columnGodzina.MaxLength = 5;
                 this.columnObjawy.AllowDBNull = false;
-                this.columnObjawy.MaxLength = 145;
+                this.columnObjawy.MaxLength = 300;
                 this.columnBPrzedmiotowe.AllowDBNull = false;
-                this.columnBPrzedmiotowe.MaxLength = 500;
+                this.columnBPrzedmiotowe.MaxLength = 750;
                 this.columnBPodmiotowe.AllowDBNull = false;
                 this.columnBPodmiotowe.MaxLength = 1100;
                 this.columnID_ICD_1.AllowDBNull = false;
                 this.columnID_ICD_1.MaxLength = 6;
                 this.columnID_ICD_2.MaxLength = 6;
                 this.columnID_ICD_3.MaxLength = 6;
-                this.columnRozpoznanie.MaxLength = 145;
-                this.columnLeki.MaxLength = 145;
+                this.columnRozpoznanie.MaxLength = 300;
+                this.columnLeki.MaxLength = 300;
                 this.columnZalecenia.AllowDBNull = false;
-                this.columnZalecenia.MaxLength = 145;
+                this.columnZalecenia.MaxLength = 300;
                 this.columnID_Lekarz.MaxLength = 50;
                 this.columnPacjent.MaxLength = 101;
             }
@@ -4356,17 +4356,17 @@ namespace StudentDatabase {
                 this.columnGodzina.AllowDBNull = false;
                 this.columnGodzina.MaxLength = 5;
                 this.columnObjawy.AllowDBNull = false;
-                this.columnObjawy.MaxLength = 145;
+                this.columnObjawy.MaxLength = 300;
                 this.columnBPrzedmiotowe.AllowDBNull = false;
-                this.columnBPrzedmiotowe.MaxLength = 500;
+                this.columnBPrzedmiotowe.MaxLength = 750;
                 this.columnBPodmiotowe.AllowDBNull = false;
                 this.columnBPodmiotowe.MaxLength = 1100;
                 this.columnID_ICD_1.MaxLength = 193;
                 this.columnID_ICD_2.MaxLength = 193;
                 this.columnID_ICD_3.MaxLength = 45;
-                this.columnRozpoznanie.MaxLength = 145;
-                this.columnLeki.MaxLength = 145;
-                this.columnZalecenia.MaxLength = 145;
+                this.columnRozpoznanie.MaxLength = 300;
+                this.columnLeki.MaxLength = 300;
+                this.columnZalecenia.MaxLength = 300;
                 this.columnID_Lekarz.MaxLength = 50;
             }
             
@@ -5660,9 +5660,9 @@ namespace StudentDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public short ID_Uzytkownik {
+            public int ID_Uzytkownik {
                 get {
-                    return ((short)(this[this.tableUZYTKOWNIK.ID_UzytkownikColumn]));
+                    return ((int)(this[this.tableUZYTKOWNIK.ID_UzytkownikColumn]));
                 }
                 set {
                     this[this.tableUZYTKOWNIK.ID_UzytkownikColumn] = value;
@@ -9219,7 +9219,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.ParameterName = "@login";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 20;
+            param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "Login";
             this._commandCollection[1].Parameters.Add(param);
@@ -9227,7 +9227,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.ParameterName = "@pass";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 20;
+            param.Size = 65;
             param.IsNullable = true;
             param.SourceColumn = "Haslo";
             this._commandCollection[1].Parameters.Add(param);
@@ -9240,7 +9240,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.ParameterName = "@login";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 20;
+            param.Size = 50;
             param.IsNullable = true;
             param.SourceColumn = "Login";
             this._commandCollection[2].Parameters.Add(param);
@@ -9248,7 +9248,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.ParameterName = "@pass";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 20;
+            param.Size = 65;
             param.IsNullable = true;
             param.SourceColumn = "Haslo";
             this._commandCollection[2].Parameters.Add(param);
@@ -9272,14 +9272,14 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             param.ParameterName = "@new_pass";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 50;
+            param.Size = 65;
             param.IsNullable = true;
             param.SourceColumn = "Haslo";
             this._commandCollection[4].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@userID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int16;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
             param.IsNullable = true;
             param.SourceColumn = "ID_Uzytkownik";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -9583,7 +9583,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<short> SelectUserID(string login, string pass) {
+        public virtual object SelectUserID(string login, string pass) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[2];
             if ((login == null)) {
                 throw new global::System.ArgumentNullException("login");
@@ -9613,10 +9613,10 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             }
             if (((returnValue == null) 
                         || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<short>();
+                return null;
             }
             else {
-                return new global::System.Nullable<short>(((short)(returnValue)));
+                return ((object)(returnValue));
             }
         }
         
@@ -9653,7 +9653,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdatePassword(string new_pass, short userID) {
+        public virtual int UpdatePassword(string new_pass, int userID) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[4];
             if ((new_pass == null)) {
                 throw new global::System.ArgumentNullException("new_pass");
@@ -9661,7 +9661,7 @@ namespace StudentDatabase.PoradniaDataSetTableAdapters {
             else {
                 command.Parameters[0].Value = ((string)(new_pass));
             }
-            command.Parameters[1].Value = ((short)(userID));
+            command.Parameters[1].Value = ((int)(userID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
