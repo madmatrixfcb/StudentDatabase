@@ -1,6 +1,6 @@
 ﻿namespace StudentDatabase
 {
-    partial class AdminMenu
+    partial class Menu
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::StudentDatabase.MenuLoad), true, true);
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.addPatient = new DevExpress.XtraBars.BarButtonItem();
             this.savePatientXLSButton = new DevExpress.XtraBars.BarButtonItem();
@@ -1706,8 +1706,8 @@
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdminMenu_FormClosing);
-            this.Load += new System.EventHandler(this.AdminMenu_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
+            this.Load += new System.EventHandler(this.Menu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.poradniaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
@@ -1785,8 +1785,6 @@
         private DevExpress.XtraBars.BarButtonItem editPatient;
         private System.Windows.Forms.Timer time;
         private DevExpress.XtraBars.BarStaticItem timeItem;
-        private DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch repositoryItemToggleSwitch1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraBars.BarToggleSwitchItem deleteModeBar;
         private DevExpress.XtraBars.BarStaticItem deleteModeLabelPatient;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;

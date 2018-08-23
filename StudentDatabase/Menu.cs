@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace StudentDatabase
 {
-    public partial class AdminMenu : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class Menu : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public AdminMenu()
+        public Menu()
         {
             InitializeComponent();
             time.Start();
@@ -15,7 +15,7 @@ namespace StudentDatabase
             UserInfo();
         }
 
-        private void AdminMenu_Load(object sender, EventArgs e)
+        private void Menu_Load(object sender, EventArgs e)
         {
             DefaultRowCout();
             CheckAdmin();
@@ -706,7 +706,7 @@ namespace StudentDatabase
         }
 
         //-----------------------------------POTWIERDZENIE WYJŚCIA Z APLIKAJCI-----------------------------------//
-        private void AdminMenu_FormClosing(object sender, FormClosingEventArgs e)
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult warning = MessageBox.Show("Czy na pewno chcesz wyjść z aplikacji", "Potwierdzenie wyjścia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (warning == DialogResult.No)

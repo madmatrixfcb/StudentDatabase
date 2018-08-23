@@ -72,22 +72,22 @@ namespace StudentDatabase
                 string ubezpieczenie = Convert.ToString(ubezpieczenieSelect.EditValue);
                 string nr_ekuz = Convert.ToString(ekuzTB.Text);
 
-                if (nr_pesel == "" || peselCB.Checked == false)
+                if (String.IsNullOrEmpty(nr_pesel) || peselCB.Checked == false)
                 {
                     nr_pesel = "Brak";
                 }
 
-                if (dowod_osobisty == "" || dowodosobistyCB.Checked == false)
+                if (String.IsNullOrEmpty(dowod_osobisty) || dowodosobistyCB.Checked == false)
                 {
                     dowod_osobisty = "Brak";
                 }
 
-                if (nr_paszportu == "" || paszportCB.Checked == false)
+                if (String.IsNullOrEmpty(nr_paszportu) || paszportCB.Checked == false)
                 {
                     nr_paszportu = "Brak";
                 }
 
-                if (nr_ekuz == "" || ekuzTB.Enabled == false)
+                if (String.IsNullOrEmpty(nr_ekuz) || ekuzTB.Enabled == false)
                 {
                     nr_ekuz = "Brak";
                 }
@@ -157,7 +157,7 @@ namespace StudentDatabase
 
         private void paszportTB_EditValueChanged(object sender, EventArgs e)
         {
-            if (paszportTB.Text == "" || paszportTB.Text == "Brak")
+            if (String.IsNullOrEmpty(paszportTB.Text) || paszportTB.Text == "Brak")
             {
                 paszportTB.Enabled = false;
                 paszportCB.Checked = false;
@@ -171,7 +171,7 @@ namespace StudentDatabase
 
         private void dowodTB_EditValueChanged(object sender, EventArgs e)
         {
-            if (dowodTB.Text == "" || dowodTB.Text == "Brak")
+            if (String.IsNullOrEmpty(dowodTB.Text) || dowodTB.Text == "Brak")
             {
                 dowodTB.Enabled = false;
                 dowodosobistyCB.Checked = false;
@@ -185,7 +185,7 @@ namespace StudentDatabase
 
         private void peselTB_EditValueChanged(object sender, EventArgs e)
         {
-            if (peselTB.Text == "" || peselTB.Text == "Brak")
+            if (String.IsNullOrEmpty(peselTB.Text) || peselTB.Text == "Brak")
             {
                 peselTB.Enabled = false;
                 peselCB.Checked = false;

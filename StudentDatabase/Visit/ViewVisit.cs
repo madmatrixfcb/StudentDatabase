@@ -16,13 +16,13 @@ namespace StudentDatabase
         {
             this.patient_viewTableAdapter.Fill(this.poradniaDataSet.patient_view);
             LoadVisitInfo();
-            int userID = Convert.ToInt16(AdminMenu.VisitPreview.patientID);
+            int userID = Convert.ToInt16(StudentDatabase.Menu.VisitPreview.patientID);
             gridView1.ActiveFilterString = "[ID_Pacjent] LIKE " + userID;
         }
 
         public static class PatientData
         {
-            public static DataRow pacjentRow = AdminMenu.VisitPreview.patientRow;
+            public static DataRow pacjentRow = StudentDatabase.Menu.VisitPreview.patientRow;
         }
 
         private void LoadPatientInfo()
@@ -52,7 +52,7 @@ namespace StudentDatabase
 
         public void LoadVisitInfo()
         {
-            DataRow visit = AdminMenu.VisitPreview.visitRow;
+            DataRow visit = StudentDatabase.Menu.VisitPreview.visitRow;
             visitIDLabelTB.Text = visit["ID_Wizyta"].ToString();
             DataGet.data = visit["Data"].ToString();
             dateLabelTB.Text = DataGet.data.Substring(0, 10) + " " + visit["Godzina"].ToString();

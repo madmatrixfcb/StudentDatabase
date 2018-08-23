@@ -93,22 +93,22 @@ namespace StudentDatabase
                 string ubezpieczenie = Convert.ToString(ubezpieczenieSelect.EditValue);
                 string nr_ekuz = Convert.ToString(ekuzTB.Text);
 
-                if (nr_pesel == "" || peselCB.Checked == false)
+                if (String.IsNullOrEmpty(nr_pesel) || peselCB.Checked == false)
                 {
                     nr_pesel = "Brak";
                 }
 
-                if (dowod_osobisty == "" || dowodosobistyCB.Checked == false)
+                if (String.IsNullOrEmpty(dowod_osobisty) || dowodosobistyCB.Checked == false)
                 {
                     dowod_osobisty = "Brak";
                 }
 
-                if (nr_paszportu == "" || paszportCB.Checked == false)
+                if (String.IsNullOrEmpty(nr_paszportu) || paszportCB.Checked == false)
                 {
                     nr_paszportu = "Brak";
                 }
 
-                if (nr_ekuz == "" || ekuzTB.Enabled == false)
+                if (String.IsNullOrEmpty(nr_ekuz) || ekuzTB.Enabled == false)
                 {
                     nr_ekuz = "Brak";
                 }

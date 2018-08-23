@@ -28,9 +28,9 @@ namespace StudentDatabase
 
         private void LoadArrangedVisitInfo()
         {
-            if (AdminMenu.ArrangedVisitParams.arrangedVisit == true)
+            if (StudentDatabase.Menu.ArrangedVisitParams.arrangedVisit == true)
             {
-                DataRow ArrangeRow = AdminMenu.ArrangedVisitParams.arrangeVisitRow;
+                DataRow ArrangeRow = StudentDatabase.Menu.ArrangedVisitParams.arrangeVisitRow;
                 pacjentCB.Text = ArrangeRow["ID_Pacjent"].ToString();
                 pacjentCB.Refresh();
                 string arrangeData = ArrangeRow["Data"].ToString();
@@ -76,7 +76,7 @@ namespace StudentDatabase
                 }
                 else
                 {
-                    if (Convert.ToInt16(umoW_WIZTETableAdapter.UmowDataCount(date, time)) >= 1 && AdminMenu.ArrangedVisitParams.arrangedVisit == false)
+                    if (Convert.ToInt16(umoW_WIZTETableAdapter.UmowDataCount(date, time)) >= 1 && StudentDatabase.Menu.ArrangedVisitParams.arrangedVisit == false)
                     {
                         DialogResult overwriteVisit = MessageBox.Show("Na wybraną datę i godzinę jest już umówiona wizyta." + Environment.NewLine + "Wybierz TAK jeśli chcesz zapisać tę wizytę mimo to i usunąć umówiąną wizytę na tę godznę" + Environment.NewLine + "Wybierz NIE jeśli chcesz wybrać inną datę lub godzinę.", "Data zajęta", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                         if (overwriteVisit == DialogResult.Yes)
@@ -86,7 +86,7 @@ namespace StudentDatabase
                                 wizytaTableAdapter.InsertQuery(patient, date, time, objawy, bprzed, bpod, icd1, icd2, icd3, rozpoznanie, leki, zalecenia, user);
                                 umoW_WIZTETableAdapter.DeleteArrangedbyDate(date, time);
                                 MessageBox.Show("Wizyta dodana", "Dodano", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                AdminMenu.ArrangedVisitParams.arrangeStatus = true;
+                                StudentDatabase.Menu.ArrangedVisitParams.arrangeStatus = true;
                                 this.Close();
                             }
                             catch (Exception ex)

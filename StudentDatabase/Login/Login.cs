@@ -35,7 +35,7 @@ namespace StudentDatabase
         }
 
         //-------------------SHA-----------------------/
-        private string GetSHA256HashData(string data)
+        private static string GetSHA256HashData(string data)
         {
             var shaSHA256 = System.Security.Cryptography.SHA256.Create();
             var inputEncodingBytes = Encoding.ASCII.GetBytes(data);
@@ -61,27 +61,13 @@ namespace StudentDatabase
                 LoginInfo.userType = Convert.ToString(uzytkownikTableAdapter.SelectLogin(LoginInfo.login, LoginInfo.pass));
                 LoginInfo.userID = Convert.ToSByte(uzytkownikTableAdapter.SelectUserID(LoginInfo.login, LoginInfo.pass));
 
-                if (LoginInfo.userType == "Admin")
+                if (LoginInfo.userType == "Admin" || LoginInfo.userType == "Lekarz")
                 {
                     try
                     {
-                        AdminMenu adminMenu = new AdminMenu();
+                        Menu menu = new Menu();
                         this.Hide();
-                        adminMenu.ShowDialog();
-                        this.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        XtraMessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else if (LoginInfo.userType == "Lekarz")
-                {
-                    try
-                    {
-                        AdminMenu adminMenu = new AdminMenu();
-                        this.Hide();
-                        adminMenu.ShowDialog();
+                        menu.ShowDialog();
                         this.Close();
                     }
                     catch (Exception ex)
